@@ -1,0 +1,26 @@
+;;;
+;;; Copyright (c) 2022-2023 Apple Inc. All rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any
+;;; time and without notice.
+;;;
+
+(version 1)
+
+(deny default)
+(deny file-map-executable iokit-get-properties process-info* nvram*)
+(deny dynamic-code-generation)
+
+(import "system.sb")
+
+;; We need to resolve symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; We need to be able to take transactions, which requires proc_set_dirty().
+(allow process-info-dirtycontrol
+    (target self))
+
+;; We need to read the statistics files that logd produces.
+(allow file-read*
+    (subpath "/private/var/db/diagnostics"))

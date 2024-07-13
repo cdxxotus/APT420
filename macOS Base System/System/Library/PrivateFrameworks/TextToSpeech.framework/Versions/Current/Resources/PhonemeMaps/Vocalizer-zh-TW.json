@@ -1,0 +1,287 @@
+[
+  {
+    "ipa": "a",
+    "synthNative": "a",
+    "descr": "open front"
+  },
+  {
+    "ipa": "ɑ",
+    "synthNative": "A",
+    "descr": "open back"
+  },
+  {
+    "ipa": "ɛ",
+    "synthNative": "E",
+    "descr": "open-mid front"
+  },
+  {
+    "ipa": "i",
+    "synthNative": "i",
+    "descr": "close front"
+  },
+  {
+    "ipa": "o",
+    "synthNative": "o",
+    "descr": "close-mid back rounded"
+  },
+  {
+    "ipa": "ɔ",
+    "synthNative": "O",
+    "descr": "open-mid back rounded"
+  },
+  {
+    "ipa": "u",
+    "synthNative": "u",
+    "descr": "close back rounded"
+  },
+  {
+    "ipa": "y",
+    "synthNative": "y",
+    "descr": "close front rounded"
+  },
+  {
+    "ipa": "ə",
+    "synthNative": "$",
+    "descr": "central (schwa)"
+  },
+  {
+    "ipa": "ɤ",
+    "synthNative": "o-",
+    "descr": "close-mid back"
+  },
+  {
+    "ipa": "ɪ̱",
+    "synthNative": "I%\\",
+    "descr": "close central retracted"
+  },
+  {
+    "ipa": "ɪ̈",
+    "synthNative": "I%0",
+    "descr": "close central centralized"
+  },
+  {
+    "ipa": "ɛ˞",
+    "synthNative": "E%r",
+    "descr": "open-mid front rhoticized"
+  },
+  {
+    "ipa": "ə˞",
+    "synthNative": "$%r",
+    "descr": "central rhoticized"
+  },
+  {
+    "ipa": "a˞",
+    "synthNative": "a%r",
+    "descr": "open back rhoticized"
+  },
+  {
+    "ipa": "ɤ˞",
+    "synthNative": "o-%r",
+    "descr": "close-mid back rhoticized"
+  },
+  {
+    "ipa": "ɔ˞",
+    "synthNative": "O%r",
+    "descr": "open-mid back rhoticized"
+  },
+  {
+    "ipa": "u˞",
+    "synthNative": "u%r",
+    "descr": "close back rhoticized"
+  },
+  {
+    "ipa": "ə̃˞",
+    "synthNative": "$%\"~r\"",
+    "descr": "central rhoticized nasalized"
+  },
+  {
+    "ipa": "õ˞",
+    "synthNative": "o%\"~r\"",
+    "descr": "close-mid back rhoticized nasalized"
+  },
+  {
+    "ipa": "ɑ̃˞",
+    "synthNative": "A%\"~r\"",
+    "descr": "open back rhoticized nasalized"
+  },
+  {
+    "ipa": "e͡ɪ",
+    "synthNative": "e&I",
+    "descr": "from close-mid front to mid-high mid-front"
+  },
+  {
+    "ipa": "a͡ɪ",
+    "synthNative": "a&I",
+    "descr": "from open front to mid-high mid-front"
+  },
+  {
+    "ipa": "a͡ʊ",
+    "synthNative": "a&U",
+    "descr": "from open front to mid-high back rounded"
+  },
+  {
+    "ipa": "o͡ʊ",
+    "synthNative": "o&U",
+    "descr": "from close-mid back rounded to mid-high back rounded"
+  },
+  {
+    "ipa": "o͡ʊ˞",
+    "synthNative": "o&U%r",
+    "descr": "from close-mid back rounded to mid-high back rounded"
+  },
+  {
+    "ipa": "a͡ʊ˞",
+    "synthNative": "a&U%r",
+    "descr": "from open back to mid-high back rounded"
+  },
+  {
+    "ipa": "j",
+    "synthNative": "j",
+    "descr": "palatal approximant voiced"
+  },
+  {
+    "ipa": "w",
+    "synthNative": "w",
+    "descr": "labial velar approximant voiced"
+  },
+  {
+    "ipa": "p",
+    "synthNative": "p",
+    "descr": "bilabial plosive voiceless"
+  },
+  {
+    "ipa": "t",
+    "synthNative": "t",
+    "descr": "alveolar plosive voiceless"
+  },
+  {
+    "ipa": "k",
+    "synthNative": "k",
+    "descr": "velar plosive voiceless"
+  },
+  {
+    "ipa": "f",
+    "synthNative": "f",
+    "descr": "labiodental fricative voiceless"
+  },
+  {
+    "ipa": "s",
+    "synthNative": "s",
+    "descr": "alveolar fricative voiceless"
+  },
+  {
+    "ipa": "m",
+    "synthNative": "m",
+    "descr": "bilabial nasal voiced"
+  },
+  {
+    "ipa": "n",
+    "synthNative": "n",
+    "descr": "alveolar nasal voiced"
+  },
+  {
+    "ipa": "ŋ",
+    "synthNative": "nK",
+    "descr": "velar nasal voiced"
+  },
+  {
+    "ipa": "l",
+    "synthNative": "l",
+    "descr": "alveolar lateral approximant"
+  },
+  {
+    "ipa": "ɕ",
+    "synthNative": "c~",
+    "descr": "alveo-palatal fricative voiceless"
+  },
+  {
+    "ipa": "ʂ",
+    "synthNative": "s+",
+    "descr": "retroflex fricative voiceless"
+  },
+  {
+    "ipa": "χ",
+    "synthNative": "X",
+    "descr": "uvular fricative voiceless"
+  },
+  {
+    "ipa": "ʐ",
+    "synthNative": "z+",
+    "descr": "retroflex fricative voiced"
+  },
+  {
+    "ipa": "pʰ",
+    "synthNative": "p{",
+    "descr": "bilabial plosive voiceless aspirated"
+  },
+  {
+    "ipa": "tʰ",
+    "synthNative": "t{",
+    "descr": "alveolar plosive voiceless aspirated"
+  },
+  {
+    "ipa": "kʰ",
+    "synthNative": "k{",
+    "descr": "velar plosive voiceless aspirated"
+  },
+  {
+    "ipa": "t͡s",
+    "synthNative": "t&s",
+    "descr": "affricate voiceless from alveolar to alveolar"
+  },
+  {
+    "ipa": "t͡ɕ",
+    "synthNative": "t&c~",
+    "descr": "affricate voiceless from alveolar to alveolo-palatal"
+  },
+  {
+    "ipa": "t͡sʰ",
+    "synthNative": "t&s{",
+    "descr": "affricate voiceless aspirated from alveolar to alveolar"
+  },
+  {
+    "ipa": "t͡ʂ",
+    "synthNative": "t&s+",
+    "descr": "affricate voiceless from alveolar to retroflex"
+  },
+  {
+    "ipa": "t͡ʂʰ",
+    "synthNative": "t&s+{",
+    "descr": "affricate voiceless aspirated from alveolar to retroflex"
+  },
+  {
+    "ipa": "t͡ɕʰ",
+    "synthNative": "t&c~{",
+    "descr": "affricate voiceless aspirated from alveolar to alveolo-palatal"
+  },
+  {
+    "ipa": ".",
+    "synthNative": ".",
+    "descr": "syllable break"
+  },
+  {
+    "ipa": "˥",
+    "synthNative": "55",
+    "descr": "high-level"
+  },
+  {
+    "ipa": "˧˥",
+    "synthNative": "35",
+    "descr": "high-rising"
+  },
+  {
+    "ipa": "˨˩˦",
+    "synthNative": "214",
+    "descr": "third tone falling-rising"
+  },
+  {
+    "ipa": "˥˩",
+    "synthNative": "51",
+    "descr": "fourth tone falling contour"
+  },
+  {
+    "ipa": "˩",
+    "synthNative": "11",
+    "descr": "fifth tone neutral tone"
+  }
+]

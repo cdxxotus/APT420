@@ -1,0 +1,115 @@
+;;; Copyright (c) 2017-2022 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Preference domain
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.SiriTTSTrainingAgent.task_database")
+)
+(allow user-preference-read
+    (preference-domain "kCFPreferencesAnyApplication")
+    (preference-domain "com.apple.coreaudio")
+)
+
+;; Mach lookups
+(allow mach-lookup
+(global-name "com.apple.securityd.xpc"
+             "com.apple.appleneuralengine"
+             "com.apple.tailspind"
+             "com.apple.audio.AudioComponentRegistrar"
+             "com.apple.triald.namespace-management"
+             "com.apple.lsd.modifydb"
+             "com.apple.lsd.mapdb"
+             "com.apple.duetactivityscheduler"
+))
+
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR")))
+;; Read access to /private/var/db/mds/messages/*/se_SecurityMessages
+(allow file-read*
+       (subpath (param "SECURITY_MESSAGES_DIR")))
+
+;; File read/write
+(allow file-read* file-write*
+    ;; SiriTTSTrainingAgent diagnostic logs
+    (home-subpath "/Library/Logs/SiriTTSTrainer/")
+    ;; SiriTTSTrainingAgent task database
+    (home-subpath "/Library/com.apple.SiriTTSTrainingAgent/")
+    ;; Cache access
+    (home-subpath "/Library/Caches/com.apple.SiriTTSTrainingAgent/")
+
+    ;; Group container of voice banking
+    (home-subpath "/Library/Group Containers/group.com.apple.accessibility.voicebanking/")
+
+    ;; absolute path of /tmp
+    (subpath "/private/tmp")
+)
+
+;; File Read-only
+(allow file-read*
+    ;; Read Trial Assets
+    (home-subpath "/Library/Trial/")
+)
+
+;; Allow mmap
+(allow file-read* file-map-executable
+       (subpath "/System/Library/Components/AudioCodecs.component/")
+       (subpath "/System/Library/Components/AudioDSP.component/")
+       (subpath "/System/Library/Components/CoreAudio.component/")
+)
+
+;; iokit access, needed by ANE
+(allow iokit-open
+         (iokit-user-client-class "AGXCommandQueue"
+                                  "AGXDevice"
+                                  "AGXDeviceUserClient"
+                                  "AGXSharedUserClient"
+                                  "H11ANEInDirectPathClient"
+                                  "IOAccelContext"
+                                  "IOAccelContext2"
+                                  "IOAccelDevice"
+                                  "IOAccelDevice2"
+                                  "IOAccelSharedUserClient"
+                                  "IOAccelSharedUserClient2"
+                                  "IOAccelSubmitter2"
+                                  "IOSurfaceRootUserClient"
+                                  ;; rdar://84983834 needed by Trial
+                                  "AppleKeyStoreUserClient"))

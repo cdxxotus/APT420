@@ -1,0 +1,114 @@
+;;; Copyright (c) 2022 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(disable-callouts) ; Don't ever let the system suspend cfprefsd due to sandbox violations. Note, this turns violation reports against cfprefsd itself into one-liners.
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(allow process-info* (target self))
+
+;; This seems to be needed for consuming extensions, even if issued w/ audit token
+(allow process-info-pidinfo)
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+; Training wheels
+(if (not (string=? "" (param "TRAINING_WHEELS")))
+  (allow file* (with telemetry) (with report))
+)
+
+; Allow access to plist files through a sandbox extension from the client
+(with-filter (extension "com.apple.cfprefsd.read")
+  (allow file-read* (regex #"\.plist$"))
+)
+(with-filter (extension "com.apple.cfprefsd.read-write")
+  (allow file-read* file-write* (regex #"\.plist$"))
+)
+ 
+; Allow access in locations where we usually store preferences
+
+(if (not (string=? "" (param "HOME"))) 
+    (allow file*
+        (require-all
+            (regex #"\.plist$")
+            (require-any
+                (subpath (string-append (param "HOME") "/Library/Preferences"))
+                (regex   (string-append #"^" (param "HOME") #"/Library/Containers/[^/]+/Data/Library/Preferences"))
+                (regex   (string-append #"^" (param "HOME") #"/Library/Group Containers/[^/]+/Library/Preferences/"))
+                (regex   (string-append #"^/Volumes/[^/]+/Library/Containers/[^/]+/Data/Library/Preferences/"))
+                (regex   (string-append #"^/Volumes/[^/]+/Library/Group Containers/[^/]+/Library/Preferences/"))
+                ))))
+
+(allow file*
+    (require-all
+        (regex #"\.plist$")
+        (require-any
+            (regex   #"^/private/var/[^/]+/Library/Preferences")
+            (regex   #"^/private/var/db/[^/]+/Library/Preferences")
+            (subpath "/Library/Preferences")
+            )))
+
+; Root -> user preference access
+(if (string=? (param "ROLE") "daemon") 
+    (allow file*
+        (require-any
+            ; com.apple.HIToolbox -- used by watchdogd, tailspind, spindump
+            (regex #"/Library/Preferences/com\.apple\.HIToolbox\.plist$")
+            ; Media-related stuff -- used by systemsoundserverd, audiotest, CAReportingService
+            (regex #"/Library/Preferences/com\.apple\.coreaudio\.plist$")
+            (regex #"/Library/Preferences/com\.apple\.audio\.virtualaudio\.plist$")
+            (regex #"/Library/Preferences/com\.apple\.imgaudio\.AudioCaptureApp\.plist$")
+            (regex #"/Library/Preferences/com\.apple\.springboard\.plist$")
+            ; Used by com.apple.MobileSoftwareUpdate
+            (regex #"/Library/Preferences/com\.apple\.MobileAsset\.plist$")
+            (regex #"/Library/Preferences/com\.apple\.MobileSoftwareUpdate\.plist$")
+            ; com.apple.da -- used by spindump, PerfPowerServices
+            (regex #"/Library/Preferences/com\.apple\.da\.plist$")
+            (regex #"/Library/Preferences/ByHost/com\.apple\.metrickitd\.BYHOST\.plist$")
+            ; used by spindump
+            (regex #"/Library/Preferences/ByHost/com\.apple\.metrickitd\.........-....-....-....-............\.plist$")
+            ; used by webfilterproxyd, parentalcontrolsd, DirectoryTools
+            (regex #"/Library/Preferences/\.GlobalPreferences.plist")
+            ; PerfPowerServices, PerfPowerServicesExtended, com.apple.MobileInstallationHelper
+            (regex #"/Library/Preferences/ByHost/\.GlobalPreferences\.........-....-....-....-............\.plist$")
+        )))
+
+(allow file-read*
+    (require-all
+        (regex #"\.plist$")
+        (subpath "/Library/Managed Preferences")))
+
+;; Read/write access to any file in a temporary directory.
+(allow file*
+    (regex #"^/private/var/folders/[^/]+/[^/]+/[A-Z]/TemporaryItems(/|$)")
+    (mount-relative-literal "/.TemporaryItems")
+    (mount-relative-regex #"^/\.TemporaryItems/folders.[0-9]+(/|$)"))
+    
+;; Write access to a temporary directory where we dump preferences on SIGUSR1
+(allow file* (subpath "/private/tmp"))
+
+; Allow access to shared memory
+(if (not (string=? "" (param "SHMEM_NAME")))
+    (allow ipc-posix-shm*
+        (ipc-posix-name (param "SHMEM_NAME"))))
+
+(allow mach-lookup
+    (local-name "com.apple.FSEvents")
+    (global-name "com.apple.FSEvents"))

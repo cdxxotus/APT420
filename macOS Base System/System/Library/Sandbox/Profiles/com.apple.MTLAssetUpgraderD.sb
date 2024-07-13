@@ -1,0 +1,63 @@
+;;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+;(allow (with report) default)
+;(allow (with report) file-map-executable process-info* nvram*)
+;(allow (with report) dynamic-code-generation)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(import "system.sb")
+(import "appsandbox-common.sb")
+
+(allow process-info* (target self))
+
+;; Self lookup
+(allow file-read*
+    (literal "/usr/libexec")
+    (literal "/usr/libexec/MTLAssetUpgraderD"))
+
+(allow file-read-metadata)
+
+(system-graphics)
+
+(allow file-map-executable
+       (subpath "/System/Library/Extensions")) ;; GPU drivers
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+(allow file-read* file-write* file-issue-extension
+       (regex #"^/private/var/folders/[^/]+/[^/]+/C/com.apple.MTLAssetUpgraderD/") ; daemon work queue
+       (regex #"^/private/var/folders/[^/]+/[^/]+/C/[^/]+/[^/]+/com.apple.metal/") ; metal cache and usage
+       (regex #"^/private/var/folders/[^/]+/[^/]+/C/[^/]+/com.apple.metalassetupgrader/")) ; app bundled map/recompiled
+
+; Allow creation the <bundleID> subdirs for app bundle binary archives
+(allow file-write-create
+       (regex #"^/private/var/folders/[^/]+/[^/]+/C"))
+
+; To inspect/read binary archives in app bundles
+(allow file-read*
+       (subpath "/Applications/"))
+
+(allow user-preference-read
+       (preference-domain "kCFPreferencesAnyApplication")
+       (preference-domain "com.apple.Metal"))
+
+; Need to be able to check for binary archives on app install
+(when (param "application_bundle")
+      (allow-read-directory-contents (param "application_bundle")))
+
+(allow mach-lookup
+        (global-name "com.apple.distributed_notifications@Uv3")
+        (global-name "com.apple.CoreServices.coreservicesd")
+        (global-name "com.apple.DiskArbitration.diskarbitrationd")
+        (global-name "com.apple.biome.access.user")
+        (global-name "com.apple.lsd.modifydb"))

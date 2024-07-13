@@ -1,0 +1,41 @@
+;;;;;; 3rd Party Format Reader / MediaExtensions Profile - AppSandbox profile
+;;;;;; Extension point: com.apple.mediaextension.formatreader.
+;;;;;; Copyright (c) 2023 Apple Inc.  All Rights reserved.
+;;;;;;
+;;;;;; WARNING: The sandbox rules in this file currently constitute
+;;;;;; Apple System Private Interface and are subject to change at any time and
+;;;;;; without notice. The contents of this file are also auto-generated and
+;;;;;; not user editable; it may be overwritten at any time.
+(version 1)
+(deny default (with telemetry) (with message "media-extension-format-reader"))
+(import "system.sb")
+(import "appsandbox-common.sb")
+(allow mach-lookup
+       (global-name
+         "com.apple.FileCoordination"
+         "com.apple.SystemConfiguration.configd"
+         "com.apple.ocspd"))
+(allow-read-directory-contents (param "application_bundle"))
+(allow file-read* (literal "/Library/Preferences/.GlobalPreferences.plist"))
+(appsandbox-container-common)
+(appsandbox-container-macos)
+(allow file-read*
+       (extension
+         "com.apple.app-sandbox.read"
+         "com.apple.app-sandbox.read-write"))
+(sandbox-array-entitlement
+  "com.apple.security.temporary-exception.files.home-relative-path.read-only"
+  (lambda (path)
+    (let ((filter (select-filter path home-subpath home-literal)))
+      (read-only-and-issue-extensions filter))))
+(sandbox-array-entitlement
+  "com.apple.security.temporary-exception.files.absolute-path.read-only"
+  (lambda (path)
+    (let ((filter (select-filter path safe-subpath literal)))
+      (read-only-and-issue-extensions filter))))
+(sandbox-array-entitlement
+  "com.apple.security.temporary-exception.shared-preference.read-only"
+  (lambda (domain) (allow user-preference-read (preference-domain domain))))
+(appsandbox-quarantine-common)
+(protect-redirected-paths)
+(protect-redirectable-paths)

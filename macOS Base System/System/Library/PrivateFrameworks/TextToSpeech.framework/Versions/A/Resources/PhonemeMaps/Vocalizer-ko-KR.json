@@ -1,0 +1,197 @@
+[
+  {
+    "ipa": "a",
+    "synthNative": "a",
+    "descr": "open front"
+  },
+  {
+    "ipa": "e",
+    "synthNative": "e",
+    "descr": "close-mid front"
+  },
+  {
+    "ipa": "ɛ",
+    "synthNative": "E",
+    "descr": "open-mid front"
+  },
+  {
+    "ipa": "i",
+    "synthNative": "i",
+    "descr": "close front"
+  },
+  {
+    "ipa": "o",
+    "synthNative": "o",
+    "descr": "close-mid back rounded"
+  },
+  {
+    "ipa": "ɔ",
+    "synthNative": "O",
+    "descr": "open-mid back rounded"
+  },
+  {
+    "ipa": "u",
+    "synthNative": "u",
+    "descr": "close back rounded"
+  },
+  {
+    "ipa": "ø",
+    "synthNative": "e+",
+    "descr": "close-mid front rounded"
+  },
+  {
+    "ipa": "ɯ",
+    "synthNative": "u-",
+    "descr": "close back"
+  },
+  {
+    "ipa": "ɯ͡i",
+    "synthNative": "u-&i",
+    "descr": "from close back to close front"
+  },
+  {
+    "ipa": "j",
+    "synthNative": "j",
+    "descr": "palatal approximant voiced"
+  },
+  {
+    "ipa": "w",
+    "synthNative": "w",
+    "descr": "labial velar approximant voiced"
+  },
+  {
+    "ipa": "r",
+    "synthNative": "r",
+    "descr": "alveolar trill"
+  },
+  {
+    "ipa": "p",
+    "synthNative": "p",
+    "descr": "bilabial plosive voiceless"
+  },
+  {
+    "ipa": "b",
+    "synthNative": "b",
+    "descr": "bilabial plosive voiced"
+  },
+  {
+    "ipa": "t",
+    "synthNative": "t",
+    "descr": "alveolar plosive voiceless"
+  },
+  {
+    "ipa": "d",
+    "synthNative": "d",
+    "descr": "alveolar plosive voiced"
+  },
+  {
+    "ipa": "k",
+    "synthNative": "k",
+    "descr": "velar plosive voiceless"
+  },
+  {
+    "ipa": "g",
+    "synthNative": "g",
+    "descr": "velar plosive voiced"
+  },
+  {
+    "ipa": "s",
+    "synthNative": "s",
+    "descr": "alveolar fricative voiceless"
+  },
+  {
+    "ipa": "h",
+    "synthNative": "h",
+    "descr": "glottal fricative voiceless"
+  },
+  {
+    "ipa": "m",
+    "synthNative": "m",
+    "descr": "bilabial nasal voiced"
+  },
+  {
+    "ipa": "n",
+    "synthNative": "n",
+    "descr": "alveolar nasal voiced"
+  },
+  {
+    "ipa": "ŋ",
+    "synthNative": "nK",
+    "descr": "velar nasal voiced"
+  },
+  {
+    "ipa": "l",
+    "synthNative": "l",
+    "descr": "alveolar lateral approximant"
+  },
+  {
+    "ipa": "ʔ",
+    "synthNative": "?",
+    "descr": "glottal plosive"
+  },
+  {
+    "ipa": "ɦ",
+    "synthNative": "h6",
+    "descr": "glottal fricative voiced"
+  },
+  {
+    "ipa": "cʰ",
+    "synthNative": "c{",
+    "descr": "palatal plosive voiceless aspirated"
+  },
+  {
+    "ipa": "ɟ",
+    "synthNative": "j-",
+    "descr": "palatal plosive voiced"
+  },
+  {
+    "ipa": "c",
+    "synthNative": "c",
+    "descr": "palatal plosive voiceless"
+  },
+  {
+    "ipa": "pʼ",
+    "synthNative": "p`",
+    "descr": "bilabial plosive voiceless ejective"
+  },
+  {
+    "ipa": "tʼ",
+    "synthNative": "t`",
+    "descr": "alveolar plosive voiceless ejective"
+  },
+  {
+    "ipa": "kʼ",
+    "synthNative": "k`",
+    "descr": "velar plosive voiceless ejective"
+  },
+  {
+    "ipa": "cʼ",
+    "synthNative": "c`",
+    "descr": "palatal plosive voiceless ejective"
+  },
+  {
+    "ipa": "sʼ",
+    "synthNative": "s`",
+    "descr": "alveolar fricative voiceless ejective"
+  },
+  {
+    "ipa": "pʰ",
+    "synthNative": "p{",
+    "descr": "bilabial plosive voiceless aspirated"
+  },
+  {
+    "ipa": "tʰ",
+    "synthNative": "t{",
+    "descr": "alveolar plosive voiceless aspirated"
+  },
+  {
+    "ipa": "kʰ",
+    "synthNative": "k{",
+    "descr": "velar plosive voiceless aspirated"
+  },
+  {
+    "ipa": ".",
+    "synthNative": ".",
+    "descr": "syllable break"
+  }
+]

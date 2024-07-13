@@ -1,0 +1,252 @@
+[
+  {
+    "ipa": "a",
+    "synthNative": "a",
+    "descr": "open front"
+  },
+  {
+    "ipa": "e",
+    "synthNative": "e",
+    "descr": "close-mid front"
+  },
+  {
+    "ipa": "ɛ",
+    "synthNative": "E",
+    "descr": "open-mid front"
+  },
+  {
+    "ipa": "i",
+    "synthNative": "i",
+    "descr": "close front"
+  },
+  {
+    "ipa": "o",
+    "synthNative": "o",
+    "descr": "close-mid back rounded"
+  },
+  {
+    "ipa": "ɔ",
+    "synthNative": "O",
+    "descr": "open-mid back rounded"
+  },
+  {
+    "ipa": "u",
+    "synthNative": "u",
+    "descr": "close back rounded"
+  },
+  {
+    "ipa": "ɛː",
+    "synthNative": "E:",
+    "descr": "open-mid front long"
+  },
+  {
+    "ipa": "iː",
+    "synthNative": "i:",
+    "descr": "close front long"
+  },
+  {
+    "ipa": "eː",
+    "synthNative": "e:",
+    "descr": "close-mid front long"
+  },
+  {
+    "ipa": "aː",
+    "synthNative": "a:",
+    "descr": "open front long"
+  },
+  {
+    "ipa": "uː",
+    "synthNative": "u:",
+    "descr": "close back rounded long"
+  },
+  {
+    "ipa": "oː",
+    "synthNative": "o:",
+    "descr": "close-mid back rounded long"
+  },
+  {
+    "ipa": "ɔː",
+    "synthNative": "O:",
+    "descr": "open-mid back rounded long"
+  },
+  {
+    "ipa": "ɤ",
+    "synthNative": "o-",
+    "descr": "close-mid back"
+  },
+  {
+    "ipa": "ɯ",
+    "synthNative": "u-",
+    "descr": "close back"
+  },
+  {
+    "ipa": "ɯː",
+    "synthNative": "u-:",
+    "descr": "close back long"
+  },
+  {
+    "ipa": "ɤː",
+    "synthNative": "o-:",
+    "descr": "close-mid back long"
+  },
+  {
+    "ipa": "iː͡a",
+    "synthNative": "i:&a",
+    "descr": "from close front long to open front"
+  },
+  {
+    "ipa": "ɯː͡a",
+    "synthNative": "u-:&a",
+    "descr": "from close back long to open front"
+  },
+  {
+    "ipa": "uː͡a",
+    "synthNative": "u:&a",
+    "descr": "from close back rounded long to open front"
+  },
+  {
+    "ipa": "j",
+    "synthNative": "j",
+    "descr": "palatal approximant voiced"
+  },
+  {
+    "ipa": "w",
+    "synthNative": "w",
+    "descr": "labial velar approximant voiced"
+  },
+  {
+    "ipa": "p",
+    "synthNative": "p",
+    "descr": "bilabial plosive voiceless"
+  },
+  {
+    "ipa": "b",
+    "synthNative": "b",
+    "descr": "bilabial plosive voiced"
+  },
+  {
+    "ipa": "t",
+    "synthNative": "t",
+    "descr": "alveolar plosive voiceless"
+  },
+  {
+    "ipa": "d",
+    "synthNative": "d",
+    "descr": "alveolar plosive voiced"
+  },
+  {
+    "ipa": "k",
+    "synthNative": "k",
+    "descr": "velar plosive voiceless"
+  },
+  {
+    "ipa": "f",
+    "synthNative": "f",
+    "descr": "labiodental fricative voiceless"
+  },
+  {
+    "ipa": "s",
+    "synthNative": "s",
+    "descr": "alveolar fricative voiceless"
+  },
+  {
+    "ipa": "h",
+    "synthNative": "h",
+    "descr": "glottal fricative voiceless"
+  },
+  {
+    "ipa": "m",
+    "synthNative": "m",
+    "descr": "bilabial nasal voiced"
+  },
+  {
+    "ipa": "n",
+    "synthNative": "n",
+    "descr": "alveolar nasal voiced"
+  },
+  {
+    "ipa": "ŋ",
+    "synthNative": "nK",
+    "descr": "velar nasal voiced"
+  },
+  {
+    "ipa": "l",
+    "synthNative": "l",
+    "descr": "alveolar lateral approximant"
+  },
+  {
+    "ipa": "ʔ",
+    "synthNative": "?",
+    "descr": "glottal plosive"
+  },
+  {
+    "ipa": "pʰ",
+    "synthNative": "p%{",
+    "descr": "bilabial plosive voiceless aspirated"
+  },
+  {
+    "ipa": "tʰ",
+    "synthNative": "t%{",
+    "descr": "alveolar plosive voiceless aspirated"
+  },
+  {
+    "ipa": "kʰ",
+    "synthNative": "k%{",
+    "descr": "velar plosive voiceless aspirated"
+  },
+  {
+    "ipa": "ɾ",
+    "synthNative": "r6",
+    "descr": "alveolar flap voiced"
+  },
+  {
+    "ipa": "t͡ʃ",
+    "synthNative": "t&S",
+    "descr": "affricate voiceless from alveolar to postalveolar"
+  },
+  {
+    "ipa": "t͡ʃʰ",
+    "synthNative": "t&S%{",
+    "descr": "affricate voiceless aspirated from alveolar to postalveolar"
+  },
+  {
+    "ipa": ".",
+    "synthNative": ".",
+    "descr": "syllable break"
+  },
+  {
+    "ipa": "ˈ",
+    "synthNative": "'",
+    "descr": "primary stress"
+  },
+  {
+    "ipa": "ˌ",
+    "synthNative": "'2",
+    "descr": "secondary stress"
+  },
+  {
+    "ipa": "˥˩",
+    "synthNative": "5",
+    "descr": "falling"
+  },
+  {
+    "ipa": "˥",
+    "synthNative": "4",
+    "descr": "high"
+  },
+  {
+    "ipa": "˧",
+    "synthNative": "3",
+    "descr": "mid"
+  },
+  {
+    "ipa": "˨",
+    "synthNative": "2",
+    "descr": "low"
+  },
+  {
+    "ipa": "˩˦",
+    "synthNative": "1",
+    "descr": "rising"
+  }
+]

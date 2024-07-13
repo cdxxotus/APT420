@@ -1,0 +1,82 @@
+;;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+;; Debugging support
+(define debugging-support-enabled?
+    (lambda ()
+        (and (param "DEBUG") (positive? (string-length (param "DEBUG"))))))
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Specific preference domain for naturallanguaged
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.naturallanguaged"))
+
+;; Additional preference domains
+(allow user-preference-read
+       (preference-domain "kCFPreferencesAnyApplication")
+       (preference-domain "com.apple.LaunchServices"))
+
+;; Read/write access to temporary and cache directories
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR")))
+
+;; Read access to additional relevant files and directories
+(allow file-read*
+    (literal "/usr/libexec")
+    (literal "/usr/libexec/naturallanguaged"))
+
+;; Read/write access to additional relevant files and directories
+(allow file-read* file-write*
+    (home-subpath "/Library/Keyboard")
+    (home-subpath "/Library/LanguageModeling")
+    (home-subpath "/Library/Spelling"))
+
+;; Access to Mach services
+(allow mach-lookup (global-name "com.apple.appleneuralengine")
+                   (global-name "com.apple.lsd.mapdb")
+                   (global-name "com.apple.lsd.modifydb")
+                   (global-name "com.apple.coreservices.quarantine-resolver")
+                   (global-name "com.apple.mobileassetd.v2")
+                   (global-name "com.apple.applespell"))
+
+;; Access to ANE
+(allow iokit-open
+    (iokit-user-client-class
+        "IOSurfaceRootUserClient"
+        "AGXDeviceUserClient"
+        "H11ANEInDirectPathClient"
+        "IOSurfaceAcceleratorClient"))

@@ -1,0 +1,124 @@
+;; Sandbox profile for /System/Library/CoreServices/mapspushd
+;;
+;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;
+(version 1)
+
+;; Strictly enforce the sandbox
+(deny default)
+(deny dynamic-code-generation file-map-executable nvram* process-info*)
+(allow socket-ioctl)
+(allow network-outbound)
+(allow system-socket)
+
+(import "system.sb")
+
+;; Useful function macros for library-relative paths
+(define (library-regex library-relative-regex)
+        (regex (string-append "^" (regex-quote (param "HOME")) library-relative-regex)))
+(define (library-subpath library-relative-subpath)
+        (subpath (string-append (param "HOME") library-relative-subpath)))
+(define (library-literal library-relative-literal)
+        (subpath (string-append (param "HOME") library-relative-literal)))
+
+
+;;; Add "(allow …)” rules below (anything you find during testing)
+
+(allow process-info-pidinfo)
+(allow process-info-pidfdinfo (target self))
+(allow process-info-pidfileportinfo (target self))
+(allow process-info-setcontrol (target self))
+(allow process-info-dirtycontrol (target self))
+(allow process-info-rusage (target self))
+
+(allow iokit-open (iokit-user-client-class "RootDomainUserClient"))
+
+(allow file-read-metadata)
+
+(allow system-fsctl (fsctl-command HFSIOC_SET_HOTFILE_STATE))
+
+(allow file-map-executable (subpath "/System/Library"))
+
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.GEO")
+    (preference-domain "com.apple.Maps")
+    (preference-domain "MobileMeAccounts")
+    (preference-domain "kCFPreferencesAnyApplication")
+    (preference-domain "com.apple.security")
+    (preference-domain "com.apple.Maps.pushdaemon")
+    (preference-domain "com.apple.AddressBook")
+    (preference-domain "group.com.apple.Maps"))
+
+(allow file-read*
+    (literal "/usr/local/lib/log")
+    (literal "/private/var/db/mds/system/mdsObject.db")
+    (literal "/private/var/db/mds/system/mdsDirectory.db")
+    (literal "/private/var/db/mds/messages/se_SecurityMessages")
+    (regex #"/private/var/db/mds/messages/.*/se_SecurityMessages")
+    (literal "/Library/Application Support/CrashReporter/SubmitDiagInfo.domains")
+    (literal "/Library/Preferences/com.apple.networkextension.uuidcache.plist")
+    (literal "/Library/Preferences/.GlobalPreferences.plist")
+    (library-literal "/Library/Preferences/.GlobalPreferences.plist")
+    (library-regex #"/Library/Preferences/ByHost/\.GlobalPreferences\..*\.plist$")
+    (library-literal "/Library/Preferences/com.apple.GEO.plist")
+    (library-subpath "/Library/Caches/GeoServices")
+    (literal "/Library/Preferences/com.apple.networkd.plist"))
+
+(allow file-read* file-write*
+    (subpath "/Library/Caches/com.apple.MapsSupport")
+    (library-subpath "/Library/Containers/com.apple.Maps")
+    (library-subpath "/Library/Caches/com.apple.MapsSupport")
+    (library-subpath "/Library/Caches/Maps")
+    (library-subpath "/Library/Logs/Maps")
+    (library-subpath "/Library/Maps")
+    (subpath (param "TEMP_DIR"))
+    (subpath (param "CACHE_DIR"))
+    (subpath "/private/var/folders")
+    (library-subpath "/Library/Group Containers/group.com.apple.Maps/")
+    (library-subpath "/Library/Caches/mapspushd/")
+    (library-subpath "/Library/HTTPStorages/mapspushd/"))
+
+(allow ipc-posix-shm*
+    (ipc-posix-name "com.apple.AppleDatabaseChanged"))
+
+(allow mach-lookup
+    (global-name "com.apple.apsd")
+    (global-name "com.apple.containermanagerd")
+    (global-name "com.apple.cookied")
+    (global-name "com.apple.CoreServices.coreservicesd")
+    (global-name "com.apple.distributed_notifications@Uv3")
+    (global-name "com.apple.identityservicesd.desktop.auth")
+    (global-name "com.apple.locationd.desktop.registration")
+    (global-name "com.apple.locationd.desktop.synchronous")
+    (global-name "com.apple.logind")
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.kvsd")
+    (global-name "com.apple.marco")
+    (global-name "com.apple.metadata.mds.legacy")
+    (global-name "com.apple.metadata.mds")
+    (global-name "com.apple.nehelper")
+    (global-name "com.apple.SecurityServer")
+    (global-name "com.apple.windowserver.active")
+    (global-name "com.apple.usernoted.daemon_client")
+    (global-name "com.apple.usernotifications.usernotificationservice")
+    (global-name "com.apple.tccd")
+    (global-name "com.apple.tccd.system")
+    (global-name "com.apple.syncdefaultsd")
+    (global-name "com.apple.AppSSO.service-xpc")
+    (global-name "com.apple.accountsd.accountmanager")
+    (global-name "com.apple.AddressBook.ContactsAccountsService")
+    (global-name "com.apple.nesessionmanager.content-filter")
+    (global-name "com.apple.contactsd.persistence")
+    (global-name "com.apple.AddressBook.abd")
+    (global-name "com.apple.xpc.amsaccountsd")
+    (global-name "com.apple.dnssd.service")
+    (global-name "com.apple.CoreLocation.agent")
+    (global-name "com.apple.networkd")
+    (global-name "com.apple.system.opendirectoryd.api")
+    (global-name "com.apple.usernotifications.listener")
+    (global-name "com.apple.Maps.MapsSync.store"))
+
+(allow file-issue-extension
+    (extension-class "com.apple.cfprefsd.read")
+    (extension-class "com.apple.cfprefsd.read-write")
+    (library-subpath "/Library/Group Containers/group.com.apple.Maps/Library/Preferences/"))

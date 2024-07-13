@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LinkSharedSupport</key>
+	<dict>
+		<key>PreReplacementCaptures</key>
+		<array>
+			<string>^SHARED_SUPPORT_PATH\=.*$</string>
+		</array>
+		<key>ReplacementContent</key>
+		<string>#!/bin/bash
+
+SHARED_SUPPORT_PATH=&quot;${3}Applications/%%%IA_NAME%%%/Contents/SharedSupport&quot;
+/bin/mkdir -m 755 -p &quot;${SHARED_SUPPORT_PATH}&quot;
+
+echo &quot;Copying ${PACKAGE_PATH} into ${SHARED_SUPPORT_PATH}&quot;
+/bin/cp -fc &quot;${PACKAGE_PATH}&quot; &quot;${SHARED_SUPPORT_PATH}/SharedSupport.dmg&quot; ||
+/bin/cp -f &quot;${PACKAGE_PATH}&quot; &quot;${SHARED_SUPPORT_PATH}/SharedSupport.dmg&quot;</string>
+		<key>PostReplacementChanges</key>
+		<array>
+			<dict>
+				<key>RegexMatch</key>
+				<string>^SHARED_SUPPORT_PATH\=.*$</string>
+				<key>PreMutationCaptureIndex</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+	</dict>
+	<key>LinkPackage</key>
+	<dict>
+		<key>PreReplacementCaptures</key>
+		<array>
+			<string>^SHARED_SUPPORT_PATH\=.*$</string>
+		</array>
+		<key>ReplacementContent</key>
+		<string>#!/bin/bash
+
+SHARED_SUPPORT_PATH=&quot;${3}Applications/%%%IA_NAME%%%/Contents/SharedSupport&quot;
+/bin/mkdir -m 755 -p &quot;${SHARED_SUPPORT_PATH}&quot;
+/bin/chmod 0755 &quot;${SHARED_SUPPORT_PATH}&quot;
+
+echo &quot;Copying ${PACKAGE_PATH} into ${SHARED_SUPPORT_PATH}&quot;
+/bin/cp -fc &quot;${PACKAGE_PATH}&quot; &quot;${SHARED_SUPPORT_PATH}/InstallESD.dmg&quot; ||
+/bin/cp -f &quot;${PACKAGE_PATH}&quot; &quot;${SHARED_SUPPORT_PATH}/InstallESD.dmg&quot;</string>
+		<key>PostReplacementChanges</key>
+		<array>
+			<dict>
+				<key>RegexMatch</key>
+				<string>^SHARED_SUPPORT_PATH\=.*$</string>
+				<key>PreMutationCaptureIndex</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+	</dict>
+	<key>LIPOARM64e</key>
+	<dict>
+		<key>ReplacementContent</key>
+		<string>#!/bin/sh
+
+echo &quot;lipoarm64e was mutated by PackageKit and is no longer implemented.&quot;</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,547 @@
+2024-07-12 22:12:47+00 localhost Installer Progress[65]: Progress UI App Starting
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: opendirectoryd (build 897.100) launched - installer mode
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Failed to open file <private> [2: No such file or directory]
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Initialize trigger support
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Failed to open file <private> [2: No such file or directory]
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Failed to open file <private> [2: No such file or directory]
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] created endpoint for mach service 'com.apple.private.opendirectoryd.rpc'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Registered RPC over XPC 'reset_cache' for service 'com.apple.private.opendirectoryd.rpc'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Registered RPC over XPC 'reset_online' for service 'com.apple.private.opendirectoryd.rpc'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Registered RPC over XPC 'reset_statistics' for service 'com.apple.private.opendirectoryd.rpc'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Registered RPC over XPC 'show' for service 'com.apple.private.opendirectoryd.rpc'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] starting endpoint for service 'com.apple.private.opendirectoryd.rpc'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Initialization: Scanning for configurations in '/System/Library/OpenDirectory/Configurations/'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Initialization: Found configuration for node name '/Local' at path '/System/Library/OpenDirectory/Configurations/Local.plist'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Failed to open file <private> [2: No such file or directory]
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Flagging configuration '/Local' as locked for changes
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Flagging configuration '/Local' as a system-owned configuration that cannot be deleted
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Registered node with name '/Local' as hidden
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Trigger - fired node event 'register' for '/Local'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Initialization: Found configuration for node name '/Configure' at path '/System/Library/OpenDirectory/Configurations/Configure.plist'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Failed to open file <private> [2: No such file or directory]
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Flagging configuration '/Configure' as locked for changes
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Flagging configuration '/Configure' as a system-owned configuration that cannot be deleted
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Registered node with name '/Configure' as hidden
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Trigger - notified opendirectoryd:nodes;register;/Local
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Trigger - fired node event 'register' for '/Configure'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] loading configuration for '/Local' from '/System/Library/OpenDirectory/Configurations/Local.plist'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Trigger - notified opendirectoryd:nodes;register;/Configure
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Loaded bundle at path '/System/Library/OpenDirectory/Modules/PlistFile.bundle'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Trigger - new attribute trigger watching for 'opendirectoryd:records;modify;/Local/Default;dsRecTypeStandard:Config;CIFSServer;dsAttrTypeStandard:XMLPlist'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Failed to open file <private> [2: No such file or directory]
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Loading node configuration for /Local
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Node configuration for /Local has a db path on on the booted OS
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Found subnode "Default" for /Local
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Registered subnode with name '/Local/Default'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Registering for network changes
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Trigger - fired node event 'register' for '/Local/Default'
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Loading node configuration for /Local/Default
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Node configuration for /Local/Default has a db path on on the booted OS
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Loading node configuration for /Local/Default
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Node configuration for /Local/Default has a db path on on the booted OS
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Trigger - notified opendirectoryd:nodes;register;/Local/Default
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] /Local/Default nodestate: starting check
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] /Local/Default service discovery: not needed, no discovery functions
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Performing first connection tasks for node configuration /Local/Default with path /var/db/dslocal/nodes/Default
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Failed to open file <private> [2: No such file or directory]
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Node is 10.7 or later
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [default] Completed first connection tasks for node configuration /Local/Default with path /System/Volumes/Data/private/var/db/dslocal/nodes/Default
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] initiating reconnect for D448F282-F885-42DD-8C6B-8709AFCCD203
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] /Local/Default nodestate: is now online
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] Internal: ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Local/Default, Options: 0x0
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] node assigned UUID - 42493532-23D6-4932-86AB-CBE784CDFBE1
+2024-07-12 22:12:47+00 localhost opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions completed
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] Trigger - notified opendirectoryd:nodes;online;/Local/Default
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 83, PROC: sandboxd ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Local/Default, Options: 0x0
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] Setting external work dequeue limit to 256
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] Setting external work limit to 128
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] Initialization: Scanning for configurations in '/Library/OpenDirectory/Configurations/'
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] Initialization: Scanning for configurations in '/Library/Preferences/OpenDirectory/Configurations/'
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] node assigned UUID - E824607F-E755-49C2-B774-21036D6E8691
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions completed
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] Internal: ODQueryCreateWithNode request, NodeID: 42493532-23D6-4932-86AB-CBE784CDFBE1, RecordType(s): dsRecTypeStandard:Config, Attribute: dsAttrTypeStandard:RecordName, MatchType: EqualTo, Equality: CaseIgnore, Value(s): CIFSServer, Requested Attributes: dsAttrTypeStandard:XMLPlist,dsAttrTypeStandard:RecordName,dsAttrTypeStandard:RecordType, Max Results: 1
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] queuing request to connection - D448F282-F885-42DD-8C6B-8709AFCCD203 - CFBundle 0x6000033bc000 </System/Library/OpenDirectory/Modules/PlistFile.bundle> (bundle, loaded)
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] ODQueryCreateWithNode completed
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 83, PROC: sandboxd ODQueryCreateWithNode request, NodeID: E824607F-E755-49C2-B774-21036D6E8691, RecordType(s): dsRecTypeStandard:Users, Attribute: dsAttrTypeStandard:UniqueID, MatchType: GreaterThan, Equality: Number, Value(s): 500, Requested Attributes: dsAttrTypeStandard:NFSHomeDirectory,dsAttrTypeStandard:GeneratedUID,dsAttrTypeStandard:RecordName,dsAttrTypeStandard:UniqueID,dsAttrTypeStandard:AppleMetaRecordName,dsAttrTypeStandard:RecordType,dsAttrTypeStandard:AppleMetaNodeLocation, Max Results: 2147483647
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] queuing request to connection - D448F282-F885-42DD-8C6B-8709AFCCD203 - CFBundle 0x6000033bc000 </System/Library/OpenDirectory/Modules/PlistFile.bundle> (bundle, loaded)
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] ODQueryCreateWithNode completed
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 83, PROC: sandboxd ODNodeRelease request, NodeID: E824607F-E755-49C2-B774-21036D6E8691
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] ODNodeRelease completed
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 68, PROC: apsd ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Search, Options: 0x0
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions failed with result 2000
+2024-07-12 22:12:48+00 localhost powerd[50]: powerd process is started
+2024-07-12 22:12:48+00 localhost powerd[50]: Assertion Created. Type:PreventSystemSleep Name:'com.apple.wifiFirmwareLoader.IOPMAssertion.loading-firmware' Id:0x700008000 Process:wifiFirmwareLoader [System: PrevSleep kCPU]
+2024-07-12 22:12:48+00 localhost opendirectoryd[67]: [session] Received a network change notification
+2024-07-12 22:12:48+00 MacBook-Air powerd[50]: Display is turned on
+2024-07-12 22:12:48+00 MacBook-Air powerd[50]: Assertion Created. Type:UserIsActive Name:'com.apple.powerd.ws.initialize' Id:0x900008004 Process:powerd [System: PrevIdle PrevSleep DeclUser kCPU kDisp]
+2024-07-12 22:12:48+00 MacBook-Air opendirectoryd[67]: [session] Received a network change notification
+2024-07-12 22:12:48+00 MacBook-Air opendirectoryd[67]: [session] Received a network change notification
+2024-07-12 22:12:48+00 MacBook-Air imklaunchagent[58]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:12:48+00 MacBook-Air imklaunchagent[58]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:12:48+00 MacBook-Air Installer Progress[65]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:12:48+00 MacBook-Air Installer Progress[65]: IASGetCurrentInstallPhaseList: phases = (
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "Boot 1";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "Language Chooser";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "OS Installer";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "EFI Firmware Update";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "Boot 2";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "Language Chooser 2";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = "-1";
+	        InstallPhase = "OS Installer 2";
+	        InstallPhaseActualPercentageKey = 70;
+	        InstallPhasePercentageKey = 70;
+	    }
+	)
+2024-07-12 22:12:48+00 MacBook-Air Installer Progress[65]: IASGetCurrentInstallPhase: Current phase name is "OS Installer"
+2024-07-12 22:12:48+00 MacBook-Air Installer Progress[65]: currentPhase = "<IASPPhase: 0x60000301f100: 'OS Installer', percentage 5.0, delay 0>", phases = (
+	    "<IASPPhase: 0x60000301f060: 'Boot 1', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x60000301ef80: 'Language Chooser', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x60000301f100: 'OS Installer', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x60000301f140: 'EFI Firmware Update', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x60000301f160: 'Boot 2', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x60000301f120: 'Language Chooser 2', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x60000301f180: 'OS Installer 2', percentage 70.0, delay -1>"
+	)
+2024-07-12 22:12:48+00 MacBook-Air Installer Progress[65]: Progress app is loading…
+2024-07-12 22:12:48+00 MacBook-Air Installer Progress[65]: Progress app is running…
+2024-07-12 22:12:49+00 MacBook-Air Installer Progress[65]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:12:49+00 MacBook-Air recoveryos_agent[185]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:12:49+00 MacBook-Air recoveryosd[80]: System doesn't have bridgeOS
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: -[SDAuthenticationManager init]: In the recovery OS, setting a recovery UI delegate
+2024-07-12 22:12:49+00 MacBook-Air recoveryos_agent[185]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] Received a network change notification
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] Received a network change notification
+2024-07-12 22:12:49+00 MacBook-Air imklaunchagent[180]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:12:49+00 MacBook-Air powerd[50]: Assertion Released. Type:PreventSystemSleep Name:'com.apple.wifiFirmwareLoader.IOPMAssertion.loading-firmware' Id:0x700008000 Process:wifiFirmwareLoader [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] UID: 205, EUID: 205, GID: 205, EGID: 205, PID: 72, PROC: locationd ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Local/Default, Options: 0x0
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] node assigned UUID - 9C93FEDD-8F90-4CA4-AE9D-D2C9E7AD6CCB
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions completed
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] UID: 205, EUID: 205, GID: 205, EGID: 205, PID: 72, PROC: locationd ODQueryCreateWithNode request, NodeID: 9C93FEDD-8F90-4CA4-AE9D-D2C9E7AD6CCB, RecordType(s): dsRecTypeStandard:Users, Attribute: dsAttrTypeStandard:UniqueID, MatchType: GreaterThan, Equality: Number, Value(s): 500, Requested Attributes: dsAttrTypeStandard:GeneratedUID,dsAttrTypeStandard:RecordType,dsAttrTypeStandard:RecordName,dsAttrTypeStandard:AppleMetaRecordName,dsAttrTypeStandard:AppleMetaNodeLocation, Max Results: 2147483647
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] queuing request to connection - D448F282-F885-42DD-8C6B-8709AFCCD203 - CFBundle 0x6000033bc000 </System/Library/OpenDirectory/Modules/PlistFile.bundle> (bundle, loaded)
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] UID: 205, EUID: 205, GID: 205, EGID: 205, PID: 72, PROC: locationd ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Search, Options: 0x0
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions failed with result 2000
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] ODQueryCreateWithNode completed
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: disk3s1,Macintosh HD: bootable flag set on volume.
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: disk2s2,xART: not macOS because bootcaches.plist does not exist.
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: disk2s4,Recovery: not macOS because bootcaches.plist does not exist.
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] UID: 205, EUID: 205, GID: 205, EGID: 205, PID: 72, PROC: locationd ODNodeRelease request, NodeID: 9C93FEDD-8F90-4CA4-AE9D-D2C9E7AD6CCB
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] ODNodeRelease completed
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: disk1s1,Recovery: not macOS because bootcaches.plist does not exist.
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] UID: 205, EUID: 205, GID: 205, EGID: 205, PID: 72, PROC: locationd ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Search, Options: 0x0
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions failed with result 2000
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: disk1s2,Update: not macOS because bootcaches.plist does not exist.
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] UID: 205, EUID: 205, GID: 205, EGID: 205, PID: 72, PROC: locationd ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Search, Options: 0x0
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions failed with result 2000
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: disk3s4,Update: not macOS because bootcaches.plist does not exist.
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: disk3s3,Recovery: not macOS because bootcaches.plist does not exist.
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: disk2s3,Hardware: not macOS because bootcaches.plist does not exist.
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] UID: 205, EUID: 205, GID: 205, EGID: 205, PID: 72, PROC: locationd ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Search, Options: 0x0
+2024-07-12 22:12:49+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions failed with result 2000
+2024-07-12 22:12:49+00 MacBook-Air Boot Picker[187]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:12:50+00 MacBook-Air mobileassetd[194]: SUPreferenceManager: Service connection invalidated!
+2024-07-12 22:12:50+00 MacBook-Air mobileassetd[194]: SUPreferenceManager: Connection proxy failure with error:Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.softwareupdated was invalidated: failed at lookup with error 3 - No such process." UserInfo={NSDebugDescription=The connection to service named com.apple.softwareupdated was invalidated: failed at lookup with error 3 - No such process.}
+2024-07-12 22:12:50+00 MacBook-Air mobileassetd[194]: SUPreferenceManager: Service connection invalidated!
+2024-07-12 22:12:50+00 MacBook-Air mobileassetd[194]: SUPreferenceManager: Connection proxy failure with error:Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.softwareupdated was invalidated: failed at lookup with error 3 - No such process." UserInfo={NSDebugDescription=The connection to service named com.apple.softwareupdated was invalidated: failed at lookup with error 3 - No such process.}
+2024-07-12 22:12:50+00 MacBook-Air mobileassetd[194]: SUPreferenceManager: Service connection invalidated!
+2024-07-12 22:12:50+00 MacBook-Air mobileassetd[194]: SUPreferenceManager: Connection proxy failure with error:Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.softwareupdated was invalidated: failed at lookup with error 3 - No such process." UserInfo={NSDebugDescription=The connection to service named com.apple.softwareupdated was invalidated: failed at lookup with error 3 - No such process.}
+2024-07-12 22:12:50+00 MacBook-Air mobileassetd[194]: SUPreferenceManager: Service connection invalidated!
+2024-07-12 22:12:50+00 MacBook-Air mobileassetd[194]: SUPreferenceManager: Connection proxy failure with error:Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.softwareupdated was invalidated: failed at lookup with error 3 - No such process." UserInfo={NSDebugDescription=The connection to service named com.apple.softwareupdated was invalidated: failed at lookup with error 3 - No such process.}
+2024-07-12 22:12:51+00 MacBook-Air powerd[50]: Assertion Created. Type:UserIsActive Name:'com.apple.iohideventsystem.queue.tickle serviceID:100000953 service:AppleMultitouchDevice product:Apple Internal Keyboard / Trackpad eventType:11' Id:0x90000800d Process:WindowServer [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:12:53+00 MacBook-Air opendirectoryd[67]: [session] Processing a network change notification
+2024-07-12 22:12:56+00 MacBook-Air launchprogresswindow[205]: ISAP: Show progress UI called
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: Connected processes {
+	    "20C927DE-249D-4327-BDE9-86C4912156D6" =     {
+	        "Phase Name" = "Launch Progress Window";
+	        "Process ID" = 205;
+	        UUID = "20C927DE-249D-4327-BDE9-86C4912156D6";
+	    };
+	}
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: Connected processes {
+	    "20C927DE-249D-4327-BDE9-86C4912156D6" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x60000133cd70>";
+	        "Phase Name" = "Launch Progress Window";
+	        "Process ID" = 205;
+	        UUID = "20C927DE-249D-4327-BDE9-86C4912156D6";
+	    };
+	}
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: IASGetCurrentInstallPhaseList: phases = (
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "Boot 1";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "Language Chooser";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "OS Installer";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "EFI Firmware Update";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "Boot 2";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = 0;
+	        InstallPhase = "Language Chooser 2";
+	        InstallPhaseActualPercentageKey = 5;
+	        InstallPhasePercentageKey = 5;
+	    },
+	        {
+	        ConclusionDelay = "-1";
+	        InstallPhase = "OS Installer 2";
+	        InstallPhaseActualPercentageKey = 70;
+	        InstallPhasePercentageKey = 70;
+	    }
+	)
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: IASGetCurrentInstallPhase: Current phase name is "OS Installer"
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: currentPhase = "<IASPPhase: 0x600003020aa0: 'OS Installer', percentage 5.0, delay 0>", phases = (
+	    "<IASPPhase: 0x600003020a60: 'Boot 1', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x600003020a80: 'Language Chooser', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x600003020aa0: 'OS Installer', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x600003020ae0: 'EFI Firmware Update', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x600003020b00: 'Boot 2', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x600003020ac0: 'Language Chooser 2', percentage 5.0, delay 0>",
+	    "<IASPPhase: 0x600003020b20: 'OS Installer 2', percentage 70.0, delay -1>"
+	)
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: Showing Progress UI
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: There are 0 window(s) and 1 display(s), 1 window(s) will be added
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: This machine is not in the Light Gray Background Machines List, setting to Black
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: Created a window at {{0, 0}, {1280, 832}}
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: Status is ""
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: Alternate status is ""
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: no background for progress added because:
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]:        no boot window list
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]:        and / or NOT booting from EFI loginwindow
+2024-07-12 22:12:56+00 MacBook-Air Language Chooser[206]: System doesn't have bridgeOS
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: Setting window alpha values to 1.0
+2024-07-12 22:12:56+00 MacBook-Air Installer Progress[65]: Ordering windows front
+2024-07-12 22:12:56+00 MacBook-Air Language Chooser[206]: Mac is connected to power, not shutting down
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: LCA: most frequent language: fr
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: LCA: most frequent language: en-GB
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: LCA: most frequent language: en
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: LCA: most frequent language: es
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: LCA: most frequent country code: FR
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Using progress phase: Language Chooser
+2024-07-12 22:13:00+00 MacBook-Air Installer Progress[65]: Connected processes {
+	    "20C927DE-249D-4327-BDE9-86C4912156D6" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x60000133cd70>";
+	        "Phase Name" = "Launch Progress Window";
+	        "Process ID" = 205;
+	        UUID = "20C927DE-249D-4327-BDE9-86C4912156D6";
+	    };
+	    "9D624375-08F8-4371-83BC-D0D7634FE90A" =     {
+	        "Phase Name" = "Language Chooser";
+	        "Process ID" = 206;
+	        UUID = "9D624375-08F8-4371-83BC-D0D7634FE90A";
+	    };
+	}
+2024-07-12 22:13:00+00 MacBook-Air Installer Progress[65]: Connected processes {
+	    "20C927DE-249D-4327-BDE9-86C4912156D6" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x60000133cd70>";
+	        "Phase Name" = "Launch Progress Window";
+	        "Process ID" = 205;
+	        UUID = "20C927DE-249D-4327-BDE9-86C4912156D6";
+	    };
+	    "9D624375-08F8-4371-83BC-D0D7634FE90A" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x600001334550>";
+	        "Phase Name" = "Language Chooser";
+	        "Process ID" = 206;
+	        UUID = "9D624375-08F8-4371-83BC-D0D7634FE90A";
+	    };
+	}
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Setup: Factory cable attached: 0
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: SCNetworkSetEstablishDefaultConfiguration returned 0 error Success!
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: no reachability flags returned
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: network reachable?: 0
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: System doesn't have bridgeOS
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Set keyboard to id: 1
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Running LCA state machine. State: 1
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Setup: Factory cable attached: 0
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: System state: bluetooth: 1, unambiguous mouse: 1, unambiguous keyboard: 1, single ambiguous device: 0, multiple ambiguous devices: 0, screen watcher: 0, factory cable attached: 0, auto-advancing: 0
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Found primary language hint "fr"
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Running LCA state machine. State: 8
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Setup: Factory cable attached: 0
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: System state: bluetooth: 1, unambiguous mouse: 1, unambiguous keyboard: 1, single ambiguous device: 0, multiple ambiguous devices: 0, screen watcher: 0, factory cable attached: 0, auto-advancing: 0
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Launching the Springboard using language code "fr"
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: System doesn't have bridgeOS
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Not hiding Language Chooser in window counter
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Running LCA state machine. State: 9
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: Activation state is Activated
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: System doesn't have bridgeOS
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: Creating connection
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: Connection = 0x6000025b90e0, callers = (
+	    "<IASUPCaller: 0x60000169c400>"
+	)
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: client 0x600000185e40: phaseName = "Install Springboard", registering connection
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: client 0x600000185e40: phaseName = "Install Springboard" was created
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: client 0x600000185e40: phaseName = "Install Springboard", hide progress UI called
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: ISAP: hide progress UI called
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: ISAP: hide progress UI called
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: client 0x600000185e40: phaseName = "Install Springboard" is being released
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: Releasing Connection
+2024-07-12 22:13:00+00 MacBook-Air Installer Progress[65]: Connected processes {
+	    "20C927DE-249D-4327-BDE9-86C4912156D6" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x60000133cd70>";
+	        "Phase Name" = "Launch Progress Window";
+	        "Process ID" = 205;
+	        UUID = "20C927DE-249D-4327-BDE9-86C4912156D6";
+	    };
+	    "9D624375-08F8-4371-83BC-D0D7634FE90A" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x600001334550>";
+	        "Phase Name" = "Language Chooser";
+	        "Process ID" = 206;
+	        UUID = "9D624375-08F8-4371-83BC-D0D7634FE90A";
+	    };
+	    "9F8D065E-0387-473C-8BA6-371E646B7A00" =     {
+	        "Phase Name" = "Install Springboard";
+	        "Process ID" = 219;
+	        UUID = "9F8D065E-0387-473C-8BA6-371E646B7A00";
+	    };
+	}
+2024-07-12 22:13:00+00 MacBook-Air Installer Progress[65]: Connected processes {
+	    "20C927DE-249D-4327-BDE9-86C4912156D6" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x60000133cd70>";
+	        "Phase Name" = "Launch Progress Window";
+	        "Process ID" = 205;
+	        UUID = "20C927DE-249D-4327-BDE9-86C4912156D6";
+	    };
+	    "9D624375-08F8-4371-83BC-D0D7634FE90A" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x600001334550>";
+	        "Phase Name" = "Language Chooser";
+	        "Process ID" = 206;
+	        UUID = "9D624375-08F8-4371-83BC-D0D7634FE90A";
+	    };
+	    "9F8D065E-0387-473C-8BA6-371E646B7A00" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x600001330dc0>";
+	        "Phase Name" = "Install Springboard";
+	        "Process ID" = 219;
+	        UUID = "9F8D065E-0387-473C-8BA6-371E646B7A00";
+	    };
+	}
+2024-07-12 22:13:00+00 MacBook-Air Installer Progress[65]: Hiding Progress UI
+2024-07-12 22:13:00+00 MacBook-Air Installer Progress[65]: Setting window alpha values to 0.0
+2024-07-12 22:13:00+00 MacBook-Air Installer Progress[65]: Ordering windows out
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: Setup: Factory cable attached: 0
+2024-07-12 22:13:00+00 MacBook-Air Language Chooser[206]: System state: bluetooth: 1, unambiguous mouse: 1, unambiguous keyboard: 1, single ambiguous device: 0, multiple ambiguous devices: 0, screen watcher: 0, factory cable attached: 0, auto-advancing: 0
+2024-07-12 22:13:00+00 MacBook-Air Installer Progress[65]: Connected processes {
+	    "20C927DE-249D-4327-BDE9-86C4912156D6" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x60000133cd70>";
+	        "Phase Name" = "Launch Progress Window";
+	        "Process ID" = 205;
+	        UUID = "20C927DE-249D-4327-BDE9-86C4912156D6";
+	    };
+	    "9D624375-08F8-4371-83BC-D0D7634FE90A" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x600001334550>";
+	        "Phase Name" = "Language Chooser";
+	        "Process ID" = 206;
+	        UUID = "9D624375-08F8-4371-83BC-D0D7634FE90A";
+	    };
+	    "9F8D065E-0387-473C-8BA6-371E646B7A00" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x600001330500>";
+	        "Phase Name" = "Install Springboard";
+	        "Process ID" = 219;
+	        UUID = "9F8D065E-0387-473C-8BA6-371E646B7A00";
+	    };
+	}
+2024-07-12 22:13:00+00 MacBook-Air Installer Progress[65]: Connected processes {
+	    "20C927DE-249D-4327-BDE9-86C4912156D6" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x60000133cd70>";
+	        "Phase Name" = "Launch Progress Window";
+	        "Process ID" = 205;
+	        UUID = "20C927DE-249D-4327-BDE9-86C4912156D6";
+	    };
+	    "9D624375-08F8-4371-83BC-D0D7634FE90A" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x600001334550>";
+	        "Phase Name" = "Language Chooser";
+	        "Process ID" = 206;
+	        UUID = "9D624375-08F8-4371-83BC-D0D7634FE90A";
+	    };
+	}
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: Setting Safari Start Page: file:///System/Installation/CDIS/Recovery%20Springboard.app/Contents/Resources/fr.lproj/RecoveryInformation.html
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: Safari Preferences Container: Does not exist. -- Error:21
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController showWindow]
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController _launchKeyRecoveryAssistantForAuthentication]
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:00+00 MacBook-Air KeyRecoveryAssistant[222]: Running KeyRecoveryAssistant-148 (/AppleInternal/Library/BuildRoots/c4e0563a-fccd-11ee-9ba8-b26cde007628/Library/Caches/com.apple.xbs/Sources/KeyRecoveryAssistant)
+2024-07-12 22:13:00+00 MacBook-Air WiFiAgent[221]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:00+00 MacBook-Air KeyRecoveryAssistant[222]: Mode: Authentication
+2024-07-12 22:13:00+00 MacBook-Air KeyRecoveryAssistant[222]: Eacs: from Wifi
+2024-07-12 22:13:00+00 MacBook-Air KeyRecoveryAssistant[222]: Device is activation locked
+2024-07-12 22:13:00+00 MacBook-Air KeyRecoveryAssistant[222]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:00+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController utilityDidAppear:]: NSConcreteNotification 0x6000014f6ea0 {name = com.apple.installdvdspringboard.utilityappear; object = <NSConcreteTask: 0x6000037a2a30>}
+2024-07-12 22:13:00+00 MacBook-Air KeyRecoveryAssistant[222]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: APFSVolumeGetSiDPState for volume:/dev/disk3s1 (<SKAPFSDisk: [22] { Volume Name: "Macintosh HD", BSD Name: disk3s1, Mount point: /Volumes/Macintosh HD, APFS UUID: 08B519A3-1F0C-4148-8595-064D4297E365, Encrypted: Yes }>) returned error: 2
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: APFSVolumeGetSiDPState for volume:/dev/disk3s5 (<SKAPFSDisk: [17] { Volume Name: "-", BSD Name: disk3s5, Mount point: Not Mounted, APFS UUID: 3E9E938D-3232-436A-B0B1-D30941DDE132, Encrypted: Yes }>) returned entangled: 1, needsRecovery: 0, noRecoveryPossible: 0
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: Machine fv auth required:0
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: setSystemToRecover: unset volume
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: Hiding APFS volume '-', type is non-system
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: Machine internal system count:1, has internal FV:1
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: setSystemToRecover: FV volume: 'Macintosh HD'
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: Device supports ownership and has owners present.
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: setSystemToRecover: found admin owner: dannybengal
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: aks_fv_get_last_known_gp_state returned: AA5B929C-F667-4DBC-893F-513724B3394C
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: setSystemToRecover: user has last known good password: dannybengal
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: setSystemToRecover: found recovery key user
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: Next pane: from <KRAWelcomeViewController: 0x6000026d4480>
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: Next pane: to <KRASelectAuthRecordViewController: 0x136a045f0>
+2024-07-12 22:13:01+00 MacBook-Air KeyRecoveryAssistant[222]: Did select record item: '(null)'
+2024-07-12 22:13:02+00 MacBook-Air KeyRecoveryAssistant[222]: Did select record item: 'dannybengal'
+2024-07-12 22:13:03+00 MacBook-Air Language Chooser[206]: ISAP: Done with Phase "Language Chooser"
+2024-07-12 22:13:03+00 MacBook-Air Installer Progress[65]: Done with phase = "Language Chooser"
+2024-07-12 22:13:04+00 MacBook-Air KeyRecoveryAssistant[222]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:05+00 MacBook-Air Installer Progress[65]: Unable to quit because there are connected processes
+2024-07-12 22:13:05+00 MacBook-Air Installer Progress[65]: Connected processes {
+	    "20C927DE-249D-4327-BDE9-86C4912156D6" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x60000133cd70>";
+	        "Phase Name" = "Launch Progress Window";
+	        "Process ID" = 205;
+	        UUID = "20C927DE-249D-4327-BDE9-86C4912156D6";
+	    };
+	    "9D624375-08F8-4371-83BC-D0D7634FE90A" =     {
+	        CompletionHandlerKey = "<__NSMallocBlock__: 0x600001334550>";
+	        "Phase Name" = "Language Chooser";
+	        "Process ID" = 206;
+	        UUID = "9D624375-08F8-4371-83BC-D0D7634FE90A";
+	    };
+	}
+2024-07-12 22:13:07+00 MacBook-Air KeyRecoveryAssistant[222]: Has Authenticated: YES
+2024-07-12 22:13:07+00 MacBook-Air KeyRecoveryAssistant[222]: Enabling AMFI permissive trustcache
+2024-07-12 22:13:07+00 MacBook-Air KeyRecoveryAssistant[222]: Setting TRM user authenticated state
+2024-07-12 22:13:07+00 MacBook-Air KeyRecoveryAssistant[222]: Validate FV password for user dannybengal: success
+2024-07-12 22:13:07+00 MacBook-Air KeyRecoveryAssistant[222]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:07+00 MacBook-Air KeyRecoveryAssistant[222]: Quitting after successful auth...
+2024-07-12 22:13:07+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController _keyRecoveryAssistantDidTerminateAfterAuthentication:]: NSConcreteNotification 0x6000014bf480 {name = NSTaskDidTerminateNotification; object = <NSConcreteTask: 0x6000037a2a30>}
+2024-07-12 22:13:07+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController _utilityDidTerminate:fromAuthenticationInRecovery:]: NSConcreteNotification 0x6000014bf480 {name = NSTaskDidTerminateNotification; object = <NSConcreteTask: 0x6000037a2a30>}
+2024-07-12 22:13:07+00 MacBook-Air OSIESpringboard[219]: KeyRecoveryAssistant authentication was successful (200)
+2024-07-12 22:13:07+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController showWindow]
+2024-07-12 22:13:08+00 MacBook-Air OSIESpringboard[219]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:19+00 MacBook-Air Disk Utility[224]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:19+00 MacBook-Air Disk Utility[224]: ---------- Disk Utility open ----------
+2024-07-12 22:13:19+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController utilityDidAppear:]: NSConcreteNotification 0x6000014f8240 {name = com.apple.installdvdspringboard.utilityappear; object = <NSConcreteTask: 0x6000037ad4a0>}
+2024-07-12 22:13:19+00 MacBook-Air Disk Utility[224]: Obtained version information from /Volumes/Preboot/3E9E938D-3232-436A-B0B1-D30941DDE132/cryptex1/current/SystemVersion.plist: {
+	    ProductBuildVersion = 23F79;
+	    ProductVersion = "14.5";
+	}
+2024-07-12 22:13:20+00 MacBook-Air Disk Utility[224]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:51+00 MacBook-Air Disk Utility[224]: ---------- Disk Utility quit ----------
+2024-07-12 22:13:51+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController utilityDidTerminate:]: NSConcreteNotification 0x600001434ca0 {name = NSTaskDidTerminateNotification; object = <NSConcreteTask: 0x6000037ad4a0>}
+2024-07-12 22:13:51+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController _utilityDidTerminate:fromAuthenticationInRecovery:]: NSConcreteNotification 0x600001434ca0 {name = NSTaskDidTerminateNotification; object = <NSConcreteTask: 0x6000037ad4a0>}
+2024-07-12 22:13:51+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController showWindow]
+2024-07-12 22:13:58+00 MacBook-Air Terminal[227]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:58+00 MacBook-Air Terminal[227]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:58+00 MacBook-Air Terminal[227]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:13:58+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController utilityDidAppear:]: NSConcreteNotification 0x6000014fa760 {name = com.apple.installdvdspringboard.utilityappear; object = <NSConcreteTask: 0x600003793d40>}
+2024-07-12 22:13:59+00 MacBook-Air ThemeWidgetControlViewService[232]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:14:09+00 MacBook-Air com.apple.appkit.xpc.openAndSavePanelService[233]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:14:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 233, PROC: com.apple.appkit.xpc.openAndSav ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Local/Default, Options: 0x0
+2024-07-12 22:14:11+00 MacBook-Air opendirectoryd[67]: [session] node assigned UUID - 1FBBE79A-2A19-45D7-A669-AAE77F519EEA
+2024-07-12 22:14:11+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions completed
+2024-07-12 22:14:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 233, PROC: com.apple.appkit.xpc.openAndSav ODQueryCreateWithNode request, NodeID: 1FBBE79A-2A19-45D7-A669-AAE77F519EEA, RecordType(s): dsRecTypeStandard:SharePoints, Attribute: dsAttrTypeStandard:RecordName, MatchType: Any, Equality: CaseExact, Value(s): dsRecordsAll, Requested Attributes: afp_use_parent_privs,dsAttrTypeStandard:GeneratedUID,afp_name,smb_inherit_permissions,dsAttrTypeStandard:AppleMetaNodeLocation,afp_shared,dsAttrTypeStandard:RecordType,sharepoint_version,smb_directorymask,smb_name,directory_path,dsAttrTypeStandard:RecordName,afp_use_parent_owner,ftp_shared,smb_shared,smb_guestaccess,smb_oplocks,afp_guestaccess,dsAttrTypeStandard:AppleMetaRecordName,com_apple_sharing_uuid,ftp_guestaccess,smb_strictlocking,ftp_name,sharepoint_account_uuid,smb_createmask,sharepoint_group_id, Max Results: 2147483647
+2024-07-12 22:14:11+00 MacBook-Air opendirectoryd[67]: [session] queuing request to connection - D448F282-F885-42DD-8C6B-8709AFCCD203 - CFBundle 0x6000033bc000 </System/Library/OpenDirectory/Modules/PlistFile.bundle> (bundle, loaded)
+2024-07-12 22:14:11+00 MacBook-Air opendirectoryd[67]: [session] ODQueryCreateWithNode completed
+2024-07-12 22:14:11+00 MacBook-Air Terminal[227]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:14:11+00 MacBook-Air com.apple.appkit.xpc.openAndSavePanelService[233]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:17:17+00 MacBook-Air Terminal[227]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:17:22+00 MacBook-Air Terminal[227]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:17:24+00 MacBook-Air powerd[50]: Assertion Released. Type:PreventUserIdleDisplaySleep Name:'com.apple.audio.context86.preventuseridledisplaysleep' Id:0x500008031 Process:coreaudiod [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:17:24+00 MacBook-Air powerd[50]: Assertion Released. Type:PreventUserIdleSystemSleep Name:'com.apple.audio.context86.preventuseridlesleep' Id:0x100008030 Process:coreaudiod [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:17:24+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController utilityDidTerminate:]: NSConcreteNotification 0x6000014e9140 {name = NSTaskDidTerminateNotification; object = <NSConcreteTask: 0x600003793d40>}
+2024-07-12 22:17:24+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController _utilityDidTerminate:fromAuthenticationInRecovery:]: NSConcreteNotification 0x6000014e9140 {name = NSTaskDidTerminateNotification; object = <NSConcreteTask: 0x600003793d40>}
+2024-07-12 22:17:24+00 MacBook-Air opendirectoryd[67]: [session] PID: 233, Client: 'com.apple.appkit.xpc.openAndSav', exited with 0 session(s), 1 node(s) and 0 active request(s)
+2024-07-12 22:17:24+00 MacBook-Air opendirectoryd[67]: [session] Internal: ODNodeRelease request, NodeID: 1FBBE79A-2A19-45D7-A669-AAE77F519EEA
+2024-07-12 22:17:24+00 MacBook-Air powerd[50]: Assertion Released. Type:PreventUserIdleDisplaySleep Name:'com.apple.audio.context87.preventuseridledisplaysleep' Id:0x500008035 Process:coreaudiod [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:17:24+00 MacBook-Air opendirectoryd[67]: [session] ODNodeRelease completed
+2024-07-12 22:17:24+00 MacBook-Air powerd[50]: Assertion Released. Type:PreventUserIdleSystemSleep Name:'com.apple.audio.context87.preventuseridlesleep' Id:0x100008034 Process:coreaudiod [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:17:24+00 MacBook-Air powerd[50]: Assertion Released. Type:PreventUserIdleDisplaySleep Name:'com.apple.audio.context88.preventuseridledisplaysleep' Id:0x500008039 Process:coreaudiod [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:17:24+00 MacBook-Air powerd[50]: Assertion Released. Type:PreventUserIdleSystemSleep Name:'com.apple.audio.context88.preventuseridlesleep' Id:0x100008038 Process:coreaudiod [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:17:24+00 MacBook-Air powerd[50]: Assertion Released. Type:PreventUserIdleDisplaySleep Name:'com.apple.audio.context89.preventuseridledisplaysleep' Id:0x50000803d Process:coreaudiod [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:17:24+00 MacBook-Air powerd[50]: Assertion Released. Type:PreventUserIdleSystemSleep Name:'com.apple.audio.context89.preventuseridlesleep' Id:0x10000803c Process:coreaudiod [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:17:24+00 MacBook-Air OSIESpringboard[219]: -[SpringboardController showWindow]
+2024-07-12 22:17:26+00 MacBook-Air Disk Utility[257]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 280, PROC: ReportCrash ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Local/Default, Options: 0x0
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] node assigned UUID - FB80BF55-A7C4-4F96-80E7-5222FE758410
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions completed
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 280, PROC: ReportCrash ODNodeCopyDetails request, NodeID: FB80BF55-A7C4-4F96-80E7-5222FE758410, Keys: (
+	    "dsAttrTypeStandard:NodePath"
+	)
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] found via filename '/System/Volumes/Data/private/var/db/dslocal/nodes/Default/computers/localhost.plist'
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCopyDetails completed, delivered 1 result
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 280, PROC: ReportCrash ODNodeRelease request, NodeID: FB80BF55-A7C4-4F96-80E7-5222FE758410
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] ODNodeRelease completed
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 280, PROC: ReportCrash ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Search, Options: 0x0
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions failed with result 2000
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 280, PROC: ReportCrash ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Search, Options: 0x0
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions failed with result 2000
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 280, PROC: ReportCrash ODNodeCreateWithNameAndOptions request, SessionID: 00000000-0000-0000-0000-000000000000, Name: /Local/Default, Options: 0x0
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] node assigned UUID - 7970C5A4-D685-4568-9110-A583A1E8611A
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] ODNodeCreateWithNameAndOptions completed
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 280, PROC: ReportCrash ODQueryCreateWithNode request, NodeID: 7970C5A4-D685-4568-9110-A583A1E8611A, RecordType(s): dsRecTypeStandard:Users, Attribute: dsAttrTypeStandard:RecordName, MatchType: Any, Equality: CaseIgnore, Value(s): dsRecordsAll, Requested Attributes: dsAttrTypeStandard:GeneratedUID,dsAttrTypeNative:LinkedIdentity,dsAttrTypeStandard:RealName,dsAttrTypeStandard:GroupMembership,dsAttrTypeNative:IsHidden,dsAttrTypeStandard:Picture,dsAttrTypeStandard:UserCertificate,dsAttrTypeStandard:AppleMetaNodeLocation,dsAttrTypeStandard:RecordType,dsAttrTypeStandard:Comment,dsAttrTypeStandard:NestedGroups,dsAttrTypeStandard:PrimaryGroupID,dsAttrTypeStandard:AuthenticationAuthority,dsAttrTypeStandard:Keywords,dsAttrTypeStandard:RecordName,dsAttrTypeStandard:JPEGPhoto,dsAttrTypeNative:_guest,dsAttrTypeStandard:AppleMetaRecordName,dsAttrTypeStandard:UserShell,dsAttrTypeStandard:GroupMembers,dsAttrTypeStandard:UniqueID,dsAttrTypeStandard:EMailAddress,dsAttrTypeStandard:NFSHomeDirectory, Max Results: 2147483647
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] queuing request to connection - D448F282-F885-42DD-8C6B-8709AFCCD203 - CFBundle 0x6000033bc000 </System/Library/OpenDirectory/Modules/PlistFile.bundle> (bundle, loaded)
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] flushing dirty record '/System/Volumes/Data/private/var/db/dslocal/nodes/Default/computers/localhost' from line 4920
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] re-indexing '/System/Volumes/Data/private/var/db/dslocal/nodes/Default/computers/localhost.plist' with type 'computers'
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] sqlite3_prepare_v2: 21
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] ODQueryCreateWithNode completed, delivered 122 results
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] UID: 0, EUID: 0, GID: 0, EGID: 0, PID: 280, PROC: ReportCrash ODNodeRelease request, NodeID: 7970C5A4-D685-4568-9110-A583A1E8611A
+2024-07-12 22:20:11+00 MacBook-Air opendirectoryd[67]: [session] ODNodeRelease completed
+2024-07-12 22:22:03+00 MacBook-Air Terminal[267]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French
+2024-07-12 22:22:48+00 MacBook-Air powerd[50]: Assertion TimedOut. Type:UserIsActive Name:'com.apple.powerd.ws.initialize' Id:0x900008004 Process:powerd [System: PrevIdle DeclUser kDisp]
+2024-07-12 22:24:18+00 MacBook-Air Terminal[267]: Use NVRAM prev-lang:kbd value (1) as default ASCII input source: French

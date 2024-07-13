@@ -1,0 +1,1327 @@
+{
+  "layer_shapes" : {
+    "input.3" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.23" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.29__out_state" : {
+      "k" : 1,
+      "w" : 8,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.6" : {
+      "k" : 1,
+      "w" : 286,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.9" : {
+      "k" : 1,
+      "w" : 32,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.35_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "357" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input0.1" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 384
+    },
+    "input.29" : {
+      "k" : 1,
+      "w" : 38,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "y.10" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "438" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "target.1_has_output_shape_expanded__in_state" : {
+      "k" : 4608,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.57" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "x.2__out_state" : {
+      "k" : 1,
+      "w" : 15,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 384
+    },
+    "stem.sep_module.3.tcn.2.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "stem.sep_module.6.tcn.2.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.31_expand_dim" : {
+      "k" : 256,
+      "w" : 38,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.31_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.33__statecrop" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "x.1" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.5_expand_dim" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "386" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.33__in_state" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "y.12" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "483" : {
+      "k" : 12,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 384
+    },
+    "input.35_expand_dim" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.55_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.13__in_state" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.7.tcn.6.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.37" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "484" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 384
+    },
+    "x.2" : {
+      "k" : 12,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 384
+    },
+    "input.59__out_state" : {
+      "k" : 1,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.13__stateconcat" : {
+      "k" : 1,
+      "w" : 31,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.1_expand_dim" : {
+      "k" : 256,
+      "w" : 286,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.2.tcn.6.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.51_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.front_norm.norm_input" : {
+      "k" : 1,
+      "w" : 384,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.25_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "y.1" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.25_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.65_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "y.2" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.0.tcn.2.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "target.1_has_output_shape_expanded__stateconcat" : {
+      "k" : 4608,
+      "w" : 31,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.6__out_state" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "y.14" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.2_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.61_expand_dim" : {
+      "k" : 256,
+      "w" : 94,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.21_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.2.tcn.2.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.1_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.17" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "y.4" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "31" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 384
+    },
+    "stem.sep_module.4.tcn.2.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.5_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.2.tcn.2.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.65_expand_dim" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "y.6" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.6.tcn.2.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.33__out_state" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.11_expand_dim" : {
+      "k" : 256,
+      "w" : 32,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.15_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.12_expand_dim" : {
+      "k" : 384,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.4" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.13__statecrop" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "y.8" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.6.tcn.6.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.55_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.23__stateconcat" : {
+      "k" : 1,
+      "w" : 32,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.7" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.1.tcn.6.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "x.2__in_state" : {
+      "k" : 1,
+      "w" : 15,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 384
+    },
+    "input.53" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "x.2__statecrop" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 384
+    },
+    "input.15_expand_dim" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.5_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.1.tcn.6.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.19__in_state" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.59" : {
+      "k" : 1,
+      "w" : 94,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.3.tcn.6.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.39__out_state" : {
+      "k" : 1,
+      "w" : 16,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input0.1_expanded__in_state" : {
+      "k" : 4,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.5.tcn.6.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "target.1_has_output_shape_expanded" : {
+      "k" : 12,
+      "w" : 1920,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.69__in_state" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.65_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.33" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.41_expand_dim" : {
+      "k" : 256,
+      "w" : 46,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.7.tcn.6.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "audio" : {
+      "k" : 1,
+      "w" : 1920,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 4
+    },
+    "input.49__in_state" : {
+      "k" : 1,
+      "w" : 32,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "x.2__stateconcat" : {
+      "k" : 1,
+      "w" : 45,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 384
+    },
+    "97" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.71_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.43__statecrop" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.39" : {
+      "k" : 1,
+      "w" : 46,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.61_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.1.tcn.2.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.1_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.67" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.35_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.45_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.45_expand_dim" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.69__out_state" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.31_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.33__stateconcat" : {
+      "k" : 1,
+      "w" : 34,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.13__out_state" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.5.tcn.6.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.13" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.19" : {
+      "k" : 1,
+      "w" : 34,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.0.tcn.6.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.47" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "target.1_has_output_shape_expand_dim" : {
+      "k" : 4608,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.43__in_state" : {
+      "k" : 1,
+      "w" : 8,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.71_expand_dim" : {
+      "k" : 256,
+      "w" : 158,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.6__in_state" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.21_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "201" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.23__in_state" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.19__out_state" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.61_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.2_expand_dim" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.5.tcn.2.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input0.1_expanded" : {
+      "k" : 384,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.9__out_state" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.2_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.8" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 384
+    },
+    "stem.sep_module.0.tcn.2.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.27" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.43__out_state" : {
+      "k" : 1,
+      "w" : 8,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.21_expand_dim" : {
+      "k" : 256,
+      "w" : 34,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input0.2" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "230" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.1.tcn.2.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.23__statecrop" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "74" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.43__stateconcat" : {
+      "k" : 1,
+      "w" : 38,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.3.tcn.2.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "126" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.25_expand_dim" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.4.tcn.6.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.11_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.49__out_state" : {
+      "k" : 1,
+      "w" : 32,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.9__in_state" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "305" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "target.1_has_output_shape_expanded__out_state" : {
+      "k" : 4608,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.51_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.5.tcn.2.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input1.2" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 4608
+    },
+    "target" : {
+      "k" : 1,
+      "w" : 1920,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 12
+    },
+    "input.71_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.63" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.45_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.7.tcn.2.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "stem.front_norm.norm_output" : {
+      "k" : 1,
+      "w" : 384,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input0.1_expanded__stateconcat" : {
+      "k" : 4,
+      "w" : 1984,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.0.tcn.6.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.51_expand_dim" : {
+      "k" : 256,
+      "w" : 62,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input0.1_expand_dim" : {
+      "k" : 4,
+      "w" : 1920,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.69" : {
+      "k" : 1,
+      "w" : 158,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.41_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "253" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.29__in_state" : {
+      "k" : 1,
+      "w" : 8,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.4.tcn.2.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.15_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.2.tcn.6.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input0.1_expanded__out_state" : {
+      "k" : 4,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "334" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.7.tcn.2.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.12" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.55_expand_dim" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "149" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.12_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "stem.sep_module.4.tcn.6.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.43" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.11_0" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input.23__out_state" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.49" : {
+      "k" : 1,
+      "w" : 62,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "409" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.6.tcn.6.norm_output" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.41_expanded" : {
+      "k" : 256,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "282" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input.59__in_state" : {
+      "k" : 1,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "stem.sep_module.3.tcn.6.norm_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 30
+    },
+    "input.39__in_state" : {
+      "k" : 1,
+      "w" : 16,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "461" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "178" : {
+      "k" : 1,
+      "w" : 30,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    }
+  }
+}

@@ -1,0 +1,37 @@
+;;; Copyright (c) 2017-2023 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(allow process-info* (target self))
+
+(allow iokit-open
+	(iokit-user-client-class "IOTimeSyncDaemonUserClient")
+	(iokit-user-client-class "IOTimeSyncUserClient")
+	(iokit-user-client-class "IOTimeSyncClockManagerUserClient")
+	(iokit-user-client-class "IOTimeSyncgPTPManagerUserClient")
+	(iokit-user-client-class "IOTimeSyncDomainUserClient")
+	(iokit-user-client-class "IOTimeSyncNetworkPortUserClient")
+	(iokit-user-client-class "IOTimeSyncSyncUserClient")
+	(iokit-user-client-class "IOTimeSyncTimedEdgeGeneratorUserClient")
+	(iokit-user-client-class "IOTimeSyncEdgeTimeCaptureUserClient")
+)
+
+(allow system-kext-load
+	(kext-bundle-id "com.apple.iokit.IONetworkingFamily")
+	(kext-bundle-id "com.apple.iokit.IOTimeSyncFamily")
+	(kext-bundle-id "com.apple.plugin.IOgPTPPlugin")
+)

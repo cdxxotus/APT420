@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>DisplayVendorID</key>
+        <integer>8914</integer>
+        <key>DisplayProductID</key>
+        <integer>43524</integer>
+	<key>edid-patches</key>
+	<array>
+		<dict>
+			<key>offset</key>
+			<integer>126</integer>
+			<key>data</key>
+			<data>Ag==</data>
+		</dict>
+		<dict>
+			<key>offset</key>
+			<integer>256</integer>
+			<key>data</key>
+			<data>cBN5AAADAFDUqACAjwljADGAAwDHBJMCf4IBALaoAACPCWMAMYADAMcEuwCngAEAAsoAAL8MdwA7gAMAXwZBAC2AAQD59gAAXw5jADGAAwArBxUAC4ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA85A=</data>
+		</dict>
+	</array>
+	<key>is-hmd</key>
+        <true/>
+</dict>
+</plist>

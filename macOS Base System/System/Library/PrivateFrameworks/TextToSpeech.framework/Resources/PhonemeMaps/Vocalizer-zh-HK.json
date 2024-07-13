@@ -1,0 +1,227 @@
+[
+  {
+    "ipa": "a",
+    "synthNative": "a",
+    "descr": "open front"
+  },
+  {
+    "ipa": "ɛ",
+    "synthNative": "E",
+    "descr": "open-mid front"
+  },
+  {
+    "ipa": "i",
+    "synthNative": "i",
+    "descr": "close front"
+  },
+  {
+    "ipa": "ɔ",
+    "synthNative": "O",
+    "descr": "open-mid back rounded"
+  },
+  {
+    "ipa": "u",
+    "synthNative": "u",
+    "descr": "close back rounded"
+  },
+  {
+    "ipa": "y",
+    "synthNative": "y",
+    "descr": "close front rounded"
+  },
+  {
+    "ipa": "œ",
+    "synthNative": "E+",
+    "descr": "open-mid front rounded"
+  },
+  {
+    "ipa": "ɐ",
+    "synthNative": "a0",
+    "descr": "open-mid central"
+  },
+  {
+    "ipa": "a͡u",
+    "synthNative": "a&u",
+    "descr": "from open front to close back rounded"
+  },
+  {
+    "ipa": "a͡i",
+    "synthNative": "a&i",
+    "descr": "from open front to close front"
+  },
+  {
+    "ipa": "ɐ͡i",
+    "synthNative": "a0&i",
+    "descr": "from open-mid central to close front"
+  },
+  {
+    "ipa": "ɐ͡u",
+    "synthNative": "a0&u",
+    "descr": "from open-mid central to close back rounded"
+  },
+  {
+    "ipa": "e͡i",
+    "synthNative": "e&i",
+    "descr": "from close-mid front to close front"
+  },
+  {
+    "ipa": "ɵ͡y",
+    "synthNative": "E+&y",
+    "descr": "from close-mid front rounded to close front rounded"
+  },
+  {
+    "ipa": "i͡u",
+    "synthNative": "i&u",
+    "descr": "from close front to close back rounded"
+  },
+  {
+    "ipa": "ɔ͡i",
+    "synthNative": "O&i",
+    "descr": "from open-mid back rounded to close front"
+  },
+  {
+    "ipa": "o͡u",
+    "synthNative": "o&u",
+    "descr": "from close-mid back rounded to close back rounded"
+  },
+  {
+    "ipa": "u͡i",
+    "synthNative": "u&i",
+    "descr": "from close back rounded to close front"
+  },
+  {
+    "ipa": "ɛ͡u",
+    "synthNative": "E&u",
+    "descr": "from open-mid front to close back rounded"
+  },
+  {
+    "ipa": "j",
+    "synthNative": "j",
+    "descr": "palatal approximant voiced"
+  },
+  {
+    "ipa": "w",
+    "synthNative": "w",
+    "descr": "labial velar approximant voiced"
+  },
+  {
+    "ipa": "p",
+    "synthNative": "p",
+    "descr": "bilabial plosive voiceless"
+  },
+  {
+    "ipa": "t",
+    "synthNative": "t",
+    "descr": "alveolar plosive voiceless"
+  },
+  {
+    "ipa": "k",
+    "synthNative": "k",
+    "descr": "velar plosive voiceless"
+  },
+  {
+    "ipa": "f",
+    "synthNative": "f",
+    "descr": "labiodental fricative voiceless"
+  },
+  {
+    "ipa": "s",
+    "synthNative": "s",
+    "descr": "alveolar fricative voiceless"
+  },
+  {
+    "ipa": "h",
+    "synthNative": "h",
+    "descr": "glottal fricative voiceless"
+  },
+  {
+    "ipa": "m",
+    "synthNative": "m",
+    "descr": "bilabial nasal voiced"
+  },
+  {
+    "ipa": "n",
+    "synthNative": "n",
+    "descr": "alveolar nasal voiced"
+  },
+  {
+    "ipa": "ŋ",
+    "synthNative": "nK",
+    "descr": "velar nasal voiced"
+  },
+  {
+    "ipa": "l",
+    "synthNative": "l",
+    "descr": "alveolar lateral approximant"
+  },
+  {
+    "ipa": "pʰ",
+    "synthNative": "p%{",
+    "descr": "bilabial plosive voiceless aspirated"
+  },
+  {
+    "ipa": "tʰ",
+    "synthNative": "t%{",
+    "descr": "alveolar plosive voiceless aspirated"
+  },
+  {
+    "ipa": "kʰ",
+    "synthNative": "k%{",
+    "descr": "velar plosive voiceless aspirated"
+  },
+  {
+    "ipa": "kʷ",
+    "synthNative": "k%w",
+    "descr": "labial velar plosive voiceless"
+  },
+  {
+    "ipa": "kʷʰ",
+    "synthNative": "k%\"w{\"",
+    "descr": "labial velar plosive voiceless aspirated"
+  },
+  {
+    "ipa": "t͡s",
+    "synthNative": "t&s",
+    "descr": "affricate voiceless from alveolar to alveolar"
+  },
+  {
+    "ipa": "t͡sʰ",
+    "synthNative": "t&s{",
+    "descr": "affricate voiceless aspirated from alveolar to alveolar"
+  },
+  {
+    "ipa": ".",
+    "synthNative": ".",
+    "descr": "syllable break"
+  },
+  {
+    "ipa": "˥",
+    "synthNative": "55",
+    "descr": "extra-high level"
+  },
+  {
+    "ipa": "˧˥",
+    "synthNative": "35",
+    "descr": "mid-to-extra-high rising"
+  },
+  {
+    "ipa": "˧",
+    "synthNative": "33",
+    "descr": "mid level"
+  },
+  {
+    "ipa": "˨˩",
+    "synthNative": "21",
+    "descr": "low-to-extra-low falling"
+  },
+  {
+    "ipa": "˩˧",
+    "synthNative": "13",
+    "descr": "extra-low-to-mid rising"
+  },
+  {
+    "ipa": "˨",
+    "synthNative": "22",
+    "descr": "low level"
+  }
+]

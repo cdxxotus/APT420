@@ -1,0 +1,217 @@
+[
+  {
+    "ipa": "a",
+    "synthNative": "a",
+    "descr": "open front"
+  },
+  {
+    "ipa": "e",
+    "synthNative": "e",
+    "descr": "close-mid front"
+  },
+  {
+    "ipa": "ɛ",
+    "synthNative": "E",
+    "descr": "open-mid front"
+  },
+  {
+    "ipa": "i",
+    "synthNative": "i",
+    "descr": "close front"
+  },
+  {
+    "ipa": "o",
+    "synthNative": "o",
+    "descr": "close-mid back rounded"
+  },
+  {
+    "ipa": "ɔ",
+    "synthNative": "O",
+    "descr": "open-mid back rounded"
+  },
+  {
+    "ipa": "u",
+    "synthNative": "u",
+    "descr": "close back rounded"
+  },
+  {
+    "ipa": "ɐ",
+    "synthNative": "a0",
+    "descr": "open-mid central"
+  },
+  {
+    "ipa": "ẽ",
+    "synthNative": "e%~",
+    "descr": "close-mid front nasalized"
+  },
+  {
+    "ipa": "õ",
+    "synthNative": "o%~",
+    "descr": "close-mid back rounded nasalized"
+  },
+  {
+    "ipa": "ã",
+    "synthNative": "a%~",
+    "descr": "open front nasalized"
+  },
+  {
+    "ipa": "ĩ",
+    "synthNative": "i%~",
+    "descr": "close front nasalized"
+  },
+  {
+    "ipa": "ĭ",
+    "synthNative": "i:~",
+    "descr": "close front extra-short"
+  },
+  {
+    "ipa": "ũ",
+    "synthNative": "u%~",
+    "descr": "close back rounded nasalized"
+  },
+  {
+    "ipa": "j",
+    "synthNative": "j",
+    "descr": "palatal approximant voiced"
+  },
+  {
+    "ipa": "w",
+    "synthNative": "w",
+    "descr": "labial velar approximant voiced"
+  },
+  {
+    "ipa": "p",
+    "synthNative": "p",
+    "descr": "bilabial plosive voiceless"
+  },
+  {
+    "ipa": "b",
+    "synthNative": "b",
+    "descr": "bilabial plosive voiced"
+  },
+  {
+    "ipa": "t",
+    "synthNative": "t",
+    "descr": "alveolar plosive voiceless"
+  },
+  {
+    "ipa": "d",
+    "synthNative": "d",
+    "descr": "alveolar plosive voiced"
+  },
+  {
+    "ipa": "k",
+    "synthNative": "k",
+    "descr": "velar plosive voiceless"
+  },
+  {
+    "ipa": "g",
+    "synthNative": "g",
+    "descr": "velar plosive voiced"
+  },
+  {
+    "ipa": "f",
+    "synthNative": "f",
+    "descr": "labiodental fricative voiceless"
+  },
+  {
+    "ipa": "v",
+    "synthNative": "v",
+    "descr": "labiodental fricative voiced"
+  },
+  {
+    "ipa": "s",
+    "synthNative": "s",
+    "descr": "alveolar fricative voiceless"
+  },
+  {
+    "ipa": "z",
+    "synthNative": "z",
+    "descr": "alveolar fricative voiced"
+  },
+  {
+    "ipa": "ʃ",
+    "synthNative": "S",
+    "descr": "postalveolar fricative voiceless"
+  },
+  {
+    "ipa": "ʒ",
+    "synthNative": "Z",
+    "descr": "postalveolar fricative voiced"
+  },
+  {
+    "ipa": "h",
+    "synthNative": "h",
+    "descr": "glottal fricative voiceless"
+  },
+  {
+    "ipa": "m",
+    "synthNative": "m",
+    "descr": "bilabial nasal voiced"
+  },
+  {
+    "ipa": "n",
+    "synthNative": "n",
+    "descr": "alveolar nasal voiced"
+  },
+  {
+    "ipa": "l",
+    "synthNative": "l",
+    "descr": "alveolar lateral approximant"
+  },
+  {
+    "ipa": "ɲ",
+    "synthNative": "n~",
+    "descr": "palatal nasal voiced"
+  },
+  {
+    "ipa": "ʎ",
+    "synthNative": "l~",
+    "descr": "palatal lateral"
+  },
+  {
+    "ipa": "ɾ",
+    "synthNative": "r6",
+    "descr": "alveolar flap voiced"
+  },
+  {
+    "ipa": "j̃",
+    "synthNative": "j%~",
+    "descr": "palatal approximant nasalized"
+  },
+  {
+    "ipa": "w̃",
+    "synthNative": "w%~",
+    "descr": "labial velar approximant nasalized"
+  },
+  {
+    "ipa": "t͡ʃ",
+    "synthNative": "t&S",
+    "descr": "affricate voiceless from alveolar to postalveolar"
+  },
+  {
+    "ipa": "d͡ʒ",
+    "synthNative": "d&Z",
+    "descr": "affricate voiced from alveolar to postalveolar"
+  },
+  {
+    "ipa": "k͡s",
+    "synthNative": "k&s",
+    "descr": "affricate voiceless unaspirated from velar to alveolar"
+  },
+  {
+    "ipa": ".",
+    "synthNative": ".",
+    "descr": "syllable break"
+  },
+  {
+    "ipa": "ˈ",
+    "synthNative": "'",
+    "descr": "primary stress"
+  },
+  {
+    "ipa": "ˌ",
+    "synthNative": "'2",
+    "descr": "secondary stress"
+  }
+]

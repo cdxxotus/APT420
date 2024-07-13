@@ -1,0 +1,119 @@
+;;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+;;; TODO: Change these to deny before finalizing this profile.
+(deny default)
+(allow (with report) file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "_HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "_HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "_HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "_HOME") home-relative-literal)))
+
+
+(allow process-info* (target self))
+
+(allow file-read* file-write*
+    (regex #"^/private/var/folders/[^/]+/[^/]+/T/com.apple.siri.vocabulary"))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+(allow distributed-notification-post)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.siriknowledged"))
+
+(allow file-read* file-write*
+    (home-subpath "/Downloads")
+    (home-subpath "/Library")
+    (home-subpath "/Applications")
+    (subpath "/private/var/folders"))
+       
+(allow user-preference-read
+    (preference-domain "com.apple.assistant.backedup")
+    (preference-domain "com.apple.assistant.support")
+    (preference-domain "com.apple.siri.vocabulary")
+    (preference-domain "com.apple.AddressBook")
+    (preference-domain "siriknowledged"))
+    
+(allow user-preference-write
+    (preference-domain "siriknowledged")
+    (preference-domain "com.apple.internal.ck")
+    (preference-domain "com.apple.UnifiedAssetFramework")
+    (preference-domain "com.apple.AddressBook"))
+    
+(allow file-read* file-read-metadata
+    (home-literal "/Library/Preferences/.GlobalPreferences.plist")
+    (home-regex "/Library/Preferences/ByHost/\.GlobalPreferences\.")
+    (literal "/AppleInternal/Library/Assistant/InternalConfig.plist")
+    (literal "/Applications")
+    (literal "/Library/Preferences/.GlobalPreferences.plist")
+    (subpath "/private/var/MobileAsset/"))
+
+(allow file-read*
+    (home-literal "/Library/Preferences/com.apple.LaunchServices.plist")
+    (home-literal "/Library/Containers/com.apple.Notes")
+    (home-literal "/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist")
+    (subpath "/AppleInternal/System/Library/ExtensionKit")
+    (subpath "/AppleInternal/Applications")
+    (subpath "/AppleInternal/DevTools")
+    (subpath "/AppleInternal/Library/UnifiedAssetFramework")
+    (subpath "/Library/Application Support")
+    (subpath "/Library")
+    (subpath "/Users/Shared")
+    (subpath "/Applications")
+    (subpath "/usr/libexec"))
+
+(allow file-map-executable
+    (subpath "/System/Library/Address Book Plug-Ins"))
+    
+(allow mach-lookup
+    (global-name "com.apple.routined.registration")
+    (global-name "com.apple.mobileassetd.v2")
+    (global-name "com.apple.mobileasset.autoasset")
+    (global-name "com.apple.triald.namespace-management")
+    (global-name "com.apple.SystemConfiguration.configd")
+    (global-name "com.apple.commcenter.coretelephony.xpc")
+    (global-name "com.apple.coreservices.quarantine-resolver")
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.coreduetd.people")
+    (global-name "com.apple.cloudd")
+    (global-name "com.apple.lsd.modifydb")
+    (global-name "com.apple.windowserver.active")
+    (global-name "com.apple.apsd")
+    (global-name "com.apple.homed.xpc")
+    (global-name "com.apple.system.opendirectoryd.api")
+    (global-name "com.apple.tccd.system")
+    (global-name "com.apple.accountsd.accountmanager")
+    (global-name "com.apple.metadata.mds")
+    (global-name "com.apple.AddressBook.abd")
+    (global-name "com.apple.contactsd.persistence")
+    (global-name "com.apple.AddressBook.ContactsAccountsService")
+    (global-name "com.apple.tccd")
+    (global-name "com.apple.siri.analytics.assistant")
+    (global-name "com.apple.biome.access.user")
+    (global-name "com.apple.SetStoreUpdateService"))
+

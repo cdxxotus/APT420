@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Property List.plist
+   IO80211
+
+   Created by yuanyuan liu on 1/26/22.
+   Copyright (c) 2022 ___ORGANIZATIONNAME___. All rights reserved.
+-->
+<plist version="1.0">
+<dict>
+	<key>DEFAULT-OPTIONS</key>
+	<dict>
+		<key>Level</key>
+		<dict>
+			<key>Enable</key>
+			<string>Inherit</string>
+			<key>Persist</key>
+			<string>Inherit</string>
+		</dict>
+		<key>Signpost-Scope</key>
+		<string>Process</string>
+		<key>Signpost-Persisted</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

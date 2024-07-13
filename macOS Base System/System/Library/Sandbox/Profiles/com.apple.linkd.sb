@@ -1,0 +1,82 @@
+;;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; linkd preference domain
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.linkd"))
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR")))
+
+;; ===== Custom Settings =====
+(allow appleevent-send)
+(allow distributed-notification-post)
+(allow iokit-get-properties)
+(allow job-creation)
+(allow lsopen)
+(allow mach-task-name (target self))
+
+;; Allow read-only file system access
+(allow file-read*
+    (regex #"\.app($|/)"))
+
+(allow file-read* file-write* file-issue-extension
+    (extension "com.apple.sandbox.container"))
+
+;; Allow mach lookup
+; Keep case-sensitive alphabetically sorted
+(allow mach-lookup
+    (global-name "com.apple.SetStoreUpdateService"
+                 "com.apple.biome.access.system"
+                 "com.apple.biome.access.user"
+                 "com.apple.chronoservices"
+                 "com.apple.containermanagerd"
+                 "com.apple.coreduetd.context"
+                 "com.apple.coreduetd.knowledge"
+                 "com.apple.coreservices.appleevents"
+                 "com.apple.coreservices.launchservicesd"
+                 "com.apple.coreservices.quarantine-resolver"
+                 "com.apple.extensionkitservice"
+                 "com.apple.linkd.extension"
+                 "com.apple.linkd.mediator"
+                 "com.apple.linkd.registry"
+                 "com.apple.lsd.mapdb"
+                 "com.apple.siriknowledged.koa.donate"
+                 "com.apple.tccd.system"
+                 "com.apple.usernotifications.usernotificationservice"))

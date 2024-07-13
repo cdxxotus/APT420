@@ -1,0 +1,153 @@
+;;; Copyright (c) 2021 Apple Inc.  All Rights reserved.
+
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+
+(allow process-info* (target self))
+(allow process-info-dirtycontrol (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Your preference domain
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.intelligenceplatform"))
+
+(allow managed-preference-read (preference-domain "kCFPreferencesAnyApplication"))
+
+(allow user-preference-read
+    (preference-domain "kCFPreferencesAnyApplication")
+    (preference-domain "com.apple.suggestions")
+)
+
+;; Allow access to GPU for CoreML
+(allow iokit-open
+    (iokit-user-client-class "AppleKeyStoreUserClient")
+    (iokit-user-client-class "AGXDeviceUserClient")
+    (iokit-user-client-class "AGXCommandQueue")
+    (iokit-user-client-class "AGXDevice")
+    (iokit-user-client-class "AGXDeviceUserClient")
+    (iokit-user-client-class "AGXSharedUserClient")
+    (iokit-user-client-class "IOAccelContext")
+    (iokit-user-client-class "IOAccelDevice")
+    (iokit-user-client-class "IOAccelSharedUserClient")
+    (iokit-user-client-class "IOAccelSubmitter2")
+    (iokit-user-client-class "IOAccelContext2")
+    (iokit-user-client-class "IOAccelDevice2")
+    (iokit-user-client-class "IOAccelSharedUserClient2")
+    (iokit-user-client-class "IOSurfaceRootUserClient")
+)
+
+;;;
+;;; Declare that the process can be an ANE client
+;;;
+(allow iokit-open-service
+    (iokit-user-client-class "AppleVirtIONeuralEngineDevice"
+                             "H11ANEIn")
+)
+(allow iokit-open
+    (iokit-user-client-class "AppleVirtIONeuralEngineDeviceUserClient")
+    (iokit-user-client-class "H11ANEInDirectPathClient")
+)
+(allow mach-lookup (global-name "com.apple.appleneuralengine"))
+
+
+(allow mach-lookup
+    (global-name "com.apple.siriknowledged.koa.donate")
+    (global-name "com.apple.biome.access.user")
+    (global-name "com.apple.intelligenceplatform.KnowledgeConstruction")
+    (global-name "com.apple.intelligenceplatform.Coordination")
+    (global-name "com.apple.linkd.transcript")
+    (global-name "com.apple.linkd.registry")
+    (global-name "com.apple.appleneuralengine")
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.lsd.modifydb")
+    (global-name "com.apple.remindd")
+    (global-name "com.apple.coreservices.quarantine-resolver")
+    (global-name "com.apple.routined.registration")
+    (global-name "com.apple.locationd.registration")
+    (global-name "com.apple.photos.service")
+)
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR"))
+       (mount-relative-literal "/.TemporaryItems")
+       (mount-relative-regex #"^/\.TemporaryItems/folders.[0-9]+(/|$)"))
+
+;; Read/write cache access
+(let ((cache-path-filter (home-subpath "/Library/Caches/com.apple.intelligenceplatform.intelligenceplatformd")))
+  (allow file-read* file-write* cache-path-filter)
+  (allow file-issue-extension
+    (require-all
+      (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+      cache-path-filter)))
+
+(allow file-read* file-write*
+    (home-subpath "/Library/IntelligencePlatform")
+)
+
+;; Allow issuing file extensions for views
+(allow file-issue-extension
+    (require-all
+        (home-subpath "/Library/IntelligencePlatform/Artifacts")
+        (extension-class "com.apple.app-sandbox.read")))
+
+(allow mach-lookup
+    (global-name "com.apple.coreduetd.people"))
+(allow file-read*
+    (literal "/private/var/db/CoreDuet/People/interactionC.db")
+    (literal "/private/var/db/CoreDuet/People/interactionC.db-shm")
+    (literal "/private/var/db/CoreDuet/People/interactionC.db-wal"))
+(allow file-write*
+    (literal "/private/var/db/CoreDuet/People/interactionC.db-shm"))
+
+;; Allow read-only access to $HOME/Library/Trial
+(allow file-read*
+    (home-subpath "/Library/Trial"))
+
+;; Allow BehaviorWindowLimiter to write to HU defaults
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.humanunderstanding"))
+
+;; Contacts
+(import "contacts.sb")
+(contacts-client (param "HOME") (param "TMPDIR"))
+
+;; Allow posting distributed notifications
+(allow distributed-notification-post)
+
+;; Consume sandbox extensions
+(with-filter (extension "com.apple.app-sandbox.read")
+    (allow file-read*)
+    (allow file-issue-extension (extension-class "com.apple.app-sandbox.read")))
+(with-filter (extension "com.apple.app-sandbox.read-write")
+    (allow file-read* file-write*)
+    (allow file-issue-extension (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")))

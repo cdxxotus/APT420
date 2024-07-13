@@ -1,0 +1,58 @@
+;;; Copyright (c) 2023 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow process-info* (target self))
+
+(allow file-read-metadata)
+
+(allow process-info-codesignature)
+
+(allow user-preference-read
+       (preference-domain "kCFPreferencesAnyApplication")
+       (preference-domain "com.apple.CloudKit"))
+
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.Maps.mapssyncd"))
+
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR"))
+       (home-subpath "/Library/Containers/com.apple.Maps/Data/Maps"))
+       
+(allow mach-lookup
+    (global-name "com.apple.apsd")
+    (global-name "com.apple.cloudd")
+    (global-name "com.apple.lsd.mapdb") ; container lookup
+    (global-name "com.apple.windowserver.active")) ; apsd
+
+(with-filter (system-attribute apple-internal)
+    (allow sysctl-write
+        (sysctl-name "vm.task_no_footprint_for_debug"))) ; MallocStackLogging

@@ -1,0 +1,7 @@
+20240712-15:12:48.53753 [00174:005703] storagekitd DMToolAPFSEnsureBooter azUpdatePrebootForVolume IntErr=1=0x1 unable to make a forwarded macOS path
+20240712-15:13:01.72773 [00174:003a03] storagekitd _DMAPFSSystemVolumeForGroupedVolume IntErr=1=0x1 recommend=1 retarget from uncontrolledif-SYSTEM-vol=0x600003ef8848=disk3s5 to isassured-SYSTEM-vol=0x16f4ad620=disk3s1
+20240712-15:13:01.78657 [00174:003a03] storagekitd _DMAPFSSystemVolumeForGroupedVolume IntErr=1=0x1 recommend=1 retarget from uncontrolledif-SYSTEM-vol=0x600003eec6e8=disk3s5 to isassured-SYSTEM-vol=0x16f4ad620=disk3s1
+20240712-15:13:01.80463 [00174:003a03] storagekitd _DMAPFSSystemVolumeForGroupedVolume IntErr=1=0x1 recommend=1 retarget from uncontrolledif-SYSTEM-vol=0x600003ee06e8=disk3s5 to isassured-SYSTEM-vol=0x16f4ad620=disk3s1
+20240712-15:13:01.82943 [00174:003a03] storagekitd _DMAPFSSystemVolumeForGroupedVolume IntErr=1=0x1 recommend=1 retarget from uncontrolledif-SYSTEM-vol=0x600003ee06e8=disk3s5 to isassured-SYSTEM-vol=0x16f4ad620=disk3s1
+20240712-15:13:01.84390 [00174:003a03] storagekitd _DMAPFSSystemVolumeForGroupedVolume IntErr=1=0x1 recommend=1 retarget from uncontrolledif-SYSTEM-vol=0x600003eec6e8=disk3s5 to isassured-SYSTEM-vol=0x16f4ad620=disk3s1
+20240712-15:13:01.85294 [00174:003a03] storagekitd _DMAPFSSystemVolumeForGroupedVolume IntErr=1=0x1 recommend=1 retarget from uncontrolledif-SYSTEM-vol=0x600003ee0638=disk3s5 to isassured-SYSTEM-vol=0x16f4ad620=disk3s1

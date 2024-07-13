@@ -1,0 +1,69 @@
+(version 1)
+
+(deny default)
+(deny file-map-executable iokit-get-properties process-info* nvram*)
+(deny dynamic-code-generation)
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(allow syscall-mig)
+(allow syscall-mach)
+(allow syscall-unix)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+        (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; ${PRODUCT_NAME}’s preference domain.
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.transparencyStaticKey"))
+
+;; Related product domains (push relay?)
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.facetime.bag")
+    (preference-domain "com.apple.imessage.bag"))
+
+;; Global and security preferences
+(allow user-preference-read
+    (preference-domain ".GlobalPreferences")
+    (literal "transparencyd"))
+
+;; read/write for Analytics DB, Transparency DB, temp dir for sqlite, URL cache, and background download task temporary storage
+(allow file-read* file-write*
+    (home-regex #"/Library/Keychains/.*/Analytics(/|$)")
+    (regex #"^/private/var/protected/sfanalytics(/|$)")
+    )
+
+(allow file-read*
+    (literal "/usr/libexec")
+    (literal "/usr/libexec/transparencyStaticKey")
+    )
+
+
+(allow mach-lookup
+    (global-name "com.apple.distributed_notifications@Uv3")
+    (global-name "com.apple.identityservicesd.nsxpc")
+    (global-name "com.apple.identityservicesd.desktop.auth")
+    (global-name "com.apple.identityservicesd.idquery.desktop.auth")
+    (global-name "com.apple.system.opendirectoryd.api")
+    (global-name "com.apple.transparencyd.ids-support")
+    )
+
+;; Read IOKit properties
+(allow iokit-get-properties
+    (iokit-property "osenvironment")
+    (iokit-property "boot-ios-diagnostics")
+    (iokit-property "model"))
+
+(allow distributed-notification-post)

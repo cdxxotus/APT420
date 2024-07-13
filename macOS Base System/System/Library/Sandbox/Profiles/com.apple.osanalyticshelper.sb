@@ -1,0 +1,89 @@
+;;; Copyright (c) 2022 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; Read/write access to osanalyticshelper's preference domain and for OSADefaults
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.osanalyticshelper")
+       (preference-domain "com.apple.osanalytics.internal"))
+
+;; Read from the OSA preference domain
+(allow user-preference-read
+       (preference-domain "com.apple.osanalytics"))
+
+;; Read from the global preferences. Needed within MobileGestalt.
+(allow user-preference-read
+       (preference-domain "kCFPreferencesAnyApplication"))
+
+;; Log writing and custom preferences lookup.
+;; Limited access to the parent directories to create the necessary subdirectories in case they don't exist
+(allow file-read* file-write*
+    (literal "/Library")
+    (literal "/Library/Logs"))
+
+(allow file-read* file-write*
+    (subpath "/Library/Logs/DiagnosticReports")
+    (subpath "/Library/OSAnalytics"))
+    
+;; Read the state of the user opt-in on macOS
+(allow file-read* 
+    (subpath "/Library/Application Support/CrashReporter/DiagnosticMessagesHistory.plist"))
+
+;; Receive sandbox extension for log writing within the user's home directory
+(with-filter (extension "com.apple.osanalytics-sandbox.read-write")
+  (allow file-read* file-write*))
+
+;; Checking for NSURLIsExcludedFromBackupKey
+(allow mach-lookup
+    (global-name "com.apple.backupd.sandbox.xpc"))
+
+;; For reading sysctl values
+(allow sysctl-read
+    (sysctl-name "kern.roots_installed")
+    (sysctl-name "security.codesigning.monitor"))
+
+;; Reading app uptime from CoreDuet
+(allow mach-lookup
+    (global-name "com.apple.biome.access.system")
+    (global-name "com.apple.coreduetd.knowledge"))
+
+;; Stability monitor
+(allow mach-lookup
+    (global-name "com.apple.softwareupdated.OSUpdate"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Following rules are needed for darwinOS variant of macOS only
+;; Ideally, we should move this to a new file and master that one in for darwinOS only.
+
+;; Connecting to submission service
+(allow mach-lookup
+    (global-name "com.apple.OSASubmission.client")
+    (global-name "com.apple.rtcreportingd"))
+
+;; Reading the crashreporter key (AnonymousIdentifier*.plist)
+;; Or creating a new one if one does not exist
+(allow file-read* file-write*
+    (regex #"/Library/Application Support/CrashReporter/AnonymousIdentifier(.*)\.plist"))
+
+;; Read/write preferences
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.CrashReporter"))  ;; Fallback mechanism for crash reporter key within CRS.f

@@ -1,0 +1,87 @@
+;;; Project: ImageCapture
+;;; Component: ImageCapture | macOS
+;;;
+(version 1)
+
+(deny default)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+;;; Query properties of PTP iDevices via remote services
+(allow mach-lookup
+    ;; CoreServices and inspection of MobileDevice properties
+    (global-name "com.apple.remoted")
+    (global-name "com.apple.CoreServices.coreservicesd")
+    
+    ;; LaunchServices
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.lsd.modifydb"))
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For reading launchservices prefs
+(allow file-read*
+    (home-literal "/Library/Preferences/com.apple.LaunchServices/com.apple.LaunchServices.plist")
+    (home-literal "/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist"))
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.imagecapture")
+       (preference-domain "com.apple.coremedia"))
+       
+;; User prefs
+(allow user-preference-read
+       (preference-domain "com.apple.security")
+       (preference-domain "kCFPreferencesAnyApplication"))
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR")))
+       
+;; IOKit
+;; This mirrors the needed resources from com.apple.photos.ImageConversionService
+(allow iokit-open
+    (iokit-user-client-class
+        "AppleUSBHostDeviceUserClient"
+        "AppleUSBHostInterfaceUserClient"
+        "IOSurfaceRootUserClient"
+        "AGXCommandQueue"
+        "AGXDevice"
+        "AGXDeviceUserClient"
+        "AGXGLContext"
+        "AGXSharedUserClient"
+        "AppleJPEGDriverUserClient"
+        "H11ANEInDirectPathClient"
+        "IOAccelContext"
+        "IOAccelContext2"
+        "IOAccelDevice"
+        "IOAccelDevice2"
+        "IOAccelSharedUserClient"
+        "IOAccelSharedUserClient2"
+        "IOAccelSubmitter2"
+        "IOSurfaceAcceleratorClient"))
+
+(allow file-read*
+       (literal "/usr/libexec"
+                "/usr/libexec/ptpcamerad"))

@@ -1,0 +1,122 @@
+(version 1)
+
+(deny default)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;; Read/write the database
+(allow file-read* file-write*
+    (subpath "/private/var/db/com.apple.backgroundtaskmanagement/"))
+
+(allow file-read* file-write*
+    (subpath (param "TMPDIR")))
+
+;; Needed to read the developer name from the signing info
+(allow file-read*
+    (subpath "/"))
+
+;; Post distributed notifications
+(allow distributed-notification-post)
+
+;; Needed to check validity of the client
+(allow file-read*
+    (extension "com.apple.app-sandbox.read"))
+
+;; Read-metadata and r/w xattr access to the entire FS
+;; is needed to be able to create and resolve bookmarks
+(allow file-read-metadata)
+(allow file-read-xattr file-write-xattr
+    (xattr-prefix "com.apple.security.")
+    (xattr-prefix "com.apple.bookmark."))
+
+;; Issue sandbox extensions
+(allow file-issue-extension
+    (extension-class "com.apple.app-sandbox.read"
+                     "com.apple.app-sandbox.read-write"))
+
+;;; Security framework
+(allow mach-lookup
+    (global-name "com.apple.securityd.xpc")
+    (global-name "com.apple.SecurityServer"))
+
+;; Fetching code signature info
+(allow process-codesigning-entitlements-blob-get)
+(allow process-codesigning-status-get)
+(allow process-codesigning-blob-get
+      process-codesigning-cdhash-get
+      process-codesigning-identity-get
+      process-codesigning-status-set
+      process-codesigning-text-offset-get
+      process-codesigning-teamid-get)
+
+
+(allow ipc-posix-shm-read-data
+    ipc-posix-shm-write-create
+    ipc-posix-shm-write-data
+    (ipc-posix-name "com.apple.AppleDatabaseChanged"))
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+
+(allow user-preference-read
+    (preference-domain "kCFPreferencesAnyApplication"))
+(allow user-preference-read user-preference-write
+    (preference-domain "backgroundtaskmanagementd"))
+
+;; Connect to agent
+(allow mach-lookup
+    (global-name "com.apple.backgroundtaskmanagement.notifications"))
+
+;; Connect to smd
+(allow mach-lookup
+    (global-name "com.apple.xpc.smd"))
+
+;; Container Manager
+(allow mach-lookup (global-name "com.apple.containermanagerd"))
+
+;; LaunchServices
+(allow mach-lookup
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.lsd.modifydb"))
+
+;; NetFS
+(allow mach-lookup
+    (global-name "com.apple.netauth.user.auth"))
+
+;; GenerationalStorage
+(allow mach-lookup
+    (global-name "com.apple.revisiond"))
+
+;; OpenDirectory
+(allow mach-lookup
+    (global-name "com.apple.system.opendirectoryd.api"))
+
+;; Copied from appsandbox-common.sb, may be required for resolving
+;; bookmarks to GenerationalStorage
+(allow system-fsctl
+    (fsctl-command APFSIOC_DOC_ID_TO_FILE_ID)
+    (fsctl-command HFSIOC_TRANSFER_DOCUMENT_ID)
+    (fsctl-command HFSIOC_VOLUME_STATUS)
+    (fsctl-command afpfsGetMountInfoFSCTL)
+    (fsctl-command afpfsSubMountFSCTL)
+    (fsctl-command smbfsUniqueShareIDFSCTL))
+
+;; Potentially called during bookmark resolution or property fetches
+(allow mach-lookup
+    (global-name "com.apple.FileCoordination")
+    (global-name "com.apple.FileProvider"))
+
+(allow authorization-right-obtain
+       (right-name "system.privilege.admin"))
+
+(with-filter (mac-policy-name "EndpointSecurity")
+  (allow system-mac-syscall
+         (mac-syscall-number  20       ; ES_SYSCALL_BTM_LAUNCH_ITEM_ADD
+                              21)))    ; ES_SYSCALL_BTM_LAUNCH_ITEM_REMOVE
+
+;; FSEvents client
+(allow mach-lookup
+  (global-name "com.apple.FSEvents"))

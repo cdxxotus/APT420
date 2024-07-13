@@ -1,0 +1,78 @@
+;;; Copyright (c) 2023 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+
+;; If getting JIT-related issues, Enable dynamic code generation (will require more than just enabling the below operation).
+(deny dynamic-code-generation)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; User-preference domain read-write for videosubscriptionsd
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.VideoSubscriberAccount")
+    (preference-domain "com.apple.videosubscriptionsd")
+)
+
+;; User-preference domain read-only for videosubscriptionsd
+(allow user-preference-read
+    (preference-domain "kCFPreferencesAnyApplication")
+    (preference-domain "com.apple.CloudKit")
+)
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+    (subpath (param "TMPDIR"))
+)
+
+;; Read/write files in videosubscriptionsd directory
+(allow file-read* file-write*
+     (home-subpath "/Library/Application Support/videosubscriptionsd")
+)
+
+;; Mach Lookup
+(allow mach-lookup
+    (global-name
+        "com.apple.apsd"
+        "com.apple.cloudd"
+        "com.apple.securityd.xpc"
+        "com.apple.SecurityServer"
+        "com.apple.tccd"
+        "com.apple.tccd.system"
+        "com.apple.windowserver.active"
+    )
+)
+
+;; Posix
+(allow ipc-posix-shm-write-create ipc-posix-shm-read-data ipc-posix-shm-write-data
+    (ipc-posix-name "com.apple.AppleDatabaseChanged")
+)

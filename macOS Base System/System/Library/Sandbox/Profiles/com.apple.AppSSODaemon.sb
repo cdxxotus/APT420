@@ -1,0 +1,123 @@
+;;; Copyright (c) 2019 Apple Inc.  All Rights reserved.
+
+(version 1)
+
+(deny default)
+(deny file-map-executable iokit-get-properties process-info* nvram*)
+(deny dynamic-code-generation)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(allow process-info* (target self))
+
+(allow file-read* file-write*
+    (regex #"^(/private)?/var/folders/[^/]+/[^/]+/[^/]+/com\.apple\.AppSSODaemon($|/)"))
+
+(allow file-read* file-write*
+    (subpath "/private/var/db/ExtensibleSSO/Configuration"))
+
+(allow iokit-get-properties)
+
+(allow iokit-open
+        (iokit-user-client-class "IOHIDParamUserClient")
+        (iokit-user-client-class "IOSurfaceRootUserClient")
+        (iokit-user-client-class "IOSurfaceAcceleratorClient")
+        (iokit-user-client-class "AppleJPEGDriverUserClient")
+        (iokit-user-client-class "IGAccelDevice")
+        (iokit-user-client-class "AppleGraphicsControlClient")
+        (iokit-user-client-class "AMDRadeonX6000_AMDAccelDevice")
+        (iokit-user-client-class "AGXDeviceUserClient")
+        (iokit-user-client-class "AppleKeyStoreUserClient"))
+
+(allow system-audit)
+
+(allow file-read-data)
+
+(allow file-read-metadata)
+
+(allow distributed-notification-post)
+
+(allow mach-lookup (global-name
+    "com.apple.windowserver"
+    "com.apple.windowserver.active"
+    "com.apple.lsd.modifydb"
+    "com.apple.lsd.mapdb"
+    "com.apple.coreservices.launchservicesd"
+    "com.apple.window_proxies"
+    "com.apple.dock.server"
+    "com.apple.coreservices.appleevents"
+    "com.apple.CoreAuthentication.agent"
+    "com.apple.CoreAuthentication.agent.libxpc"
+    "com.apple.CoreAuthentication.daemon"
+    "com.apple.CoreAuthentication.daemon.libxpc"
+    "com.apple.ctkd.token-client"
+    "com.apple.system.opendirectoryd.api"
+    "com.apple.mdmclient.daemon.unrestricted"
+    "com.apple.CARenderServer"
+    "com.apple.windowmanager.server"
+    "com.apple.PlatformSSO.daemon-xpc"
+    "com.apple.CryptoTokenKit.AuthenticationHintsProvider.agent.libxpc"
+    "com.apple.CoreAuthentication.daemon.EndpointProvider"
+    "com.apple.CryptoTokenKit.AuthenticationHintsProvider.daemon.libxpc"
+    "com.apple.SystemConfiguration.configd"
+    "com.apple.dt.xctestd.target"
+    "com.apple.tsm.uiserver"
+    "com.apple.tccd.system"))
+
+(allow file-map-executable (subpath
+    "/System/Library/CoreServices/ManagedClient.app/Contents/PlugIns"))
+    
+(allow user-preference* (preference-domain
+    "com.apple.AppSSO"
+    "com.apple.CFNetwork"
+    "com.apple.PlatformSSO"
+    "com.apple.AppSSODaemon"
+    "com.apple.loginwindow"
+    "AppSSODaemon"))
+
+(allow user-preference-read (preference-domain
+    "kCFPreferencesAnyApplication"))
+
+(with-filter (extension "com.apple.app-sandbox.read")
+    (allow file-read*)
+    (allow file-issue-extension (extension-class "com.apple.app-sandbox.read")))
+(with-filter (extension "com.apple.app-sandbox.read-write")
+    (allow file-read* file-write*)
+    (allow file-issue-extension (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")))
+
+;; read/write cache access
+(let ((agent-path-filter (subpath "/System/Library/PrivateFrameworks/AppSSO.framework/Support/AppSSODaemon")))
+    (allow file-read* file-write* agent-path-filter)
+    (allow file-issue-extension
+        (require-all
+            (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+            agent-path-filter)))
+
+;; to allow updating auth rights
+(allow authorization-right-obtain
+    (right-name "system.preferences")
+    (right-name "config.modify.system.login.console")
+    (right-name "config.modify.system.login.screensaver.backup")
+    (right-name "config.modify.system.login.screensaver"))
+
+;; for binding updates
+(allow process-exec (literal "/System/Library/Frameworks/CryptoTokenKit.framework/ctkbind.app/Contents/MacOS/ctkbind"))
+(allow process-fork)
+
+;; to allow binding to psso tokens (fallback)
+(allow authorization-right-obtain
+    (right-name "com.apple.ctk.pair")
+    (right-name "com.apple.ctkbind.admin"))
+    
+;; for binding sc token for keychain
+(allow user-preference-read user-preference-write
+      (preference-domain "com.apple.security")
+      (preference-domain "com.apple.security.smartcard")
+      (preference-domain "com.apple.security.tokenlogin"))
+
+;; read smartcard settings
+(allow file-read*
+   (literal "/private/etc/SmartcardLogin.plist")
+   (literal "/private/etc/cacloginconfig.plist"))

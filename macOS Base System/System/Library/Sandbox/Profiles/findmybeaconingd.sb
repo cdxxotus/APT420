@@ -1,0 +1,190 @@
+;;; Copyright (c) 2020 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+;;; https://at.apple.com/WtnPGW
+;;;
+
+(version 1)
+
+;;; These 4 lines configure the sandbox for tracing mode (no enforcement)
+;; (allow (with report) default)
+;; (allow (with report) file-map-executable iokit-get-properties process-info* nvram*)
+;; (allow (with report) dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+(system-network) ;; Allow access to the network
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Your preference domain
+(allow user-preference-read user-preference-write
+       (preference-domain "${PRODUCT_BUNDLE_IDENTIFIER}"))
+       (preference-domain "com.apple.security")
+       (preference-domain "kCFPreferencesAnyApplication")
+
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR")))
+
+;;;; These 3 lines enforce the profile
+(deny default)
+(deny file-map-executable iokit-get-properties process-info* nvram*)
+(deny dynamic-code-generation)
+
+;; Read/write cache access
+;; TODO: Replace ${PRODUCT_BUNDLE_IDENTIFIER} with the actual bundle identifier.
+(let ((cache-path-filter (home-subpath "/Library/Caches/${PRODUCT_BUNDLE_IDENTIFIER}")))
+  (allow file-read* file-write* cache-path-filter)
+  (allow file-issue-extension
+    (require-all
+      (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+      cache-path-filter)))
+
+(system-network) ;; Allow access to the network
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex))
+)
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath))
+)
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix))
+)
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal))
+)
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Read/write cache access
+(let ((cache-path-filter (home-subpath "/Library/Caches/com.apple.findmy.findmybeaconingd")))
+    (allow file-read* file-write* cache-path-filter)
+    (allow file-issue-extension
+        (require-all
+            (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+            cache-path-filter
+        )
+    )
+)
+
+;;;;
+;;;; Security.framework section
+;;;;
+
+;; Security.framework read-write access
+(allow file-read* file-write*
+    (subpath "/private/var/db/mds/system")
+)
+
+;; Security.framework read-only access
+(allow file-read*
+    (literal (param "SECURITY_MESSAGES_DIR"))
+)
+
+(allow ipc-posix-shm-read-data ipc-posix-shm-write-create ipc-posix-shm-write-data
+    (ipc-posix-name "com.apple.AppleDatabaseChanged")
+)
+
+;;;;
+;;;; Preferences
+;;;;
+
+;; Preferences (read-write)
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.findmy.findmybeaconingd")
+)
+
+
+;;;;
+;;;; Filesystem
+;;;;
+
+;; Filesystem read-write access
+(allow file-read* file-write*
+    (subpath "/Library/Keychains")
+    (subpath (param "DARWIN_CACHE_DIR"))
+    (subpath (param "DARWIN_USER_DIR"))
+    (subpath (param "TMPDIR"))
+    (mount-relative-regex (string-append "^/\.TemporaryItems/folders\." (param "UID") "(/|$)"))
+    (subpath "/private/var/db/com.apple.findmy.findmybeaconingd")
+)
+
+;; Filesystem read-only access
+(allow file-read*
+    (literal "/Library/Preferences/com.apple.security.plist")
+    (literal "/usr/libexec")
+    (literal "/usr/libexec/findmybeaconingd")
+)
+
+;;;;
+;;;; Mach services
+;;;;
+
+;; Mach services
+(allow mach-lookup
+    (global-name "com.apple.securityd.xpc")
+    (global-name "com.apple.SecurityServer")
+)
+
+;;;;
+;;;; IOKit
+;;;;
+
+;; IOKit access
+(allow iokit-open
+    (iokit-user-client-class "AppleKeyStoreUserClient")
+)
+
+;; IOKit properties
+(allow iokit-get-properties)
+
+;;;;
+;;;; Miscellaneous
+;;;;
+
+;; Allow outbound network access
+(allow network-outbound
+    (literal "/private/var/run/mDNSResponder")
+    (remote tcp)
+)

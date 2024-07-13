@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DisplayVendorID</key>
+	<integer>1552</integer>
+	<key>DisplayProductID</key>
+	<integer>44606</integer>
+	<key>DisplayProductName</key>
+	<string>Studio Display</string>
+	<key>IOGFlags</key>
+	<integer>4</integer>				
+	<key>scale-resolutions</key>
+	<array>
+		<data>AAAZAAAADhA=</data>		
+		<data>AAAWgAAADKg=</data>		
+		<data>AAAUAAAAC0A=</data>		
+		<data>AAAQAAAACQA=</data>		
+		<data>AAAMgAAABwg=</data>		
+		<data>AAALQAAABlQ=</data>		
+		<data>AAAKAAAABaA=</data>		
+		<data>AAAIAAAABIA=</data>		
+		<data>AAAGQAAAA4Q=</data>      		
+		<data>AAAFoAAAAyo=</data>      		
+		<data>AAAFAAAAAtA=</data>      		
+		<data>AAAUAAAAC0AAAAAJAKAAAA==</data>	
+		<data>AAAPAAAACHAAAAAJAKAAAA==</data>	
+		<data>AAALwAAABpwAAAAJAKAAAA==</data>	
+		<data>AAAKAAAABaAAAAAJAKAAAA==</data>	
+		<data>AAAHgAAABDgAAAAJAKAAAA==</data>	
+		<data>AAAF4AAAA04AAAAJAKAAAA==</data>	
+		<data>AAAFAAAAAtAAAAAJAKAAAA==</data>	
+	</array>
+	<key>display-rotation-policy</key>
+	<data>AAAAAAAAAAQ=</data>			
+	<key>display-contrast</key>
+	<integer>1200</integer>                         
+</dict>
+</plist>
