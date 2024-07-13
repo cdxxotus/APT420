@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>danielfebrero</key>
+	<dict>
+		<key>AuthenticationAuthority</key>
+		<array>
+			<string>;ShadowHash;HASHLIST:&lt;SALTED-SHA512-PBKDF2,SRP-RFC5054-4096-SHA512-PBKDF2&gt;</string>
+			<string>;SecureToken;</string>
+			<string>;Kerberosv5;;danielfebrero@LKDC:SHA1.437D45D51BBFF20D17A86D79E28D74E45B91C7AF;LKDC:SHA1.437D45D51BBFF20D17A86D79E28D74E45B91C7AF;</string>
+		</array>
+		<key>GeneratedUID</key>
+		<string>AA5B929C-F667-4DBC-893F-513724B3394C</string>
+		<key>RealName</key>
+		<string>dannybengal</string>
+	</dict>
+</dict>
+</plist>
