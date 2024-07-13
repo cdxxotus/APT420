@@ -1,0 +1,1 @@
+If allowed, private data, including all open URLs except private tabs, will be collected for diagnostic purposes.

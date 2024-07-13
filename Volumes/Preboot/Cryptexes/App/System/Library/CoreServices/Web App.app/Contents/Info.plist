@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>22A380019</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Web App</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Web App</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>NSDocumentClass</key>
+			<string>WebAppDocument</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>Web App</string>
+	<key>CFBundleGetInfoString</key>
+	<string>17.5, Copyright © 2003-2024 Apple Inc.</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Safari.help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>com.apple.Safari.help</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>ISGraphicIconConfiguration</key>
+		<dict>
+			<key>ISEnclosureColor</key>
+			<string>blue</string>
+			<key>ISRenderingMode</key>
+			<string>automatic</string>
+			<key>ISSymbolColor</key>
+			<string>white</string>
+			<key>ISSymbolName</key>
+			<string>safari.fill</string>
+		</dict>
+	</dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.Safari.WebApp</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Web App</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>17.5</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>19618.2.12.11.6</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>23F75</string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
+	<key>DTPlatformVersion</key>
+	<string>14.5</string>
+	<key>DTSDKBuild</key>
+	<string>23F75</string>
+	<key>DTSDKName</key>
+	<string>macosx14.5.internal</string>
+	<key>DTXcode</key>
+	<string>1500</string>
+	<key>DTXcodeBuild</key>
+	<string>15E6079e</string>
+	<key>HPDHelpProjectIdentifier</key>
+	<string>safari</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.5</string>
+	<key>LSTemplateProxyApplication</key>
+	<true/>
+	<key>LSTemplateProxyApplicationParameters</key>
+	<dict>
+		<key>AcceptsArguments</key>
+		<true/>
+	</dict>
+	<key>NSMainStoryboardFile</key>
+	<string>Main</string>
+	<key>NSPrincipalClass</key>
+	<string>BrowserApplication</string>
+</dict>
+</plist>
