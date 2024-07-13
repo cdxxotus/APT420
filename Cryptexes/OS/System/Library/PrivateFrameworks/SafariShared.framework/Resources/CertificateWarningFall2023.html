@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover">
+    <title class="l12n">This Connection Is Not Private</title>
+    <style>
+        :root {
+            --bypass-feature-icon-color: #000000;
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root {
+                --bypass-feature-icon-color: #FFFFFF;
+            }
+        }
+
+        body {
+            --font-color: #434343;
+            --compact-font-color: #434343;
+            --blue-color: rgb(0, 122, 255);
+            --horizontal-padding: 32px;
+            --compact-horizontal-padding: 20px;
+            --border-radius: 6px;
+            --ios-border-radius: 10px;
+            --title-color: #444;
+            --icon-element-color: #dc143c;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body:not(.ios) * {
+            font-family: -apple-system-font;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-size: 13px;
+            background: linear-gradient(30deg, #dfdfdf 0%, #fafafb 100%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            cursor: default;
+            -webkit-user-select: none;
+        }
+
+        #title {
+            overflow: hidden;
+            color: var(--title-color);
+            padding-top: 3px;
+        }
+
+        .alert {
+            background-color: white;
+            min-width: 320px;
+            max-width: 672px;
+            position: relative;
+            margin: 0 auto;
+            padding-top: 28px;
+            border-radius: var(--border-radius);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14);
+        }
+
+        .alert-body {
+            margin: 21px 0 0 0;
+            padding-left: var(--horizontal-padding);
+            padding-right: var(--horizontal-padding);
+            padding-bottom: 24px;
+            color: var(--font-color);
+        }
+
+        .alert-body p:first-of-type {
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .alert-body p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .bottom-bar {
+            margin-top: 1.3em;
+            height: 22px;
+        }
+
+        .bottom-bar button {
+            float: right;
+            font-size: 13px;
+            line-height: 21px;
+            min-width: 90px;
+            margin: 0 4px;
+            vertical-align: bottom;
+            padding: 0 12px;
+        }
+
+        .bottom-bar .details {
+            float: left;
+        }
+
+        .bottom-bar .details a {
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        #details {
+            display: none;
+            padding: 22px var(--horizontal-padding) 10px var(--horizontal-padding);
+            border-top: 1px solid rgb(217, 217, 217);
+            color: var(--font-color);
+            background-color: rgb(243, 243, 243);
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+        }
+
+        .bottom-bar.goBack .closePage, .bottom-bar.closePage .goBack, #ignoreWarning {
+            display: block;
+        }
+
+        #openDateAndTimeButton {
+            display: none;
+        }
+
+        #bypassFeatureButton {
+            display: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        #lock, #clock {
+            float: left;
+            width: 30px;
+            top: 4px;
+            margin-right: 15px;
+            position: relative;
+        }
+
+        #clock {
+            display: none;
+        }
+
+        #bypassFeatureIcon {
+            display: none;
+        }
+
+        .lock-element {
+            fill: var(--icon-element-color);
+        }
+
+        .clock-element {
+            fill: var(--icon-element-color);
+        }
+
+        body.clockWarning #clock {
+            display: block;
+        }
+
+        body.clockWarning #lock {
+            display: none;
+        }
+
+        body.clockWarning #goBackButton {
+            display: none;
+        }
+
+        body.clockWarning #openDateAndTimeButton {
+            display: block;
+        }
+
+        body.bypassFeature #bypassFeatureButton {
+            display: block;
+        }
+
+        body.bypassFeature #detailsButton {
+            display: none;
+        }
+
+        body.bypassFeature #bypassFeatureIcon {
+            display: block;
+            float: left;
+            width: 34px;
+            top: 4px;
+            margin-right: 15px;
+            position: relative;
+        }
+
+        body.bypassFeature #lock {
+            display: none;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: 700;
+            line-height: 30px;
+            padding: 0 var(--horizontal-padding);
+            margin-bottom: -6px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 19px;
+            margin-bottom: 1em;
+            word-wrap: break-word;
+        }
+
+        body.ios .alert {
+            box-shadow: none;
+            border-radius: var(--ios-border-radius);
+            max-width: 640px;
+        }
+
+        body.ios .alert-body {
+            font: -apple-system-body;
+        }
+
+        body.ios #details {
+            font: -apple-system-body;
+            border-bottom-left-radius: var(--ios-border-radius);
+            border-bottom-right-radius: var(--ios-border-radius);
+        }
+
+        body.ios h1 {
+            font-size: 26px;
+            font-family: -webkit-system-font;
+        }
+
+        body.ios p {
+            font-size: 1.1em;
+            line-height: unset;
+        }
+
+        body.ios button {
+            background: none;
+            border: none;
+            color: var(--blue-color);
+            font: -apple-system-short-body;
+        }
+
+        body.ios #detailsButton {
+            color: var(--font-color);
+        }
+
+        body.ios #bypassFeatureIcon {
+            fill: #000000;
+        }
+
+        body:not(.ios) #bypassFeatureIcon {
+            fill: var(--bypass-feature-icon-color);
+        }
+
+        @media screen and (max-width: 666px) {
+            /* iPhone 6 in landscape (667px) and smaller, including all iPhones in portrait */
+            body {
+                color: var(--compact-font-color);
+            }
+
+            .alert {
+                box-shadow: none;
+                background-color: var(--red-color);
+            }
+
+            .alert-body {
+                color: var(--compact-font-color);
+                padding-left: var(--compact-horizontal-padding);
+                padding-right: var(--compact-horizontal-padding);
+                padding-bottom: 30px;
+            }
+
+            h1 {
+                color: var(--compact-font-color);
+                padding: 0 var(--compact-horizontal-padding);
+            }
+
+            body.ios button,
+            body.ios #detailsButton {
+                text-decoration: underline;
+            }
+
+            #details {
+                background-color: var(--red-color);
+                padding: 22px var(--compact-horizontal-padding) 22px var(--compact-horizontal-padding);
+                border-top-width: 1px;
+                border-top-color: rgba(0, 0, 0, .15);
+            }
+        }
+
+        /* RTL support */
+ 
+        html[dir="rtl"] .bottom-bar button {
+            float: left;
+        }
+
+        html[dir="rtl"] :matches(#lock, #clock, #bypassFeatureIcon)  {
+            float: right;
+            margin-left: 15px;
+            margin-right: 0;
+        }
+    </style>
+    <link rel=stylesheet type="text/css" href="safari-resource:/CertificateWarningExtras.css">
+    <script type="text/javascript" src="safari-resource:/Utilities.js" charset="utf-8"></script>
+    <script type="text/javascript" src="safari-resource:/WBSHTMLViewController.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        // Should be kept in sync with WBSCertificateWarningCategory in WBSCertificateWarningPageContext.h.
+        var CertificateWarningCategory = {
+            Expired: 0,
+            InvalidCanBypass: 1,
+            InvalidCannotBypass: 2,
+            HostnameMismatch: 3,
+            IncorrectClock: 4,
+            LegacyTLS: 5,
+            // Placeholder
+            BypassFeatureNormal: 7,
+            BypassFeatureUnencrypted: 8,
+        };
+
+        var CertificateWarning = {
+            _host: undefined,
+            _canGoBack: undefined,
+            _warningCategory: undefined,
+            _numberOfDaysInvalid: undefined,
+            _expiredCertificateDetails: undefined,
+            _clockSkew: undefined,
+
+            get host()
+            {
+                return this._host;
+            },
+
+            set host(value)
+            {
+                if (this._host === value)
+                    return;
+
+                this._host = value;
+            },
+
+            get canGoBack()
+            {
+                return this._canGoBack;
+            },
+
+            set canGoBack(value)
+            {
+                if (this._canGoBack === value)
+                    return;
+
+                this._canGoBack = value;
+            },
+
+            get warningCategory()
+            {
+                return this._warningCategory;
+            },
+
+            set warningCategory(value)
+            {
+                if (this._warningCategory === value)
+                    return;
+
+                this._warningCategory = value;
+            },
+
+            get numberOfDaysInvalid()
+            {
+                return this._numberOfDaysInvalid;
+            },
+
+            set numberOfDaysInvalid(value)
+            {
+                if (this._numberOfDaysInvalid === value)
+                    return;
+
+                this._numberOfDaysInvalid = value;
+            },
+
+            get expiredCertificateDetails()
+            {
+                return this._expiredCertificateDetails;
+            },
+
+            set expiredCertificateDetails(value)
+            {
+                if (this._expiredCertificateDetails === value)
+                    return;
+
+                this._expiredCertificateDetails = value;
+            },
+
+            get clockSkew()
+            {
+                return this._clockSkew;
+            },
+
+            set clockSkew(value)
+            {
+                if (this._clockSkew === value)
+                    return;
+
+                this._clockSkew = value;
+            },
+
+            pageLoaded: function()
+            {
+                if (/Macintosh/g.test(navigator.userAgent))
+                    document.body.classList.add("mac");
+                else
+                    document.body.classList.add("ios");
+
+                HTMLViewController.pageLoaded();
+                CertificateWarningController.pageLoaded();
+
+                window.addEventListener("resize", layOut, false);
+                layOut();
+            },
+
+            currentSystemTime: function()
+            {
+                var dateFormatter = Intl.DateTimeFormat(undefined, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+                return dateFormatter.format(new Date());
+            },
+
+            showIncorrectClockWarning: function()
+            {
+                console.assert(this.warningCategory === CertificateWarningCategory.IncorrectClock);
+                console.assert(this.clockSkew !== 0);
+
+                document.body.classList.add("clockWarning");
+
+                var title = HTMLViewController.UIString("Your Clock Is Set Incorrectly");
+
+                document.title = title;
+                document.getElementById("title").textContent = title;
+
+                var incorrectClockHTMLTemplate = HTMLViewController.UIString("Safari can’t connect to “%hostname%” because your system clock is incorrectly set to %@. Set your system clock to the correct time and try again.").format(this.currentSystemTime());
+                var incorrectClockHTML = incorrectClockHTMLTemplate.replace("%hostname%", this.host);
+
+                var warningText = document.getElementById("warningText");
+                warningText.innerHTML = incorrectClockHTML;
+
+                var detailsTextHTMLTemplate = HTMLViewController.UIString("Because your system clock is set incorrectly, Safari can’t verify that your connection is private. If you understand the risks involved, you can %visit-this-site-link%.");
+                var detailsTextHTML = "<a role='button' onClick='CertificateWarningController.visitInsecureWebsiteWithTemporaryBypass();'>%@</a>".format(HTMLViewController.UIString("visit this website"));
+                var detailsText = detailsTextHTMLTemplate.replace("%visit-this-site-link%", detailsTextHTML);
+
+                document.getElementById("detailsText").innerHTML = detailsText;
+
+                setDetailsVisibility(false);
+            },
+
+            showBypassFeatureNavigationFailedWarning: function()
+            {
+                console.assert(this.warningCategory === CertificateWarningCategory.BypassFeatureNormal || this.warningCategory === CertificateWarningCategory.BypassFeatureUnencrypted);
+
+                document.body.classList.add("bypassFeature");
+
+                document.getElementById("title").textContent = CertificateWarningController.bypassFeatureTitleText();
+                document.getElementById("warningText").textContent = CertificateWarningController.bypassFeatureWarningText();
+            },
+
+            updateDetailsStrings: function()
+            {
+                if (this.warningCategory === CertificateWarningCategory.IncorrectClock) {
+                    this.showIncorrectClockWarning();
+                    return;
+                }
+
+                if (this.warningCategory === CertificateWarningCategory.BypassFeatureNormal || this.warningCategory === CertificateWarningCategory.BypassFeatureUnencrypted) {
+                    this.showBypassFeatureNavigationFailedWarning();
+                    return;
+                }
+
+                var warningText = document.getElementById("warningText");
+                var warningTextHTMLTemplate;
+                if (this.warningCategory === CertificateWarningCategory.LegacyTLS) {
+                    if (this.canGoBack)
+                        warningTextHTMLTemplate = HTMLViewController.UIString("This website has an outdated security configuration, which may allow an attacker to steal personal or financial information entered into “%hostname%”. You should go back to the previous page.");
+                    else
+                        warningTextHTMLTemplate = HTMLViewController.UIString("This website has an outdated security configuration, which may allow an attacker to steal personal or financial information entered into “%hostname%”. You should close this page.");
+                } else {
+                    if (this.canGoBack)
+                        warningTextHTMLTemplate = HTMLViewController.UIString("This website may be impersonating “%hostname%” to steal your personal or financial information. You should go back to the previous page.");
+                    else
+                        warningTextHTMLTemplate = HTMLViewController.UIString("This website may be impersonating “%hostname%” to steal your personal or financial information. You should close this page.");
+                }
+                var warningTextHTML = warningTextHTMLTemplate.replace("%hostname%", this.host);
+                warningText.innerHTML = warningTextHTML;
+
+                var bypassCertificateWarningHTMLTemplate = HTMLViewController.UIString("If you understand the risks involved, you can %visit-this-site-link%.");
+                var visitUnsafeWebsiteLinkHTML = "<a role='button' onClick='CertificateWarningController.visitInsecureWebsite();'>%@</a>".format(HTMLViewController.UIString("visit this website"));
+                var bypassCertificateWarningHTML = bypassCertificateWarningHTMLTemplate.replace("%visit-this-site-link%", visitUnsafeWebsiteLinkHTML);
+
+                var viewCertificateHTMLTemplate = HTMLViewController.UIString("To learn more, you can %view-the-certificate%.");
+                var viewCertificateLinkHTML = "<a role='button' onClick='CertificateWarningController.showCertificateInformation();'>%@</a>".format(HTMLViewController.UIString("view the certificate"));
+                var viewCertificateHTML = viewCertificateHTMLTemplate.replace("%view-the-certificate%", viewCertificateLinkHTML);
+
+                var detailsText = document.getElementById("detailsText");
+                switch (this.warningCategory) {
+                case CertificateWarningCategory.Expired:
+                    var firstParagraphHTMLTemplate = HTMLViewController.UIString("Safari warns you when a website has %certificate-description%. %expiration-date-details%. This may happen if the website is misconfigured, an attacker has compromised your connection, or your system clock is incorrect. Your system clock is set to %@. If this is not right, %fixing-the-clock% may address this warning.");
+
+                    var firstParagraphWithDateHTMLTemplate = firstParagraphHTMLTemplate.format(this.currentSystemTime());
+
+                    var openClockSettingsLinkHTML = "<a role='button' onClick='CertificateWarningController.openClockSettings();'>%@</a>".format(HTMLViewController.UIString("fixing the clock"));
+                    var firstParagraphWithClockHTMLTemplate = firstParagraphWithDateHTMLTemplate.replace("%fixing-the-clock%", openClockSettingsLinkHTML);
+
+                    var firstParagraphWithExpirationDateDetails = firstParagraphWithClockHTMLTemplate.replace("%expiration-date-details%", this.expiredCertificateDetails);
+
+                    var certificateDescription;
+                    if (this.numberOfDaysInvalid > 0)
+                        certificateDescription = HTMLViewController.UIString("an expired certificate");
+                    else
+                        certificateDescription = HTMLViewController.UIString("a certificate that is not valid");
+
+                    var firstParagraph = firstParagraphWithExpirationDateDetails.replace("%certificate-description%", certificateDescription);
+
+                    // Localizers: The space in between viewCertificateHTML and bypassCertificateWarningHTML should be translated to the appropriate space between two sentences.
+                    detailsText.innerHTML = "<p>" + firstParagraph + "</p><p>" + viewCertificateHTML + " " + bypassCertificateWarningHTML + "</p>";
+                    break;
+
+                case CertificateWarningCategory.HostnameMismatch:
+                case CertificateWarningCategory.InvalidCanBypass:
+                    // FIXME 30320099: Hostname mismatch should be its own unique case.
+                    var firstParagraph = HTMLViewController.UIString("Safari warns you when a website has a certificate that is not valid. This may happen if the website is misconfigured or an attacker has compromised your connection.");
+
+                    // Localizers: The space in between viewCertificateHTML and bypassCertificateWarningHTML should be translated to the appropriate space between two sentences.
+                    detailsText.innerHTML = "<p>" + firstParagraph + "</p><p>" + viewCertificateHTML + " " + bypassCertificateWarningHTML + "</p>";
+                    break;
+
+                case CertificateWarningCategory.InvalidCannotBypass:
+                    var firstParagraph = HTMLViewController.UIString("Safari warns you when a website has a certificate that is not valid. This may happen if an attacker has compromised your connection. For your protection, you can’t visit this website. You can check back later to see if this issue has been resolved. You can also contact the website owner to tell them about this error.");
+
+                    // Localizers: The space in between firstParagraph and viewCertificateHTML should be translated to the appropriate space between two sentences.
+                    detailsText.innerHTML = firstParagraph + " " + viewCertificateHTML;
+                    break;
+
+                case CertificateWarningCategory.LegacyTLS:
+                    var firstParagraph = HTMLViewController.UIString("Safari warns you when a website uses TLS 1.0 or TLS 1.1, which are not secure. This may allow an attacker to compromise your connection to steal your personal or financial information, including passwords, phone numbers, and credit cards.");
+
+                    detailsText.innerHTML = "<p>" + firstParagraph + "</p><p>" + bypassCertificateWarningHTML + "</p>";
+                    break;
+
+                default:
+                    console.assert(false, "Invalid warning category given");
+                    break;
+                }
+
+                setDetailsVisibility(false);
+            },
+
+            updateUI: function(host, warningCategory, canGoBack, numberOfDaysInvalid, expiredCertificateDetails, clockSkew)
+            {
+                this.warningCategory = warningCategory;
+                this.host = host;
+                this.canGoBack = canGoBack;
+                this.numberOfDaysInvalid = numberOfDaysInvalid;
+                this.expiredCertificateDetails = expiredCertificateDetails;
+                this.clockSkew = clockSkew;
+
+                if (!canGoBack)
+                    document.getElementById("goBackButton").textContent = HTMLViewController.UIString("Close Page");
+
+                document.getElementById("bypassFeatureButton").textContent = CertificateWarningController.bypassFeatureButtonText();
+
+                var svg = document.getElementById("bypassFeatureIcon");
+                var path = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+                var pathString = CertificateWarningController.bypassFeatureIconPath();
+                path.setAttribute("d", pathString);
+                path.style.opacity = 0.5;
+                svg.appendChild(path);
+
+                this.updateDetailsStrings();
+            },
+
+            setTextDirection: function(textDirection)
+            {
+                document.documentElement.setAttribute("dir", textDirection);
+            }
+        };
+
+        function setDetailsVisibility(show)
+        {
+            var detailsDiv = document.getElementById("details");
+            if (show) {
+                detailsDiv.style.display = "block";
+                document.getElementById("detailsButton").style.display = "none";
+                detailsDiv.scrollIntoViewIfNeeded();
+            } else {
+                detailsDiv.style.display = "none";
+                document.getElementById("detailsButton").style.display = "block";
+            }
+
+            layOut();
+        }
+
+        function layOut()
+        {
+            const minimumMarginTop = 22;
+            const maximumMarginTop = 156;
+            var alertBox = document.getElementById("alert");
+            var alertHeight = alertBox.getBoundingClientRect().height;
+            var viewportHeight = window.innerHeight;
+            if (viewportHeight > alertHeight + 2 * maximumMarginTop)
+                alertBox.style.top = maximumMarginTop + "px";
+            else
+                alertBox.style.top = Math.max(minimumMarginTop, (viewportHeight - alertHeight) / 2) + "px";
+        }
+
+        HTMLViewController.loadLocalizedStrings(CertificateWarningController);
+        window.addEventListener("load", function() { CertificateWarning.pageLoaded(); }, false);
+    </script>
+</head>
+
+<body>
+    <div id="alert" class="alert">
+        <h1>
+            <svg id="lock" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33.6768" height="31.2098">
+                <rect height="30.1758" opacity="0" width="27.3834" x="0" y="0"/>
+                <path class="lock-element" d="M13.396 2.55615C16.1353 2.55615 18.5229 4.50439 18.5229 8.21045L18.5229 12.019L13.2056 12.019L23.4009 22.1851L23.4009 15.4907C23.4009 13.4692 22.5073 12.312 20.8374 12.0776L20.8374 8.51807C20.8374 3.01025 17.2339 0.344238 13.396 0.344238C10.3784 0.344238 7.56592 2.01416 6.49658 5.29541L8.37158 7.18506C8.75244 4.16748 10.9058 2.55615 13.396 2.55615ZM6.70166 29.0698L20.105 29.0698C20.7935 29.0698 21.3794 28.9087 21.8042 28.6304L5.42725 12.2681L5.29541 12.2681C4.09424 12.6636 3.40576 13.7769 3.40576 15.4907L3.40576 25.5835C3.40576 27.8979 4.54834 29.0698 6.70166 29.0698ZM25.4517 29.8462C25.9058 30.2856 26.6235 30.2856 27.0483 29.8462C27.4878 29.4067 27.5024 28.689 27.0483 28.2495L1.94092 3.14209C1.50146 2.70264 0.769043 2.70264 0.32959 3.14209C-0.109863 3.58154-0.109863 4.31396 0.32959 4.73877Z"/>
+            </svg>
+            <svg id="clock" x="0px" y="0px" viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
+                <path class="clock-element" d="M75,0C33.6,0,0,33.6,0,75c0,41.4,33.6,75,75,75s75-33.6,75-75C150,33.6,116.4,0,75,0z M81,68v7 c0,3.3-2.7,6-6,6H45c-3.3,0-6-2.7-6-6v-1c0-3.3,2.7-6,6-6h23V26c0-3.3,2.7-6,6-6h1c3.3,0,6,2.7,6,6V68z"/>
+            </svg>
+            <svg id="bypassFeatureIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33.6768" height="31.2098">
+                <rect height="31.2098" opacity="0" width="33.6768" x="0" y="0"/>
+            </svg>
+            <div id="title" class="l12n">This Connection Is Not Private</div>
+        </h1>
+        <div class="alert-body">
+            <div class="item">
+                <p id="warningText"></p>
+            </div>
+
+            <div class="bottom-bar goBack closePage" id="bottom-bar">
+                <button type="button" id="goBackButton" class="l12n goBack" onClick="CertificateWarningController.goBackSelected();">Go Back</button>
+                <button type="button" id="openDateAndTimeButton" class="l12n" onClick="CertificateWarningController.openClockSettings();">Open Date & Time…</button>
+                <button type="button" id="detailsButton" class="l12n" onClick="setDetailsVisibility(true);">Show Details</button>
+                <button type="button" id="bypassFeatureButton" class="l12n" onClick="CertificateWarningController.bypassFeatureVisitWebsite();">Continue</button>
+            </div>
+        </div>
+        <div id="details">
+            <p id="detailsText"></p>
+        </div>
+    </div>
+</body>
+
+</html>

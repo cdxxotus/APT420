@@ -1,0 +1,31 @@
+<!-- LOCALIZERS: Each localizable piece of the page is marked with a comment -->
+<html dir="rtl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel=stylesheet type="text/css" href="page-load-errors.css">
+    <!-- LOCALIZERS: You might want to change the font family. You can also add styles to override sizes, etc. -->
+    <style type="text/css">
+        body {font-family:'-apple-system-font';}
+    </style>
+    <!-- Title of the page that was showing right before the crash. -->
+    <title>%pageName%</title>
+</head>
+
+<body>
+    <div class="content-container">
+        <div class="error-container">
+            <div class="text-container">
+                <!-- Error message here. -->
+                <p class="error-message">%message%</p>
+            </div>
+        </div>
+        <div class="action-container">
+            <form class="suggestion-form" method=GET action='reload-error-pages:'>
+                <!-- Button to reload affected webpages. -->
+                <input type=submit value="%reloadButtonName%">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
