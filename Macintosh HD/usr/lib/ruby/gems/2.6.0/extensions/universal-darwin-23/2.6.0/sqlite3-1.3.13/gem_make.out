@@ -1,0 +1,8 @@
+current directory: /Library/Caches/com.apple.xbs/Binaries/RubyGems/install/TempContent/Root/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0/gems/sqlite3-1.3.13/ext/sqlite3
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20240413-8948-cun2dc.rb extconf.rb --use-system-libraries --ignore-dependencies --with-xml2-include\=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.Internal.sdk/usr/include/libxml2 --with-xml2-lib\=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.Internal.sdk/usr/lib --with-xslt-include\=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.Internal.sdk/usr/include --with-xslt-lib\=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.Internal.sdk/usr/lib
+current directory: /Library/Caches/com.apple.xbs/Binaries/RubyGems/install/TempContent/Root/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0/gems/sqlite3-1.3.13/ext/sqlite3
+make "DESTDIR=" clean
+current directory: /Library/Caches/com.apple.xbs/Binaries/RubyGems/install/TempContent/Root/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0/gems/sqlite3-1.3.13/ext/sqlite3
+make "DESTDIR="
+current directory: /Library/Caches/com.apple.xbs/Binaries/RubyGems/install/TempContent/Root/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0/gems/sqlite3-1.3.13/ext/sqlite3
+make "DESTDIR=" install

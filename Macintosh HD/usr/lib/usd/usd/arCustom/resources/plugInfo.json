@@ -1,0 +1,18 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "ArMemoryResolver": {
+                        "bases": ["ArDefaultResolver"]
+                    }
+                }
+            },
+            "LibraryPath": "", 
+            "Name": "arCustom", 
+            "ResourcePath": "resources", 
+            "Root": "..", 
+            "Type": "library"
+        }
+    ]
+}

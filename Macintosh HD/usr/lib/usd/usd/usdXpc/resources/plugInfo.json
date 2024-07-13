@@ -1,0 +1,27 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "UsdXpcFileFormat": {
+                        "bases": [
+                            "SdfFileFormat"
+                        ],
+                        "displayName": "USD XPC Service for legacy 3D format loader",
+                        "extensions": [
+                            "obj", "OBJ", "ply", "PLY", "stl", "STL"
+                        ],
+                        "formatId": "xpc",
+                        "primary": true,
+                        "target": "usd"
+                    }
+                }
+            },
+            "LibraryPath": "",
+            "Name": "usdXpc",
+            "ResourcePath": "resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

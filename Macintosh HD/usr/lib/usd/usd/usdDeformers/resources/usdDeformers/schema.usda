@@ -1,0 +1,172 @@
+#usda 1.0
+(
+    """ This file contains a schema for supporting skin/blend shape-deformable meshes in USD.
+    """
+    subLayers = [
+        @usdGeom/schema.usda@
+    ]
+) 
+
+over "GLOBAL" (
+    customData = {
+        string libraryName       = "usdDeformers"
+        string libraryPath       = "pxr/usd/usdDeformers"
+        string libraryPrefix     = "UsdDeformers"
+    }
+) {
+}
+
+class AAPLBlendShape "AAPLBlendShape" (
+    inherits = </Typed>
+    doc="""Describes a target blend shape."""
+) {
+    point3f[] points (
+        doc = """<b>Required property</b>. Target shape positions."""
+    )
+
+    uint[] pointIndices = [] (
+        doc = """<b>Optional property</b>. Indices into the original mesh that correspond to the values in points.""")
+}
+
+class "SkinDeformerAPI" (
+    inherits = </APISchemaBase>
+)
+{
+    rel skinDeformer:targetJoints (
+        customData = {
+            string apiName = "skinTargetJoints"
+        }
+        doc = """A list of joint xform prims that drive the skinned animation (e.g. rel targetJoints = [ </Skeleton/Pelvis>, </Skeleton/Pelvis/Chest>, ... ] )"""
+    )
+
+    uint[] skinDeformer:componentsPerVertex  (
+        customData = {
+            string apiName = "skinComponentsPerVertex"
+        }
+        doc = """<b>Optional property</b>. Weights for each vertex. If missing, a constant number is assumed (number of elements in skinJointIndices divided by number of mesh vertices)."""
+    );
+
+    uint[] skinDeformer:jointIndices (
+        customData = {
+            string apiName = "skinJointIndices"
+        }
+        doc = """Indices into skinJoints. skinningComponentsPerVertex determines how many indices are stored per vertex."""
+    )
+
+    float[] skinDeformer:jointWeights (
+        customData = {
+            string apiName = "skinJointWeights"
+        }
+        doc = """Weights for the joints indexed by skinJointIndices. skinningComponentsPerVertex determines how many weights are stored per vertex."""
+    )
+
+    matrix4d[] skinDeformer:bindTransforms (
+        customData = {
+            string apiName = "skinBindTransforms"
+        }
+        doc = """(World-space) joint transforms at bind time."""
+    )
+    
+    matrix4d skinDeformer:meshBindTransform (
+        customData = {
+            string apiName = "skinMeshBindTransform"
+        }
+        doc = """(World-space) transform of our geometry at bind time."""
+    )
+}
+
+class "MorphDeformerAPI" (
+    inherits = </APISchemaBase>
+)
+{
+    rel morphDeformer:targetBlendShapes  (
+        customData = {
+            string apiName = "morphTargetBlendShapes"
+        }
+        doc = """List of all target blend shapes (including in-betweens)."""
+    )
+
+    float[] morphDeformer:weights (
+        customData = {
+            string apiName = "morphWeights"
+        }
+        doc = """Weight of each morph channel.
+        A channel groups all in-between morph targets (including the final target) that are driven by the same morph weight."""
+    )
+
+    uint [] morphDeformer:channelTargetCounts (
+        customData = {
+            string apiName = "morphChannelTargetCounts"
+        }
+        doc = """<b>Optional property</b>. Number of in-between morph targets for each channel. 
+        A channel groups all in-between morph targets (including the final target) that are driven by the same weight. 
+        Can be left empty if no in-between morph targets are used. If not empty, the sum of all elements has to equal the number of relations in morphTargetBlendShapes"""
+    )
+
+    float[] morphDeformer:channelTargetWeights (
+        customData = {
+            string apiName = "morphChannelTargetWeights"
+        }
+        doc = """<b>Optional property</b>. Weight location of in-between morph target shape. Can be left empty if no in-between morph targets are used"""
+    )
+
+}
+
+
+class DeformableMesh "DeformableMesh" (
+    inherits = </Mesh>
+    doc="""DEPRECATED: Adds skinning and morphing information to Mesh."""
+) {
+    #
+    # Skin Deformer Properties
+    #
+
+    rel skinTargetJoints (
+        doc = """DEPRECATED: A list of joint xform prims that drive the skinned animation (e.g. rel targetJoints = [ </Skeleton/Pelvis>, </Skeleton/Pelvis/Chest>, ... ] )"""
+    )
+
+    uint[] skinComponentsPerVertex  (
+        doc = """DEPRECATED: <b>Optional property</b>. Weights for each vertex. If missing, a constant number is assumed (number of elements in skinJointIndices divided by number of mesh vertices)."""
+    );
+
+    uint[] skinJointIndices (
+        doc = """DEPRECATED: Indices into skinJoints. skinningComponentsPerVertex determines how many indices are stored per vertex."""
+    )
+
+    float[] skinJointWeights (
+        doc = """DEPRECATED: Weights for the joints indexed by skinJointIndices. skinningComponentsPerVertex determines how many weights are stored per vertex."""
+    )
+
+    matrix4d[] skinBindTransforms (
+        doc = """DEPRECATED: (World-space) joint transforms at bind time."""
+    )
+    
+    matrix4d skinMeshBindTransform (
+        doc = """DEPRECATED: (World-space) transform of our geometry at bind time."""
+    )
+
+    #
+    # Morph Deformer Properties
+    #
+
+    rel morphTargetBlendShapes  (
+        doc = """DEPRECATED: List of all target blend shapes (including in-betweens)."""
+    )
+
+    float[] morphWeights (
+        doc = """DEPRECATED: Weight of each morph channel.
+        A channel groups all in-between morph targets (including the final target) that are driven by the same morph weight."""
+    )
+
+    uint [] morphChannelTargetCounts (
+        doc = """DEPRECATED: <b>Optional property</b>. Number of in-between morph targets for each channel. 
+        A channel groups all in-between morph targets (including the final target) that are driven by the same weight. 
+        Can be left empty if no in-between morph targets are used. If not empty, the sum of all elements has to equal the number of relations in morphTargetBlendShapes"""
+    )
+
+    float[] morphChannelTargetWeights (
+        doc = """DEPRECATED: <b>Optional property</b>. Weight location of in-between morph target shape. Can be left empty if no in-between morph targets are used"""
+    )
+}
+
+
