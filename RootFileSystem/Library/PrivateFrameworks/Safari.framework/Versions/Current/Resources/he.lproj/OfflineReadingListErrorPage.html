@@ -1,0 +1,38 @@
+<!-- LOCALIZERS: Each localizable piece of the page is marked with a comment -->
+<html>
+<head dir="rtl">
+<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="page-load-errors.css" dir="rtl">
+    <!-- LOCALIZERS: You might want to change the font family. You can also add styles to override sizes, etc. -->
+    <style dir="rtl">
+        body {font-family:'-apple-system-font';}
+    </style>
+    <!-- LOCALIZERS: The next line contains the page title that appears in the window's title bar -->
+    <title dir="rtl">%pageErrorTitle%</title>
+</head>
+
+<body dir="rtl">
+    <div class="content-container" dir="rtl">
+        <div class="error-container" dir="rtl">
+            <div class="text-container" dir="rtl">
+                <!-- Main title here. -->
+                <p class="error-title" dir="rtl">%title%</p>
+            </div>
+            <div class="text-container" dir="rtl">
+                <!-- Error message here. -->
+                <p class="error-message" dir="rtl">%message%</p>
+            </div>
+        </div>
+        <div class="suggestion-container" dir="rtl">
+            <div class="text-container" dir="rtl">
+                <!-- LOCALIZERS: Localize the prompt and the button title. -->
+                <p class="suggestion-prompt" dir="rtl">מאמרים ברשימת הקריאה זמינים לצפייה כשאין לך  חיבור לאינטרנט.</p>
+            </div>
+            <form class="suggestion-form" method="GET" action="show-reading-list:" dir="rtl">
+                <input type="submit" value="הצגת רשימת הקריאה" dir="rtl">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

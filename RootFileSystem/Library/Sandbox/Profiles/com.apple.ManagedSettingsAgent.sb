@@ -1,0 +1,98 @@
+;;; Copyright © 2023 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+;;;;;;
+;;; Restrictions
+;;;;;;
+
+(deny default)
+(deny file-map-executable iokit-get-properties process-info* nvram*)
+(deny dynamic-code-generation)
+
+;;;;;;
+;;; Imports
+;;;;;;
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;;;;;
+;;; Defines
+;;;;;;
+
+
+;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(define (user-subpath user-relative-subpath)
+    (subpath (string-append (param "DARWIN_USER_DIR") user-relative-subpath)))
+
+;;;;;;
+;;; Permissions
+;;;;;;
+
+;; Allow introspecting our own process info.
+(allow process-info* (target self))
+
+;; Allow resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; Allow validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Allow read/write access to our own preferences.
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.ManagedSettingsAgent"))
+
+;; Allow read-only access to any application preferences
+(allow user-preference-read
+       (preference-domain "kCFPreferencesAnyApplication"))
+
+;; Allow read data access to our launch path.
+(allow file-read-data
+       (literal "/usr/libexec")
+       (literal "/usr/libexec/ManagedSettingsAgent"))
+       
+;; Allow read/write access to our temporary directories
+(allow file-read* file-write*
+       (subpath (param "DARWIN_CACHE_DIR"))
+       (subpath (param "DARWIN_USER_DIR"))
+       (subpath (param "TMPDIR")))
+
+;; Read/write cache access
+(let ((cache-path-filter (home-subpath "/Library/Caches/com.apple.ManagedSettingsAgent")))
+  (allow file-read* file-write* cache-path-filter)
+  (allow file-issue-extension
+    (require-all
+      (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+      cache-path-filter)))
+
+;; Allow read/write access to Screen Time data vault
+(let ((screen-time-data-vault-path-filter (user-subpath "/com.apple.ScreenTimeAgent/Store")))
+  (allow file-read* file-write* screen-time-data-vault-path-filter)
+  (allow file-issue-extension
+    (require-all
+      (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+      screen-time-data-vault-path-filter)))
+
+;; Mach lookup access
+(allow mach-lookup
+       (global-name "com.apple.lsd.mapdb")
+       (global-name "com.apple.lsd.modifydb")
+       (global-name "com.apple.pluginkit.pkd"))

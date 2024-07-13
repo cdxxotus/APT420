@@ -1,0 +1,212 @@
+;;; Copyright (c) 2019 Apple Inc.  All Rights reserved.
+
+(version 1)
+
+(deny default)
+(deny file-map-executable iokit-get-properties process-info* nvram*)
+(deny dynamic-code-generation)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow process-info* (target self))
+
+(allow process-info-pidinfo)
+
+(allow file-read-data)
+
+(allow file-read-metadata)
+
+(allow file-read-xattr (subpath "/Library/KerberosPlugins"))
+
+(allow file-read*
+    (literal "/Library/Application Support/CrashReporter/SubmitDiagInfo.domains"))
+
+(allow file-read* file-write*
+    (regex #"^(/private)?/var/folders/[^/]+/[^/]+/[^/]+/com\.apple\.AppSSOAgent($|/)"))
+
+(allow file-read* file-write*
+    (subpath "/private/var/db/ExtensibleSSO/Configuration"))
+
+;; Read/write access to shared folder for kerberos extension
+(allow file-read* file-write* (home-subpath "/Library/Group Containers/group.com.apple.KerberosExtension"))
+
+(allow lsopen)
+
+(allow process-info-codesignature)
+
+(allow network-outbound)
+
+(allow network-bind)
+
+(deny mach-priv-host-port)
+
+(allow iokit-get-properties)
+
+(allow system-socket)
+
+(allow ipc-posix-shm)
+
+(allow distributed-notification-post)
+
+(allow iokit-open
+        (iokit-user-client-class "IOHIDParamUserClient")
+        (iokit-user-client-class "IOSurfaceRootUserClient")
+        (iokit-user-client-class "IGAccelDevice")
+        (iokit-user-client-class "AppleGraphicsControlClient")
+        (iokit-user-client-class "AMDRadeonX6000_AMDAccelDevice")
+        (iokit-user-client-class "AGXDeviceUserClient")
+        (iokit-user-client-class "AppleKeyStoreUserClient"))
+
+;; Read/write access to change legacy keychain password
+(allow file-read* file-write*
+    (home-subpath "/Library/Keychains/"))
+
+(allow mach-lookup (global-name
+    "com.apple.AppSSO.service-xpc"
+    "com.apple.PlatformSSO.service-login-manager-xpc"
+    "com.apple.coreservices.quarantine-resolver"
+    "com.apple.pluginkit.pkd"
+    "com.apple.runningboard"
+    "com.apple.SecurityServer"
+    "com.apple.ak.authorizationservices.xpc"
+    "com.apple.SharedWebCredentials"
+    "com.apple.CoreDisplay.master"
+    "com.apple.coreservices.appleevents"
+    "com.apple.dock.server"
+    "com.apple.lsd.modifydb"
+    "com.apple.lsd.mapdb"
+    "com.apple.coreservices.launchservicesd"
+    "com.apple.windowserver.active"
+    "com.apple.pasteboard.1"
+    "com.apple.window_proxies"
+    "com.apple.fonts"
+    "com.apple.CARenderServer"
+    "com.apple.dock.fullscreen"
+    "com.apple.quicklook.ui.helper.active"
+    "com.apple.SystemConfiguration.DNSConfiguration"
+    "org.h5l.kcm"
+    "com.apple.GSSCred"
+    "com.apple.SystemConfiguration.configd"
+    "com.apple.system.opendirectoryd.api"
+    "com.apple.usernoted.client"
+    "com.apple.inputmethodkit.launchagent"
+    "com.apple.inputmethodkit.launcher"
+    "com.apple.inputmethodkit.getxpcendpoint"
+    "com.apple.ocspd"
+    "com.apple.audio.SystemSoundServer-OSX"
+    "com.apple.tccd.system"
+    "com.apple.iohideventsystem"
+    "com.apple.touchbarserver.mig"
+    "com.apple.DiskArbitration.diskarbitrationd"
+    "com.apple.tsm.uiserver"
+    "com.apple.mdmclient.daemon"
+    "com.apple.mdmclient.agent"
+    "com.apple.mdmclient.daemon.unrestricted"
+    "com.apple.mdmclient.agent.unrestricted"
+    "com.apple.dnssd.service"
+    "com.apple.cfnetwork.cfnetworkagent"
+    "com.apple.SystemConfiguration.NetworkInformation"
+    "com.apple.nesessionmanager"
+    "com.apple.ctkd.token-client"
+    "com.apple.PlatformSSO.daemon-xpc"
+    "com.apple.iconservices"
+    "com.apple.iconservices.store"
+    "com.apple.securityd.xpc"
+    "com.apple.CoreAuthentication.agent"
+    "com.apple.CoreAuthentication.agent.libxpc"
+    "com.apple.CoreAuthentication.daemon"
+    "com.apple.CoreAuthentication.daemon.libxpc"
+    "com.apple.PlatformSSO.service-xpc"
+    "com.apple.cvmsServ"
+    "com.apple.windowmanager.server"
+    "com.apple.containermanagerd"
+    "com.apple.AuthenticationServices.AutoFill"
+    "com.apple.pbs.fetch_services"
+    "com.apple.usernotifications.listener"
+    "com.apple.nehelper"
+    "com.apple.CryptoTokenKit.AuthenticationHintsProvider.agent.libxpc"
+    "com.apple.CoreAuthentication.daemon.EndpointProvider"
+    "com.apple.CryptoTokenKit.AuthenticationHintsProvider.daemon.libxpc"
+    "com.apple.dt.testmanagerd.uiprocess"
+    "com.apple.metadata.mds"
+    "com.apple.dt.xctestd.target"
+    "com.apple.tsm.uiserver"
+    "com.apple.usernotifications.usernotificationservice"))
+
+(allow user-preference* (preference-domain
+    "group.com.apple.KerberosExtension"
+    "com.apple.AppSSO"
+    "com.apple.PlatformSSO"
+    "com.apple.security.tokenlogin"
+    "com.apple.AppSSOAgent"))
+
+(allow user-preference-read (preference-domain
+    "kCFPreferencesAnyApplication"
+    "com.apple.universalaccess"
+    "com.apple.HIToolbox"
+    "com.apple.MultitouchSupport"))
+
+(allow file-map-executable (subpath
+    "/System/Library/CoreServices/ManagedClient.app/Contents/PlugIns"
+    "/private/var/db/CVMS"
+    "/System/Library/KerberosPlugins"
+    "/Library/Frameworks/"
+    "/System/Library/Extensions/"
+    "/Library/KerberosPlugins"))
+
+(with-filter (extension "com.apple.app-sandbox.read")
+    (allow file-read*)
+    (allow file-issue-extension (extension-class "com.apple.app-sandbox.read")))
+(with-filter (extension "com.apple.app-sandbox.read-write")
+    (allow file-read* file-write*)
+    (allow file-issue-extension (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")))
+
+;; read/write cache access
+(let ((agent-path-filter (subpath (param "APP_BUNDLE_PATH"))))
+    (allow file-read* agent-path-filter)
+    (allow file-issue-extension
+        (require-all
+            (extension-class "com.apple.app-sandbox.read")
+            agent-path-filter)))
+
+(allow system-audit)
+
+;; to allow auth rights
+(allow authorization-right-obtain
+    (right-name "com.apple.security.syntheticinput")
+    (right-name "system.platformsso.auth"))
+
+;; to allow binding to psso tokens (fallback)
+(allow authorization-right-obtain
+    (right-name "com.apple.ctk.pair")
+    (right-name "com.apple.ctkbind.admin"))
+    
+;; for binding sc token for keychain
+(allow user-preference-read user-preference-write
+      (preference-domain "com.apple.security")
+      (preference-domain "com.apple.security.smartcard")
+      (preference-domain "com.apple.security.tokenlogin"))
+
+;; read smartcard settings
+(allow file-read*
+   (literal "/private/etc/SmartcardLogin.plist")
+   (literal "/private/etc/cacloginconfig.plist"))
+
+
+;; for binding updates
+(allow process-exec (literal "/System/Library/Frameworks/CryptoTokenKit.framework/ctkbind.app/Contents/MacOS/ctkbind"))
+(allow process-fork)

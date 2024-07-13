@@ -1,0 +1,41 @@
+graphName "mac_hal_spatial_multichannel"
+
+in input
+out output
+
+; -------------------------------------
+; variables
+; -------------------------------------
+
+[def sampleRateIn 48000]
+[def numChannelsIn 2]
+[def numChannelsOut 2]
+
+box Spatializer (aumx 3dem) 1 1
+box Volume dbgn 1 1
+
+; -------------------------------------
+; topology
+; -------------------------------------
+
+wire input Volume ([sampleRateIn] [numChannelsIn])
+wire Volume Spatializer ([sampleRateIn] [numChannelsIn])
+wire Spatializer output ([sampleRateIn] [numChannelsOut])
+
+; -------------------------------------
+; parameters
+; -------------------------------------
+
+; graph volume control
+;param volu -20
+;param mute 0
+;wireGraphParam volu (Volume 0 0 0)
+;wireGraphParam mute (Volume 1 0 0)
+
+; channel layout
+property clay
+wireGraphProperty clay (Spatializer 19 input)
+
+; head-tracking position
+property head
+wireGraphProperty head (Spatializer 3102)

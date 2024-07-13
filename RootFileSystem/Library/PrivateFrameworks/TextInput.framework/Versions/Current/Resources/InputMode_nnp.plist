@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAddKeyboardUsesPicker</key>
+	<true/>
+	<key>UIKeyboardSupportedInputModes</key>
+	<dict>
+		<key>nnp</key>
+		<dict>
+			<key>Preferences</key>
+			<array>
+				<string>KeyboardPeriodShortcut</string>
+				<string>SmartTyping</string>
+			</array>
+			<key>UIKeyboardDefaultLayoutIsASCIICapable</key>
+			<false/>
+			<key>HWLayouts</key>
+			<array>
+				<string>Wancho-QWERTY</string>
+			</array>
+			<key>SWLayouts</key>
+			<array>
+				<string>Wancho</string>
+			</array>
+			<key>SWLayouts-iPadExtra</key>
+			<array>
+				<string>Wancho</string>
+				<string>Wancho-QWERTY</string>
+			</array>
+		</dict>
+	</dict>
+	<key>UIKeyboardDefaultLanguageInputModes</key>
+	<dict>
+		<key>nnp</key>
+		<array>
+			<string>nnp</string>
+			<string>en_IN</string>
+		</array>
+	</dict>
+</dict>
+</plist>

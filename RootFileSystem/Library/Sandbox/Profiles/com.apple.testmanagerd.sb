@@ -1,0 +1,143 @@
+;;; Copyright © 2022 Apple Inc. All rights reserved.
+(version 1)
+
+(deny default (with telemetry) (with partial-symbolication))
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+(daemon-container)
+
+;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex))
+)
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath))
+)
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix))
+)
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal))
+)
+
+(allow process-info* (target self))
+(allow process-info-codesignature) ;; For validating the entitlements of clients.
+(allow process-info-pidinfo)
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; Write our prefs
+(allow user-preference-write
+    (preference-domain "com.apple.testmanagerd")
+)
+
+;; Read other user prefs
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.HIToolbox")
+    (preference-domain "com.apple.universalaccess")
+    (preference-domain "kCFPreferencesAnyApplication")
+)
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+    (subpath "/private/var/tmp/") ;; For -[XCTDDiagnosticsProvider requestLogArchiveForUser:startDate:completion:]
+    (subpath (param "DARWIN_CACHE_DIR"))
+    (subpath (param "TMPDIR"))
+)
+
+;; Read/write cache access
+(let ((cache-path-filter (home-subpath "/Library/Caches/com.apple.testmanagerd")))
+    (allow file-issue-extension
+        (require-all
+            (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+        cache-path-filter)
+    )
+    (allow file-read* file-write* cache-path-filter)
+)
+
+;; Allow signalling other processes
+(allow signal)
+
+;; Allows us to launch apps from a sandboxed testmanagerd
+(allow lsopen)
+
+(allow sysctl-read
+   (sysctl-name "hw.model")
+   (sysctl-name "kern.bootsessionuuid")
+)
+
+(allow network-outbound
+    (literal "/private/var/run/mDNSResponder")
+)
+
+;; Read access to testmanagerd_config.plist, com.apple.networkd.plist and the install path of testmanagerd
+(allow file-read*
+    (home-subpath "/Library/Input Methods")
+    (home-subpath "/Library/Keyboard Layouts")
+    (literal "/usr/libexec")
+    (literal "/AppleInternal/Library/Application Support/XCTest/testmanagerd_config.plist")
+    (literal "/Library/Preferences/com.apple.networkd.plist")
+)
+
+(allow file-read* file-map-executable
+    (literal "/System/Library/Video/Plug-Ins/AppleVideoEncoder.bundle/Contents/MacOS/AppleVideoEncoder")
+    (literal "/System/Library/Video/Plug-Ins/VCPHEVC.bundle/Contents/MacOS/VCPHEVC")
+)
+
+(allow iokit-open
+    (iokit-user-client-class "AGXDeviceUserClient")
+    (iokit-user-client-class "AppleAVE2UserClient")
+    (iokit-user-client-class "AppleNVMeEANUC")
+    (iokit-user-client-class "IOHIDParamUserClient")
+    (iokit-user-client-class "IOSurfaceAcceleratorClient")
+    (iokit-user-client-class "IOSurfaceRootUserClient")
+)
+
+;; Read crash report files
+(allow file-read*
+    (home-subpath "/Library/Logs/DiagnosticReports")
+    (subpath "/Library/Logs/DiagnosticReports")
+)
+
+;; Look up Mach service names
+(allow mach-lookup
+    (global-name
+        "com.apple.AppSSO.service-xpc"
+        "com.apple.CARenderServer"
+        "com.apple.CoreAuthentication.agent"
+        "com.apple.CoreAuthentication.agent.libxpc"
+        "com.apple.PowerManagement.control"
+        "com.apple.SystemConfiguration.configd"
+        "com.apple.VirtualDisplay"
+        "com.apple.coreservices.launchservicesd"
+        "com.apple.coreservices.quarantine-resolver"
+        "com.apple.dock.server"
+        "com.apple.dt.automationmode.reader"
+        "com.apple.dt.automationmode.writer"
+        "com.apple.lsd.mapdb"
+        "com.apple.lsd.xpc"
+        "com.apple.pasteboard.1"
+        "com.apple.powerlog.plxpclogger.xpc"
+        "com.apple.spindump"
+        "com.apple.tccd"
+        "com.apple.tccd.system"
+        "com.apple.usymptomsd"
+        "com.apple.windowserver.active"
+    )
+    (local-name "com.apple.axserver")
+    (local-name "com.apple.tsm.portname")
+)
+
+(with-filter (extension "com.apple.app-sandbox.read-write")
+    (allow file-read* file-write*)
+    (allow file-issue-extension (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+)

@@ -1,0 +1,76 @@
+;;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 2)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+	(regex (string-append "^" (regex-quote (param "_HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+	(subpath (string-append (param "_HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+	(prefix (string-append (param "_HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+	(literal (string-append (param "_HOME") home-relative-literal)))
+
+;; Basic things that all cryptex session profiles would need, like access to
+;; the cryptex itself. Also define home- helpers.
+(define (cryptex-session)
+	;; For resolving symlinks, realpath(3), and equivalents.
+	(allow file-read-metadata)
+	(allow file-test-existence)
+
+	;; Device access
+	(allow file-read* file-write*
+		(path "/dev/random")
+		(path "/dev/urandom")
+		(path "/dev/null")
+		(path "/dev/random")
+		(path "/dev/stdin")
+		(path "/dev/stdout")
+		(path "/dev/stderr")
+		(path "/dev/tty")
+		(path "/dev/zero")
+		(subpath "/dev/fd")
+	)
+
+	;; process info / communication
+	(allow process-info-codesignature)
+	(allow process-info* signal
+		(target self)
+		(target children)
+	)
+
+	;; Basic file system read
+	(allow file-read* file-map-executable
+		(subpath "/private/var/run/com.apple.security.cryptexd/mnt")
+	)
+)
+
+;; Allow execution of cryptexctl
+(allow file-read* process-exec
+	 (path "/usr/appleinternal/bin/cryptexctl")
+	 (path "/usr/bin/cryptexctl")
+ )
+
+;; confstr related paths
+(define (cryptex-session-confstr)
+	(allow file-read* file-write*
+		(subpath (param "_CONFSTR_USER"))
+		(subpath (param "_CONFSTR_USER_TMP"))
+		(subpath (param "_CONFSTR_USER_CACHE"))
+		(path "/private/var")
+	)
+	(allow file-read* file-write*
+		(require-all
+			(vnode-type DIRECTORY)
+			(subpath "/private/var/folders")
+		)
+	)
+)

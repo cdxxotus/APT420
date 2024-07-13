@@ -1,0 +1,21 @@
+2024-07-12 15:12:47.988 UTC−7 com.apple.recoveryosd: Task [/usr/bin/pmset][(
+    autorestart,
+    1
+)] -- 
+2024-07-12 15:12:48.007 UTC−7 com.apple.recoveryosd: Task [/System/Installation/CDIS/mountrecursive][(
+)] -- failed to mount enclosing file systems, error code: -1 reason: * Failed to mount imgsrc device, no device info
+
+2024-07-12 15:12:48.007 UTC−7 com.apple.recoveryosd: Failed to invoke mount_recursive with exit status: 255
+2024-07-12 15:12:48.007 UTC−7 com.apple.recoveryosd: Establishing an Aqua Session...
+2024-07-12 15:12:48.008 UTC−7 com.apple.recoveryosd: New Audit Session Created! [ID: 100001 -- Flags: 0x30]
+2024-07-12 15:12:48.900 UTC−7 com.apple.recoveryosd: Current Audit Session: [AUID: -1, ASID: 100001]
+2024-07-12 15:12:48.900 UTC−7 com.apple.recoveryosd: Invoking setaudit_addr() -- [AUID: 0, ASID: 100001, MASK: 0, TERMID: 1840167200, FLAGS: 48]
+2024-07-12 15:12:48.900 UTC−7 com.apple.recoveryosd: Invoking SLSPackagesInitializeSessionPreferences()...
+2024-07-12 15:12:48.915 UTC−7 com.apple.recoveryosd: Switched to per session launchd with pid:1
+2024-07-12 15:12:48.925 UTC−7 com.apple.recoveryosd: Aqua session established.
+2024-07-12 15:12:49.053 UTC−7 com.apple.recoveryos_agent: Agent started!
+2024-07-12 15:12:49.097 UTC−7 com.apple.recoveryos_agent: Running Aqua specific tasks.
+2024-07-12 15:12:49.135 UTC−7 com.apple.recoveryos_agent: Launching "/System/Installation/CDIS/Boot Picker.app/Contents/MacOS/Boot Picker"
+2024-07-12 15:12:56.157 UTC−7 com.apple.recoveryos_agent: Launching "/System/Installation/CDIS/launchprogresswindow"
+2024-07-12 15:12:56.158 UTC−7 com.apple.recoveryos_agent: Launching "/System/Library/CoreServices/Language Chooser.app/Contents/MacOS/Language Chooser"
+2024-07-12 15:12:56.162 UTC−7 com.apple.recoveryos_agent: (/System/Installation/CDIS/Boot Picker.app/Contents/MacOS/Boot Picker) exitted with status:0

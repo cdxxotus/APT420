@@ -1,0 +1,547 @@
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<title>Gjenoppretting &ndash; Intel</title>
+	<link rel="stylesheet" type="text/css" href="../css/static.css">
+</head>
+<body class="apd-topic" data-istaskopen="true">
+<header role="presentation" id="mchl338cf9a8" class="AppleTopic">
+	<figure class="topicIcon">
+		<img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24">
+	</figure>
+	<h1>
+		Bruk macOS-gjenoppretting på Intel-baserte Macer
+	</h1>
+	<p>		macOS-gjenoppretting er det innebygde gjenopprettingssystemet på Macen.
+	</p>
+	<p>		Du kan bruke appene i macOS-gjenoppretting på Intel-baserte Macer for å reparere den interne lagringsenheten, installere macOS på nytt, gjenopprette filer fra en Time Machine-sikkerhetskopi, angi sikkerhetsvalg og mer.
+	</p>
+	<p>		Du må ha en internettforbindelse hvis du skal installere macOS på nytt. Du kan koble til internett via en trådløs eller kablet nettverkstilkobling. Hvis du prøver å koble til Wi-Fi via en påloggingsportal (for eksempel på en kaffebar, et bibliotek eller et hotell) eller et bedriftsnettverk, kan det hende at du ikke får tilgang til internett i macOS-gjenoppretting. Se <a href="#mchlbeaa54bc" class="xRef Task">Koble til internett over Wi-Fi</a>.
+	</p>
+	<div class="Alert">
+		<p class="Note">			<em>Merk: </em>Hvis du vil klargjøre Macen din for salg eller innbytte, eller gi den bort, og maskinen din er en Intel-basert Mac med Apple T2-sikkerhetsbrikke, kan du bruke Slettingsassistent i macOS. Du bruker Slettingsassistent på følgende måte: start maskinen i macOS, velg Apple-menyen <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Systeminnstillinger, klikk på Generelt <img src="../SharedGlobalArt/AppIconTopic_General.png" alt="" height="30" width="30"> i sidepanelet (du må kanskje rulle ned litt), klikk på Overfør eller nullstill til høyre og så på Slett alt innhold og innstillinger, og følg deretter instruksjonene på skjermen.
+		</p>
+	</div>
+	<div id="mchl6317f876" class="Subhead">
+		<div class="heading-nobreak">
+			<h2 class="Name">
+				Apper som er tilgjengelige i macOS-gjenoppretting på Intel-baserte Macer
+			</h2>
+			<p>				Følgende apper er tilgjengelig i macOS-gjenoppretting på Intel-baserte Macer:
+			</p>
+		</div>
+		<ul>
+			<li>
+			<p>				<em>Gjenoppretting: </em>Gjenoppretting-appen åpnes når datamaskinen starter opp i macOS-gjenoppretting. Se <a href="#mchl69906860" class="xRef Task">Start en Intel-basert Mac i macOS-gjenoppretting</a> og <a href="#mchl6518f21a" class="xRef Task">Avslutt macOS-gjenoppretting</a>.
+			</p>
+			</li>
+			<li>
+			<p>				<em>Time Machine-systemgjenoppretting: </em>Gjenopprett data fra en Time Machine-sikkerhetskopi. Velg Gjenopprett fra Time Machine i Gjenoppretting-appen, og klikk deretter på Fortsett. Hvis du vil gå tilbake til Gjenoppretting-appen, velger du Time Machine-systemgjenoppretting &gt; Avslutt Time Machine-systemgjenoppretting. Se <a href="#mchl43ee355d" class="xRef Task">Bruk Time Machine til å gjenopprette filene dine</a>.
+			</p>
+			</li>
+			<li>
+			<p>				<em>Installer macOS: </em>Installer macOS på nytt på datamaskinen. Velg Installer macOS [<em>name</em>] på nytt i Gjenoppretting-appen, og klikk deretter på Fortsett. For å gå tilbake til Gjenoppretting-appen velger du Installer macOS [<em>name</em>] &gt; Avslutt installer macOS. Se <a href="#mchlde1a4fd2" class="xRef Task">Installer macOS på nytt</a>.
+			</p>
+			</li>
+			<li>
+			<p>				<em>Safari: </em>Velg Safari i Gjenoppretting-appen, og klikk deretter på Fortsett. Velg Safari &gt; Avslutt Safari for å gå tilbake til Gjenoppretting-appen. Hvis du er tilkoblet internett, kan du bruke Safari til å søke etter mer informasjon på nettstedet for Apple-kundestøtte.
+			</p>
+			</li>
+			<li>
+			<p>				<em>Diskverktøy: </em>Reparer eller slett disken. Velg Diskverktøy i Gjenoppretting-appen, og klikk deretter på Fortsett. Velg Diskverktøy &gt; Avslutt Diskverktøy for å gå tilbake til Gjenoppretting-appen. Se <a href="#mchlcb3af2f6" class="xRef Task">Slett macOS og installer det på nytt</a>.
+			</p>
+			</li>
+			<li>
+			<p>				<em>Oppstartssikkerhetsverktøy: </em>Angi sikkerhetskriteriene for Macen. Velg Verktøy &gt; Oppstartssikkerhetsverktøy i Gjenoppretting-appen. Velg Oppstartssikkerhetsverktøy &gt; Avslutt Oppstartssikkerhetsverktøy for å gå tilbake til Gjenoppretting-appen. Se <a href="#mchl616f896e" class="xRef Task">Bruk Oppstartssikkerhetsverktøy til å angi et firmwarepassord</a> og <a href="#mchl4260d54a" class="xRef Task">Bruk Oppstartssikkerhetsverktøy til å angi valg for sikker oppstart</a>.
+			</p>
+			<p>				Valgene som er tilgjengelige i Oppstartssikkerhetsverktøy, varierer fra Mac-modell til Mac-modell. Se Apple-kundestøtteartiklene <a href="https://support.apple.com/HT208198" class="URL">Om Oppstartssikkerhetsverktøy på en Mac med Apple T2-sikkerhetsbrikke</a> og <a href="https://support.apple.com/HT208862" class="URL">Mac-modeller med Apple T2-sikkerhetsbrikken</a>.
+			</p>
+			</li>
+			<li>
+			<p>				<em>Startdisk: </em>Angi startdisk for Macen. Velg Apple-menyen <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Startdisk. Velg Startdisk &gt; Avslutt Startdisk for å gå tilbake til Gjenoppretting-appen.
+			</p>
+			</li>
+			<li>
+			<p>				<em>Terminal: </em>Velg Verktøy &gt; Terminal i Gjenoppretting-appen. Velg Terminal &gt; Avslutt Terminal for å gå tilbake til Gjenoppretting-appen.
+			</p>
+			</li>
+		</ul>
+		<p>			Du kan også bruke macOS-gjenoppretting til å gjøre følgende:
+		</p>
+		<ul>
+			<li>
+			<p>				<a href="#mchlb6f6d1d9" class="xRef Task">Vis Gjenoppretting-loggen</a>
+			</p>
+			</li>
+			<li>
+			<p>				<a href="#mchl7ed39991" class="xRef Task">Opprett en diagnostikkfil for gjenopprettingen</a>
+			</p>
+			</li>
+		</ul>
+	</div>
+	<div id="mchl69906860" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl69906860">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl69906860" class="Name">
+					Start den Intel-baserte Macen i macOS-gjenoppretting
+				</h2>
+				<ol>
+					<li>
+					<p>						Start Macen på nytt.
+					</p>
+					</li>
+					<li>
+					<p>						Hold umiddelbart nede en av følgende tastekombinasjoner til du ser oppstartsskjermen:
+					</p>
+					<ul>
+						<li>
+						<p>							<em>Kommando-R: </em>Start maskinen fra det innebygde macOS-gjenopprettingssystemet. Bruk denne tastekombinasjonen for å reinstallere den siste macOS-versjonen som var installert på systemet ditt, eller for å bruke de andre appene i macOS-gjenoppretting.
+						</p>
+						</li>
+						<li>
+						<p>							<em>Tilvalg-Kommando-R: </em>Start maskinen fra macOS-gjenoppretting over internett. Bruk denne tastekombinasjonen hvis du vil installere macOS på nytt og oppgradere til den nyeste macOS-versjonen som er kompatibel med Macen.
+						</p>
+						</li>
+						<li>
+						<p>							<em>Tilvalg-Skift-Kommando-R: </em>Start maskinen fra macOS-gjenoppretting over internett. Bruk denne tastekombinasjonen hvis du vil reinstallere den macOS-versjonen som ble levert med Macen, eller den nærmeste versjonen som fremdeles er tilgjengelig.
+						</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p>						Hvis du ser et låsesymbol, skriver du inn Macens passord.
+					</p>
+					</li>
+					<li>
+					<p>						Hvis du har flere volumer på disken, markerer du det volumet du vil gjenopprette, og klikker på Neste.
+					</p>
+					</li>
+					<li>
+					<p>						Hvis du blir bedt om det, velger du en administratorkonto, klikker på Neste, skriver inn passordet for kontoen og klikker på Fortsett.
+					</p>
+					<p>						Når Gjenoppretting-appen vises i menylinjen, kan du velge blant de tilgjengelige alternativene i vinduet eller menylinjen.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchlbeaa54bc" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlbeaa54bc">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlbeaa54bc" class="Name">
+					Koble til internett over Wi-Fi
+				</h2>
+				<p>					Hvis symbolet for Wi-Fi-menyen (oppe i høyre hjørne på skjermen) viser en eller flere streker <span class="NoBreak"><img src="../SharedGlobalArt/IL_Wifi.png" alt="" height="30" width="42">, </span>er Wi-Fi slått på og tilkoblet et trådløst nettverk. Hvis symbolet for Wi-Fi-menyen ikke viser noen streker <span class="NoBreak"><img src="../SharedGlobalArt/IL_WiFiNoBars.png" alt="" height="30" width="41">, </span>er Wi-Fi slått på, men ikke tilkoblet et trådløst nettverk. Hvis det går en skråstrek gjennom symbolet for Wi-Fi-menyen <span class="NoBreak"><img src="../SharedGlobalArt/IL_WifiSlash.png" alt="" height="30" width="34">, </span>er Wi-Fi slått av. Wi-Fi må slås på før du kan koble til et trådløst nettverk.
+				</p>
+			</div>
+			<p>				Gjør ett av følgende på Macen:
+			</p>
+			<ul>
+				<li>
+				<p>					<em>Slå på Wi-Fi: </em>Klikk på symbolet for Wi-Fi-menyen, og velg deretter Slå på Wi-Fi.
+				</p>
+				</li>
+				<li>
+				<p>					<em>Slå av Wi-Fi: </em>Klikk på symbolet for Wi-Fi-menyen, og velg deretter Slå av Wi-Fi.
+				</p>
+				</li>
+				<li>
+				<p>					<em>Koble til et nettverk: </em>Klikk på symbolet for Wi-Fi-menyen, og velg deretter et nettverk. Skriv inn passordet for nettverket hvis du blir bedt om det.
+				</p>
+				</li>
+				<li>
+				<p>					<em>Koble til et lukket nettverk: </em>Klikk på symbolet for Wi-Fi-menyen, og velg deretter Koble til annet nettverk. Skriv inn navnet på nettverket og, hvis du blir bedt om det, passordet til nettverket.
+				</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="mchl7ac77bd4" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl7ac77bd4">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl7ac77bd4" class="Name">
+					Reparer den interne lagringsdisken
+				</h2>
+				<p>					Hvis du har problemer med datamaskinen, eller hvis du startet datamaskinen og macOS-gjenopprettingsvinduet ble vist, må du kanskje reparere den interne lagringsenheten på datamaskinen (som en SSD-disk).
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>					Velg Diskverktøy i Gjenoppretting-appen, og klikk deretter på Fortsett.
+				</p>
+				</li>
+				<li>
+				<p>					Velg Vis &gt; Vis alle enheter i Diskverktøy-appen.
+				</p>
+				</li>
+				<li>
+				<p>					Marker et volum i sidepanelet, og klikk deretter på Førstehjelp-knappen <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37">.</span>
+				</p>
+				</li>
+				<li>
+				<p>					Klikk på Start i Førstehjelp-dialogruten, og følg deretter instruksjonene på skjermen.
+				</p>
+				</li>
+				<li>
+				<p>					Når Førstehjelp-prosessen er fullført, klikker du på Ferdig.
+				</p>
+				</li>
+				<li>
+				<p>					Gjenta trinn 3 til 5 for hvert volum på lagringsenheten.
+				</p>
+				</li>
+				<li>
+				<p>					Marker en beholder i sidepanelet, og klikk deretter på Førstehjelp-knappen <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37">.</span>
+				</p>
+				</li>
+				<li>
+				<p>					Klikk på Start i Førstehjelp-dialogruten, og følg deretter instruksjonene på skjermen.
+				</p>
+				</li>
+				<li>
+				<p>					Når Førstehjelp-prosessen er fullført, klikker du på Ferdig.
+				</p>
+				</li>
+				<li>
+				<p>					Gjenta trinn 7 til 9 for hver beholder på lagringsenheten.
+				</p>
+				</li>
+				<li>
+				<p>					Marker lagringsenheten i sidepanelet, og klikk deretter på Førstehjelp-knappen <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37">.</span>
+				</p>
+				</li>
+				<li>
+				<p>					Klikk på Start i Førstehjelp-dialogruten, og følg deretter instruksjonene på skjermen.
+				</p>
+				</li>
+				<li>
+				<p>					Når Førstehjelp-prosessen er fullført, klikker du på Ferdig.
+				</p>
+				</li>
+			</ol>
+			<p>				Hvis Diskverktøy ikke klarer å reparere disken, bør du sikkerhetskopiere så mye av innholdet ditt som mulig og deretter følge instruksjonene i <a href="#mchlcb3af2f6" class="xRef Task">Slett macOS og installer det på nytt</a>.
+			</p>
+			<p>				Velg Diskverktøy &gt; Avslutt Diskverktøy for å gå tilbake til Gjenoppretting-appen.
+			</p>
+		</div>
+	</div>
+	<div id="mchl43ee355d" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl43ee355d">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl43ee355d" class="Name">
+					Bruk Time Machine til å gjenopprette filene dine
+				</h2>
+				<p>					Hvis du allerede har opprettet en Time Machine-sikkerhetskopi, kan du gjenopprette filene dine fra sikkerhetskopien.
+				</p>
+			</div>
+			<div class="Alert">
+				<p class="Important">					<strong>Viktig: </strong>Time Machine-sikkerhetskopien skal kun brukes til å gjenopprette informasjon på datamaskinen som er kilden til sikkerhetskopien. Hvis du vil overføre informasjon fra denne Macen til en ny datamaskin, avslutter du macOS-gjenoppretting, starter Macen på nytt og bruker Overføringsassistent-appen i macOS.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>					Hvis sikkerhetskopien er på en Time Capsule, må du forsikre deg om at du er tilkoblet internett.
+				</p>
+				</li>
+				<li>
+				<p>					Velg Gjenopprett fra Time Machine i Gjenoppretting-appen, og klikk deretter på Fortsett.
+				</p>
+				</li>
+				<li>
+				<p>					Følg instruksjonene på skjermen i Time Machine-systemgjenoppretting.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl616f896e" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl616f896e">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl616f896e" class="Name">
+					Bruk Oppstartssikkerhetsverktøy til å angi et firmwarepassord
+				</h2>
+				<p>					Ved å angi et firmwarepassord forhindrer du Macen i å starte opp fra en annen intern eller ekstern lagringsenhet enn den startdisken du har markert, med mindre firmwarepassordet oppgis. Du kan slå på, slå av eller endre firmwarepassordet ved hjelp av Oppstartssikkerhetsverktøy.
+				</p>
+			</div>
+			<p>				Når firmwarepassordet er slått på, må du skrive inn passordet hver gang du starter maskinen fra macOS-gjenoppretting eller fra en annen lagringsenhet enn den du har markert i Startdisk-innstillingene.
+			</p>
+			<p>				Når du har startet Macen på nytt, trer endringer av firmwarepassordet i kraft.
+			</p>
+			<ol>
+				<li>
+				<p>					Velg Verktøy &gt; Oppstartssikkerhetsverktøy i Gjenoppretting-appen.
+				</p>
+				</li>
+				<li>
+				<p>					Skriv inn brukernavn og passord for en administrator hvis du blir bedt om det.
+				</p>
+				</li>
+				<li>
+				<p>					Gjør ett av følgende:
+				</p>
+				<ul>
+					<li>
+					<p>						<em>Slå på firmwarepassordet: </em>Klikk på Slå på firmwarepassord, skriv inn et nytt passord, skriv det inn på nytt for å verifisere det, og klikk deretter på Angi passord.
+					</p>
+					</li>
+					<li>
+					<p>						<em>Slå av firmwarepassordet: </em>Klikk på Slå av firmwarepassord, skriv inn passordet, og klikk deretter på Slå av passord.
+					</p>
+					</li>
+					<li>
+					<p>						<em>Endre firmwarepassordet: </em>Klikk på Endre passord, skriv inn det gamle passordet, skriv inn et nytt passord og verifiser det, og klikk deretter på Endre passord.
+					</p>
+					</li>
+				</ul>
+				</li>
+				<li>
+				<p>					Klikk på Avslutt Oppstartssikkerhetsverktøy.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl4260d54a" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl4260d54a">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl4260d54a" class="Name">
+					Bruk Oppstartssikkerhetsverktøy til å angi valg for sikker oppstart
+				</h2>
+				<p>					Valg for sikker oppstart er bare tilgjengelig på Mac-datamaskiner med Apple T2-sikkerhetsbrikke.
+				</p>
+			</div>
+			<p>				Når du har startet Macen på nytt, trer endringer i valget for sikker oppstart i kraft.
+			</p>
+			<ol>
+				<li>
+				<p>					Velg Verktøy &gt; Oppstartssikkerhetsverktøy i Gjenoppretting-appen.
+				</p>
+				</li>
+				<li>
+				<p>					Skriv inn brukernavn og passord for en administrator.
+				</p>
+				</li>
+				<li>
+				<p>					Velg et av sikkerhetsalternativene under Sikker oppstart.
+				</p>
+				<ul>
+					<li>
+					<p>						<em>Full sikkerhet: </em>Sikrer at bare gjeldende OS, eller signert operativsystemprogramvare som er godkjent av Apple på det nåværende tidspunktet, kan kjøres. Denne modusen krever en nettverkstilkobling under installering av programvare.
+					</p>
+					</li>
+					<li>
+					<p>						<em>Middels sikkerhet: </em>Tillater en hvilken som helst versjon av signert operativsystemprogramvare som noensinne har vært godkjent av Apple til å kjøres.
+					</p>
+					</li>
+					<li>
+					<p>						<em>Ingen sikkerhet: </em>Håndhever ingen krav på det oppstartbare operativsystemet.
+					</p>
+					</li>
+				</ul>
+				</li>
+				<li>
+				<p>					Velg ett av alternativene under Tillatte oppstartsmedier.
+				</p>
+				<ul>
+					<li>
+					<p>						<em>Ikke tillat oppstart fra eksterne eller uttakbare medier: </em>Begrenser muligheten til å starte fra enheter som ikke er beskyttet av Apple T2-sikkerhetsbrikken, for eksempel USB- og Thunderbolt-disker eller internt tilkoblede PCIe- eller SATA-disker.
+					</p>
+					</li>
+					<li>
+					<p>						<em>Tillat oppstart fra eksterne eller uttakbare medier: </em>Begrenser ikke muligheten til å starte maskinen fra noen enheter.
+					</p>
+					</li>
+				</ul>
+				</li>
+				<li>
+				<p>					Velg Oppstartssikkerhetsverktøy &gt; Avslutt Oppstartssikkerhetsverktøy.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchlde1a4fd2" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlde1a4fd2">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlde1a4fd2" class="Name">
+					Installer macOS på nytt
+				</h2>
+				<p>					I noen tilfeller kan det være du må installere macOS på nytt. Du kan installere macOS på nytt og likevel beholde filer og brukerinnstillinger.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>					Forsikre deg om at du er koblet til internett.
+				</p>
+				</li>
+				<li>
+				<p>					I Gjenoppretting-appen klikker du på Installer macOS [<em>name</em>] på nytt og klikker deretter på Fortsett.
+									</p>
+				</li>
+				<li>
+				<p>									Følg instruksjonene på skjermen.
+				</p>
+				<div class="Alert">
+					<p class="Important">						<strong>Viktig:</strong> I panelet der du markerer en disk, markerer du gjeldende macOS-disk (i de fleste tilfeller er det den eneste som er tilgjengelig).
+</p>
+				</div>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchlcb3af2f6" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlcb3af2f6">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlcb3af2f6" class="Name">
+					Slett macOS og installer det på nytt
+				</h2>
+				<p>					Hvis du sletter macOS og installerer det på nytt, blir brukerkontoene dine, nettverksinnstillinger og alle filer og mapper på Macen slettet. Før du sletter macOS, bør du prøve å logge på systemet og deretter sikkerhetskopiere filer du ønsker å beholde, ved å kopiere dem til en annen lagringsenhet. Skriv også ned innstillingene i Nettverk-innstillingene for å gjøre det enklere å koble til igjen etter at macOS er installert på nytt.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>					Forsikre deg om at du er koblet til internett.
+				</p>
+				</li>
+				<li>
+				<p>					Klikk på Diskverktøy i Gjenoppretting-appen, og klikk deretter på Fortsett.
+				</p>
+				</li>
+				<li>
+				<p>					Marker det volumet du vil slette, i sidepanelet i Diskverktøy, og klikk deretter på Slett-knappen i verktøylinjen.
+				</p>
+				</li>
+				<li>
+				<p>					Skriv inn et navn på volumet i Navn-feltet.
+				</p>
+				</li>
+				<li>
+				<p>					Klikk på Format-lokalmenyen, velg APFS, og klikk deretter på Slett volumgruppe.
+				</p>
+				</li>
+				<li>
+				<p>					Når sletteprosessen er fullført, klikker du på Ferdig og velger Diskverktøy &gt; Avslutt Diskverktøy.
+				</p>
+				</li>
+				<li>
+				<p>					Klikk på Installer macOS [<em>name</em>] på nytt i Gjenoppretting-appen, klikk på Fortsett, og følg instruksjonene på skjermen.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchlb6f6d1d9" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlb6f6d1d9">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlb6f6d1d9" class="Name">
+					Vis Gjenoppretting-loggen
+				</h2>
+				<p>					Gjenoppretting-loggen inneholder meldinger logget av macOS-gjenoppretting. Du kan spesifisere hvilke typer meldinger du vil vise, filtrere meldinger for å søke etter bestemt tekst samt arkivere Gjenoppretting-loggen til en fil.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>					Velg Vindu &gt; Gjenoppretting-logg i Gjenoppretting-appen.
+				</p>
+				</li>
+				<li>
+				<p>					Klikk på Detaljnivå-lokalmenyen, og velg deretter hva slags meldinger du vil vise:
+				</p>
+				<ul>
+					<li>
+					<p>						<em>Vis kun feil: </em>Velg dette alternativet for å vise kun feilmeldinger.
+					</p>
+					</li>
+					<li>
+					<p>						<em>Vis feil og framdrift: </em>Velg dette alternativet for å vise feilmeldinger og framdriftsmeldinger.
+					</p>
+					</li>
+					<li>
+					<p>						<em>Vis alle logger: </em>Velg dette alternativet for å vise alle meldinger.
+					</p>
+					</li>
+				</ul>
+				</li>
+				<li>
+				<p>					For å filtrere meldinger må du skrive inn søketeksten i Filter-feltet.
+				</p>
+				</li>
+				<li>
+				<p>					For å arkivere Gjenoppretting-loggen må du klikke på Arkiver-knappen, velge en plassering for filen og deretter klikke på Arkiver.
+				</p>
+				</li>
+				<li>
+				<p>					Når du er ferdig med å se på Gjenoppretting-loggen, klikker du på Lukk-knappen <img src="../SharedGlobalArt/IL_XMarkBlackCircleFillRed.png" alt="" height="30" width="30"> øverst til venstre i vinduet.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl7ed39991" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl7ed39991">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl7ed39991" class="Name">
+					Opprett en diagnostikkfil for gjenopprettingen
+				</h2>
+				<p>					Hvis du sender inn en problemrapport ved hjelp av Tilbakemeldingsassistent, kan du bli spurt om å sende en diagnostikkfil for gjennopprettingen. Du kan opprette filen og arkivere den på en ekstern lagringsenhet.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>					Koble en ekstern lagringsenhet til Macen.
+				</p>
+				</li>
+				<li>
+				<p>					Hold nede Kontroll-Tilvalg-Skift-Kommando-punktum.
+				</p>
+				</li>
+				<li>
+				<p>					Når skjermen blinker, må du vente et lite øyeblikk til en dialogrute vises.
+				</p>
+				</li>
+				<li>
+				<p>					Bruk dialogruten til å arkivere diagnostikkfilen fra Gjenoppretting til en plassering på den eksterne lagringsenheten.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl6518f21a" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl6518f21a">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl6518f21a" class="Name">
+					Avslutt macOS-gjenoppretting
+				</h2>
+				<p>					Macen starter automatisk på nytt mens den gjenoppretter systemet fra Time Machine eller installerer macOS på nytt. I andre tilfeller må du kanskje avslutte macOS-gjenoppretting manuelt (for eksempel hvis du vil sikkerhetskopiere filene dine før du installerer macOS på nytt, eller hvis du nettopp har endret en innstilling ved hjelp av Oppstartssikkerhetsverktøy).
+				</p>
+			</div>
+			<p>				Gjør ett av følgende på Macen:
+			</p>
+			<ul>
+				<li>
+				<p>					<em>Start Macen på nytt: </em>Velg Apple-menyen <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Omstart.
+				</p>
+				</li>
+				<li>
+				<p>					<em>Velg en annen startdisk før du starter Macen på nytt: </em>Velg Apple-menyen <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Startdisk, marker en startdisk, og klikk deretter på Omstart.
+				</p>
+				</li>
+				<li>
+				<p>					<em>Slå av Macen: </em>Velg Apple-menyen <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Slå av.
+				</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<main></main>
+<footer>
+	<p>
+		Copyright © 2024 Apple Inc. Alle rettigheter forbeholdes.
+	</p>
+</footer>
+<script type="text/javascript" src="../js/static.js">
+</script>
+</body>
+</html>

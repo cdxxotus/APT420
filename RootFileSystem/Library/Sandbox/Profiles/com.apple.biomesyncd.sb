@@ -1,0 +1,92 @@
+;;; Copyright (c) 2021 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow process-info* (target self))
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; Your preference domain
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.biomesyncd")
+    (preference-domain "com.apple.contextsync.subscriptions")
+    (preference-domain "com.apple.facetime.bag"))
+
+; .GlobalPreferences
+(allow user-preference-read
+       (preference-domain "kCFPreferencesAnyApplication")
+       (preference-domain "com.apple.CloudKit")
+       (preference-domain "com.apple.AppSupport")
+       (preference-domain "com.apple.SystemConfiguration.configd"))
+
+;; Read for NSBundle
+(allow file-read*
+    (literal "/usr/libexec")
+    (literal "/usr/libexec/biomesyncd"))
+
+;; Read/write access to suffixed darwin directories
+(allow file-read* file-write*
+       (subpath (param "DARWIN_TOP_DIR"))
+       (subpath (param "DARWIN_TMP_DIR"))
+       (subpath (param "DARWIN_CACHE_DIR")))
+
+;; Read/write cache access
+(let ((cache-path-filter (home-subpath "/Library/Caches/com.apple.biomesyncd")))
+    (allow file-read* file-write* cache-path-filter)
+    (allow file-issue-extension
+        (require-all
+            (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+            cache-path-filter)))
+
+;; Service lookup
+(allow mach-lookup
+    (global-name "com.apple.biome.access.user")
+    (global-name "com.apple.biome.access.system")
+    (global-name "com.apple.biome.compute.source.user")
+    (global-name "com.apple.CompanionLink")
+    (global-name "com.apple.cloudd")
+    (global-name "com.apple.apsd")
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.accountsd.accountmanager")
+    (global-name "com.apple.lsd.modifydb")
+    (global-name "com.apple.metadata.mds")
+    (global-name "com.apple.identityservicesd.desktop.auth")
+    (global-name "com.apple.intelligenceplatform.Coordination")
+    (global-name "com.apple.logind"))
+
+;; Sandbox Extensions
+(with-filter (extension "com.apple.app-sandbox.read")
+  (allow file-read*))
+(with-filter (extension "com.apple.app-sandbox.read-write")
+  (allow file-read* file-write*))

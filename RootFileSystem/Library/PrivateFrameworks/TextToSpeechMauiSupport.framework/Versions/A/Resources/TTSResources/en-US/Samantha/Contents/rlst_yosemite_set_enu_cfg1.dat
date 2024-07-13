@@ -1,0 +1,103 @@
+﻿# Ruleset for Yosemite (Vocalizer Expressive)
+#
+# Copyright (c) 2013 Nuance Communications, Inc. All Rights Reserved.
+#
+#RLSTAG: RLS_FE.ENU_6.0.5
+
+[header]
+language = ENU
+
+[data]
+
+#FB42723 radar14966445
+/PLACEHOLDERADDRESSTAG/ --> "\x1b\\tn=address\\"
+
+/"Ms.\s/ --> "Ms "
+/ - (\D)/ --> " ; $1"
+/ \(Live\)/i --> " ;live "
+/ \(Bonus Track Version\)/i --> " ; bonus track version"
+/ \(Deluxe Version\)/i --> " ; Deluxe Version "
+/ \(Remastered\)/i --> " ; Remastered "
+/E=MC²/ --> "E=MC squared"
+
+#  these might be covered in a music-specific text-conditioning rule in Voice Control
+/\bfeat(\.)/i --> "featuring"
+
+
+# rule for "dot com" bug  (radar 7768195 Bugzilla16288)
+/([a-zA-Z])\.org\b/ --> "$1 dot org"
+/([a-zA-Z])\.net\b/ --> "$1 dot net"
+/([a-zA-Z])\.gov\b/ --> "$1 dot gov"
+/([a-zA-Z])\.edu\b/ --> "$1 dot edu"
+/([a-zA-Z])\.info\b/ --> "$1 dot info"
+/([a-zA-Z])\.biz\b/ --> "$1 dot biz"
+/([a-zA-Z])\.jobs\b/ --> "$1 dot jobs"
+/([a-zA-Z])\.coop\b/ --> "$1 dot coop"
+/([a-zA-Z])\.ac\b/ --> "$1 dot A C"
+/([a-zA-Z])\.us\b/ --> "$1 dot U S"
+/([a-zA-Z])\.uk\b/ --> "$1 dot U K"
+/([a-zA-Z])\.eu\b/ --> "$1 dot E U"
+/([a-zA-Z])\.int\b/ --> "$1 dot int"
+/([a-zA-Z])\.co\b/ --> "$1 dot C O"
+/([a-zA-Z])\.es\b/ --> "$1 dot E S"
+/([a-zA-Z])\.de\b/ --> "$1 dot D E"
+/([a-zA-Z])\.fr\b/ --> "$1 dot F R"
+/([a-zA-Z])\.it\b/ --> "$1 dot I T"
+/([a-zA-Z])\.be\b/ --> "$1 dot B E"
+/([a-zA-Z])\.nl\b/ --> "$1 dot N L"
+/([a-zA-Z])\.gr\b/ --> "$1 dot G R"
+/([a-zA-Z])\.ru\b/ --> "$1 dot R U"
+/([a-zA-Z])\.mx\b/ --> "$1 dot M X"
+/([a-zA-Z])\.ca\b/ --> "$1 dot C A"
+
+# HI area
+/HI area/ --> "H I area"
+
+# Fogbugz 21869
+/\sde\s/ --> " dah "
+
+
+#FB9671
+/(\w)™/ --> "$1"
+
+#FB24543
+/(\W)R\$\s?([\d\.,]+)/ --> "$1 $2 Brazilian real"
+/^R\$\s?([\d\.,]+)/ --> "$1 Brazilian real"
+
+#FB22750
+/(\W|^)\$\s?0?\.(\d\d)([^A-za-z0-9]|$)/ --> "$1 $2 ¢ $3"
+/([^A-za-z0-9]|^)0?\.(\d\d)\s?\$(\W|$)/ --> "$1 $2 ¢ $3"
+
+#FB22365
+/Dr\.? No\b/ --> "Doctor No"
+
+#FB33284 (A, B, C.  D, E, F.)
+/([,]\s[A-Z][\.])\s+([A-Z])/ --> "$1\x1b\\eos=1\\$2"
+
+#FB41267 radar 14664719
+/([Ww]ar) of 1812/ --> "$1 of 18 12"
+
+#FB38304 radar14253831
+#19th Ave
+/([\d](?:st|nd|rd|th)\s)Ave\./ --> "$1 avenue"
+/([\d](?:st|nd|rd|th)\s)Ave\b/ --> "$1 avenue"
+
+#FB45614 radar15504150
+/"(\[|\(|\{)/ --> "$1"
+
+#FB41262 radar14662782
+/(\d)' ([\d]+\.\d\d)"/ --> "$1 ft $2 inches"
+
+#FB38602 radar14279429
+/401\(k\)/ --> "4 oh 1 K"
+/401\(a\)/ --> "4 oh 1 A"
+/403\(b\)/ --> "4 oh 3 B"
+
+#FB74290
+/[Cc]hapter [Xx][Vv][Ii][Ii][Ii]/ --> "chapter 18"
+
+#FB70836
+/World War II/ --> "world war 2"
+
+#FB66860
+/(:[\d][\d]) PM\./ --> "$1 p m \x1b\\pause=200\\" 

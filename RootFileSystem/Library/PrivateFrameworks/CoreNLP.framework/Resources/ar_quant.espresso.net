@@ -1,0 +1,146 @@
+{
+  "storage" : "ar_quant.espresso.weights",
+  "analyses" : {
+
+  },
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "metadata_in_weights" : [
+
+  ],
+  "layers" : [
+    {
+      "nB" : 80,
+      "top" : "embedding_layer",
+      "has_biases" : 1,
+      "weights" : {
+        "Q" : 3,
+        "W_int8" : 5
+      },
+      "nC" : 8,
+      "is_lookup" : 1,
+      "quantization_mode" : 2,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input",
+      "debug_info" : "",
+      "has_tanh" : 0,
+      "blob_biases" : 1,
+      "name" : "embedding_layer",
+      "has_prelu" : 0
+    },
+    {
+      "dst_cp" : -1,
+      "bottom" : "embedding_layer",
+      "weights" : {
+
+      },
+      "debug_info" : "",
+      "top" : "quant_embedding_layer_1,quant_embedding_layer_1_Qscale",
+      "type" : "dynamic_quantize",
+      "name" : "quant_fc1_1",
+      "simple_mode" : 1
+    },
+    {
+      "nB" : 8,
+      "top" : "quant_fc1_1",
+      "has_biases" : 0,
+      "weights" : {
+        "W_int8" : 7
+      },
+      "nC" : 100,
+      "quantization_mode" : 5,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "quant_embedding_layer_1",
+      "debug_info" : "",
+      "has_tanh" : 0,
+      "name" : "fc1",
+      "has_prelu" : 0
+    },
+    {
+      "dst_cp" : -1,
+      "has_relu" : 1,
+      "bottom" : "quant_fc1_1,quant_embedding_layer_1_Qscale",
+      "weights" : {
+        "biases" : 9
+      },
+      "w_quantization_scale" : 66.988800048828125,
+      "debug_info" : "",
+      "top" : "fc1",
+      "type" : "dynamic_dequantize",
+      "name" : "dequant_fc1_1",
+      "simple_mode" : 1
+    },
+    {
+      "axis_mode" : 16,
+      "bottom" : "fc1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 0,
+      "nd_mode" : true,
+      "debug_info" : "",
+      "use_version" : 1,
+      "top" : "average_pooling",
+      "type" : "reduce",
+      "name" : "average_pooling"
+    },
+    {
+      "dst_cp" : -1,
+      "bottom" : "average_pooling",
+      "weights" : {
+
+      },
+      "debug_info" : "",
+      "top" : "quant_average_pooling_3,quant_average_pooling_3_Qscale",
+      "type" : "dynamic_quantize",
+      "name" : "quant_softmax_fc_3",
+      "simple_mode" : 1
+    },
+    {
+      "nB" : 100,
+      "top" : "quant_softmax_fc_3",
+      "has_biases" : 0,
+      "weights" : {
+        "W_int8" : 11
+      },
+      "nC" : 2,
+      "quantization_mode" : 5,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "quant_average_pooling_3",
+      "debug_info" : "",
+      "has_tanh" : 0,
+      "name" : "softmax_fc",
+      "has_prelu" : 0
+    },
+    {
+      "dst_cp" : -1,
+      "bottom" : "quant_softmax_fc_3,quant_average_pooling_3_Qscale",
+      "weights" : {
+        "biases" : 13
+      },
+      "w_quantization_scale" : 70.016326904296875,
+      "debug_info" : "",
+      "top" : "softmax_fc",
+      "type" : "dynamic_dequantize",
+      "name" : "dequant_softmax_fc_3",
+      "simple_mode" : 1
+    },
+    {
+      "bottom" : "softmax_fc",
+      "weights" : {
+
+      },
+      "debug_info" : "",
+      "top" : "output",
+      "C" : 2,
+      "type" : "softmax",
+      "name" : "output"
+    }
+  ]
+}

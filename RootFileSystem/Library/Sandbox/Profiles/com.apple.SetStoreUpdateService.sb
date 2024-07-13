@@ -1,0 +1,61 @@
+;;; Copyright (c) 2022 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 3)
+
+(deny default)
+
+(import "system.sb")
+
+(allow process-info* (target self))
+(allow process-info-pidinfo) ;; to display client name in logs
+(allow process-info-codesignature) ;; For validating the entitlements of clients.
+
+(allow syscall-mach)
+(allow syscall-unix)
+(allow file-test-existence)
+
+(allow iokit-get-properties)
+(allow syscall-mach syscall-unix system-fcntl system-mac-syscall)
+
+;; BiomeWriteService preference domain
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.SetStoreUpdateService"))
+
+;; .GlobalPreferences preference domain
+(allow user-preference-read
+       (preference-domain "kCFPreferencesAnyApplication"))
+
+;; Read for NSBundle
+(allow file-read*
+    (literal "/System/Library/PrivateFrameworks/CascadeSets.framework/XPCServices")
+    (literal "/System/Library/PrivateFrameworks/CascadeSets.framework/XPCServices/BiomeWriteService"))
+
+;; Mach lookups
+(allow mach-lookup
+    ;; Biome
+    (global-name "com.apple.biome.access.user")
+    (global-name "com.apple.biome.access.system")
+    (global-name "com.apple.biome.compute.source.user")
+    (global-name "com.apple.biome.compute.source")
+    (global-name "com.apple.cascade.SetChangeRelayService")
+    (global-name "com.apple.CoreServices.coreservicesd")
+    (global-name "com.apple.DiskArbitration.diskarbitrationd")
+    (global-name "com.apple.metadata.mds")
+    (global-name "com.apple.distributed_notifications@1v3")
+    (global-name "com.apple.distributed_notifications@Uv3"))
+
+;; Ensure SetStoreUpdateService cannot issue extensions
+(deny file-issue-extension)
+
+;; Sandbox Extensions
+(with-filter (extension "com.apple.app-sandbox.read")
+  (allow file-read*))
+(with-filter (extension "com.apple.app-sandbox.read-write")
+  (allow file-read* file-write*))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)

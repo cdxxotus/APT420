@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>asyncLights</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>asyncOutletSwitch</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>asyncScenes</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>conversationalContinuers</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>flashlightReformation</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>flashlightReformationi18n</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>intentSelectionCache</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>serverFlowByPass</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>siriHelp</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>trial</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>usoEntitySpan</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

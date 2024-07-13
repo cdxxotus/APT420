@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MachServices</key>
+	<dict>
+		<key>com.apple.usernotifications.delegate.com.apple.APFSUserAgent</key>
+		<true/>
+	</dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>com.apple.APFSUserAgent</string>
+	<key>CFBundleDisplayName</key>
+	<string>APFS User Agent</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.APFSUserAgent</string>
+	<key>UNUserNotificationCenter</key>
+	<dict>
+		<key>UNAutomaticallyShowSettings</key>
+		<true/>
+		<key>UNDaemonShouldReceiveBackgroundResponses</key>
+		<true/>
+		<key>UNDefaultSettings</key>
+		<dict>
+			<key>UNSettingModalAlertStyle</key>
+			<true/>
+			<key>UNSettingAlerts</key>
+			<true/>
+			<key>UNSettingBadges</key>
+			<true/>
+			<key>UNSettingLockScreen</key>
+			<true/>
+			<key>UNSettingNotificationCenter</key>
+			<true/>
+			<key>UNSettingProvidesAppNotificationSettings</key>
+			<true/>
+			<key>UNSettingSounds</key>
+			<true/>
+		</dict>
+		<key>UNHideSettings</key>
+		<true/>
+		<key>UNNotificationIcons</key>
+		<dict>
+			<key>UNNotificationIconDefault</key>
+			<string>disk_icon.png</string>
+		</dict>
+		<key>UNSuppressDismissalSync</key>
+		<true/>
+		<key>UNSuppressUserAuthorizationPrompt</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

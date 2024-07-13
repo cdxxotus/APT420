@@ -1,0 +1,8 @@
+---
+Name: IconFoundation
+Classes:
+  - Name: IFImage
+    Properties:
+      - Name: cgImage
+        PropertyKind: Instance
+        Nullability: N

@@ -1,0 +1,583 @@
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<title>Gendannelse &ndash; Apple Silicon</title>
+	<link rel="stylesheet" type="text/css" href="../css/static.css">
+</head>
+<body class="apd-topic" data-istaskopen="true">
+<header role="presentation" id="mchl82829c17" class="AppleTopic">
+	<figure class="topicIcon">
+		<img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24">
+	</figure>
+	<h1>
+		Brug macOS-gendannelse på en Mac med Apple Silicon
+	</h1>
+	<p>macOS-gendannelse er det indbyggede gendannelsessystem på din Mac.</p>
+	<p>Du kan bruge appsene i macOS-gendannelse på en Mac med Apple Silicon til at reparere den interne lagring, geninstallere macOS, gendanne dine arkiver fra en Time Machine-sikkerhedskopi, indstille sikkerhedspolitikker til forskellige enheder, overføre arkiver mellem to Mac-computere, starte i sikker funktion m.m.</p>
+	<p>Geninstallering af macOS kræver en internetforbindelse. Hvis du skal oprette forbindelse til internettet, kan du bruge en netværksforbindelse med kabler eller en trådløs forbindelse. Hvis du prøver at oprette forbindelse til Wi-Fi via en tvungen portal (f.eks. på en café, et bibliotek eller et hotel) eller et virksomhedsnetværk, kan du muligvis ikke få adgang til internettet i macOS-gendannelse. Se <a href="#mchle9d1cb3c" class="xRef Task">Opret forbindelse til internettet via Wi-Fi</a>.</p>
+	<div class="Alert">
+		<p class="Note">
+			<em>Bemærk: </em>Hvis du vil gøre din Mac klar, før du indbytter den, sælger den eller forærer den væk, skal du bruge Sletningsassistent i macOS. Hvis du vil bruge Sletningsassistent, skal du starte computeren i macOS, vælge Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Systemindstillinger, klikke på Generelt <img src="../SharedGlobalArt/AppIconTopic_General.png" alt="" height="30" width="30"> i indholdsoversigten (du skal muligvis rulle ned), klikke på “Overfør eller nulstil” i højre side, klikke på knappen Slet alt indhold og alle indstillinger og derefter følge instruktionerne på skærmen.
+		</p>
+	</div>
+	<div id="mchla906a106" class="Subhead">
+		<div class="heading-nobreak">
+			<h2 class="Name">
+				Tilgængelige apps i macOS-gendannelse på en Mac med Apple Silicon
+			</h2>
+			<p>
+				Følgende apps er tilgængelige i macOS-gendannelse på en Mac med Apple Silicon:
+			</p>
+		</div>
+		<ul>
+			<li>
+			<p><em>Gendannelse: </em>Appen Gendannelse giver adgang til yderligere apps i macOS-gendannelse. Se <a href="#mchl5abfbb29" class="xRef Task">Start computeren i macOS-gendannelse</a>, <a href="#mchldc3556ed" class="xRef Task">Start computeren i macOS-gendannelse, og etabler pardannelse med Bluetooth-indtastningsenheder</a> og <a href="#mchlb7e93c86" class="xRef Task">Slut macOS-gendannelse</a>.</p>
+			</li>
+			<li><p><em>Time Machine-systemgendannelse: </em>Gendan dine data fra en Time Machine-sikkerhedskopi. Vælg  “Gendan fra Time Machine” i appen Gendannelse, og klik på Fortsæt. Vælg Time Machine-systemgendannelse &gt; Slut Time Machine-systemgendannelse for at vende tilbage til appen Gendannelse. Se <a href="#mchlf4cdcc0f" class="xRef Task">Brug Time Machine til at gendanne systemet</a>.</p>
+			</li>
+			<li><p><em>Installer macOS: </em>Geninstaller macOS på din computer. Vælg Geninstaller macOS [<em>navn</em>] i appen Gendannelse, og klik på Fortsæt. Du vender tilbage til appen Gendannelse ved at vælge Installer macOS [<em>navn</em>] &gt; Slut Installer macOS. Se <a href="#mchl57249f89" class="xRef Task">Geninstaller macOS</a>.</p>
+			</li>
+			<li><p><em>Safari: </em>Vælg Safari i appen Gendannelse, og klik på Fortsæt. Vælg Safari &gt; Slut Safari for at vende tilbage til appen Gendannelse. Hvis der er forbindelse til internettet, kan du bruge Safari til at søge efter flere oplysninger på Apples websted om support.</p>
+			</li>
+			<li><p><em>Diskværktøj: </em>Reparer eller slet den interne lagring. Vælg Diskværktøj i appen Gendannelse, og klik på Fortsæt. Vælg Diskværktøj &gt; Slut Diskværktøj for at vende tilbage til appen Gendannelse. Se <a href="#mchl0e4c30d6" class="xRef Task">Slet og geninstaller macOS</a> og <a href="#mchl3fe49482" class="xRef Task">Reparer den interne lagring</a>.</p>
+			</li>
+			<li><p><em>Startsikkerhedsværktøj: </em>Indstil sikkerhedspolitikker til Mac. Vælg Hjælpeapps &gt; Startsikkerhedsværktøj i appen Gendannelse. Vælg Startsikkerhedsværktøj &gt; Slut Startdisk for at vende tilbage til appen Gendannelse. Se <a href="#mchl9b13cbdc" class="xRef Task">Skift sikkerhedspolitik</a>.</p>
+			</li>
+			<li>
+			<p><em>Terminal: </em>Skift indstillinger via kommandolinjen. Vælg Hjælpeapps &gt; Terminal i appen Gendannelse. Vælg Terminal &gt; Slut Terminal for at vende tilbage til appen Gendannelse.</p>
+			</li>
+			<li><p><em>Del disk: </em>Del disken på en Mac, der er startet i macOS-gendannelse. Vælg Hjælpeapps &gt; Del disk i appen Gendannelse. Se <a href="#mchl6e3b9225" class="xRef Task">Brug Del disk til at overføre arkiver mellem to Mac-computere</a>.</p>
+			</li>
+			<li>
+			<p><em>Startdisk: </em>Indstil startdisk til Mac. Vælg Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Startdisk. Vælg Startdisk &gt; Slut Startdisk for at slutte appen.</p>
+			</li>
+		</ul>
+	</div>
+	<p>
+		Du kan også bruge macOS-gendannelse til at udføre følgende opgaver:
+	</p>
+	<ul>
+		<li>
+		<p><a href="#mchl08ae9930" class="xRef Task">Start computeren i sikker funktion</a></p>
+		</li>
+		<li>
+		<p>	<a href="#mchlbcf8b54b" class="xRef Task">Indstil standardstartenheden, og genstart computeren</a>
+		</p>
+		</li>
+		<li>
+		<p>	<a href="#mchl2a21e30c" class="xRef Task">Vis logarkivet over gendannelse</a>
+		</p>
+		</li>
+		<li>
+		<p>	<a href="#mchl4ee3f192" class="xRef Task">Opret et diagnosticeringsarkiv over gendannelse</a>
+		</p>
+		</li>
+	</ul>
+	<div id="mchl5abfbb29" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl5abfbb29">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl5abfbb29" class="Name">
+					Start computeren i macOS-gendannelse
+				</h2>
+				<ol>
+					<li>
+					<p>	Vælg Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Luk ned på din Mac.
+					</p>
+					<p>	Vent på, at din Mac er lukket helt ned. En Mac er lukket helt ned, når skærmen er sort, og alt lys (herunder i Touch Bar) er slukket.
+					</p>
+					</li>
+					<li>
+					<p>	Hold afbryderknappen nede på din Mac, indtil systemenheden og knappen Indstillinger vises.
+					</p>
+					</li>
+					<li>
+					<p>	Klik på Indstillinger, og klik derefter på Fortsæt.
+					</p>
+					</li>
+					<li>
+					<p>	Vælg en enhed, der skal gendannes, hvis du bliver bedt om det, og klik på Næste.
+					</p>
+					</li>
+					<li>
+					<p>	Vælg en administratorkonto, og klik derefter på Næste.
+					</p>
+					</li>
+					<li>
+					<p>	Indtast adgangskoden til administratorkontoen, og klik derefter på Fortsæt.
+					</p>
+					<p>	Når appen Gendannelse vises på menulinjen, kan du vælge blandt de tilgængelige muligheder i vinduet eller på menulinjen.
+					</p>
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchldc3556ed" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchldc3556ed">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchldc3556ed" class="Name">
+					Start computeren i macOS-gendannelse, og etabler pardannelse med Bluetooth-indtastningsenheder
+				</h2>
+				<p>Følg disse instruktioner, hvis du skal etablere pardannelse mellem et Bluetooth<sup>®</sup>-tastatur eller -pegefelt eller en Bluetooth<sup>®</sup>-mus og din Mac, når du starter i macOS-gendannelse.</p>
+			</div>
+			<ol>
+				<li>
+				<p>Vælg Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Luk ned på din Mac.</p>
+				<p>Vent på, at din Mac er lukket helt ned. En Mac er lukket helt ned, når skærmen er sort, og alt lys (herunder i Touch Bar) er slukket.</p>
+				</li>
+				<li>
+				<p>Hold afbryderknappen nede på din Mac, indtil systemenheden og knappen Indstillinger vises.</p>
+				</li>
+				<li>
+				<p>Tryk tre gange på afbryderknappen.</p>
+				<div class="Alert">
+					<p class="Note">
+						<em>Bemærk: </em>Hvert tryk på afbryderknappen skal ske inden for 1 sekund efter det foregående tryk. Hvis du trykker for hurtigt på afbryderknappen, bliver det ikke registreret, fordi hurtige tryk er reserveret til andre formål, f.eks. VoiceOver.
+					</p>
+				</div>
+				</li>
+				<li>
+				<p>Brug Bluetooth-indstillingsassistent til at etablere pardannelse mellem Bluetooth-tilbehør og din Mac.</p>
+				<div class="Alert">
+					<p class="Note">
+						<em>Bemærk: </em>Bluetooth-indstillingsassistent vises ikke, hvis der allerede er tilsluttet en indtastningsenhed.
+					</p>
+				</div>
+				</li>
+				<li>
+				<p>Vælg en administratorkonto, og klik derefter på Næste.</p>
+				</li>
+				<li>
+				<p>Indtast adgangskoden til administratorkontoen, og klik derefter på Fortsæt.</p>
+				<p>Når appen Gendannelse vises på menulinjen, kan du vælge blandt de tilgængelige muligheder i vinduet eller på menulinjen.</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl08ae9930" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl08ae9930">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl08ae9930" class="Name">
+					Start computeren i sikker funktion
+				</h2>
+				<ol>
+					<li>
+					<p>Vælg Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Luk ned på din Mac.</p>
+				<p>Vent på, at din Mac er lukket helt ned. En Mac er lukket helt ned, når skærmen er sort, og alt lys (herunder i Touch Bar) er slukket.</p>
+				</li>
+				<li>
+				<p>	Hold afbryderknappen nede på din Mac, indtil systemenheden og knappen Indstillinger vises.
+					</p>
+					</li>
+					<li>
+					<p>	Vælg en enhed.
+					</p>
+					</li>
+					<li>
+					<p>	Tryk på og hold Skiftetasten nede, og klik derefter Fortsæt i sikker funktion.
+					</p>
+					<p>	Computeren starter igen automatisk.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchlbcf8b54b" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlbcf8b54b">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlbcf8b54b" class="Name">
+					Indstil standardstartenheden, og genstart computeren
+				</h2>
+				<ol>
+					<li>
+					<p>	Vælg Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Luk ned på din Mac.</p>
+				<p>Vent på, at din Mac er lukket helt ned. En Mac er lukket helt ned, når skærmen er sort, og alt lys (herunder i Touch Bar) er slukket.</p>
+				</li>
+				<li>
+				<p>	Hold afbryderknappen nede på din Mac, indtil systemenheden og knappen Indstillinger vises.
+					</p>
+					</li>
+					<li>
+					<p>	Vælg en enhed.
+					</p>
+					</li>
+					<li>
+					<p>	Hold Alternativtasten nede, og klik derefter på Brug altid.
+					</p>
+					<p>	Computeren starter igen automatisk.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchle9d1cb3c" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchle9d1cb3c">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchle9d1cb3c" class="Name">
+					Opret forbindelse til internettet via Wi-Fi
+				</h2>
+				<p>Hvis Wi-Fi-symbolet på menulinjen (i øverste højre hjørne af skærmen) viser en eller flere søjler <span class="NoBreak"><img src="../SharedGlobalArt/IL_Wifi.png" alt="" height="30" width="42">, </span>er Wi-Fi slået til, og der er oprettet forbindelse til et trådløst netværk. Hvis Wi-Fi-symbolet ikke indeholder søjler <span class="NoBreak"><img src="../SharedGlobalArt/IL_WiFiNoBars.png" alt="" height="30" width="41">, </span>er Wi-Fi slået til, men der er ikke oprettet forbindelse til et trådløst netværk. Hvis Wi-Fi-symbolet vises med en skråstreg <span class="NoBreak"><img src="../SharedGlobalArt/IL_WifiSlash.png" alt="" height="30" width="34">, </span>er Wi-Fi slået fra. Wi-Fi skal være slået til, før du kan oprette forbindelse til et trådløst netværk.</p>
+			</div>
+			<p>
+				Gør et af følgende på din Mac:
+			</p>
+			<ul>
+				<li>
+				<p><em>Slå Wi-Fi til: </em>Klik på Wi-Fi-symbolet på menulinjen, og vælg Slå Wi-Fi til.</p>
+				</li>
+				<li>
+				<p><em>Slå Wi-Fi fra: </em>Klik på Wi-Fi-symbolet på menulinjen, og vælg Slå Wi-Fi fra.</p>
+				</li>
+				<li>
+				<p><em>Opret forbindelse til et netværk: </em>Klik på Wi-Fi-symbolet på menulinjen, og vælg et netværk. Skriv adgangskoden til netværket, hvis du bliver bedt om det.</p>
+				</li>
+				<li>
+				<p><em>Opret forbindelse til et lukket netværk: </em>Klik på Wi-Fi-symbolet på menulinjen, og vælg derefter Opret forbindelse til andet netværk. Skriv navnet på netværket og adgangskoden til netværket, hvis du bliver bedt om det.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="mchl3fe49482" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl3fe49482">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl3fe49482" class="Name">
+					Reparer den interne lagring
+				</h2>
+				<p>Hvis du har problemer med computeren, eller hvis du har startet computeren, og vinduet macOS-gendannelse blev vist, skal du måske reparere computerens interne lagring.</p>
+			</div>
+			<ol>
+				<li>
+				<p>Vælg Diskværktøj i appen Gendannelse, og klik på Fortsæt.</p>
+				</li>
+				<li>
+				<p>Vælg Oversigt &gt; Vis alle enheder i Diskværktøj.</p>
+				</li>
+				<li>
+				<p>Vælg en enhed i indholdsoversigten, og klik på knappen Førstehjælp <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37">.</span></p>
+				</li>
+				<li>
+				<p>Klik på Start i dialogen Førstehjælp, og følg instruktionerne på skærmen.</p>
+				</li>
+				<li>
+				<p>Klik på OK, når førstehjælpsprocessen er færdig.</p>
+				</li>
+				<li>
+				<p>Gentag trin 3 til og med 5 for hver enhed på lagringsenheden.</p>
+				</li>
+				<li>
+				<p>Vælg en beholder i indholdsoversigten, og klik på knappen Førstehjælp <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37">.</span></p>
+				</li>
+				<li>
+				<p>Klik på Start i dialogen Førstehjælp, og følg instruktionerne på skærmen.</p>
+				</li>
+				<li>
+				<p>Klik på OK, når førstehjælpsprocessen er færdig.</p>
+				</li>
+				<li>
+				<p>Gentag trin 7 til og med 9 for hver beholder på lagringsenheden.</p>
+				</li>
+				<li>
+				<p>Vælg lagringsenheden i indholdsoversigten, og klik på knappen Førstehjælp <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37">.</span></p>
+				</li>
+				<li>
+				<p>Klik på Start i dialogen Førstehjælp, og følg instruktionerne på skærmen.</p>
+				</li>
+				<li>
+				<p>Klik på OK, når førstehjælpsprocessen er færdig.</p>
+				</li>
+			</ol>
+			<p>		Hvis Diskværktøj ikke kan reparere disken, skal du sikkerhedskopiere så mange af dine oplysninger som muligt og derefter følge instruktionerne i <a href="#mchl0e4c30d6" class="xRef Task">Slet og geninstaller macOS</a>.
+			</p>
+			<p>		Vælg Diskværktøj &gt; Slut Diskværktøj for at vende tilbage til appen Gendannelse.
+			</p>
+		</div>
+	</div>
+	<div id="mchlf4cdcc0f" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlf4cdcc0f">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlf4cdcc0f" class="Name">
+					Brug Time Machine til at gendanne systemet
+				</h2>
+				<p>Hvis du tidligere har oprettet en Time Machine-sikkerhedskopi, kan du gendanne alt på computeren, som det var før.</p>
+			</div>
+			<div class="Alert">
+				<p class="Important">
+					<strong>Vigtigt: </strong>Brug kun Time Machine-sikkerhedskopien til at gendanne oplysninger på den computer, som sikkerhedskopien er oprettet fra. Hvis du vil overføre oplysninger fra denne Mac til en ny computer, skal du slutte macOS-gendannelse, starte din Mac igen og bruge appen Overførselsassistent i macOS.</p>
+			</div>
+			<ol>
+				<li>
+				<p>Hvis din sikkerhedskopi ligger på en Time Capsule, skal der være oprettet forbindelse til internettet.</p>
+				</li>
+				<li>
+				<p>Vælg “Gendan fra Time Machine” i appen Gendannelse, og klik på Fortsæt.</p>
+				</li>
+				<li>
+				<p>Følg instruktionerne på skærmen i appen Time Machine-systemgendannelse.</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl57249f89" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl57249f89">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl57249f89" class="Name">
+					Geninstaller macOS
+				</h2>
+				<p>Under visse omstændigheder skal du måske geninstallere macOS. Du kan geninstallere macOS og beholde dine arkiver og brugerindstillinger.</p>
+			</div>
+			<ol>
+				<li>
+				<p>Sørg for, at der er oprettet forbindelse til internettet.</p>
+				</li>
+				<li>
+				<p>Klik på Geninstaller macOS [<em>navn</em>] i appen Gendannelse, og klik derefter på Fortsæt.</p>
+				</li>
+				<li>
+				<p>Følg instruktionerne på skærmen.</p>
+				<div class="Alert">
+					<p class="Important">
+						<strong>Vigtigt:</strong> I det vindue, hvor du vælger en disk, skal du vælge den aktuelle macOS-disk (i de fleste tilfælde er det den eneste tilgængelige disk).
+					</p>
+				</div>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl0e4c30d6" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl0e4c30d6">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl0e4c30d6" class="Name">
+					Slet og geninstaller macOS
+				</h2>
+				<p>Hvis du sletter og geninstallerer macOS, slettes dine brugerkonti, netværksindstillinger og alle arkiver og mapper på din Mac. Du kan forsøge at logge ind på dit system igen, før du sletter macOS, og derefter sikkerhedskopiere de arkiver, du vil beholde, ved at kopiere dem til en anden lagringsenhed. Skriv også netværksindstillingerne fra vinduet Netværk ned, så det bliver nemmere at oprette forbindelse igen efter geninstalleringen af macOS.</p>
+			</div>
+			<div class="Alert">
+				<p class="Note">
+					<em>Bemærk: </em>Når du sletter og geninstallerer macOS, bliver en tidligere version af macOS muligvis installeret. Hvis du vil opgradere fra den installerede version til den nyeste version af macOS, skal du gå til Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Systemindstillinger, klikke på Generelt <img src="../SharedGlobalArt/AppIconTopic_General.png" alt="" height="30" width="30"> i indholdsoversigten (du skal måske rulle nedad) og derefter klikke på Softwareopdatering til højre.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>Sørg for, at der er oprettet forbindelse til internettet.</p>
+				</li>
+				<li>
+				<p>Klik på Diskværktøj i appen Gendannelse, og klik på Fortsæt.</p>
+				</li>
+				<li>
+				<p>Vælg den enhed, du vil slette, i indholdsoversigten i appen Gendannelse, og klik derefter på knappen Slet på værktøjslinjen.</p>
+				</li>
+				<li>
+				<p>Skriv et navn til enheden i feltet Navn.</p>
+				</li>
+				<li>
+				<p>Klik på lokalmenuen Format, vælg APFS, og klik på Slet enhedsgruppe.</p>
+				</li>
+				<li>
+				<p>Klik på OK, når sletningen er færdig, og vælg Diskværktøj &gt; Slut Diskværktøj.</p>
+				</li>
+				<li>
+				<p>Klik på Geninstaller macOS [<em>navn</em>] i appen Gendannelse, klik på Fortsæt, og følg derefter instruktionerne på skærmen.</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl9b13cbdc" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl9b13cbdc">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl9b13cbdc" class="Name">
+					Skift sikkerhedspolitikken
+				</h2>
+				<ol>
+					<li>
+					<p>Vælg Hjælpeapps &gt; Startsikkerhedsværktøj i appen Gendannelse.
+					</p>
+					</li>
+					<li>
+					<p>Vælg det system, du vil bruge til at indstille sikkerhedspolitikken.
+					</p>
+					</li>
+					<li>
+					<p>	Hvis disken er krypteret, skal du klikke på Lås op, skrive adgangskoden og derefter klikke på Lås op.
+					</p>
+					</li>
+					<li>
+					<p>	Klik på Sikkerhedspolitik.
+					</p>
+					</li>
+					<li>
+					<p>	Vælg et af følgende sikkerhedsvalg:
+					</p>
+					<ul>
+						<li>
+						<p><em>Fuld sikkerhed: </em>Sikrer, at kun det aktuelle OS eller signerede operativsystemer, som er godkendt af Apple, kan starte. Denne funktion kræver en netværkforbindelse, når softwaren installeres.</p>
+						</li>
+						<li>
+						<p><em>Reduceret sikkerhed:</em> Tillader, at alle versioner af signerede operativsystemer, som nogensinde er godkendt af Apple, kan starte.</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p>	Hvis du valgte Reduceret sikkerhed, skal du vælge en af følgende muligheder, hvis det er nødvendigt:
+					</p>
+					<ul>
+						<li>
+						<p><em>Tillad brugeradministration af kerneudvidelser fra identificerede udviklere: </em>Tillad installation af software, der bruger ældre kerneudvidelser.</p>
+						</li>
+						<li>
+						<p><em>Tillad fjernstyring af kerneudvidelser og automatiske softwareopdateringer: </em>Godkend ekstern administration af ældre kerneudvidelser og softwareopdateringer ved hjælp af en løsning til administration af mobile enheder (MDM).</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p>	Klik på OK.</p>
+					</li>
+					<li>
+					<p>Hvis du har ændret sikkerhedspolitikken, skal du klikke på lokalmenuen Bruger, vælge en administratorkonto, indtaste adgangskoden til administratorkontoen og derefter klikke på OK.</p>
+					</li>
+					<li>
+					<p>Vælg Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Start igen.</p>
+					<p>Du skal genstarte din Mac, før ændringerne træder i kraft.</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchl6e3b9225" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl6e3b9225">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl6e3b9225" class="Name">
+					Brug Del disk til at overføre arkiver mellem to Mac-computere
+				</h2>
+				<p>Du kan overføre arkiver mellem en Mac, der er startet i macOS-gendannelse, og en anden Mac ved at dele en enhed og forbinde de to computere vha. et USB-, USB-C-, eller Thunderbolt-kabel.</p>
+			</div>
+			<ol>
+				<li>
+				<p>Forbind de to computere med et USB-, USB-C- eller Thunderbolt-kabel.</p>
+				</li>
+				<li>
+				<p>Vælg Hjælpeapps &gt; Del disk i appen Gendannelse.</p>
+				</li>
+				<li>
+				<p>Vælg den enhed, du vil dele, og klik derefter på Start deling.</p>
+				</li>
+				<li>
+				<p>Åbn et Findervindue på den anden Mac, og klik derefter på Netværk under Placeringer i indholdsoversigten.</p>
+				</li>
+				<li>
+				<p>Dobbeltklik på Mac-computeren med den delte disk i vinduet Netværk, klik på Opret forbindelse som, vælg Gæst i vinduet Opret forbindelse som, og klik derefter på Opret forbindelse.</p>
+				</li>
+				<li>
+				<p>Overfør arkiverne.</p>
+				</li>
+				<li>
+				<p>Skub enheden ud på den anden Mac, når du er færdig med at overføre arkiver.</p>
+				</li>
+				<li>
+				<p>Klik på Stop deling i appen Del disk.</p>
+				</li>
+				<li>
+				<p>Vælg Del disk &gt; Slut Del disk.</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl2a21e30c" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl2a21e30c">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl2a21e30c" class="Name">
+					Vis logarkivet over gendannelse
+				</h2>
+				<p>Logarkivet over gendannelse indeholder meddelelser, som er registreret af macOS-gendannelse. Du kan angive, hvilke typer meddelelser der skal vises, filtrere meddelelser for at søge efter specifik tekst og gemme logarkivet over gendannelse.</p>
+			</div>
+			<ol>
+				<li>
+				<p>Vælg Vindue &gt; Logarkiv over gendannelse i appen Gendannelse.</p>
+				</li>
+				<li>
+				<p>Klik på lokalmenuen Oplysningsniveau, og vælg, hvilke meddelelser der skal vises:</p>
+				<ul>
+					<li>
+					<p>	<em>Vis kun fejl: </em>Vælg denne indstilling, hvis der kun skal vises fejlmeddelelser.
+					</p>
+					</li>
+					<li>
+					<p>	<em>Vis fejl og status: </em>Vælg denne indstilling, hvis der skal vises fejl- og statusmeddelelser.
+					</p>
+					</li>
+					<li>
+					<p>	<em>Vis alle logarkiver: </em>Vælg denne indstilling, hvis alle meddelelser skal vises.
+					</p>
+					</li>
+				</ul>
+				</li>
+				<li>
+				<p>Du filtrerer meddelelser ved at skrive den tekst, du vil søge efter, i feltet Filtrer.</p>
+				</li>
+				<li>
+				<p>Du kan gemme logarkivet over gendannelse ved at klikke på knappen Gem, vælge en placering til arkivet og derefter klikke på Gem.</p>
+				</li>
+				<li>
+				<p>Klik på lukkeknappen <img src="../SharedGlobalArt/IL_XMarkBlackCircleFillRed.png" alt="" height="30" width="30"> i øverste venstre hjørne af vinduet, når du ikke vil se logarkivet over gendannelse mere.</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl4ee3f192" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl4ee3f192">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl4ee3f192" class="Name">
+					Opret et diagnosticeringsarkiv over gendannelse
+				</h2>
+				<p>Hvis du opretter en problemrapport vha. Feedback Assistant, bliver du måske bedt om at inkludere et diagnosticeringsarkiv over gendannelse. Du kan oprette arkivet og gemme det på en ekstern lagringsenhed.</p>
+			</div>
+			<ol>
+				<li>
+				<p>Slut en ekstern lagringsenhed til din Mac.</p>
+				</li>
+				<li>
+				<p>Tryk på ctrl-Alternativ-Skift-Kommando-punktum.</p>
+				</li>
+				<li>
+				<p>Når skærmen blinker, skal du vente et øjeblik, indtil der vises en dialog.</p>
+				</li>
+				<li>
+				<p>Brug dialogen til at gemme diagnosticeringsarkivet over gendannelse på den eksterne lagringsenhed.</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchlb7e93c86" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlb7e93c86">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlb7e93c86" class="Name">
+					Slut macOS-gendannelse
+				</h2>
+				<p>Din Mac starter igen automatisk under gendannelse af dit system fra Time Machine eller geninstallering af macOS. I andre tilfælde skal du slutte macOS-gendannelse manuelt (f.eks. hvis du vil sikkerhedskopiere dine arkiver, før du geninstallerer macOS, eller hvis du har ændret en indstilling vha. Startsikkerhedsværktøj).</p>
+			</div>
+			<p>		Gør et af følgende på din Mac:
+			</p>
+			<ul>
+				<li>
+				<p><em>Start Mac igen: </em>Vælg Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Start igen.</p>
+				</li>
+				<li>
+				<p><em>Vælg en anden startdisk, før du starter din Mac igen: </em>Vælg Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Startdisk, vælg en startdisk, og klik derefter på Start igen.</p>
+				</li>
+				<li>
+				<p><em>Luk Mac ned: </em>Vælg Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Luk ned.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<main></main>
+<footer>
+	<p>Copyright © 2024 Apple Inc. Alle rettigheder forbeholdes.</p>
+</footer>
+<script type="text/javascript" src="../js/static.js">
+</script>
+</body>
+</html>

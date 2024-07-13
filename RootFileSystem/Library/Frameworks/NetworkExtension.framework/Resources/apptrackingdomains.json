@@ -1,0 +1,757 @@
+{
+  "5g.gmcc.net": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "a.vpimg3.com": {
+    "dn": "Guangzhou Vipshop E-Commerce",
+    "n": "Guangzhou Vipshop E-Commerce Co.,Ltd.",
+    "s": 2
+  },
+  "aaid.amap.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "aaid.umeng.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "aaid.uyunad.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "activity.tuiaaaa.com": {
+    "dn": "Duiba Group",
+    "n": "Duiba Group Ltd",
+    "s": 2
+  },
+  "activity.tuifish.com": {
+    "dn": "Duiba Group",
+    "n": "Duiba Group Ltd",
+    "s": 2
+  },
+  "activity.tuigorilla.com": {
+    "dn": "Duiba Group",
+    "n": "Duiba Group Ltd",
+    "s": 2
+  },
+  "analytics.foresee.com": {
+    "dn": "ForeSee Results",
+    "n": "ForeSee Results, Inc.",
+    "s": 2
+  },
+  "analytics.rayjump.com": {
+    "dn": "Talent Game Box",
+    "n": "Talent Game Box",
+    "s": 2
+  },
+  "ap2.qiyukf.com": {
+    "dn": "NetEase",
+    "n": "NetEase, Inc.",
+    "s": 2
+  },
+  "api.geetest.com": {
+    "dn": "Wuhan Jiyi Network Technology",
+    "n": "Wuhan Jiyi Network Technology Co., Ltd.",
+    "s": 2
+  },
+  "api.nx-perf.cn": {
+    "dn": "\u676d\u5dde\u5ff5\u54cd\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "n": "\u676d\u5dde\u5ff5\u54cd\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "api.tantu.com": {
+    "dn": "\u5e7f\u5dde\u529b\u631a\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "n": "\u5e7f\u5dde\u529b\u631a\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "api.yausiu.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "apimobile.meituan.com": {
+    "dn": "Sankuai Technology",
+    "n": "Sankuai Technology Co., Ltd.",
+    "s": 2
+  },
+  "apm.imdada.cn": {
+    "dn": "\u4e0a\u6d77\u8da3\u76db\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "n": "\u4e0a\u6d77\u8da3\u76db\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "app-measurement.com": {
+    "dn": "Google",
+    "n": "Google LLC",
+    "s": 2
+  },
+  "appdelivery.4008823823.com.cn": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "appush.zuzuche.com": {
+    "dn": "\u5e7f\u5dde\u529b\u631a\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "n": "\u5e7f\u5dde\u529b\u631a\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "arms-retcode.aliyuncs.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "audid-api.taobao.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "avc.qcloud.com": {
+    "dn": "Tencent",
+    "n": "Tencent Holdings Ltd.",
+    "s": 2
+  },
+  "aws.userlogsanalytics.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "bat.bing.com": {
+    "dn": "Microsoft",
+    "n": "Microsoft Corporation",
+    "s": 2
+  },
+  "beacon-api.aliyuncs.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "box.25wanwan.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "bugly.qq.com": {
+    "dn": "Tencent",
+    "n": "Tencent Holdings Ltd.",
+    "s": 2
+  },
+  "captcha.fenqile.com": {
+    "dn": "Lexin Fintech Holdings",
+    "n": "Lexin Fintech Holdings Ltd.",
+    "s": 2
+  },
+  "captcha.qq.com": {
+    "dn": "Tencent",
+    "n": "Tencent Holdings Ltd.",
+    "s": 2
+  },
+  "cc.cmbimg.com": {
+    "dn": "China Merchants Bank",
+    "n": "China Merchants Bank Co.,Ltd.",
+    "s": 2
+  },
+  "cdid.c-ctrip.com": {
+    "dn": "Trip.com Group",
+    "n": "Trip.com Group Limited",
+    "s": 2
+  },
+  "cdn.bootcss.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "cdn.dingxiang-inc.com": {
+    "dn": "Dingxiang Technologies",
+    "n": "Beijing Dingxiang Technologies Co., Ltd.",
+    "s": 2
+  },
+  "cimg1.fenqile.com": {
+    "dn": "Lexin Fintech Holdings",
+    "n": "Lexin Fintech Holdings Ltd.",
+    "s": 2
+  },
+  "cm.ipinyou.com": {
+    "dn": "iPinYou",
+    "n": "Beijing IPinYou Information Technologies Co Ltd",
+    "s": 2
+  },
+  "cn.miaozhen.com": {
+    "dn": "Miaozhen Systems",
+    "n": "Miaozhen Systems",
+    "s": 2
+  },
+  "cn.ronghub.com": {
+    "dn": "\u5317\u4eac\u4e91\u4e2d\u878d\u4fe1\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "n": "\u5317\u4eac\u4e91\u4e2d\u878d\u4fe1\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "collector-pxikkul2rm.px-cloud.net": {
+    "dn": "PerimeterX",
+    "n": "PerimeterX, Inc.",
+    "s": 2
+  },
+  "config.jpush.cn": {
+    "dn": "Shenzhen Hexun Huagu Information Technology",
+    "n": "Shenzhen Hexun Huagu Information Technology Co., Ltd.",
+    "s": 2
+  },
+  "configure.rayjump.com": {
+    "dn": "Talent Game Box",
+    "n": "Talent Game Box",
+    "s": 2
+  },
+  "crasheyerp.testplus.cn": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "cruiser.bayescom.cn": {
+    "dn": "Shanghai Mingrui Information Technology",
+    "n": "Shanghai Mingrui Information Technology Co., Ltd.",
+    "s": 2
+  },
+  "crystal-config.miguvideo.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "da.mmarket.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "dc.fenqile.com": {
+    "dn": "Lexin Fintech Holdings",
+    "n": "Lexin Fintech Holdings Ltd.",
+    "s": 2
+  },
+  "dldir1.qq.com": {
+    "dn": "Tencent",
+    "n": "Tencent Holdings Ltd.",
+    "s": 2
+  },
+  "dmp.ghac.cn": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "dsp-x.jd.com": {
+    "dn": "Beijing Jingdong Century Trading",
+    "n": "Beijing Jingdong Century Trading Co., Ltd.",
+    "s": 2
+  },
+  "dsp.spay365.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "dualstack-restapi.amap.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "dualstack-restsdk.amap.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "eco.taobao.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "ei.cnzz.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "eleven.bayescom.cn": {
+    "dn": "Shanghai Mingrui Information Technology",
+    "n": "Shanghai Mingrui Information Technology Co., Ltd.",
+    "s": 2
+  },
+  "engine.tuia.cn": {
+    "dn": "Duiba Group",
+    "n": "Duiba Group Ltd",
+    "s": 2
+  },
+  "errlog.umeng.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "exchange.ybaobx.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "firebase-settings.crashlytics.com": {
+    "dn": "Google",
+    "n": "Google LLC",
+    "s": 2
+  },
+  "fsmlcrystal-config.miguvideo.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "g.doubleclick.net": {
+    "dn": "Google",
+    "n": "Google LLC",
+    "s": 2
+  },
+  "gcdsdk.appsflyer.com": {
+    "dn": "AppsFlyer",
+    "n": "AppsFlyer",
+    "s": 2
+  },
+  "gdt.qq.com": {
+    "dn": "Tencent",
+    "n": "Tencent Holdings Ltd.",
+    "s": 2
+  },
+  "geyan.getui.com": {
+    "dn": "Zhejiang Merit Interactive Network Technology",
+    "n": "Zhejiang Merit Interactive Network Technology Co., Ltd.",
+    "s": 2
+  },
+  "gm.mmstat.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "graph.facebook.com": {
+    "dn": "Facebook",
+    "n": "Facebook, Inc.",
+    "s": 2
+  },
+  "gurd.snssdk.com": {
+    "dn": "ByteDance",
+    "n": "ByteDance Ltd.",
+    "s": 2
+  },
+  "hm.baidu.com": {
+    "dn": "Baidu",
+    "n": "Baidu, Inc.",
+    "s": 2
+  },
+  "huichuan.sm.cn": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "hw.gmcc.net": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "i.gridsumdissector.com": {
+    "dn": "Beijing Gridsum Technology",
+    "n": "Beijing Gridsum Technology Co., Ltd.",
+    "s": 2
+  },
+  "i.meituan.com": {
+    "dn": "Sankuai Technology",
+    "n": "Sankuai Technology Co., Ltd.",
+    "s": 2
+  },
+  "im.qcloud.com": {
+    "dn": "Tencent",
+    "n": "Tencent Holdings Ltd.",
+    "s": 2
+  },
+  "imdns.hpplay.cn": {
+    "dn": "Shenzhen LeBao Technology",
+    "n": "Shenzhen LeBao Technology Co., Ltd.",
+    "s": 2
+  },
+  "imp.voiceads.cn": {
+    "dn": "iFlytek",
+    "n": "iFlytek Co., Ltd.",
+    "s": 2
+  },
+  "is.snssdk.com": {
+    "dn": "ByteDance",
+    "n": "ByteDance Ltd.",
+    "s": 2
+  },
+  "jr.ctrip.com": {
+    "dn": "Trip.com Group",
+    "n": "Trip.com Group Limited",
+    "s": 2
+  },
+  "kepler.jd.com": {
+    "dn": "Beijing Jingdong Century Trading",
+    "n": "Beijing Jingdong Century Trading Co., Ltd.",
+    "s": 2
+  },
+  "log-h5.imdada.cn": {
+    "dn": "\u4e0a\u6d77\u8da3\u76db\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "n": "\u4e0a\u6d77\u8da3\u76db\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "log.aliyuncs.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "log.geetest.com": {
+    "dn": "Wuhan Jiyi Network Technology",
+    "n": "Wuhan Jiyi Network Technology Co., Ltd.",
+    "s": 2
+  },
+  "log.trackingio.com": {
+    "dn": "Beijing Reyun Technology",
+    "n": "Beijing Reyun Technology Co. Ltd.",
+    "s": 2
+  },
+  "log.umsns.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "log.umtrack.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "log1.cmpassport.com": {
+    "dn": "China Mobile",
+    "n": "China Mobile Limited",
+    "s": 2
+  },
+  "loggw-ex.alipay.com": {
+    "dn": "Ant Financial",
+    "n": "Ant Financial Services Group",
+    "s": 2
+  },
+  "login.umeng.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "m.changyoyo.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "m.ctrip.com": {
+    "dn": "Trip.com Group",
+    "n": "Trip.com Group Limited",
+    "s": 2
+  },
+  "m.etoote.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "m.jd.com": {
+    "dn": "Beijing Jingdong Century Trading",
+    "n": "Beijing Jingdong Century Trading Co., Ltd.",
+    "s": 2
+  },
+  "map.baidu.com": {
+    "dn": "Baidu",
+    "n": "Baidu, Inc.",
+    "s": 2
+  },
+  "mapi.1221mall.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "mdap.alipay.com": {
+    "dn": "Ant Financial",
+    "n": "Ant Financial Services Group",
+    "s": 2
+  },
+  "mgsv.miguvideo.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "mina-core.pingan.com": {
+    "dn": "Ping An Insurance",
+    "n": "Ping An Insurance",
+    "s": 2
+  },
+  "mobilegw.alipay.com": {
+    "dn": "Ant Financial",
+    "n": "Ant Financial Services Group",
+    "s": 2
+  },
+  "mpush-api.aliyun.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "msg.umengcloud.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "o2.qq.com": {
+    "dn": "Tencent",
+    "n": "Tencent Holdings Ltd.",
+    "s": 2
+  },
+  "openlog.tuia.cn": {
+    "dn": "Duiba Group",
+    "n": "Duiba Group Ltd",
+    "s": 2
+  },
+  "p0.meituan.net": {
+    "dn": "Sankuai Technology",
+    "n": "Sankuai Technology Co., Ltd.",
+    "s": 2
+  },
+  "p1.meituan.net": {
+    "dn": "Sankuai Technology",
+    "n": "Sankuai Technology Co., Ltd.",
+    "s": 2
+  },
+  "pic1.ajkimg.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "pic6.ajkimg.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "pixel.mathtag.com": {
+    "dn": "MediaMath",
+    "n": "MediaMath, Inc.",
+    "s": 2
+  },
+  "postreport.meituan.com": {
+    "dn": "Sankuai Technology",
+    "n": "Sankuai Technology Co., Ltd.",
+    "s": 2
+  },
+  "raddus.bayescom.com": {
+    "dn": "Shanghai Mingrui Information Technology",
+    "n": "Shanghai Mingrui Information Technology Co., Ltd.",
+    "s": 2
+  },
+  "register.appsflyer.com": {
+    "dn": "AppsFlyer",
+    "n": "AppsFlyer",
+    "s": 2
+  },
+  "render.alipay.com": {
+    "dn": "Ant Financial",
+    "n": "Ant Financial Services Group",
+    "s": 2
+  },
+  "restapi.amap.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "retcode.taobao.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "s.irs03.com": {
+    "dn": "iResearch Consulting Group",
+    "n": "iResearch Consulting Group",
+    "s": 2
+  },
+  "s1.irs03.com": {
+    "dn": "iResearch Consulting Group",
+    "n": "iResearch Consulting Group",
+    "s": 2
+  },
+  "sale.fenqile.com": {
+    "dn": "Lexin Fintech Holdings",
+    "n": "Lexin Fintech Holdings Ltd.",
+    "s": 2
+  },
+  "sdk.appsflyer.com": {
+    "dn": "AppsFlyer",
+    "n": "AppsFlyer",
+    "s": 2
+  },
+  "sdkauth.hpplay.cn": {
+    "dn": "Shenzhen LeBao Technology",
+    "n": "Shenzhen LeBao Technology Co., Ltd.",
+    "s": 2
+  },
+  "sofire.baidu.com": {
+    "dn": "Baidu",
+    "n": "Baidu, Inc.",
+    "s": 2
+  },
+  "ssdkauth.hpplay.cn": {
+    "dn": "Shenzhen LeBao Technology",
+    "n": "Shenzhen LeBao Technology Co., Ltd.",
+    "s": 2
+  },
+  "ssp.zxrtb.com": {
+    "dn": "\u5317\u4eac\u4e4b\u884c\u4f20\u5a92\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "n": "\u5317\u4eac\u4e4b\u884c\u4f20\u5a92\u79d1\u6280\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "static.baoyung.com": {
+    "dn": "\u4e0a\u6d77\u62b1\u9633\u4fe1\u606f\u6280\u672f\u670d\u52a1\u6709\u9650\u516c\u53f8",
+    "n": "\u4e0a\u6d77\u62b1\u9633\u4fe1\u606f\u6280\u672f\u670d\u52a1\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "static.geetest.com": {
+    "dn": "Wuhan Jiyi Network Technology",
+    "n": "Wuhan Jiyi Network Technology Co., Ltd.",
+    "s": 2
+  },
+  "static1.baoyung.com": {
+    "dn": "\u4e0a\u6d77\u62b1\u9633\u4fe1\u606f\u6280\u672f\u670d\u52a1\u6709\u9650\u516c\u53f8",
+    "n": "\u4e0a\u6d77\u62b1\u9633\u4fe1\u606f\u6280\u672f\u670d\u52a1\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "stats.appsflyer.com": {
+    "dn": "AppsFlyer",
+    "n": "AppsFlyer",
+    "s": 2
+  },
+  "stats.jpush.cn": {
+    "dn": "Shenzhen Hexun Huagu Information Technology",
+    "n": "Shenzhen Hexun Huagu Information Technology Co., Ltd.",
+    "s": 2
+  },
+  "thirdwx.qlogo.cn": {
+    "dn": "Tencent",
+    "n": "Tencent Holdings Ltd.",
+    "s": 2
+  },
+  "tim.qq.com": {
+    "dn": "Tencent",
+    "n": "Tencent Holdings Ltd.",
+    "s": 2
+  },
+  "tj1.youzanyun.com": {
+    "dn": "Youzan",
+    "n": "Youzan",
+    "s": 2
+  },
+  "toblog.ctobsnssdk.com": {
+    "dn": "ByteDance",
+    "n": "ByteDance Ltd.",
+    "s": 2
+  },
+  "ubas.1qianbao.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "uc.hsxxad.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "ulogs.umeng.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "uranus.jd.com": {
+    "dn": "Beijing Jingdong Century Trading",
+    "n": "Beijing Jingdong Century Trading Co., Ltd.",
+    "s": 2
+  },
+  "user.jpush.cn": {
+    "dn": "Shenzhen Hexun Huagu Information Technology",
+    "n": "Shenzhen Hexun Huagu Information Technology Co., Ltd.",
+    "s": 2
+  },
+  "vas-hl-x.snssdk.com": {
+    "dn": "ByteDance",
+    "n": "ByteDance Ltd.",
+    "s": 2
+  },
+  "vt.ipinyou.com": {
+    "dn": "iPinYou",
+    "n": "Beijing IPinYou Information Technologies Co Ltd",
+    "s": 2
+  },
+  "vtd.vip.com": {
+    "dn": "Guangzhou Vipshop E-Commerce",
+    "n": "Guangzhou Vipshop E-Commerce Co.,Ltd.",
+    "s": 2
+  },
+  "webapi.amap.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "www.baoyung.com": {
+    "dn": "\u4e0a\u6d77\u62b1\u9633\u4fe1\u606f\u6280\u672f\u670d\u52a1\u6709\u9650\u516c\u53f8",
+    "n": "\u4e0a\u6d77\u62b1\u9633\u4fe1\u606f\u6280\u672f\u670d\u52a1\u6709\u9650\u516c\u53f8",
+    "s": 2
+  },
+  "www.facebook.com": {
+    "dn": "Facebook",
+    "n": "Facebook, Inc.",
+    "s": 2
+  },
+  "www.googleadservices.com": {
+    "dn": "Google",
+    "n": "Google LLC",
+    "s": 2
+  },
+  "www.mcdonalds.com": {
+    "dn": "McDonald's",
+    "n": "McDonald's Corporation",
+    "s": 2
+  },
+  "www.recaptcha.net": {
+    "dn": "Google",
+    "n": "Google LLC",
+    "s": 2
+  },
+  "www.sayweee.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "wx.gdems.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "z12.cnzz.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "z3.cnzz.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "z6.cnzz.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "z7.cnzz.com": {
+    "dn": "Alibaba",
+    "n": "Alibaba Group",
+    "s": 2
+  },
+  "zfbxcx.gjzwfw.gov.cn": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  },
+  "zip-qc.xhscdn.com": {
+    "dn": "",
+    "n": "",
+    "s": 2
+  }
+}

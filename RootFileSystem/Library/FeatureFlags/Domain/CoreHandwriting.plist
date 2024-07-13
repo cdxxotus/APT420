@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>arabic_support</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>ctld_reading_order</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>modernized_decoder</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>vietnamese_support</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

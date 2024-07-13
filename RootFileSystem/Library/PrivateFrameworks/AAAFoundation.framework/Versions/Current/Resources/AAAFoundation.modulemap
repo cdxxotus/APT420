@@ -1,0 +1,7 @@
+framework module AAAFoundation [system] {
+  umbrella header "AAAFoundation.h"
+
+  export *
+  module * { export * }
+}
+

@@ -1,0 +1,142 @@
+;;; Copyright (c) 2017-2022 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+;;; TODO: Change these to deny before finalizing this profile.
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(system-network)
+(allow network-outbound)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Preference domain
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.sirittsd")
+       (preference-domain "com.apple.voiceservices")
+       (preference-domain "com.apple.osprey")
+       (preference-domain "com.apple.coremedia")
+       (preference-domain "com.apple.triald")
+       (preference-domain "com.apple.siri.audio")
+       (preference-domain "com.apple.SpeakSelection")
+)
+(allow user-preference-read
+    (preference-domain "kCFPreferencesAnyApplication")
+)
+
+;; Mach lookups
+(allow mach-lookup
+(global-name "com.apple.securityd.xpc"
+             "com.apple.audio.AudioComponentRegistrar"
+             "com.apple.audio.audiohald"
+             "com.apple.siri.analytics.assistant"
+             "com.apple.appleneuralengine"
+             "com.apple.mobileasset.autoasset"
+             "com.apple.coremedia.systemcontroller.xpc"
+             "com.apple.tailspind"
+             "com.apple.triald"
+             "com.apple.triald.namespace-management"
+             "com.apple.mobileassetd.v2"
+))
+
+
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR"))
+       (subpath "/private/tmp/")
+)
+;; Read access to /private/var/db/mds/messages/*/se_SecurityMessages
+(allow file-read*
+       (subpath (param "SECURITY_MESSAGES_DIR")))
+
+;; Read/write cache access
+(let ((cache-path-filter (home-subpath "/Library/Caches/com.apple.sirittsd")))
+  (allow file-read* file-write* cache-path-filter)
+  (allow file-issue-extension
+    (require-all
+      (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+      cache-path-filter)))
+
+;; Read/write HTTPStorage
+(let ((cache-path-filter (home-subpath "/Library/HTTPStorages/com.apple.sirittsd")))
+  (allow file-read* file-write* cache-path-filter)
+)
+
+;; Read/write Trial
+(let ((cache-path-filter (home-subpath "/Library/Trial/")))
+  (allow file-read* file-write* cache-path-filter)
+)
+
+;; Read/write Logs
+(let ((cache-path-filter (home-subpath "/Library/Logs/SiriTTSService/")))
+  (allow file-read* file-write* cache-path-filter)
+)
+
+;; Read/write VoiceServices folder
+(allow file-read* file-write*
+    (home-subpath "/Library/VoiceServices/")
+)
+
+;; Allow mmap
+(allow file-read* file-map-executable
+       (subpath "/System/Library/Components/AudioCodecs.component/")
+       (subpath "/System/Library/Components/AudioDSP.component/")
+       (subpath "/System/Library/Components/CoreAudio.component/")
+)
+
+;; Allow Audio ipc shm read
+(allow ipc-posix-shm-read-data ipc-posix-shm-write-data ipc-posix-shm-read-metadata
+       (ipc-posix-name-regex #"^AudioIO")
+)
+
+;; iokit access, needed by ANE
+(allow iokit-open
+         (iokit-user-client-class "AGXCommandQueue"
+                                  "AGXDevice"
+                                  "AGXDeviceUserClient"
+                                  "AGXSharedUserClient"
+                                  "H11ANEInDirectPathClient"
+                                  "IOAccelContext"
+                                  "IOAccelContext2"
+                                  "IOAccelDevice"
+                                  "IOAccelDevice2"
+                                  "IOAccelSharedUserClient"
+                                  "IOAccelSharedUserClient2"
+                                  "IOAccelSubmitter2"
+                                  "IOSurfaceRootUserClient"
+                                  ;; rdar://84983834 needed by Trial
+                                  "AppleKeyStoreUserClient"))

@@ -1,0 +1,36 @@
+<!-- LOCALIZERS: Each localizable piece of the page is marked with a comment -->
+<html>
+<head>
+    <link rel=stylesheet type="text/css" href="page-load-errors.css">
+    <!-- LOCALIZERS: You might want to change the font family. You can also add styles to override sizes, etc. -->
+    <style>
+        body {font-family:'-apple-system-font';}
+    </style>
+    <title>%pageErrorTitle%</title>
+</head>
+
+<body>
+    <div class="content-container">
+        <div class="error-container">
+            <div class="text-container">
+                <!-- Main title here. -->
+                <p class="error-title">%title%</p>
+            </div>
+            <div class="text-container">
+                <!-- Error message here. -->
+                <p class="error-message">%message%</p>
+            </div>
+        </div>
+        <div class="suggestion-container">
+            <div class="text-container">
+                <!-- LOCALIZERS: Localize the prompt and the button title. -->
+                <p class="suggestion-prompt">Det finns läslisteartiklar som du kan läsa när du saknar anslutning.</p>
+            </div>
+            <form class="suggestion-form" method=GET action='show-reading-list:'>
+                <input type=submit value='Visa läslistan'>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

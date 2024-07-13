@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# rdar://126582623 (DawnburstF: Correct timestamps in downloaded timezone asset)
+
+min_date=1577836800  # Jan 1, 2020
+max_date=$(date +%s) # now
+
+find "${DSTROOT}/private/var/db/timezone/tz" -type f | while read file; do
+    mod_date=$(date -r "$file" +%s)
+    if [[ $mod_date -lt $min_date ]] || [[ $mod_date -gt $max_date ]]; then
+      touch -am "$file"
+    fi
+  done

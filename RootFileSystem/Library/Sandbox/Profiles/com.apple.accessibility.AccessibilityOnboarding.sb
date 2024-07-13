@@ -1,0 +1,135 @@
+;;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+;;; TODO: Change these to deny before finalizing this profile.
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+(allow file-read* (extension "com.apple.app-sandbox.read"))
+
+;; Your preference domain
+(allow user-preference-read
+    (preference-domain "com.apple.Accessibility")
+    (preference-domain "com.apple.AccessibilityOnboarding")
+    (preference-domain "com.apple.HIToolbox")
+    (preference-domain "com.apple.controlcenter")
+    (preference-domain "com.apple.speech.recognition.AppleSpeechRecognition.prefs")
+    (preference-domain "com.apple.CoreGraphics")
+    (preference-domain "pbs")
+    (preference-domain "com.apple.speech.voice.prefs")
+    (preference-domain "com.apple.AppleMultitouchTrackpad")
+    (preference-domain "com.apple.preferences.extensions.ServicesWithUI")
+    (preference-domain "com.apple.coremedia")
+    (preference-domain "com.apple.universalaccess"))
+    
+(allow user-preference-write
+    (preference-domain "com.apple.Accessibility")
+    (preference-domain "com.apple.controlcenter")
+    (preference-domain "com.apple.speech.recognition.AppleSpeechRecognition.prefs")
+    (preference-domain "com.apple.preferences.extensions.ServicesWithUI")
+    (preference-domain "com.apple.AccessibilityOnboarding"))
+
+(allow mach-lookup
+    (global-name "com.apple.tccd.system")
+    (global-name "com.apple.windowserver.active")
+    (global-name "com.apple.coreservices.launchservicesd")
+    (global-name "com.apple.speech.speechdatainstallerd")
+    (global-name "com.apple.dock.fullscreen")
+    (global-name "com.apple.dock.server")
+    (global-name "com.apple.inputmethodkit.getxpcendpoint")
+    (global-name "com.apple.inputmethodkit.launchagent")
+    (global-name "com.apple.inputmethodkit.launcher")
+    (global-name "com.apple.iohideventsystem")
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.lsd.modifydb")
+    (global-name "com.apple.CARenderServer")
+    (global-name "com.apple.windowmanager.server")
+    (global-name "com.apple.touchbarserver.mig")
+    (global-name "com.apple.coreservices.appleevents")
+    (global-name "com.apple.pasteboard.1")
+    (global-name "com.apple.DiskArbitration.diskarbitrationd")
+    (global-name "com.apple.tsm.uiserver")
+    (global-name "com.apple.window_proxies")
+    (global-name "com.apple.coreduetd.knowledge.user")
+    (global-name "com.apple.spindump")
+    (global-name "com.apple.sidecar-relay")
+    (global-name "com.apple.pbs.fetch_services")
+    (global-name "com.apple.siri.VoiceShortcuts.xpc")
+    (global-name "com.apple.pbs.fetch_services")
+    (global-name "com.apple.sidecar-relay")
+    (global-name "com.apple.naturallanguaged")
+    (global-name "com.apple.pluginkit.pkd")
+    (global-name "com.apple.audio.SystemSoundServer-OSX")
+    (global-name "mul-xpc (Apple)_OpenStep")
+    (global-name "com.apple.speech.CommandAndControl.utility"))
+
+;; Read/write access to a temporary directory.
+
+ (allow file-read* file-write*
+    (home-subpath "/Library/Keyboard Layouts")
+    (home-subpath "/Library/Input Methods")
+    (home-subpath "/Library/Application Support/CrashReporter")
+    (home-subpath "/Library/Spelling")
+    (regex #"^/private/var/folders/[^/]+/[^/]+/C/Voice_Control_Guide/com.apple.AccessibilityOnboarding/")
+    (home-subpath "/Library/Saved Application State/com.apple.AccessibilityOnboarding.savedState"))
+    
+;; Read/write cache access
+(let ((cache-path-filter (home-subpath "/Library/Caches/com.apple.AccessibilityOnboarding")))
+  (allow file-read* file-write* cache-path-filter)
+  (allow file-issue-extension
+    (require-all
+      (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+      cache-path-filter)))
+(allow file-issue-extension
+    (require-all
+        (extension-class "com.apple.app-sandbox.read-write")
+        (subpath "/")))
+        
+(allow file-issue-extension (extension-class "com.apple.app-sandbox.read"))
+
+(allow iokit-open
+    (iokit-user-client-class "AGXDeviceUserClient")
+    (iokit-user-client-class "IOHIDParamUserClient")
+    (iokit-user-client-class "AppleJPEGDriverUserClient")
+    (iokit-user-client-class "IOSurfaceRootUserClient"))
+
+(allow file-map-executable
+    (literal "/System/Library/Accessibility/BundlesBase/com.apple.securityinterface.axbundle/Versions/A/com.apple.securityinterface")
+    (literal "/System/Library/Accessibility/BundlesBase/com.apple.frameworks.preferencepanessupport.axbundle/Versions/A/com.apple.frameworks.preferencepanessupport")
+    (literal "/System/Library/Accessibility/BundlesBase/com.apple.AppKit.axbundle/Versions/A/com.apple.AppKit")
+    (literal "/System/Library/Accessibility/BundlesBase/com.apple.OnBoardingKit.axbundle/Versions/A/com.apple.OnBoardingKit"))
+    

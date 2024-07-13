@@ -1,0 +1,50 @@
+;;; Copyright (c) 2022 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 3)
+
+(deny default)
+
+(import "system.sb")
+
+(allow process-info* (target self))
+(allow process-info-pidinfo) ;; to display client name in logs
+(allow process-info-codesignature) ;; For validating the entitlements of clients.
+
+;; BiomeWriteService preference domain
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.BiomeWriteService"))
+
+;; .GlobalPreferences preference domain
+(allow user-preference-read
+       (preference-domain "kCFPreferencesAnyApplication"))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata 
+    (literal "/var"))
+
+;; Read for NSBundle
+(allow file-read*
+    (literal "/System/Library/PrivateFrameworks/BiomeStorage.framework/XPCServices")
+    (literal "/System/Library/PrivateFrameworks/BiomeStorage.framework/XPCServices/BiomeWriteService"))
+
+;; Read/write access to HOME and suffixed darwin directories
+;;(allow file-read* file-write*
+;;       (subpath (param "HOME"))
+;;       (subpath (param "DARWIN_TOP_DIR"))
+;;       (subpath (param "DARWIN_TMP_DIR"))
+;;       (subpath (param "DARWIN_CACHE_DIR")))
+
+;; Mach lookups
+(allow mach-lookup
+    ;; Biome
+    (global-name "com.apple.biome.access.user")
+    (global-name "com.apple.biome.access.system")
+    (global-name "com.apple.biome.compute.source.user")
+    (global-name "com.apple.biome.compute.source"))
+
+;; Ensure BiomeWriteService cannot issue extensions
+(deny file-issue-extension)

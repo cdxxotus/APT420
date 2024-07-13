@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Text</key>
+	<dict>
+		<key>ExactMatch</key>
+		<dict>
+			<key>Key Echo speaks each key that is pressed.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Відлуння[[slnc 10]] клавіш промовляє кожну натиснену клавішу.</string>
+			</dict>
+			<key>Command echo speaks the name of the performed command.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Відлуння команди промовляє назву [[emph +]]виконаної команди.</string>
+			</dict>
+			<key>Screen curtain darkens the video display.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Завіса екрана [[emph +]]затемнює [[emph +]]дисплей відеопристрою.</string>
+			</dict>
+			<key>Disabling word echo mode</key>
+			<dict>
+				<key>MTText</key>
+				<string>Вимкнення режиму [[emph +]]відлуння слів</string>
+			</dict>
+			<key>Starting keyboard help. Starting keyboard help.  Type keys to hear their names.  Hold down the VoiceOver keys while typing to hear VoiceOver commands. Press the Escape key at the top left corner of the keyboard to stop help.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Запускається клавіатурна довідка. Натискайте клавіші, щоб почути їх назви. Утримуйте клавіші [[emph +]]Voice[[emph -]]Over [[emph -]] під час натискання, щоб почути команди VoiceOver. Натисніть клавішу [[emph +]]Escape у [[emph +]]верхньому[[slnc 50]] [[emph +]]лівому куті клавіатури, щоб [[emph +]]зупинити довідку.</string>
+			</dict>
+			<key>This window cannot be resized</key>
+			<dict>
+				<key>MTText</key>
+				<string>Розмір цього вікна змінити [[emph +]]не можна[[emph +]]</string>
+			</dict>
+			<key>Moves the window down on the screen.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Переміщує вікно [[emph +]]вниз на екрані.</string>
+			</dict>
+			<key>Moves the window to the left on the screen.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Переміщує вікно [[emph +]]вліво на екрані.</string>
+			</dict>
+			<key>Moves the window to the right on the screen.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Переміщує вікно вправо [[slnc 50]]на екрані.</string>
+			</dict>
+			<key>Cannot move window right any further.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося пересунути вікно [[slnc 50]]правіше, [[emph +]]ніж зараз.</string>
+			</dict>
+			<key>Step window up</key>
+			<dict>
+				<key>MTText</key>
+				<string>Посунути вікно на крок [[slnc 20]]угору.</string>
+			</dict>
+			<key>Cannot move window up any further. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося пересунути вікно вище, [[slnc 30]]ніж зараз.</string>
+			</dict>
+			<key>Steps the window right on the screen in increments.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Поступово посуває вікно вправо [[slnc 30]]на екрані.</string>
+			</dict>
+			<key>Cannot move window right any further. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося пересунути вікно правіше, [[slnc 30]]ніж зараз.</string>
+			</dict>
+			<key>Cannot make window height any taller.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося зробити вікно вищим, [[slnc 30]]ніж зараз.</string>
+			</dict>
+			<key>Cannot make sheet height any shorter. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося зробити аркуш нижчим, [[slnc 20]]ніж зараз.</string>
+			</dict>
+			<key>Cannot make sheet height any taller.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося зробити аркуш вищим, [[slnc 20]]ніж зараз.</string>
+			</dict>
+			<key>Cannot make sheet width any more narrow.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося зробити аркуш вужчим, [[slnc 20]]ніж зараз.</string>
+			</dict>
+			<key>Cannot make sheet height any shorter.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося зробити аркуш нижчим, [[slnc 20]]ніж зараз.</string>
+			</dict>
+			<key>Cannot make sheet width any narrower.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося зробити аркуш вужчим, [[slnc 20]]ніж зараз.</string>
+			</dict>
+			<key>Cannot make sheet width any wider.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося зробити аркуш ширшим, [[slnc 20]]ніж зараз.</string>
+			</dict>
+			<key>Web links menu</key>
+			<dict>
+				<key>MTText</key>
+				<string>Меню [[emph +]]вебпосилань.</string>
+			</dict>
+			<key>Lists the available links on the web page.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Показує список [[emph +]]посилань, доступних [[slnc 20]]на [[emph +]]вебсторінці.</string>
+			</dict>
+			<key>Confirming text field. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Підтвердження [[emph +]]текстового поля.</string>
+			</dict>
+			<key>Cannot confirm text field. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося підтвердити [[emph +]]текстове поле.</string>
+			</dict>
+			<key>Confirm text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Підтвердити [[emph +]]текстове поле</string>
+			</dict>
+			<key>Clear search field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Очистити [[emph +]]поле пошуку</string>
+			</dict>
+			<key>Clearing search field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Очищення [[emph +]]поля пошуку</string>
+			</dict>
+			<key>Cannot clear search field.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдалося очистити [[emph +]]поле пошуку.</string>
+			</dict>
+			<key>Interact with text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Взаємодія з [[emph +]]текстовим полем</string>
+			</dict>
+			<key>Edit or echo the contents of the text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Редагувати чи[[slnc 10]] створити відлуння вмісту [[emph +]]текстового поля</string>
+			</dict>
+			<key>Stop interacting with text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Припиняє взаємодію з [[emph +]]текстовим полем</string>
+			</dict>
+			<key>Stops interacting with text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Припиняє взаємодію з [[emph +]]текстовим полем</string>
+			</dict>
+			<key>Reads from the start of the text field to the cursor position.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Читання відбуватиметься з початку [[emph +]]текстового поля й до [[emph +]]позиції курсора.</string>
+			</dict>
+			<key>Reads from the cursor position to the end of the text field.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Читання відбуватиметься від [[emph +]]позиції курсора до кінця [[emph +]]текстового поля.</string>
+			</dict>
+			<key>Moves splitter up or down</key>
+			<dict>
+				<key>MTText</key>
+				<string>Пересуває роздільник [[emph +]]угору [[slnc 20]]або [[emph +]]вниз</string>
+			</dict>
+			<key>Moves the scrollable area up one page.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Переміщує прокручувану область угору [[slnc 10]]на одну сторінку.</string>
+			</dict>
+			<key>Moves splitter left or right</key>
+			<dict>
+				<key>MTText</key>
+				<string>Пересуває роздільник уліво [[slnc 10]]чи [[slnc 10]] вправо</string>
+			</dict>
+			<key>Minimizes the area above or left of the splitter.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Згортає область [[emph +]]вгорі [[slnc 10]]або [[emph +]]зліва від роздільника.</string>
+			</dict>
+			<key>Top/left area is already maximized. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Верхня/ліва [[slnc 10]]область уже розгорнута.</string>
+			</dict>
+			<key>Increases the value or steps forward through a list</key>
+			<dict>
+				<key>MTText</key>
+				<string>Збільшує значення або крокує[[slnc 10]] вперед по списку</string>
+			</dict>
+			<key>Opening dropdown list</key>
+			<dict>
+				<key>MTText</key>
+				<string>Відкривання[[slnc 10]][[emph +]] розкривного списку</string>
+			</dict>
+			<key>Closing dropdown list</key>
+			<dict>
+				<key>MTText</key>
+				<string>Закривання [[slnc 10]][[emph +]] розкривного списку</string>
+			</dict>
+			<key>currently not busy</key>
+			<dict>
+				<key>MTText</key>
+				<string>зараз [[emph +]] не зайнятий</string>
+			</dict>
+			<key>This application has no menubar.</key>
+			<dict>
+				<key>MTText</key>
+				<string>У цієї програми [[emph +]]немає смуги меню.</string>
+			</dict>
+			<key>nothing is in the VoiceOver cursor</key>
+			<dict>
+				<key>MTText</key>
+				<string>у курсорі VoiceOver [[emph +]]нічого немає</string>
+			</dict>
+			<key>nothing has keyboard focus</key>
+			<dict>
+				<key>MTText</key>
+				<string>нічого не перебуває у [[emph +]]фокусі клавіатури</string>
+			</dict>
+			<key>Performs the default action on the item in the VoiceOver cursor.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Виконує стандартну дію[[slnc 50]] з [[slnc 10]] елементом у курсорі VoiceOver.</string>
+			</dict>
+			<key>Moves the keyboard focus to the item in the VoiceOver cursor.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Пересуває фокус клавіатури до [[slnc 10]] [[emph +]]елемента в курсорі VoiceOver.</string>
+			</dict>
+			<key>There is no item with keyboard focus</key>
+			<dict>
+				<key>MTText</key>
+				<string>Немає елемента у [[emph +]]фокусі клавіатури</string>
+			</dict>
+			<key>Cannot move up any further </key>
+			<dict>
+				<key>MTText</key>
+				<string>Не вдається перемістити вище, [[slnc 10]]ніж зараз</string>
+			</dict>
+			<key>Move VoiceOver cursor left to nearest item.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Переміщення курсора VoiceOver [[slnc 10]]уліво до [[slnc 10]]найближчого елемента.</string>
+			</dict>
+			<key>Focus VoiceOver cursor out to inspect surrounding items.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Фокусує курсор VoiceOver назовні для [[slnc 10]]огляду навколишніх елементів.</string>
+			</dict>
+			<key>Move VoiceOver cursor to item linked to current item</key>
+			<dict>
+				<key>MTText</key>
+				<string>Переміщення курсора VoiceOver до елемента, повʼязаного [[slnc 10]]з поточним елементом</string>
+			</dict>
+			<key>Allows the item to be controlled with the keyboard.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Дозволяє [[slnc 10]]керувати елементом за допомогою [[slnc 10]]клавіатури.</string>
+			</dict>
+			<key>Add the item in the VoiceOver cursor to the list of selected items</key>
+			<dict>
+				<key>MTText</key>
+				<string>Додати [[slnc 10]]елемент у курсорі VoiceOver до списку вибраних елементів</string>
+			</dict>
+			<key>Shows current item&apos;s contextual menu if it has one</key>
+			<dict>
+				<key>MTText</key>
+				<string>Показує контекстне меню поточного елемента, якщо [[emph +]]воно існує</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

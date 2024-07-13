@@ -1,0 +1,92 @@
+;;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow process-info* (target self))
+(allow process-info-pidinfo)
+
+;; Networking
+(allow network-outbound)
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Preference domain
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.groupkit"))
+       
+(allow user-preference-read
+    (preference-domain "com.apple.CloudKit")) ;; Avoids excess xpc calls to cloudd
+
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR")))
+
+;; Read/write cache access
+(let ((cache-path-filter-groupkitd (home-subpath "/Library/Caches/com.apple.groupkitd")))
+  (allow file-read* file-write* cache-path-filter-groupkitd)
+  (allow file-issue-extension
+    (require-all
+      (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+      cache-path-filter-groupkitd)))
+
+;; Other read/write paths
+(allow file-read* file-write*
+    (home-subpath "/Library/com.apple.groupkitd")
+    (home-subpath "/Library/HTTPStorages/com.apple.groupkitd")
+    (home-subpath "/Library/Caches/com.apple.groupkitd")
+)
+
+;; Mach lookups
+(allow mach-lookup
+    (global-name "com.apple.mobileactivationd")
+    (global-name "com.apple.ak.auth.xpc")
+    (global-name "com.apple.accountsd.accountmanager")
+    (global-name "com.apple.identityservicesd.desktop.auth")
+    (global-name "com.apple.identityservicesd.idquery.desktop.auth")
+    (global-name "com.apple.cloudd")
+    (global-name "com.apple.rtcreportingd")  ;; rtcreportingd is the daemon used for our metrics reporting via the RTC framework
+    (global-name "com.apple.ak.anisette.xpc")
+    (global-name "com.apple.securityd")
+    (global-name "com.apple.securityd.xpc")
+    (global-name "com.apple.imdpersistence.IMDPersistenceAgent")
+    (global-name "com.apple.protectedcloudstorage.protectedcloudkeysyncing")
+    (global-name "com.apple.cdp.daemon")
+)
+
+;; Mach-register
+(allow mach-register
+    (global-name "com.apple.aps.groupkitd")
+)

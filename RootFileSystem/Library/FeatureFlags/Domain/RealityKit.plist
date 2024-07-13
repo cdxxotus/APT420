@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnableAsyncReceive</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>EnableEntityOrdering</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>EnableForwardingFromNonAuthoritativePeers</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>PhysicsDebugRendering</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>UseRealityFusion</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>UseRealityFusionAnchoring</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>UseRealityFusionEnvironmentProbe</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>filterUSDZTextureImports</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

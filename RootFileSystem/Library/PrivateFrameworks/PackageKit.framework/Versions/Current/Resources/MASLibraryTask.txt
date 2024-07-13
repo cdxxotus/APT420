@@ -1,0 +1,1 @@
+Mac App Store library has been modified. Validate libPackageKitMAS.a builds and that InstallCmdsMAS can build/run against it.

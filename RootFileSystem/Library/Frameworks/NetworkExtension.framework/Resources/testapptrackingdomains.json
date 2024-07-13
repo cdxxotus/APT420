@@ -1,0 +1,12 @@
+{
+  "tracking.domain.example": {
+	"dn": "",
+	"n": "",
+	"s": 2
+  },
+  "tracking.example.com": {
+	"dn": "",
+	"n": "",
+	"s": 2
+  },
+}

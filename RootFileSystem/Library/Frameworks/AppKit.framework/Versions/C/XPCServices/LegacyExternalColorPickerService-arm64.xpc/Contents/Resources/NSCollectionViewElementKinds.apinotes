@@ -1,0 +1,39 @@
+---
+Name: AppKit
+SwiftVersions:
+- Version: 3
+  Typedefs:
+  - Name: NSCollectionViewSupplementaryElementKind
+    SwiftWrapper: none
+  - Name: NSCollectionViewDecorationElementKind
+    SwiftWrapper: none
+  Globals:
+  - Name: NSCollectionElementKindSectionHeader
+    SwiftName: NSCollectionElementKindSectionHeader
+  - Name: NSCollectionElementKindSectionFooter
+    SwiftName: NSCollectionElementKindSectionFooter
+  - Name: NSCollectionElementKindInterItemGapIndicator
+    SwiftName: NSCollectionElementKindInterItemGapIndicator
+- Version: 4
+  Typedefs:
+  - Name: NSCollectionViewDecorationElementKind
+    SwiftName: NSCollectionView.DecorationElementKind
+    SwiftWrapper: struct
+  - Name: NSCollectionViewSupplementaryElementKind
+    SwiftName: NSCollectionView.SupplementaryElementKind
+    SwiftWrapper: struct
+  Globals:
+  - Name: NSCollectionElementKindSectionHeader
+    SwiftName: "sectionHeader"
+  - Name: NSCollectionElementKindSectionFooter
+    SwiftName: "sectionFooter"
+  - Name: NSCollectionElementKindInterItemGapIndicator
+    SwiftName: "interItemGapIndicator"
+
+Globals:
+- Name: NSCollectionElementKindSectionHeader
+  SwiftName: "NSCollectionView.elementKindSectionHeader"
+- Name: NSCollectionElementKindSectionFooter
+  SwiftName: "NSCollectionView.elementKindSectionFooter"
+- Name: NSCollectionElementKindInterItemGapIndicator
+  SwiftName: "NSCollectionView.elementKindInterItemGapIndicator"

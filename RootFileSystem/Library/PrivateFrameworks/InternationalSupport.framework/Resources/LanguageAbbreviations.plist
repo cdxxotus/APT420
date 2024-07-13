@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>am</key>
+	<string>አ</string>
+	<key>apw</key>
+	<string>NB</string>
+	<key>ar</key>
+	<string>ع</string>
+	<key>ar-AE</key>
+	<string>ع</string>
+	<key>ar-SA</key>
+	<string>ع</string>
+	<key>ars</key>
+	<string>ن</string>
+	<key>as</key>
+	<string>অ</string>
+	<key>az-Latn</key>
+	<string>AZ</string>
+	<key>be</key>
+	<string>БЕ</string>
+	<key>bg</key>
+	<string>БГ</string>
+	<key>bn</key>
+	<string>বাং</string>
+	<key>bo</key>
+	<string>བོ</string>
+	<key>brx</key>
+	<string>ब</string>
+	<key>ca</key>
+	<string>CA</string>
+	<key>chr</key>
+	<string>Ꮳ</string>
+	<key>ckb</key>
+	<string>س</string>
+	<key>cs</key>
+	<string>CZ</string>
+	<key>cy</key>
+	<string>Cy</string>
+	<key>da</key>
+	<string>DA</string>
+	<key>de</key>
+	<string>DE</string>
+	<key>de-AT</key>
+	<string>DE AT</string>
+	<key>de-CH</key>
+	<string>DE CH</string>
+	<key>de-DE</key>
+	<string>DE DE</string>
+	<key>doi-Deva</key>
+	<string>डो</string>
+	<key>dv</key>
+	<string>ދި</string>
+	<key>dz</key>
+	<string>རྫོ</string>
+	<key>el</key>
+	<string>λ</string>
+	<key>en</key>
+	<string>EN</string>
+	<key>en-AE</key>
+	<string>EN AE</string>
+	<key>en-AU</key>
+	<string>EN AU</string>
+	<key>en-CA</key>
+	<string>EN CA</string>
+	<key>en-GB</key>
+	<string>EN GB</string>
+	<key>en-ID</key>
+	<string>EN ID</string>
+	<key>en-HK</key>
+	<string>EN HK</string>
+	<key>en-IE</key>
+	<string>EN IE</string>
+	<key>en-MY</key>
+	<string>EN MY</string>
+	<key>en-IN</key>
+	<string>EN IN</string>
+	<key>en-JP</key>
+	<string>EN JP</string>
+	<key>en-NZ</key>
+	<string>EN NZ</string>
+	<key>en-PH</key>
+	<string>EN PH</string>
+	<key>en-SG</key>
+	<string>EN SG</string>
+	<key>en-US</key>
+	<string>EN US</string>
+	<key>en-ZA</key>
+	<string>EN ZA</string>
+	<key>es</key>
+	<string>ES</string>
+	<key>es-419</key>
+	<string>ES LA</string>
+	<key>es-ES</key>
+	<string>ES ES</string>
+	<key>es-CL</key>
+	<string>ES CL</string>
+	<key>es-CO</key>
+	<string>ES CO</string>
+	<key>es-MX</key>
+	<string>ES MX</string>
+	<key>es-US</key>
+	<string>ES US</string>
+	<key>et</key>
+	<string>ET</string>
+	<key>fa</key>
+	<string>ف</string>
+	<key>fa-AF</key>
+	<string>د</string>
+	<key>fi</key>
+	<string>FI</string>
+	<key>fo</key>
+	<string>FO</string>
+	<key>fr</key>
+	<string>FR</string>
+	<key>fr-BE</key>
+	<string>FR BE</string>
+	<key>fr-CA</key>
+	<string>FR CA</string>
+	<key>fr-CH</key>
+	<string>FR CH</string>
+	<key>fr-FR</key>
+	<string>FR FR</string>
+	<key>ga-IE</key>
+	<string>GA</string>
+	<key>he-IL</key>
+	<string>HE</string>
+	<key>haw</key>
+	<string>ʻŌ</string>
+	<key>hi</key>
+	<string>हि</string>
+	<key>hi-Latn</key>
+	<string>HI</string>
+	<key>hr</key>
+	<string>HR</string>
+	<key>hu</key>
+	<string>HU</string>
+	<key>id</key>
+	<string>ID</string>
+	<key>ig</key>
+	<string>IG</string>
+	<key>is</key>
+	<string>IS</string>
+	<key>it</key>
+	<string>IT</string>
+	<key>ja-JP</key>
+	<string>あ</string>
+	<key>it-IT</key>
+	<string>IT IT</string>
+	<key>it-CH</key>
+	<string>IT CH</string>
+	<key>kk-Cyrl</key>
+	<string>Қ</string>
+	<key>kk-Latn</key>
+	<string>KA</string>
+	<key>ko</key>
+	<string>한</string>
+	<key>kok-Deva</key>
+	<string>कों</string>
+	<key>ks-Arab</key>
+	<string>كٲ</string>
+	<key>ks-Deva</key>
+	<string>कॉ</string>
+	<key>ku-Latn</key>
+	<string>KU</string>
+	<key>ky-Cyrl</key>
+	<string>КГ</string>
+	<key>lt</key>
+	<string>LT</string>
+	<key>lv</key>
+	<string>LV</string>
+	<key>mai</key>
+	<string>मै</string>
+	<key>mi</key>
+	<string>Mā</string>
+	<key>mk</key>
+	<string>MK</string>
+	<key>mn</key>
+	<string>МО</string>
+	<key>mni-Beng</key>
+	<string>ম</string>
+	<key>mni-Mtei</key>
+	<string>ꯃꯤ</string>
+	<key>mr</key>
+	<string>म</string>
+	<key>ms</key>
+	<string>MS</string>
+	<key>ms-Arab</key>
+	<string>ج</string>
+	<key>mt</key>
+	<string>MT</string>
+	<key>nb</key>
+	<string>NB</string>
+	<key>ne</key>
+	<string>ने</string>
+	<key>nl</key>
+	<string>NL</string>
+	<key>nl-BE</key>
+	<string>NL BE</string>
+	<key>nl-NL</key>
+	<string>NL NL</string>
+	<key>nn</key>
+	<string>NN</string>
+	<key>nv</key>
+	<string>DB</string>
+	<key>pa</key>
+	<string>ਪੰ</string>
+	<key>pl</key>
+	<string>PL</string>
+	<key>ps</key>
+	<string>ښ</string>
+	<key>pt</key>
+	<string>PT</string>
+	<key>pt-BR</key>
+	<string>PT BR</string>
+	<key>pt-PT</key>
+	<string>PT PT</string>
+	<key>rhg</key>
+	<string>𐴌𐴗𐴥</string>
+	<key>ro</key>
+	<string>RO</string>
+	<key>ru</key>
+	<string>РУ</string>
+	<key>sa</key>
+	<string>सं</string>
+	<key>sat-Deva</key>
+	<string>सा</string>
+	<key>sat-Olck</key>
+	<string>ᱥ</string>
+	<key>sd</key>
+	<string>ڌ</string>
+	<key>sd-Deva</key>
+	<string>सि</string>
+	<key>sk</key>
+	<string>SK</string>
+	<key>sl</key>
+	<string>SL</string>
+	<key>sm</key>
+	<string>Sā</string>
+	<key>sq</key>
+	<string>SQ</string>
+	<key>sr-Cyrl</key>
+	<string>СР</string>
+	<key>sr-Latn</key>
+	<string>SR</string>
+	<key>sv</key>
+	<string>SV</string>
+	<key>sw</key>
+	<string>SW</string>
+	<key>tg-Cyrl</key>
+	<string>ТҶ</string>
+	<key>tg-Latn</key>
+	<string>TJ</string>
+	<key>ti</key>
+	<string>ት</string>
+	<key>tk-Latn</key>
+	<string>TÜ</string>
+	<key>tl</key>
+	<string>TL</string>
+	<key>to</key>
+	<string>TO</string>
+	<key>th</key>
+	<string>TH</string>
+	<key>tr</key>
+	<string>TR</string>
+	<key>ug</key>
+	<string>ئوُ</string>
+	<key>uk</key>
+	<string>УК</string>
+	<key>ur</key>
+	<string>اُر</string>
+	<key>uz-Arab</key>
+	<string>اوُز</string>
+	<key>uz-Cyrl</key>
+	<string>ЎЗ</string>
+	<key>uz-Latn</key>
+	<string>Oʻz</string>
+	<key>vi</key>
+	<string>VI</string>
+	<key>yi</key>
+	<string>ייִ</string>
+	<key>wuu-Hans</key>
+	<string>吴</string>
+	<key>yue-Hans</key>
+	<string>粤</string>
+	<key>yue-Hant</key>
+	<string>廣</string>
+	<key>zh-Hans</key>
+	<string>普</string>
+	<key>zh-Hant</key>
+	<string>國</string>
+	<key>zh-Hant-HK</key>
+	<string>廣</string>
+</dict>
+</plist>

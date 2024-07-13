@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CalibrationModules</key>
+	<array>
+		<string>DspCalibrationEQ</string>
+	</array>
+	<key>CompressorModules</key>
+	<array>
+		<string>DspBuzzKill</string>
+		<string>DspControlFreak</string>
+		<string>DspControlFreak4ch</string>
+		<string>DspMozartCompressor</string>
+		<string>DspMozartCompressorDualBand</string>
+		<string>DspMultiBandCompressor</string>
+	</array>
+	<key>LinearModules</key>
+	<array>
+		<string>Dsp2ChInput</string>
+		<string>Dsp2To4Splitter</string>
+		<string>Dsp2To6Splitter</string>
+		<string>Dsp3ChOutput</string>
+		<string>Dsp4ChOutput</string>
+		<string>Dsp6ChOutput</string>
+		<string>DspAudioMeter</string>
+		<string>DspClientGainAdjustStage</string>
+		<string>DspCrossover2Dot1</string>
+		<string>DspCrossover2Dot2</string>
+		<string>DspCrossover2Way</string>
+		<string>DspDCBlocker</string>
+		<string>DspDelay</string>
+		<string>DspEqualization</string>
+		<string>DspEqualization32</string>
+		<string>DspFIREqualization</string>
+		<string>DspGainStage</string>
+		<string>DspLoudness</string>
+		<string>DspSum</string>
+		<string>DspVolume_3ch</string>
+		<string>DspVolume_4ch</string>
+		<string>DspVolume</string>
+		<string>DspXTC_2chIn_2chOut</string>
+		<string>DspXTC_2chIn_4chOut</string>
+	</array>
+	<key>NonLinearModules</key>
+	<array>
+		<string>DspAutoGainControl</string>
+		<string>DspBassEnhancer</string>
+		<string>DspBeamFormer</string>
+		<string>DspDynamicRange</string>
+		<string>DspLimiter</string>
+		<string>DspLoudness</string>
+		<string>DspMultibandDRC</string>
+		<string>DspNoiseReduction</string>
+		<string>DspPreGainStage</string>
+		<string>DspSplineLimiter</string>
+		<string>DspSplitBand</string>
+		<string>DspStereoEnhancer</string>
+		<string>DspStereoToMono</string>
+		<string>DspVirtualization</string>
+	</array>
+	
+	<key>AlwaysBypass</key>
+	<array>
+		<string>DspAECGainAdjustStage</string>
+		<string>DspB2</string>
+		<string>DspClientGainAdjustStage</string>
+	</array>
+	<key>NeverBypass</key>
+	<array>
+		<string>Dsp3ChOutput</string>
+		<string>Dsp4ChOutput</string>
+		<string>Dsp6ChOutput</string>
+		<string>DspVolume</string>
+	</array>
+</dict>
+</plist>

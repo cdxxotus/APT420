@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grant Permissions for Web Extension?</title>
+<style>
+    @media (prefers-color-scheme: dark) {
+        :root {
+            color-scheme: dark !important;
+        }
+
+        body {
+            background: rgb(30, 30, 30) !important;
+            --font-color: hsl(0, 0%, 85%) !important;
+            --title-color: rgb(224, 225, 225) !important;
+        }
+
+        .alert-container {
+            background-color: rgb(56, 57, 59) !important;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .24) !important;
+        }
+    }
+
+    body {
+        --font-color: #434343;
+        --horizontal-padding: 32px;
+        --border-radius: 6px;
+        --title-color: #444;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: -apple-system-font;
+    }
+
+    :root {
+        color-scheme: light;
+    }
+
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        font-size: 13px;
+        background: linear-gradient(30deg, #dfdfdf 0%, #fafafb 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        cursor: default;
+        -webkit-user-select: none;
+        overflow: hidden;
+    }
+
+    .vertical-flex-container {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+        flex-wrap: nowrap; 
+        align-content: stretch;
+        padding-top: 156px;
+    }
+
+    @media (max-height: 30rem) {
+        .vertical-flex-container {
+            padding-top: min(calc(60vh - 150px), 156px);
+        }
+    }
+
+    .alert-container {
+        background-color: white;
+        min-width: 320px;
+        max-width: 672px;
+        position: relative;
+        margin: 0 auto;
+        padding-top: 24px;
+        border-radius: var(--border-radius);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14);
+    }
+
+    .alert-container h1 {
+        overflow: hidden;
+        color: var(--title-color);
+        padding-top: 3px;
+    }
+
+    .alert-body {
+        display: block;
+        margin: 21px 0 0 0;
+        padding-left: var(--horizontal-padding);
+        padding-right: var(--horizontal-padding);
+        padding-bottom: 28px;
+        color: var(--font-color);
+    }
+
+    .alert-body p:first-of-type {
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+
+    .alert-body p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .button-bar {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        align-content: stretch;
+
+        margin-top: 1.3em;
+    }
+
+    .button-bar button {
+        font-size: 13px;
+        line-height: 21px;
+        min-width: 90px;
+        margin: 4px;
+        vertical-align: bottom;
+        padding: 0 12px;
+        color: var(--font-color);
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        font-weight: 700;
+        line-height: 30px;
+        padding: 0 var(--horizontal-padding);
+        margin-bottom: 1em;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 19px;
+        margin-bottom: 1em;
+        word-wrap: break-word;
+    }
+</style>
+<script>
+// Note: these values are synonymous with the values of enum class Inspector::ExtensionError.
+    WI = {
+        WebInspectorExtension: {
+            ErrorCode: {
+                ContextDestroyed: "ContextDestroyed",
+                InternalError: "InternalError",
+                InvalidRequest: "InvalidRequest",
+                RegistrationFailed: "RegistrationFailed",
+                NotImplemented: "NotImplemented",
+            }
+        }
+    };
+
+    function addButtonEventListener(elementID, callback)
+    {
+        let button = document.getElementById(elementID);
+        if (!button)
+            return false;
+
+        button.addEventListener("click", callback);
+        return true;
+    }
+
+    // Note: this is expected to return a promise that fulfills when
+    // one of the buttons is clicked. The promise will be rejected if
+    // there are no buttons specified, and also just before the main
+    // frame navigates.
+    async function waitForPolicyDecision()
+    {
+        if (window._waitForPolicyDecisionPromiseData)
+            return window._waitForPolicyDecisionPromiseData.promise;
+        
+        window._waitForPolicyDecisionPromiseData = {};
+        window._waitForPolicyDecisionPromiseData.promise = new Promise((resolve, reject) => {
+            window._waitForPolicyDecisionPromiseData.resolve = resolve;
+            window._waitForPolicyDecisionPromiseData.reject = reject;
+        });
+
+        let buttonNames = ["policy-1", "policy-2", "policy-3"];
+        let addedButtonsCount = buttonNames.filter((id) => addButtonEventListener(id, handlePolicyDecision)).length;
+        if (!addedButtonsCount)
+            window._waitForPolicyDecisionPromiseData.reject?.(WI.WebInspectorExtension.ErrorCode.InvalidRequest);
+
+        window.addEventListener("pagehide", () => {
+            window._waitForPolicyDecisionPromiseData.reject?.(WI.WebInspectorExtension.ErrorCode.ContextDestroyed);
+        });
+
+        return window._waitForPolicyDecisionPromiseData.promise;
+    }
+
+    function handlePolicyDecision(event)
+    {
+        if (!window._waitForPolicyDecisionPromiseData)
+            return;
+
+        // On the first button click, pull out the resolve and reject callbacks.
+        let {resolve, reject, promise} = window._waitForPolicyDecisionPromiseData;
+        if (!resolve || !reject)
+            return;
+
+        window._waitForPolicyDecisionPromiseData = { promise };
+
+        // One of 'policy-1', 'policy-2', 'policy-3'.
+        resolve(event.target.id);
+    }
+
+    function receivePayload(payload)
+    {
+        for (let placeholderID of ['titleText', 'descriptionText', 'policy-1', 'policy-2', 'policy-3']) {
+            let placeholderElement = document.getElementById(placeholderID);
+            if (!placeholderElement) {
+                console.error("Couldn't find placeholder element for placeholderID: " + placeholderID);
+                continue;
+            }
+
+            let payloadValue = payload[placeholderID];
+            placeholderElement.textContent = payloadValue ?? "LOCALIZED STRING NOT FOUND";
+            placeholderElement.classList.toggle("hidden", !payloadValue);
+        }
+
+        let anyButtonIsVisible = payload['policy-1'] || payload['policy-2'] || payload['policy-3'];
+        let bottomBarElement = document.getElementsByClassName('button-bar')[0];
+        bottomBarElement.classList.toggle("hidden", !anyButtonIsVisible);
+    }
+</script>
+</head>
+<body>
+    <div class="vertical-flex-container">
+        <div id="alert-container" class="alert-container">
+            <h1 id="titleText">An extension would like to access this website</h1>
+            </h1>
+            <div class="alert-body">
+                <p id="descriptionText">The extension would be able to read and alter webpages and see your browsing history on this website. This could include sensitive information, including passwords, phone numbers, and credit cards.</p>
+                <div class="button-bar">
+                    <button type="button" id="policy-1">Allow for One Day</button>
+                    <button type="button" id="policy-2">Always Allow on This Website</button>
+                    <button type="button" id="policy-3">Always Allow on Every Website...</button>
+                 </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

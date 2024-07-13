@@ -1,0 +1,169 @@
+;;; Copyright (c) 2021 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow mach-task-name)
+
+(allow mach-lookup
+    (global-name
+        "com.apple.airportd"
+        "com.apple.accountsd.accountmanager"
+        "com.apple.audio.AudioSession"
+        "com.apple.CARenderServer"
+        "com.apple.chronoservices.chronodbridge"
+        "com.apple.containermanagerd"
+        "com.apple.CoreLocation.agent"
+        "com.apple.coremedia.systemcontroller.xpc"
+        "com.apple.coreservices.appleevents"
+        "com.apple.coreservices.launchservicesd"
+        "com.apple.coreservices.quarantine-resolver"
+        "com.apple.corewlan-xpc"
+        "com.apple.iconservices"
+        "com.apple.iconservices.store"
+        "com.apple.identityservicesd.desktop.auth"
+        "com.apple.idsremoteurlconnectionagent.desktop.auth"
+        "com.apple.idsremoteurlconnectionagent.embedded.auth"
+        "com.apple.linkd.extension"
+        "com.apple.linkd.mediator"
+        "com.apple.linkd.registry"
+        "com.apple.linkd.transcript"
+        "com.apple.localizationswitcherd"
+        "com.apple.locationd.desktop.registration"
+        "com.apple.logind"
+        "com.apple.lsd.mapdb"
+        "com.apple.lsd.modifydb"
+        "com.apple.networkd_privileged"
+        "com.apple.pluginkit.pkd"
+        "com.apple.powerlog.plxpclogger.xpc"
+        "com.apple.private.corewifi-xpc"
+        "com.apple.rapport.people"
+        "com.apple.SecurityServer"
+        "com.apple.StatusKit.local"
+        "com.apple.symptom_diagnostics"
+        "com.apple.SystemConfiguration.configd"
+        "com.apple.tccd.system"
+        "com.apple.trustd"
+        "com.apple.usernotifications.listener"
+        "com.apple.windowserver.active"
+    )
+)
+
+(allow process-info-pidinfo)
+(allow process-info* (target self))
+
+(allow process-info-codesignature)
+
+(allow file-read-metadata)
+
+(allow file-read* file-write*
+    (subpath (param "TMPDIR"))
+    (subpath (param "DARWIN_CACHE_DIR"))
+    (subpath (param "DARWIN_USER_DIR"))
+)
+
+(allow file-read* file-write*
+    (extension "com.apple.sandbox.application-group")
+    (home-subpath "/Library/Caches/com.apple.chrono")
+    (home-regex #"/Library/Containers/.*/com.apple.chrono(/|$)")
+)
+
+(allow file-read*
+    (subpath "/Library/Caches/com.apple.iconservices.store")
+    (literal "/Library/Preferences/com.apple.security.plist")
+    (literal "/Library/Preferences/com.apple.networkd.plist")
+    (literal "/Library/Preferences/SystemConfiguration/preferences.plist")
+    (subpath "/Library/Video/Plug-Ins")
+
+    (regex #"\.app($|/)")
+    (home-regex #"/Library/Daemon Containers/[^/]+/Data/linkd[^/]+$")
+
+    (regex #"^/private/var/folders/[^/]+/[^/]+/[^/]+/com\.apple\.iconservices(/|$)")
+)
+
+(with-filter (system-attribute apple-internal)
+    (allow file-read*
+        (subpath "/AppleInternal/Library/Video/Plug-Ins")
+    )
+)
+
+(allow file-read* file-write* (mount-relative-regex #"^/\.TemporaryItems(/|$)"))
+
+(allow file-map-executable
+    (subpath "/System/Library/Video/Plug-Ins/AppleVideoEncoder.bundle")
+)
+
+(allow file-read* file-write* (extension "identityservicesd:mds"))
+(allow file-read*
+       (literal "/private/var/db/mds/system/mdsDirectory.db")
+       (literal "/private/var/db/mds/system/mdsObject.db"))
+(allow file-read*
+        (literal (param "SECURITY_MESSAGES_DIR")))
+(allow ipc-posix-shm-read-data ipc-posix-shm-write-data ipc-posix-shm-write-create
+       (ipc-posix-name "com.apple.AppleDatabaseChanged"))
+
+
+(system-network)
+(allow network-outbound)
+(allow network-inbound (local udp))
+(allow network-bind)
+(allow system-socket (socket-domain AF_SYSTEM))
+(allow system-socket (socket-domain 39))
+
+(allow ipc-posix-shm-read* ipc-posix-shm-write*
+    (ipc-posix-name
+        "/com.apple.chrono.loc-in-use1"
+        "/com.apple.chrono.loc-in-use2"
+    )
+)
+
+(allow iokit-open
+    (iokit-user-client-class
+        "AppleAVE2UserClient"
+        "AppleKeyStoreUserClient"
+        "RootDomainUserClient"
+    )
+)
+
+(system-graphics)
+
+(allow user-preference-write
+    (preference-domain "com.apple.chronod")
+)
+
+(allow user-preference-read
+    (preference-domain
+        "kCFPreferencesAnyApplication"
+        "com.apple.chronod"
+        "com.apple.coremedia"
+        "com.apple.security"
+        "com.apple.springboard"
+        "com.apple.universalaccess"
+    )
+)
+
+(allow lsopen)
+(allow appleevent-send)

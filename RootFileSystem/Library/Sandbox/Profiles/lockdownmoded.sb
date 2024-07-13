@@ -1,0 +1,112 @@
+;;; Copyright (c) 2023 Apple Inc. All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 3)
+
+(deny default)
+(deny mach-priv-host-port)
+(deny dynamic-code-generation)
+(allow syscall-unix syscall-mach)
+(allow file-test-existence iokit-get-properties)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;; access our own process's info
+(allow process-info* (target self))
+
+;; read the Lockdown Mode state
+(allow system-mac-syscall)
+
+;; check entitlements of incoming connections
+(allow process-info-codesignature)
+
+(define (home-subpath home-relative-subpath)
+        (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-literal home-relative-literal)
+        (literal (string-append (param "HOME") home-relative-literal)))
+
+;; resolve symlinks, realpath(3), and writing temp files
+(allow file-read-metadata)
+    
+;; read/write the Lockdown Mode state, and access to a temporary directory
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR"))
+       (home-subpath "/Library/LockdownMode/"))
+
+(allow file-issue-extension
+       (home-subpath "/Library/LockdownMode/metadata.plist"))
+       
+;; used by IconServices
+(allow file-read*
+       (regex #"^/private/var/folders/[^/]+/[^/]+/[^/]+/com\.apple\.iconservices/store\.index")
+       (subpath "/Library/Caches/com.apple.iconservices.store"))
+
+;; on Intel Macs, set NVRAM state
+(allow nvram-set nvram-get nvram-delete
+       (nvram-variable "40A0DDD2-77F8-4392-B4A3-1E7304206516:ldm"))
+
+;; write the state file
+(allow system-fcntl
+       (fcntl-command F_SETPROTECTIONCLASS))
+
+;; set state of restrictions
+(allow mach-lookup
+       (global-name "com.apple.kvsd")
+       (global-name "com.apple.authd")
+       (global-name "com.apple.amfi.xpc")
+       (global-name "com.apple.sharingd")
+       (global-name "com.apple.lsd.mapdb")
+       (global-name "com.apple.analyticsd")
+       (global-name "com.apple.lsd.modifydb")
+       (global-name "com.apple.iconservices")
+       (global-name "com.apple.lockdownmoded")
+       (global-name "com.apple.UNCUserNotification")
+       (global-name "com.apple.controlcenter.toggle")
+       (global-name "com.apple.CoreAuthentication.agent")
+       (global-name "com.apple.accountsd.accountmanager")
+       (global-name "com.apple.system.opendirectoryd.api")
+       (global-name "com.apple.usernotifications.listener")
+       (global-name "com.apple.distributed_notifications@Uv3")
+       (global-name "com.apple.managedconfiguration.profiled")
+       (global-name "com.apple.CoreAuthentication.agent.libxpc")
+       (global-name "com.apple.identityservicesd.embedded.auth")
+       (global-name "com.apple.coreservices.quarantine-resolver")
+       (global-name "com.apple.systemadministration.writeconfig")
+       (global-name "com.apple.usernotifications.usernotificationservice"))
+    
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.Sharing")
+       (preference-domain "com.apple.sharingd")
+       (preference-domain "com.apple.coremedia")
+       (preference-domain "com.apple.controlcenter")
+       (preference-domain "kCFPreferencesAnyApplication"))
+
+;; read the Firewall state
+(allow user-preference-read
+       (preference-domain "com.apple.alf"))
+    
+;; set the Firewall state
+(allow authorization-right-obtain
+       (right-name "system.preferences"))
+
+;; reset pairing records
+(allow network-outbound (literal "/private/var/run/lockdown.sock"))
+
+;; used by AirDrop
+(allow socket-ioctl
+       (ioctl-command SIOCGIFMEDIA)
+       (ioctl-command SIOCGIFCLAT46ADDR))
+
+;; used by AirDrop + setting state in ACM
+(allow iokit-open-service
+       (iokit-registry-entry-class "AppleCredentialManager")
+       (iokit-registry-entry-class "AppleBCMWLANSkywalkInterface"))
+(allow iokit-open-user-client
+       (iokit-user-client-class "AppleCredentialManagerUserClient"))

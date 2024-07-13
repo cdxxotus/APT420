@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<installer-gui-script minSpecVersion="1">
+    <options hostArchitectures="i386,x86_64" customize="never" visibleOnlyForPredicate="true"/>
+    <title>SU_TITLE</title>
+    <script/>
+    <volume-check script="VolumeCheck()"/>
+    <installation-check script="VolumeCheck()"/>
+    <tags>
+    </tags>
+    <platforms>
+        <client arch="i386"/>
+        <server arch="i386"/>
+    </platforms>
+    <choices-outline ui="SoftwareUpdate">
+        <line choice="su"/>
+    </choices-outline>
+    <choices-outline>
+        <line choice="su"/>
+    </choices-outline>
+    <choice id="su" description-mime-type="text/html" secondaryDescription="SU_SERVERCOMMENT" suDisabledGroupID="MultiLingualVoice_ro_RO_ioana" start_selected="true" versStr="SU_VERS" description="SU_DESCRIPTION" title="Voice Update - Ioana" visible="VolumeCheck(my.target.mountpoint)">
+        <pkg-ref id="com.apple.pkg.MultiLingualVoice_ro_RO_ioana.16U1127" auth="Root" packageIdentifier="com.apple.pkg.MultiLingualVoice_ro_RO_ioana.16U1127">MultiLingualVoice_ro_RO_ioana.pkg</pkg-ref>
+    </choice>
+    <script>
+function VolumeCheck(prefix) {
+    return true;
+}
+</script>
+    <localization>
+        <strings language="English">"SU_TITLE" = "BridgeOSUpdateCustomer";
+"SU_VERS" = "10.14.6";
+"SU_SERVERCOMMENT" = "For Desktop and Server systems";
+"SU_DESCRIPTION" = '&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+';
+</strings>
+    </localization>
+    <pkg-ref id="com.apple.pkg.MultiLingualVoice_ro_RO_ioana.16U1127" installKBytes="119698" version="3.0.0.0.1.1498694169"/>
+</installer-gui-script>

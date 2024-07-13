@@ -1,0 +1,111 @@
+2024-07-12 22:45:26.928276+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] invalidated after a failed init
+2024-07-12 22:45:26.928334+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:45:39.727482+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb0b40] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:45:39.727564+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb0b40] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:45:39.727595+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb0b40] invalidated after a failed init
+2024-07-12 22:45:39.727623+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:45:52.271506+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:45:52.272422+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:45:52.272534+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] invalidated after a failed init
+2024-07-12 22:45:52.272622+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:46:04.994132+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb0b40] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:46:04.994258+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb0b40] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:46:04.994311+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb0b40] invalidated after a failed init
+2024-07-12 22:46:04.994359+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:46:17.332268+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:46:17.332997+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:46:17.333096+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] invalidated after a failed init
+2024-07-12 22:46:17.333234+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:46:29.982444+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:46:29.983245+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:46:29.983358+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] invalidated after a failed init
+2024-07-12 22:46:29.983448+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:46:42.777461+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:46:42.778208+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:46:42.778331+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] invalidated after a failed init
+2024-07-12 22:46:42.778441+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:46:55.577515+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:46:55.578030+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:46:55.578144+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] invalidated after a failed init
+2024-07-12 22:46:55.578246+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:47:08.300889+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:47:08.301691+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:47:08.301789+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] invalidated after a failed init
+2024-07-12 22:47:08.301880+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:47:20.990905+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb8780] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:47:20.991028+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb8780] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:47:20.991062+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb8780] invalidated after a failed init
+2024-07-12 22:47:20.991089+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:47:33.636407+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:47:33.636759+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:47:33.636878+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] invalidated after a failed init
+2024-07-12 22:47:33.636986+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:47:45.982524+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:47:45.982863+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:47:45.983029+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] invalidated after a failed init
+2024-07-12 22:47:45.983158+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:47:58.529792+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:47:58.530291+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:47:58.530385+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] invalidated after a failed init
+2024-07-12 22:47:58.530482+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:48:11.290174+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:48:11.290629+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:48:11.290829+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] invalidated after a failed init
+2024-07-12 22:48:11.290941+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:48:24.044245+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:48:24.044670+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:48:24.044789+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] invalidated after a failed init
+2024-07-12 22:48:24.044903+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:48:36.490051+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:48:36.491051+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:48:36.491138+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] invalidated after a failed init
+2024-07-12 22:48:36.491224+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:48:49.145208+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:48:49.145893+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:48:49.145996+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] invalidated after a failed init
+2024-07-12 22:48:49.146082+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:49:01.665358+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:49:01.666112+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:49:01.666230+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] invalidated after a failed init
+2024-07-12 22:49:01.666326+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:49:14.348637+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:49:14.349148+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:49:14.349261+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] invalidated after a failed init
+2024-07-12 22:49:14.349355+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:49:27.081551+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002b9c000] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:49:27.081653+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002b9c000] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:49:27.081697+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002b9c000] invalidated after a failed init
+2024-07-12 22:49:27.081736+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:49:39.816293+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:49:39.816917+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:49:39.816983+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba81e0] invalidated after a failed init
+2024-07-12 22:49:39.817355+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:49:40.336810+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x11fe21da0] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+2024-07-12 22:49:52.610026+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:49:52.610315+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:49:52.610363+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] invalidated after a failed init
+2024-07-12 22:49:52.610411+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:50:05.410154+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:50:05.410619+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:50:05.410810+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] invalidated after a failed init
+2024-07-12 22:50:05.410956+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:50:18.200126+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:50:18.200974+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:50:18.201100+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bac000] invalidated after a failed init
+2024-07-12 22:50:18.201200+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:50:30.982338+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:50:30.983020+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:50:30.983128+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba43c0] invalidated after a failed init
+2024-07-12 22:50:30.983224+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:50:43.436622+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:50:43.437784+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:50:43.437889+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] invalidated after a failed init
+2024-07-12 22:50:43.437975+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:50:55.982479+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:50:55.983208+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:50:55.983328+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002ba02d0] invalidated after a failed init
+2024-07-12 22:50:55.983772+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid
+2024-07-12 22:51:08.685448+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb8780] activating connection: mach=true listener=false peer=false name=com.apple.dock.fullscreen
+2024-07-12 22:51:08.685584+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb8780] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2024-07-12 22:51:08.685608+0000 Default      219     0     Recovery Springboard: (libxpc.dylib) [com.apple.xpc:connection] [0x600002bb8780] invalidated after a failed init
+2024-07-12 22:51:08.685630+0000 Error        219     0     Recovery Springboard: (AppKit) [com.apple.AppKit:Window] Dock connection error: Connection invalid

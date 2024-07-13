@@ -1,0 +1,232 @@
+[
+  {
+    "ipa": "a",
+    "synthNative": "a",
+    "descr": "open front"
+  },
+  {
+    "ipa": "e",
+    "synthNative": "e",
+    "descr": "close-mid front"
+  },
+  {
+    "ipa": "ɛ",
+    "synthNative": "E",
+    "descr": "open-mid front"
+  },
+  {
+    "ipa": "i",
+    "synthNative": "i",
+    "descr": "close front"
+  },
+  {
+    "ipa": "o",
+    "synthNative": "o",
+    "descr": "close-mid back rounded"
+  },
+  {
+    "ipa": "ɔ",
+    "synthNative": "O",
+    "descr": "open-mid back rounded"
+  },
+  {
+    "ipa": "u",
+    "synthNative": "u",
+    "descr": "close back rounded"
+  },
+  {
+    "ipa": "ə",
+    "synthNative": "$",
+    "descr": "central (schwa)"
+  },
+  {
+    "ipa": "ɯ",
+    "synthNative": "u-",
+    "descr": "close back"
+  },
+  {
+    "ipa": "ă",
+    "synthNative": "a:~",
+    "descr": "open front extra-short"
+  },
+  {
+    "ipa": "ə̆",
+    "synthNative": "$:~",
+    "descr": "central (schwa) extra-short"
+  },
+  {
+    "ipa": "ɛ̆",
+    "synthNative": "E:~",
+    "descr": "open-mid front extra-short"
+  },
+  {
+    "ipa": "ɔ̆",
+    "synthNative": "O:~",
+    "descr": "open-mid back rounded extra-short"
+  },
+  {
+    "ipa": "u͡ə",
+    "synthNative": "u&$",
+    "descr": "from close back rounded to central"
+  },
+  {
+    "ipa": "i͡ə",
+    "synthNative": "i&$",
+    "descr": "from close front to central"
+  },
+  {
+    "ipa": "ɯ͡ə",
+    "synthNative": "u-&$",
+    "descr": "from close back to central"
+  },
+  {
+    "ipa": "j",
+    "synthNative": "j",
+    "descr": "palatal approximant voiced"
+  },
+  {
+    "ipa": "w",
+    "synthNative": "w",
+    "descr": "labial velar approximant voiced"
+  },
+  {
+    "ipa": "p",
+    "synthNative": "p",
+    "descr": "bilabial plosive voiceless"
+  },
+  {
+    "ipa": "t",
+    "synthNative": "t",
+    "descr": "alveolar plosive voiceless"
+  },
+  {
+    "ipa": "k",
+    "synthNative": "k",
+    "descr": "velar plosive voiceless"
+  },
+  {
+    "ipa": "f",
+    "synthNative": "f",
+    "descr": "labiodental fricative voiceless"
+  },
+  {
+    "ipa": "v",
+    "synthNative": "v",
+    "descr": "labiodental fricative voiced"
+  },
+  {
+    "ipa": "s",
+    "synthNative": "s",
+    "descr": "alveolar fricative voiceless"
+  },
+  {
+    "ipa": "z",
+    "synthNative": "z",
+    "descr": "alveolar fricative voiced"
+  },
+  {
+    "ipa": "x",
+    "synthNative": "x",
+    "descr": "velar fricative voiceless"
+  },
+  {
+    "ipa": "ɣ",
+    "synthNative": "G",
+    "descr": "velar fricative voiced"
+  },
+  {
+    "ipa": "h",
+    "synthNative": "h",
+    "descr": "glottal fricative voiceless"
+  },
+  {
+    "ipa": "m",
+    "synthNative": "m",
+    "descr": "bilabial nasal voiced"
+  },
+  {
+    "ipa": "n",
+    "synthNative": "n",
+    "descr": "alveolar nasal voiced"
+  },
+  {
+    "ipa": "ŋ",
+    "synthNative": "nK",
+    "descr": "velar nasal voiced"
+  },
+  {
+    "ipa": "l",
+    "synthNative": "l",
+    "descr": "alveolar lateral approximant"
+  },
+  {
+    "ipa": "ʔ",
+    "synthNative": "?",
+    "descr": "glottal plosive"
+  },
+  {
+    "ipa": "tʰ",
+    "synthNative": "t%{",
+    "descr": "alveolar plosive voiceless aspirated"
+  },
+  {
+    "ipa": "ɲ",
+    "synthNative": "n~",
+    "descr": "palatal nasal voiced"
+  },
+  {
+    "ipa": "c",
+    "synthNative": "c",
+    "descr": "palatal plosive voiceless"
+  },
+  {
+    "ipa": "ʐ",
+    "synthNative": "z+",
+    "descr": "retroflex fricative voiced"
+  },
+  {
+    "ipa": "ɓ",
+    "synthNative": "b\\",
+    "descr": "bilabial implosive voiced"
+  },
+  {
+    "ipa": "ɗ",
+    "synthNative": "d\\",
+    "descr": "alveolar implosive"
+  },
+  {
+    "ipa": ".",
+    "synthNative": ".",
+    "descr": "syllable break"
+  },
+  {
+    "ipa": "˧",
+    "synthNative": "33",
+    "descr": "mid level"
+  },
+  {
+    "ipa": "˨˩",
+    "synthNative": "21",
+    "descr": "low-to-extra-low falling"
+  },
+  {
+    "ipa": "˨˦",
+    "synthNative": "24",
+    "descr": "Rising tone"
+  },
+  {
+    "ipa": "˧˩˨",
+    "synthNative": "312",
+    "descr": "First falling, then rising"
+  },
+  {
+    "ipa": "˨˩̰",
+    "synthNative": "21%!",
+    "descr": "Falling with creakiness"
+  },
+  {
+    "ipa": "˧˥̰",
+    "synthNative": "35%!",
+    "descr": "Rising with creakiness"
+  }
+]

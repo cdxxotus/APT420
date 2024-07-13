@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AudioConverterV2</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>AudioMetadata</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>AudioQueueXPC</key>
+	<dict>
+		<key>DevelopmentPhase</key>
+		<string>FeatureComplete</string>
+	</dict>
+	<key>SpatialOnAggregateDevices</key>
+	<dict>
+		<key>DevelopmentPhase</key>
+		<string>FeatureComplete</string>
+	</dict>
+	<key>SpatialPhaseIO</key>
+	<dict>
+		<key>DevelopmentPhase</key>
+		<string>FeatureComplete</string>
+	</dict>
+	<key>UseSessionVolume</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>audio_converter_out_of_process</key>
+	<dict>
+		<key>DevelopmentPhase</key>
+		<string>FeatureComplete</string>
+	</dict>
+	<key>haptic_engine_cpms</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>haptic_rt_notification</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>haptics_power_optimized</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>tvOSAudioOnlySpatialization</key>
+	<dict>
+		<key>DevelopmentPhase</key>
+		<string>FeatureComplete</string>
+	</dict>
+</dict>
+</plist>

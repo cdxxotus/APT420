@@ -1,0 +1,133 @@
+{
+  "storage" : "devn_quant.espresso.weights",
+  "analyses" : {
+
+  },
+  "properties" : {
+    "fast_reshape" : "1"
+  },
+  "format_version" : 200,
+  "metadata_in_weights" : [
+
+  ],
+  "layers" : [
+    {
+      "nB" : 105,
+      "top" : "embedding_out",
+      "has_biases" : 1,
+      "weights" : {
+        "Q" : 3,
+        "W_int8" : 5
+      },
+      "nC" : 16,
+      "is_lookup" : 1,
+      "quantization_mode" : 2,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input",
+      "debug_info" : "",
+      "has_tanh" : 0,
+      "blob_biases" : 1,
+      "name" : "embedding",
+      "has_prelu" : 0
+    },
+    {
+      "input_size" : 16,
+      "arch" : 1,
+      "quantization_scale_h" : 14.427785873413086,
+      "quantization_scale_x" : 26.61393928527832,
+      "hidden_size" : 256,
+      "nonlinearity_alpha" : 1,
+      "nonlinearity_bidir_type" : 0,
+      "lstm_forget_bias" : 0,
+      "coupled_input_forget" : 0,
+      "quantization_simple_mode" : true,
+      "bias_vector_flag" : 1,
+      "mode" : 0,
+      "cell_clip_threshold" : 50,
+      "type" : "rnn_arch",
+      "internal_nonlinearity_second_beta" : 1,
+      "internal_nonlinearity_alpha" : 1,
+      "internal_nonlinearity_beta" : 1,
+      "forget_bias" : 0,
+      "weights" : {
+        "W_h_int8" : 7,
+        "W_x_int8" : 9,
+        "b" : 11
+      },
+      "lstm_has_peepholes" : 0,
+      "beta" : 1,
+      "quantization_mode" : 5,
+      "name" : "lstm1",
+      "quantization_scale_h_reverse" : 0,
+      "top" : "lstm1_out,lstm1_h_out,lstm1_c_out",
+      "alpha" : 1,
+      "quantization_scale_x_reverse" : 0,
+      "max_batch_size" : 1,
+      "debug_info" : "",
+      "nonlinearity_bidir_alpha" : 1,
+      "nonlinearity_beta" : 1,
+      "internal_nonlinearity_second_alpha" : 1,
+      "encoder_bidirectional_mode" : 0,
+      "internal_nonlinearity_type" : 2,
+      "bottom" : "embedding_out,lstm1_h_in,lstm1_c_in",
+      "nonlinearity_type" : 0,
+      "nonlinearity_bidir_beta" : 1,
+      "encoder_output_sequence" : 0,
+      "internal_nonlinearity_second_type" : 0
+    },
+    {
+      "dst_cp" : -1,
+      "bottom" : "lstm1_out",
+      "weights" : {
+
+      },
+      "debug_info" : "",
+      "top" : "quant_lstm1_out_2,quant_lstm1_out_2_Qscale",
+      "type" : "dynamic_quantize",
+      "name" : "quant_dense_2",
+      "simple_mode" : 1
+    },
+    {
+      "nB" : 256,
+      "top" : "quant_output_before_softmax_2",
+      "has_biases" : 0,
+      "weights" : {
+        "W_int8" : 13
+      },
+      "nC" : 2,
+      "quantization_mode" : 5,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "quant_lstm1_out_2",
+      "debug_info" : "",
+      "has_tanh" : 0,
+      "name" : "dense",
+      "has_prelu" : 0
+    },
+    {
+      "dst_cp" : -1,
+      "bottom" : "quant_output_before_softmax_2,quant_lstm1_out_2_Qscale",
+      "weights" : {
+        "biases" : 15
+      },
+      "w_quantization_scale" : 15.88331127166748,
+      "debug_info" : "",
+      "top" : "output_before_softmax",
+      "type" : "dynamic_dequantize",
+      "name" : "dequant_dense_2",
+      "simple_mode" : 1
+    },
+    {
+      "bottom" : "output_before_softmax",
+      "weights" : {
+
+      },
+      "debug_info" : "",
+      "top" : "output",
+      "C" : 2,
+      "type" : "softmax",
+      "name" : "dense_softmax"
+    }
+  ]
+}

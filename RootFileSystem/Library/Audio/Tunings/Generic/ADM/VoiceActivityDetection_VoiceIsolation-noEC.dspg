@@ -1,0 +1,84 @@
+graphName "VoiceActivityDetection_VoiceIsolation-noEC"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; 	Macros
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[def sampleRateIn 48000]    ; overridden by ADM
+[def numChannelsIn 4]       ; overridden by ADM
+[def vadProcSampleRate 16000]
+[def vadProcBlockSize 512]
+[def viProcSampleRate 24000]
+[def viProcBlockSize 240]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	I/O
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+in in
+out out
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	Boxes
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Mic
+box MicChannelSelector (aufx clsl appl) 1 1
+box MicInputGain dbgn 1 1
+box InputSRC src 1 1
+
+; VAD and LoudnessNormalizer
+box LoudnessNormalizer (aufx ldnm appl) 1 1
+box NNVAD_In_FFT fft 1 1
+box NNVAD (aufx nnva appl) 1 1
+box OutputDeadEndBox dead 1 0
+
+; VI
+box VIInputSRC src 1 1
+box AUNeuralNet (aufx nnet appl) 1 1 
+box ChannelCopier chancopy 1 1
+box VIOutputSRC src 1 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	Wires
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+wire in MicChannelSelector ([sampleRateIn] [numChannelsIn])
+wire MicChannelSelector MicInputGain ([sampleRateIn] 1)
+wire MicInputGain InputSRC ([sampleRateIn] 1)
+
+; VAD
+wire InputSRC LoudnessNormalizer ([vadProcSampleRate] 1 [vadProcBlockSize])
+wire LoudnessNormalizer NNVAD_In_FFT ([vadProcSampleRate] 1 [vadProcBlockSize])
+wire NNVAD_In_FFT NNVAD (freq [vadProcSampleRate] 1 [vadProcBlockSize])
+wire NNVAD OutputDeadEndBox (freq [vadProcSampleRate] 1 [vadProcBlockSize])
+
+; VI
+wire MicChannelSelector VIInputSRC ([sampleRateIn] 1)
+wire VIInputSRC AUNeuralNet ([viProcSampleRate] 1 [viProcBlockSize])
+wire AUNeuralNet ChannelCopier ([viProcSampleRate] 1 [viProcBlockSize])
+wire ChannelCopier VIOutputSRC ([viProcSampleRate] [numChannelsIn] [viProcBlockSize])
+wire VIOutputSRC out ([sampleRateIn] [numChannelsIn])
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; 	Parameters and properties
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+param sppb 0 out ; speech probability as boolean value (e.g. 0 or 1) 
+wireGraphParam sppb (NNVAD 5 global 0)
+
+param sppf 0 out ; speech probability as float value (e.g. anything between 0.0 and 1.0)  
+wireGraphParam sppf (NNVAD 6 global 0)
+
+property chsl 0x00000000 in
+wireGraphProperty chsl ( MicChannelSelector slcm 0 0 )

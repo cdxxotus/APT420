@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Text</key>
+	<dict>
+		<key>ExactMatch</key>
+		<dict>
+			<key>Key Echo speaks each key that is pressed.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Tangenteko[[slnc 10]] läser upp varje tangent som trycks ned.</string>
+			</dict>
+			<key>Command echo speaks the name of the performed command.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Kommandoeko läser upp namnet på det utförda [[emph +]]kommandot.</string>
+			</dict>
+			<key>Screen curtain darkens the video display.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Skärmridå [[emph +]]sänker [[emph +]]videoskärmens ljusnivå.</string>
+			</dict>
+			<key>Disabling word echo mode</key>
+			<dict>
+				<key>MTText</key>
+				<string>Stänger av ordekoläget[[emph +]]</string>
+			</dict>
+			<key>Starting keyboard help. Starting keyboard help.  Type keys to hear their names.  Hold down the VoiceOver keys while typing to hear VoiceOver commands. Press the Escape key at the top left corner of the keyboard to stop help.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Startar tangentbordshjälp.  Tryck på tangenter för att höra deras namn.  Håll ned [[emph +]]Voice[[emph -]]Over [[emph -]]tangenterna medan du skriver om du vill höra VoiceOver-kommandon.  Tryck på escapetangenten [[emph +]]i det[[emph +]]övre[[slnc 50]] [[emph +]]vänstra hörnet [[emph +]]om du vill sluta öva.</string>
+			</dict>
+			<key>This window cannot be resized</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte [[emph +]]att byta storlek på det här fönstret [[emph +]]</string>
+			</dict>
+			<key>Moves the window down on the screen.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flyttar fönstret [[emph +]]längre ned på skärmen.</string>
+			</dict>
+			<key>Moves the window to the left on the screen.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flyttar fönstret till vänster [[emph +]]om skärmen.</string>
+			</dict>
+			<key>Moves the window to the right on the screen.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flyttar fönstret till höger [[slnc 50]]på skärmen.</string>
+			</dict>
+			<key>Cannot move window right any further.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att flytta fönstret [[slnc 50]]längre till höger [[emph +]].</string>
+			</dict>
+			<key>Step window up</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flytta fönstret stegvis [[slnc 20]]uppåt.</string>
+			</dict>
+			<key>Cannot move window up any further. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att flytta fönstret [[slnc 30]]högre upp.</string>
+			</dict>
+			<key>Steps the window right on the screen in increments.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flyttar fönstret stegvis åt höger [[slnc 30]]på skärmen.</string>
+			</dict>
+			<key>Cannot move window right any further. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att flytta fönstret [[slnc 30]]längre åt höger.</string>
+			</dict>
+			<key>Cannot make window height any taller.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att göra fönsterhöjden [[slnc 30]]högre.</string>
+			</dict>
+			<key>Cannot make sheet height any shorter. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att göra dokumentets höjd [[slnc 20]]kortare.</string>
+			</dict>
+			<key>Cannot make sheet height any taller.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att göra dokumentets höjd [[slnc 20]]högre.</string>
+			</dict>
+			<key>Cannot make sheet width any more narrow.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att göra dokumentets bredd [[slnc 20]]smalare.</string>
+			</dict>
+			<key>Cannot make sheet height any shorter.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att göra dokumentets höjd [[slnc 20]]kortare.</string>
+			</dict>
+			<key>Cannot make sheet width any narrower.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att göra dokumentets bredd [[slnc 20]]smalare.</string>
+			</dict>
+			<key>Cannot make sheet width any wider.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att göra dokumentets bredd [[slnc 20]]bredare.</string>
+			</dict>
+			<key>Web links menu</key>
+			<dict>
+				<key>MTText</key>
+				<string>Meny med webblänkar [[emph +]].</string>
+			</dict>
+			<key>Lists the available links on the web page.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Listar de tillgängliga [[emph +]]länkarna [[slnc 20]]på [[emph +]] webbplatsen.</string>
+			</dict>
+			<key>Confirming text field. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Bekräftar [[emph +]]textfältet.</string>
+			</dict>
+			<key>Cannot confirm text field. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att bekräfta [[emph +]]textfältet.</string>
+			</dict>
+			<key>Confirm text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Bekräfta [[emph +]]textfält</string>
+			</dict>
+			<key>Clear search field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Rensa [[emph +]]sökfältet</string>
+			</dict>
+			<key>Clearing search field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Rensar [[emph +]]sökfältet</string>
+			</dict>
+			<key>Cannot clear search field.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte att rensa [[emph +]]sökfältet.</string>
+			</dict>
+			<key>Interact with text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Interagera med [[emph +]]textfältet</string>
+			</dict>
+			<key>Edit or echo the contents of the text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Redigera eller [[slnc 10]] läs upp innehållet i [[emph +]]textfältet</string>
+			</dict>
+			<key>Stop interacting with text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Sluta interagera [[emph +]]med textfältet</string>
+			</dict>
+			<key>Stops interacting with text field</key>
+			<dict>
+				<key>MTText</key>
+				<string>Slutar interagera [[emph +]]med textfältet</string>
+			</dict>
+			<key>Reads from the start of the text field to the cursor position.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Läser från början [[emph +]]av textfältet till [[emph +]]pekarens position.</string>
+			</dict>
+			<key>Reads from the cursor position to the end of the text field.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Läser från [[emph +]]pekarens position till [[emph +]]slutet av [[emph +]]textfältet	.</string>
+			</dict>
+			<key>Moves splitter up or down</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flyttar avdelaren [[emph +]]upp [[slnc 20]]eller [[emph +]]ned</string>
+			</dict>
+			<key>Moves the scrollable area up one page.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flyttar upp den rullningsbara ytan [[slnc 10]]en sida.</string>
+			</dict>
+			<key>Moves splitter left or right</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flyttar avdelaren åt vänster [[slnc 10]]eller [[slnc 10]] åt höger</string>
+			</dict>
+			<key>Minimizes the area above or left of the splitter.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Minimerar området [[emph +]]ovanför [[slnc 10]]eller [[emph +]]till vänster om avdelaren.</string>
+			</dict>
+			<key>Top/left area is already maximized. </key>
+			<dict>
+				<key>MTText</key>
+				<string>Det övre vänstra [[slnc 10]]området är redan maximerat. </string>
+			</dict>
+			<key>Increases the value or steps forward through a list</key>
+			<dict>
+				<key>MTText</key>
+				<string>Ökar värdet eller går stegvis[[slnc 10]] framåt i en lista</string>
+			</dict>
+			<key>Opening dropdown list</key>
+			<dict>
+				<key>MTText</key>
+				<string>Öppnar [[slnc 10]][[emph +]] rullgardinslista</string>
+			</dict>
+			<key>Closing dropdown list</key>
+			<dict>
+				<key>MTText</key>
+				<string>Stänger [[slnc 10]][[emph +]] rullgardinslista</string>
+			</dict>
+			<key>currently not busy</key>
+			<dict>
+				<key>MTText</key>
+				<string>för tillfället [[emph +]] inte upptagen</string>
+			</dict>
+			<key>This application has no menubar.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Den här appen [[emph +]]har inget menyfält.</string>
+			</dict>
+			<key>nothing is in the VoiceOver cursor</key>
+			<dict>
+				<key>MTText</key>
+				<string>det finns inget [[emph +]]i VoiceOver-pekaren</string>
+			</dict>
+			<key>nothing has keyboard focus</key>
+			<dict>
+				<key>MTText</key>
+				<string>inget [[emph +]]har tangentbordsfokus</string>
+			</dict>
+			<key>Performs the default action on the item in the VoiceOver cursor.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Utför den förvalda åtgärden [[slnc 50]] på [[slnc 10]] objektet i VoiceOver-pekaren.</string>
+			</dict>
+			<key>Moves the keyboard focus to the item in the VoiceOver cursor.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flyttar tangentbordets fokus till [[slnc 10]] [[emph +]]objektet i VoiceOver-pekaren.</string>
+			</dict>
+			<key>There is no item with keyboard focus</key>
+			<dict>
+				<key>MTText</key>
+				<string>Det finns [[emph +]]inget objekt med tangentbordsfokus</string>
+			</dict>
+			<key>Cannot move up any further </key>
+			<dict>
+				<key>MTText</key>
+				<string>Det går inte [[slnc 10]]att flytta längre upp</string>
+			</dict>
+			<key>Move VoiceOver cursor left to nearest item.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flytta VoiceOver-pekaren [[slnc 10]]åt vänster [[slnc 10]]till närmsta objekt.</string>
+			</dict>
+			<key>Focus VoiceOver cursor out to inspect surrounding items.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flytta VoiceOver-pekarens fokus utåt [[slnc 10]]om du vill inspektera kringliggande objekt.</string>
+			</dict>
+			<key>Move VoiceOver cursor to item linked to current item</key>
+			<dict>
+				<key>MTText</key>
+				<string>Flytta VoiceOver-pekaren till objekt som har koppling [[slnc 10]]till det aktuella objektet</string>
+			</dict>
+			<key>Allows the item to be controlled with the keyboard.</key>
+			<dict>
+				<key>MTText</key>
+				<string>Tillåter att objektet [[slnc 10]]styrs [[slnc 10]] med tangentbordet.</string>
+			</dict>
+			<key>Add the item in the VoiceOver cursor to the list of selected items</key>
+			<dict>
+				<key>MTText</key>
+				<string>Lägg till objektet [slnc 10]] i VoiceOver-pekaren till listan av markerade objekt</string>
+			</dict>
+			<key>Shows current item&apos;s contextual menu if it has one</key>
+			<dict>
+				<key>MTText</key>
+				<string>Visar det aktuella objektets kontextmenu [[emph +]]om det finns en</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

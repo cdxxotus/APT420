@@ -1,0 +1,810 @@
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<title>Recovery Apple Silicon</title>
+	<link rel="stylesheet" type="text/css" href="../css/static.css">
+</head>
+<body class="apd-topic" data-istaskopen="true">
+<header role="presentation" id="mchl82829c17" class="AppleTopic">
+	<figure class="topicIcon">
+		<img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24">
+	</figure>
+	<h1>
+		Sử dụng Khôi phục macOS trên máy Mac có Apple silicon
+	</h1>
+	<p>
+		Khôi phục macOS là hệ thống khôi phục được tích hợp trên máy Mac.
+	</p>
+	<p>
+		Bạn có thể sử dụng các ứng dụng trong Khôi phục macOS trên máy Mac có Apple silicon để sửa chữa ổ lưu trữ trong, cài đặt lại macOS, khôi phục các tệp từ bản sao lưu Time Machine, đặt chính sách bảo mật cho các ổ đĩa khác nhau, chuyển các tệp giữa hai máy tính Mac, khởi động ở chế độ an toàn, v.v.
+	</p>
+	<p>
+		Việc cài đặt lại macOS yêu cầu có kết nối internet. Để kết nối vào internet, bạn có thể sử dụng kết nối mạng không dây hoặc có dây. Nếu bạn đang cố gắng kết nối vào Wi-Fi qua cổng xác thực (ví dụ: tại quán cà phê, thư viện hoặc khách sạn) hoặc mạng doanh nghiệp thì có thể bạn không truy cập được internet trong Khôi phục macOS. Hãy xem <a href="#mchle9d1cb3c" class="xRef Task">Kết nối vào internet bằng Wi-Fi</a>.
+	</p>
+	<div class="Alert">
+		<p class="Note">
+			<em>Lưu ý: </em>Nếu bạn muốn chuẩn bị sẵn sàng cho máy Mac để trao đổi, bán hoặc cho tặng, hãy sử dụng Trợ lý xóa trong macOS. Để sử dụng Trợ lý xóa, hãy khởi động máy tính của bạn trong macOS, chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Cài đặt hệ thống, bấm vào Cài đặt chung <img src="../SharedGlobalArt/AppIconTopic_General.png" alt="" height="30" width="30"> trong thanh bên (có thể bạn cần phải cuộn xuống), bấm vào “Chuyển hoặc đặt lại” ở bên phải, bấm vào nút Xóa tất cả nội dung và cài đặt, sau đó làm theo các hướng dẫn trên màn hình.
+		</p>
+	</div>
+	<div id="mchla906a106" class="Subhead">
+		<div class="heading-nobreak">
+			<h2 class="Name">
+				Các ứng dụng khả dụng trong Khôi phục macOS trên máy Mac có Apple silicon
+			</h2>
+			<p>
+				Các ứng dụng sau đây khả dụng trong Khôi phục macOS trên máy Mac có Apple silicon:
+			</p>
+		</div>
+		<ul>
+			<li>
+			<p>
+				<em>Khôi phục: </em>Ứng dụng Khôi phục cung cấp quyền truy cập vào các ứng dụng bổ sung trong Khôi phục macOS. Hãy xem <a href="#mchl5abfbb29" class="xRef Task">Khởi động máy tính của bạn trong Khôi phục macOS</a>, <a href="#mchldc3556ed" class="xRef Task">Khởi động máy tính trong Khôi phục macOS và ghép đôi các thiết bị đầu vào Bluetooth</a> và <a href="#mchlb7e93c86" class="xRef Task">Thoát Khôi phục macOS</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Khôi phục hệ thống Time Machine: </em>Khôi phục dữ liệu từ bản sao lưu Time Machine. Trong ứng dụng Khôi phục, hãy chọn “Khôi phục từ Time Machine”, sau đó bấm vào Tiếp tục. Để quay lại ứng dụng Khôi phục, hãy chọn Khôi phục hệ thống Time Machine &gt; Thoát Khôi phục hệ thống Time Machine. Hãy xem <a href="#mchlf4cdcc0f" class="xRef Task">Sử dụng Time Machine để khôi phục các tệp của bạn</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Cài đặt macOS Sonoma: </em>Cài đặt lại macOS trên máy tính của bạn. Trong ứng dụng Khôi phục, hãy chọn Cài đặt lại macOS [<em>name</em>], sau đó bấm vào Tiếp. Để quay lại ứng dụng Khôi phục, hãy chọn Cài đặt macOS [<em>name</em>] &gt; Thoát Cài đặt macOS. Hãy xem <a href="#mchl57249f89" class="xRef Task">Cài đặt lại macOS</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Safari: </em>Trong ứng dụng Khôi phục, hãy chọn Safari, sau đó bấm vào Tiếp tục. Để quay lại ứng dụng Khôi phục, hãy chọn Safari &gt; Thoát Safari. Nếu thiết bị của bạn được kết nối với internet, bạn có thể sử dụng Safari để tìm kiếm thêm thông tin trên trang web Hỗ trợ của Apple.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Tiện ích ổ đĩa: </em>Sửa chữa hoặc xóa ổ lưu trữ trong của bạn. Trong ứng dụng Khôi phục, hãy chọn Tiện ích ổ đĩa, sau đó bấm vào Tiếp tục. Để quay lại ứng dụng Khôi phục, hãy chọn Tiện ích ổ đĩa &gt; Thoát Tiện ích ổ đĩa. Hãy xem <a href="#mchl0e4c30d6" class="xRef Task">Xóa và cài đặt lại macOS</a> và <a href="#mchl3fe49482" class="xRef Task">Sửa chữa ổ lưu trữ trong của bạn</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Tiện ích bảo mật khởi động: </em>Đặt các chính sách bảo mật cho máy Mac của bạn. Trong ứng dụng Khôi phục, hãy chọn Tiện ích &gt; Tiện ích bảo mật khởi động. Để quay lại ứng dụng Khôi phục, hãy chọn Ổ đĩa khởi động &gt; Thoát Ổ đĩa khởi động. Hãy xem <a href="#mchl9b13cbdc" class="xRef Task">Thay đổi chính sách bảo mật</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Terminal: </em>Thay đổi cài đặt qua dòng lệnh. Trong ứng dụng Khôi phục, hãy chọn Tiện ích &gt; Terminal. Để quay lại ứng dụng Khôi phục, hãy chọn Terminal &gt; Thoát Terminal.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Chia sẻ ổ đĩa: </em>Chia sẻ ổ đĩa của máy Mac được khởi động trong Khôi phục macOS. Trong ứng dụng Khôi phục, hãy chọn Tiện ích &gt; Chia sẻ ổ đĩa. Hãy xem <a href="#mchl6e3b9225" class="xRef Task">Sử dụng Chia sẻ ổ đĩa để chuyển các tệp giữa hai máy tính Mac</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Ổ đĩa khởi động: </em>Đặt ổ đĩa khởi động cho máy Mac của bạn. Chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Ổ đĩa khởi động. Để thoát khỏi ứng dụng, hãy chọn Ổ đĩa khởi động &gt; Thoát Ổ đĩa khởi động. 
+			</p>
+			</li>
+		</ul>
+	</div>
+	<p>
+		Bạn cũng có thể sử dụng Khôi phục macOS để thực hiện các tác vụ sau:
+	</p>
+	<ul>
+		<li>
+		<p>
+			<a href="#mchl08ae9930" class="xRef Task">Khởi động máy tính của bạn ở chế độ an toàn</a>
+		</p>
+		</li>
+		<li>
+		<p>
+			<a href="#mchlbcf8b54b" class="xRef Task">Đặt ổ đĩa khởi động mặc định và khởi động lại máy tính của bạn</a>
+		</p>
+		</li>
+		<li>
+		<p>
+			<a href="#mchl2a21e30c" class="xRef Task">Xem bản ghi khôi phục</a>
+		</p>
+		</li>
+		<li>
+		<p>
+			<a href="#mchl4ee3f192" class="xRef Task">Tạo tệp chẩn đoán khôi phục</a>
+		</p>
+		</li>
+	</ul>
+	<div id="mchl5abfbb29" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl5abfbb29">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl5abfbb29" class="Name">
+					Khởi động máy tính của bạn trong Khôi phục macOS
+				</h2>
+				<ol>
+					<li>
+					<p>
+						Trên máy Mac của bạn, hãy chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Tắt máy.
+					</p>
+					<p>
+						Đợi máy Mac của bạn tắt hoàn toàn. Máy Mac được tắt hoàn toàn khi màn hình có màu đen và tất cả các đèn (bao gồm trong Touch Bar và bàn phím) được tắt.
+					</p>
+					</li>
+					<li>
+					<p>
+						Nhấn và giữ nút nguồn trên máy Mac của bạn cho đến khi ổ đĩa hệ thống và nút Tùy chọn xuất hiện.
+					</p>
+					</li>
+					<li>
+					<p>
+						Bấm vào nút Tùy chọn, sau đó bấm vào Tiếp tục. 
+					</p>
+					</li>
+					<li>
+					<p>
+						Nếu được hỏi, hãy chọn ổ đĩa cần khôi phục, sau đó bấm vào Tiếp.
+					</p>
+					</li>
+					<li>
+					<p>
+						Chọn tài khoản quản trị viên, sau đó bấm vào Tiếp.
+					</p>
+					</li>
+					<li>
+					<p>
+						Nhập mật khẩu cho tài khoản quản trị viên, sau đó bấm vào Tiếp.
+					</p>
+					<p>
+						Khi ứng dụng Khôi phục xuất hiện trong thanh menu, bạn có thể chọn bất kỳ tùy chọn có sẵn nào trong cửa sổ hoặc thanh menu.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchldc3556ed" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchldc3556ed">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchldc3556ed" class="Name">
+					Khởi động máy tính của bạn trong Khôi phục macOS và ghép đôi các thiết bị Bluetooth
+				</h2>
+				<p>
+					Làm theo những hướng dẫn này nếu bạn cần ghép đôi bàn phím, bàn di chuột hoặc chuột Bluetooth<sup>®</sup> với máy Mac của bạn khi bạn khởi động trong Khôi phục macOS.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Trên máy Mac của bạn, hãy chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Tắt máy.
+				</p>
+				<p>
+					Đợi máy Mac của bạn tắt hoàn toàn. Máy Mac được tắt hoàn toàn khi màn hình có màu đen và tất cả các đèn (bao gồm trong Touch Bar và bàn phím) được tắt.
+				</p>
+				</li>
+				<li>
+				<p>
+					Nhấn và giữ nút nguồn trên máy Mac của bạn cho đến khi ổ đĩa hệ thống và nút Tùy chọn xuất hiện.
+				</p>
+				</li>
+				<li>
+				<p>
+					Nhấn nút nguồn ba lần.
+				</p>
+				<div class="Alert">
+					<p class="Note">
+						<em>Lưu ý: </em>Mỗi lần nhấn nút nguồn cần được thực hiện trong vòng 1 giây sau lần nhấn trước đó. Nếu bạn nhấn nút nguồn quá nhanh thì tác vụ đó sẽ không đăng ký do những lần nhấn nhanh được dành riêng cho các mục đích khác, chẳng hạn như VoiceOver.
+					</p>
+				</div>
+				</li>
+				<li>
+				<p>
+					Sử dụng Trợ lý thiết lập Bluetooth để ghép đôi các phụ kiện Bluetooth với máy Mac của bạn.
+				</p>
+				<div class="Alert">
+					<p class="Note">
+						<em>Lưu ý: </em>Bạn không thấy Trợ lý thiết lập Bluetooth nếu thiết bị của bạn đã được kết nối với thiết bị đầu vào.
+					</p>
+				</div>
+				</li>
+				<li>
+				<p>
+					Chọn tài khoản quản trị viên, sau đó bấm vào Tiếp.
+				</p>
+				</li>
+				<li>
+				<p>
+					Nhập mật khẩu cho tài khoản quản trị viên, sau đó bấm vào Tiếp tục.
+				</p>
+				<p>
+					Khi ứng dụng Khôi phục xuất hiện trong thanh menu, bạn có thể chọn bất kỳ tùy chọn có sẵn nào trong cửa sổ hoặc thanh menu.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl08ae9930" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl08ae9930">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl08ae9930" class="Name">
+					Khởi động máy tính của bạn ở chế độ an toàn
+				</h2>
+				<ol>
+					<li>
+					<p>
+						Trên máy Mac của bạn, hãy chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Tắt máy.
+					</p>
+					<p>
+						Đợi máy Mac của bạn tắt hoàn toàn. Máy Mac được tắt hoàn toàn khi màn hình có màu đen và tất cả các đèn (bao gồm trong Touch Bar và bàn phím) được tắt.
+					</p>
+					</li>
+					<li>
+					<p>
+						Nhấn và giữ nút nguồn trên máy Mac của bạn cho đến khi ổ đĩa hệ thống và nút Tùy chọn xuất hiện.
+					</p>
+					</li>
+					<li>
+					<p>
+						Chọn một ổ đĩa.
+					</p>
+					</li>
+					<li>
+					<p>
+						Nhấn và giữ phím Shift, sau đó bấm vào Tiếp tục ở Chế độ an toàn.
+					</p>
+					<p>
+						Máy tính sẽ tự động khởi động lại.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchlbcf8b54b" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlbcf8b54b">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlbcf8b54b" class="Name">
+					Đặt ổ đĩa khởi động mặc định và khởi động lại máy tính của bạn
+				</h2>
+				<ol>
+					<li>
+					<p>
+						Trên máy Mac của bạn, hãy chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Tắt máy.
+					</p>
+					<p>
+						Đợi máy Mac của bạn tắt hoàn toàn. Máy Mac được tắt hoàn toàn khi màn hình có màu đen và tất cả các đèn (bao gồm trong Touch Bar và bàn phím) được tắt.
+					</p>
+					</li>
+					<li>
+					<p>
+						Nhấn và giữ nút nguồn trên máy Mac của bạn cho đến khi ổ đĩa hệ thống và nút Tùy chọn xuất hiện.
+					</p>
+					</li>
+					<li>
+					<p>
+						Chọn một ổ đĩa.
+					</p>
+					</li>
+					<li>
+					<p>
+						Nhấn và giữ phím Option, sau đó bấm vào Luôn sử dụng.
+					</p>
+					<p>
+						Máy tính sẽ tự động khởi động lại.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchle9d1cb3c" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchle9d1cb3c">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchle9d1cb3c" class="Name">
+					Kết nối vào internet bằng Wi-Fi
+				</h2>
+				<p>
+					Nếu biểu tượng menu Wi-Fi (ở góc phía trên bên phải của màn hình) có một hoặc nhiều vạch <span class="NoBreak"><img src="../SharedGlobalArt/IL_Wifi.png" alt="" height="30" width="42"> </span>thì nghĩa là Wi-Fi đã được bật và được kết nối với mạng không dây. Nếu biểu tượng menu Wi-Fi không có vạch nào <span class="NoBreak"><img src="../SharedGlobalArt/IL_WiFiNoBars.png" alt="" height="30" width="41"> </span>thì nghĩa là Wi-Fi đã được bật nhưng không được kết nối với mạng không dây. Nếu biểu tượng menu Wi-Fi có dấu gạch chéo qua biểu tượng đó <span class="NoBreak"><img src="../SharedGlobalArt/IL_WifiSlash.png" alt="" height="30" width="34"> </span>thì nghĩa là Wi-Fi đã bị tắt. Wi-Fi cần được bật trước khi bạn có thể kết nối vào mạng không dây.
+				</p>
+			</div>
+			<p>
+				Trên máy Mac của bạn, hãy thực hiện bất kỳ tác vụ nào sau đây:
+			</p>
+			<ul>
+				<li>
+				<p>
+					<em>Bật Wi-Fi: </em>Bấm vào biểu tượng menu Wi-Fi, sau đó chọn Bật Wi-Fi.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>Tắt Wi-Fi: </em>Bấm vào biểu tượng menu Wi-Fi, sau đó chọn Tắt Wi-Fi.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>Kết nối vào một mạng: </em>Bấm vào biểu tượng menu Wi-Fi, sau đó chọn một mạng. Nếu được yêu cầu, hãy nhập mật khẩu của mạng.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>Kết nối vào một mạng đóng: </em>Bấm vào biểu tượng menu Wi-Fi, sau đó chọn Kết nối mạng khác. Nhập tên của mạng và, nếu được yêu cầu, hãy nhập mật khẩu của mạng.
+				</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="mchl3fe49482" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl3fe49482">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl3fe49482" class="Name">
+					Sửa chữa ổ lưu trữ trong
+				</h2>
+				<p>
+					Nếu bạn gặp sự cố với máy tính hoặc nếu bạn đã khởi động máy tính và cửa sổ Khôi phục macOS đã xuất hiện thì có thể bạn cần phải sửa chữa ổ lưu trữ trong của máy tính.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Trong ứng dụng Khôi phục, hãy chọn Tiện ích ổ đĩa, sau đó bấm vào Tiếp tục.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong ứng dụng Tiện ích ổ đĩa, hãy chọn Xem &gt; Hiển thị tất cả thiết bị.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong thanh bên, hãy chọn ổ đĩa, sau đó bấm vào nút Sửa nhanh <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37">.</span>
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong hộp thoại Sửa nhanh, hãy bấm vào Chạy, sau đó làm theo các hướng dẫn trên màn hình.
+				</p>
+				</li>
+				<li>
+				<p>
+					Khi quá trình Sửa nhanh đã hoàn tất, hãy bấm vào Xong.
+				</p>
+				</li>
+				<li>
+				<p>
+					Lặp lại các bước từ 3 đến 5 cho từng ổ đĩa trên thiết bị lưu trữ.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong thanh bên, hãy chọn bộ chứa, sau đó bấm vào nút Sửa nhanh <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37">.</span>
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong hộp thoại Sửa nhanh, hãy bấm vào Chạy, sau đó làm theo các hướng dẫn trên màn hình.
+				</p>
+				</li>
+				<li>
+				<p>
+					Khi quá trình Sửa nhanh đã hoàn tất, hãy bấm vào Xong.
+				</p>
+				</li>
+				<li>
+				<p>
+					Lặp lại các bước từ 7 đến 9 cho từng bộ chứa trên thiết bị lưu trữ.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong thanh bên, hãy chọn thiết bị lưu trữ, sau đó bấm vào nút Sửa nhanh <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37">.</span>
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong hộp thoại Sửa nhanh, hãy bấm vào Chạy, sau đó làm theo các hướng dẫn trên màn hình.
+				</p>
+				</li>
+				<li>
+				<p>
+					Khi quá trình Sửa nhanh đã hoàn tất, hãy bấm vào Xong.
+				</p>
+				</li>
+			</ol>
+			<p>
+				Nếu Tiện ích ổ đĩa không thể sửa chữa ổ đĩa của bạn, hãy sao lưu thông tin của bạn hết mức có thể, sau đó làm theo các hướng dẫn trong phần <a href="#mchl0e4c30d6" class="xRef Task">Xóa và cài đặt lại macOS</a>.
+			</p>
+			<p>
+				Để quay lại ứng dụng Khôi phục, hãy chọn Tiện ích ổ đĩa &gt; Thoát Tiện ích ổ đĩa.
+			</p>
+		</div>
+	</div>
+	<div id="mchlf4cdcc0f" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlf4cdcc0f">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlf4cdcc0f" class="Name">
+					Sử dụng Time Machine để khôi phục các tệp của bạn
+				</h2>
+				<p>
+					Nếu bạn đã tạo một bản sao lưu Time Machine trước đây, bạn có thể khôi phục các tệp của mình từ bản sao lưu.
+				</p>
+			</div>
+			<div class="Alert">
+				<p class="Important">
+					<strong>Quan trọng: </strong>Chỉ sử dụng bản sao lưu Time Machine của bạn để khôi phục thông tin vào máy tính là nguồn sao lưu. Nếu bạn muốn chuyển thông tin từ máy Mac này sang máy tính mới, hãy thoát Khôi phục macOS, khởi động lại máy Mac của bạn và sử dụng ứng dụng Trợ lý di chuyển trong macOS.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Nếu bản sao lưu của bạn nằm trên Time Capsule, hãy bảo đảm thiết bị của bạn được kết nối vào internet.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong ứng dụng Khôi phục, hãy chọn “Khôi phục từ Time Machine”, sau đó bấm vào Tiếp tục.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong ứng dụng Khôi phục hệ thống Time Machine, hãy làm theo các hướng dẫn trên màn hình.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl57249f89" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl57249f89">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl57249f89" class="Name">
+					Cài đặt lại macOS
+				</h2>
+				<p>
+					Trong một số trường hợp, bạn có thể cần cài đặt lại macOS. Bạn có thể cài đặt lại macOS mà vẫn giữ nguyên các tệp và cài đặt người dùng của mình.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Đảm bảo thiết bị của bạn được kết nối vào internet.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong ứng dụng Khôi phục, hãy bấm vào Cài đặt lại macOS [<em>name</em>], sau đó bấm vào Tiếp tục.
+				</p>
+				</li>
+				<li>
+				<p>
+					Làm theo các hướng dẫn trên màn hình.
+				</p>
+				<div class="Alert">
+					<p class="Important">
+						<strong>Quan trọng: </strong> Khi được đề nghị chọn ổ đĩa, hãy chọn ổ đĩa macOS hiện tại của bạn (trong hầu hết các trường hợp, đây là lựa chọn duy nhất).
+					</p>
+				</div>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl0e4c30d6" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl0e4c30d6">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl0e4c30d6" class="Name">
+					Xóa và cài đặt lại macOS
+				</h2>
+				<p>
+					Nếu bạn xóa và cài đặt lại macOS, tài khoản người dùng, cài đặt mạng và tất cả các tệp và thư mục trên máy Mac của bạn sẽ bị xóa. Trước khi bạn xóa macOS, hãy cố gắng đăng nhập lại vào hệ thống của bạn, sau đó sao lưu mọi tệp bạn muốn giữ lại bằng cách sao chép chúng sang một thiết bị lưu trữ khác. Đồng thời, hãy ghi lại các cài đặt mạng của bạn từ cài đặt Mạng để bạn có thể được kết nối lại dễ dàng hơn sau khi cài đặt lại macOS.
+				</p>
+			</div>
+			<div class="Alert">
+				<p class="Note">
+					<em>Lưu ý: </em>Khi bạn xóa và cài đặt lại macOS, một phiên bản macOS trước đó có thể được cài đặt. Để nâng cấp từ phiên bản đã cài đặt lên phiên bản mới nhất của macOS, hãy đi tới menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Cài đặt hệ thống, bấm vào Cài đặt chung <img src="../SharedGlobalArt/AppIconTopic_General.png" alt="" height="30" width="30"> trong thanh bên (có thể bạn cần phải cuộn xuống), sau đó bấm vào Cập nhật phần mềm ở bên phải.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Đảm bảo thiết bị của bạn được kết nối vào internet.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong ứng dụng Khôi phục, hãy bấm vào Tiện ích ổ đĩa, sau đó bấm vào Tiếp tục.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong Tiện ích ổ đĩa, hãy chọn ổ đĩa bạn muốn xóa trong thanh bên, sau đó bấm vào nút Xóa trong thanh công cụ.
+				</p>
+				</li>
+				<li>
+				<p>
+					Nhập tên cho ổ đĩa trong trường Tên.
+				</p>
+				</li>
+				<li>
+				<p>
+					Bấm vào menu bật lên Định dạng, chọn APFS, sau đó bấm vào Xóa nhóm ổ đĩa.
+				</p>
+				</li>
+				<li>
+				<p>
+					Khi quá trình xóa hoàn tất, hãy bấm vào Xong, sau đó chọn Tiện ích ổ đĩa &gt; Thoát Tiện ích ổ đĩa.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong ứng dụng Khôi phục, hãy bấm vào Cài đặt lại macOS [<em>name</em>], bấm vào Tiếp tục, sau đó làm theo các hướng dẫn trên màn hình.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl9b13cbdc" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl9b13cbdc">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl9b13cbdc" class="Name">
+					Thay đổi chính sách bảo mật
+				</h2>
+				<ol>
+					<li>
+					<p>
+						Trong ứng dụng Khôi phục, hãy chọn Tiện ích &gt; Tiện ích bảo mật khởi động.
+					</p>
+					</li>
+					<li>
+					<p>
+						Chọn hệ thống mà bạn muốn sử dụng để đặt chính sách bảo mật.
+					</p>
+					</li>
+					<li>
+					<p>
+						Nếu ổ đĩa được mã hóa, hãy bấm vào Mở khóa, nhập mật khẩu, sau đó bấm vào Mở khóa.
+					</p>
+					</li>
+					<li>
+					<p>
+						Bấm vào Chính sách bảo mật.
+					</p>
+					</li>
+					<li>
+					<p>
+						Chọn một trong các tùy chọn bảo mật sau đây:
+					</p>
+					<ul>
+						<li>
+						<p>
+							<em>Bảo mật đầy đủ: </em>Đảm bảo rằng chỉ hệ điều hành hiện tại của bạn hoặc phần mềm hệ điều hành đã xác thực hiện được Apple tin cậy mới có thể chạy. Chế độ này yêu cầu kết nối mạng khi cài đặt phần mềm.
+						</p>
+						</li>
+						<li>
+						<p>
+							<em>Bảo mật hạ cấp: </em> Cho phép chạy mọi phiên bản của phần mềm hệ điều hành đã xác thực được Apple tin cậy.
+						</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p>
+						Nếu bạn đã chọn Bảo mật hạ cấp, hãy chọn bất kỳ tùy chọn nào sau đây, nếu cần:
+					</p>
+					<ul>
+						<li>
+						<p>
+							<em>Cho phép quản lý người dùng đối với các phần mở rộng kernel từ các nhà phát triển được xác định: </em>Cho phép cài đặt phần mềm sử dụng các phần mở rộng kernel cũ.
+						</p>
+						</li>
+						<li>
+						<p>
+							<em>Cho phép quản lý từ xa đối với các phần mở rộng kernel và các bản cập nhật phần mềm tự động: </em>Cấp phép quản lý từ xa đối với các phần mở rộng kernel cũ và các bản cập nhật phần mềm bằng giải pháp quản lý thiết bị di động (MDM).
+						</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p>
+						Bấm vào OK.
+					</p>
+					</li>
+					<li>
+					<p>
+						Nếu bạn đã thay đổi chính sách bảo mật, hãy bấm vào menu bật lên Người dùng, chọn tài khoản quản trị viên, nhập mật khẩu cho tài khoản quản trị viên, sau đó bấm vào OK.
+					</p>
+					</li>
+					<li>
+					<p>
+						Chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Khởi động lại.
+					</p>
+					<p>
+						Bạn phải khởi động lại máy Mac của mình để các thay đổi có hiệu lực.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchl6e3b9225" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl6e3b9225">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl6e3b9225" class="Name">
+					Sử dụng Chia sẻ ổ đĩa để chuyển các tệp giữa hai máy tính Mac
+				</h2>
+				<p>
+					Bạn có thể chuyển các tệp giữa máy Mac đã được khởi động vào Khôi phục macOS và một máy Mac khác bằng cách chia sẻ ổ đĩa và kết nối hai máy tính bằng cáp USB, USB-C hoặc Thunderbolt.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Kết nối hai máy tính bằng cáp USB, USB-C hoặc Thunderbolt.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong ứng dụng Khôi phục, hãy chọn Tiện ích &gt; Chia sẻ ổ đĩa.
+				</p>
+				</li>
+				<li>
+				<p>
+					Chọn ổ đĩa bạn muốn chia sẻ, sau đó bấm vào Bắt đầu chia sẻ.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trên máy Mac khác, hãy mở cửa sổ Finder, sau đó bấm vào Mạng trong thanh bên bên trong Vị trí.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong cửa sổ Mạng, hãy bấm hai lần vào máy Mac có ổ đĩa được chia sẻ, bấm vào Kết nối dưới dạng, chọn Khách trong cửa sổ Kết nối dưới dạng, sau đó bấm vào Kết nối.
+				</p>
+				</li>
+				<li>
+				<p>
+					Chuyển các tệp.
+				</p>
+				</li>
+				<li>
+				<p>
+					Khi bạn đã chuyển xong các tệp, hãy tháo ổ đĩa trên máy Mac khác.
+				</p>
+				</li>
+				<li>
+				<p>
+					Trong ứng dụng Chia sẻ ổ đĩa, hãy bấm vào Dừng chia sẻ.
+				</p>
+				</li>
+				<li>
+				<p>
+					Chọn Chia sẻ ổ đĩa &gt; Thoát Chia sẻ ổ đĩa.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl2a21e30c" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl2a21e30c">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl2a21e30c" class="Name">
+					Xem bản ghi khôi phục
+				</h2>
+				<p>
+					Bản ghi khôi phục chứa các thông báo được Khôi phục macOS ghi nhật ký. Bạn có thể chỉ định các loại thông báo sẽ hiển thị, lọc các thông báo để tìm kiếm văn bản cụ thể cũng như lưu bản ghi khôi phục vào tệp.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Trong ứng dụng Khôi phục, hãy chọn Cửa sổ &gt; Bản ghi khôi phục.
+				</p>
+				</li>
+				<li>
+				<p>
+					Bấm vào menu bật lên Mức chi tiết, sau đó chọn thông báo sẽ hiển thị:
+				</p>
+				<ul>
+					<li>
+					<p>
+						<em>Chỉ hiển thị lỗi: </em>Chọn tùy chọn này để chỉ hiển thị thông báo lỗi.
+					</p>
+					</li>
+					<li>
+					<p>
+						<em>Hiển thị lỗi và tiến trình: </em>Chọn tùy chọn này để hiển thị thông báo lỗi và thông báo tiến trình.
+					</p>
+					</li>
+					<li>
+					<p>
+						<em>Hiển thị tất cả bản ghi: </em>Chọn tùy chọn này để hiển thị tất cả các thông báo.
+					</p>
+					</li>
+				</ul>
+				</li>
+				<li>
+				<p>
+					Để lọc các thông báo, hãy nhập văn bản bạn muốn tìm kiếm vào trường Bộ lọc.
+				</p>
+				</li>
+				<li>
+				<p>
+					Để lưu bản ghi khôi phục, hãy bấm vào nút Lưu, chọn vị trí cho tệp, sau đó bấm vào Lưu.
+				</p>
+				</li>
+				<li>
+				<p>
+					Khi bạn xem xong bản ghi khôi phục, hãy bấm vào nút Đóng <img src="../SharedGlobalArt/IL_XMarkBlackCircleFillRed.png" alt="" height="30" width="30"> ở góc trên cùng bên trái của cửa sổ.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl4ee3f192" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl4ee3f192">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl4ee3f192" class="Name">
+					Tạo tệp chẩn đoán khôi phục
+				</h2>
+				<p>
+					Nếu bạn gửi báo cáo sự cố bằng Trợ lý phản hồi, bạn có thể được yêu cầu cung cấp tệp chẩn đoán khôi phục. Bạn có thể tạo tệp và lưu tệp đó vào thiết bị lưu trữ ngoài.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Kết nối thiết bị lưu trữ ngoài vào máy Mac của bạn.
+				</p>
+				</li>
+				<li>
+				<p>
+					Nhấn Control-Option-Shift-Command-Dấu chấm.
+				</p>
+				</li>
+				<li>
+				<p>
+					Sau khi màn hình nhấp nháy, hãy đợi một lúc cho đến khi hộp thoại xuất hiện.
+				</p>
+				</li>
+				<li>
+				<p>
+					Sử dụng hộp thoại để lưu tệp chẩn đoán khôi phục vào vị trí trên thiết bị lưu trữ ngoài của bạn.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchlb7e93c86" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlb7e93c86">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlb7e93c86" class="Name">
+					Thoát Khôi phục macOS
+				</h2>
+				<p>
+					Máy Mac của bạn sẽ tự động khởi động lại trong khi khôi phục hệ thống từ Time Machine hoặc cài đặt lại macOS. Trong các trường hợp khác, bạn cần phải thoát Khôi phục macOS theo cách thủ công (ví dụ: nếu bạn muốn sao lưu các tệp trước khi cài đặt lại macOS hoặc nếu bạn chỉ thay đổi cài đặt bằng Tiện ích bảo mật khởi động).
+				</p>
+			</div>
+			<p>
+				Trên máy Mac của bạn, hãy thực hiện một trong các tác vụ sau:
+			</p>
+			<ul>
+				<li>
+				<p>
+					<em>Khởi động lại máy Mac của bạn: </em>Chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Khởi động lại.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>Chọn ổ đĩa khởi động khác trước khi khởi động lại máy Mac của bạn: </em>Chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Ổ đĩa khởi động, chọn một ổ đĩa khởi động, sau đó bấm vào Khởi động lại.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>Tắt máy Mac của bạn: </em>Chọn menu Apple <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Tắt máy.
+				</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<main></main>
+<footer>
+	<p>
+		Copyright © 2024 Apple Inc. Mọi quyền được bảo lưu.
+	</p>
+</footer>
+<script type="text/javascript" src="../js/static.js">
+</script>
+</body>
+</html>

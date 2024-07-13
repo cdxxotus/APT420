@@ -1,0 +1,2 @@
+TimeStamp,PresentDOD0,PresentDOD1,PresentDOD2,AppleRawCurrentCapacity,IsCharging,Temperature,Amperage,InstantAmperage,CellVoltage0,CellVoltage1,CellVoltage2,StateOfCharge,AppleRawMaxCapacity,CurrentCapacity,AccumulatedSystemLoad,AccumulatedSystemPowerIn,MiscStatus
+2024-07-12 22:12:49,1,1,1,4648,0,3040,0,0,4413,4416,4416,99,4660,100,69433,70996,192

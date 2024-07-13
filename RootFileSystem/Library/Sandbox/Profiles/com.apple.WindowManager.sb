@@ -1,0 +1,256 @@
+;;; Copyright (c) 2022 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 2)
+
+(deny default)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Read/write access to preference domain.
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.WindowManager"))
+
+;; Read/write access to saved state
+(allow file-read* file-write*
+    (home-subpath "/Library/Application Support/com.apple.windowmanager"))
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+       (subpath (param "DARWIN_CACHE_DIR"))
+       (subpath (param "TMPDIR")))
+
+(allow file-test-existence)
+
+(allow process-info-pidinfo)
+(allow process-codesigning
+       (codesigning-operation CS_OPS_DER_ENTITLEMENTS_BLOB
+                              CS_OPS_STATUS))
+
+(allow syscall-unix
+       (syscall-group-bsdthread)
+       (syscall-group-getfsstat)
+       (syscall-group-kevent)
+       (syscall-group-pthread-cv)
+       (syscall-group-pthread-locks)
+       (syscall-group-read)
+       (syscall-group-rlimit)
+       (syscall-group-stat)
+       (syscall-group-statfs)
+       (syscall-group-ulock)
+       (syscall-number SYS___disable_threadsignal
+                       SYS_access
+                       SYS_csrctl
+                       SYS_exit
+                       SYS_faccessat
+                       SYS_fgetattrlist
+                       SYS_fgetxattr
+                       SYS_fsgetpath
+                       SYS_fsync
+                       SYS_getattrlist
+                       SYS_getattrlistbulk
+                       SYS_getaudit_addr
+                       SYS_getdirentries64
+                       SYS_getegid
+                       SYS_getentropy
+                       SYS_geteuid
+                       SYS_getgid
+                       SYS_gettid
+                       SYS_gettimeofday
+                       SYS_getuid
+                       SYS_getxattr
+                       SYS_issetugid
+                       SYS_kdebug_trace
+                       SYS_kdebug_trace64
+                       SYS_kdebug_trace_string
+                       SYS_kdebug_typefilter
+                       SYS_lseek
+                       SYS_madvise
+                       SYS_mkdir
+                       SYS_mkdirat
+                       SYS_mmap
+                       SYS_mprotect
+                       SYS_munmap
+                       SYS_open_dprotected_np
+                       SYS_readlink
+                       SYS_rename
+                       SYS_rmdir
+                       SYS_sendto
+                       SYS_sigaction
+                       SYS_sigaltstack
+                       SYS_sigprocmask
+                       SYS_thread_selfid
+                       SYS_workq_kernreturn
+                       SYS_workq_open))
+
+
+(allow syscall-mach
+       (machtrap-number MSC__kernelrpc_mach_port_allocate_trap
+                        MSC__kernelrpc_mach_port_construct_trap
+                        MSC__kernelrpc_mach_port_deallocate_trap
+                        MSC__kernelrpc_mach_port_destruct_trap
+                        MSC__kernelrpc_mach_port_extract_member_trap
+                        MSC__kernelrpc_mach_port_get_attributes_trap
+                        MSC__kernelrpc_mach_port_guard_trap
+                        MSC__kernelrpc_mach_port_insert_member_trap
+                        MSC__kernelrpc_mach_port_insert_right_trap
+                        MSC__kernelrpc_mach_port_mod_refs_trap
+                        MSC__kernelrpc_mach_port_request_notification_trap
+                        MSC__kernelrpc_mach_port_type_trap
+                        MSC__kernelrpc_mach_vm_allocate_trap
+                        MSC__kernelrpc_mach_vm_deallocate_trap
+                        MSC__kernelrpc_mach_vm_map_trap
+                        MSC__kernelrpc_mach_vm_protect_trap
+                        MSC__kernelrpc_mach_vm_purgable_control_trap
+                        MSC_host_create_mach_voucher_trap
+                        MSC_host_self_trap
+                        MSC_mach_generate_activity_id
+                        MSC_mach_msg2_trap
+                        MSC_mach_msg_trap
+                        MSC_mach_reply_port
+                        MSC_mach_voucher_extract_attr_recipe_trap
+                        MSC_mk_timer_arm
+                        MSC_mk_timer_cancel
+                        MSC_mk_timer_create
+                        MSC_semaphore_signal_trap
+                        MSC_semaphore_timedwait_trap
+                        MSC_semaphore_wait_trap
+                        MSC_syscall_thread_switch
+                        MSC_task_dyld_process_info_notify_get
+                        MSC_task_name_for_pid
+                        MSC_thread_get_special_reply_port
+                        MSC_thread_self_trap))
+
+
+;; Mach services
+(allow mach-lookup
+       (global-name "com.apple.CARenderServer"
+                    "com.apple.DiskArbitration.diskarbitrationd"
+                    "com.apple.FileCoordination"
+                    "com.apple.SecurityServer"
+                    "com.apple.ViewBridgeAuxiliary"
+                    "com.apple.audio.SystemSoundServer-OSX"
+                    "com.apple.coreservices.appleevents"
+                    "com.apple.coreservices.launchservicesd"
+                    "com.apple.coreservices.sharedfilelistd.xpc"
+                    "com.apple.coreservices.quarantine-resolver"
+                    "com.apple.dock.fullscreen"
+                    "com.apple.dock.server"
+                    "com.apple.fonts"
+                    "com.apple.iconservices"
+                    "com.apple.iconservices.store"
+                    "com.apple.inputmethodkit.getxpcendpoint"
+                    "com.apple.inputmethodkit.launchagent"
+                    "com.apple.inputmethodkit.launcher"
+                    "com.apple.iohideventsystem"
+                    "com.apple.lsd.mapdb"
+                    "com.apple.lsd.modifydb"
+                    "com.apple.lsd.xpc"
+                    "com.apple.pasteboard.1"
+                    "com.apple.pbs.fetch_services"
+                    "com.apple.pluginkit.pkd"
+                    "com.apple.powerlog.plxpclogger.xpc"
+                    "com.apple.siri.VoiceShortcuts.xpc"
+                    "com.apple.spindump"
+                    "com.apple.tccd.system"
+                    "com.apple.touchbarserver.mig"
+                    "com.apple.tsm.uiserver"
+                    "com.apple.window_proxies"
+                    "com.apple.windowmanager.server"
+                    "com.apple.windowserver.active"))
+
+(with-filter (system-attribute apple-internal)
+  (allow mach-lookup
+         (global-name "com.apple.dt.xctestd.target")))
+
+(allow mach-lookup
+       (xpc-service-name "com.apple.hiservices-xpcservice"))
+
+(allow system-fcntl
+       (fcntl-command F_GETPROTECTIONCLASS
+                      F_GETSIGSINFO
+                      F_SETFD
+                      F_SETLKW))
+
+(allow system-mac-syscall
+       (mac-policy-name "Quarantine"
+                        "Sandbox"))
+                        
+(allow appleevent-send)
+
+;; Needed for graphics
+(allow iokit-get-properties)
+
+(allow iokit-open-service
+       (iokit-registry-entry-class "AppleNVMeEAN"
+                                   "IOHIDSystem"
+                                   "IOSurfaceRoot"))
+
+(allow iokit-open-user-client
+       (iokit-registry-entry-class "AppleNVMeEANUC"
+                                   "IOHIDParamUserClient"
+                                   "IOSurfaceRootUserClient"))
+
+;; Other preferences
+(allow user-preference-read
+       (preference-domain "com.apple.AppleMultitouchTrackpad"
+                          "com.apple.CoreServicesInternal"
+                          "com.apple.HIToolbox"
+                          "com.apple.ImageIO"
+                          "com.apple.MultitouchSupport"
+                          "com.apple.PowerManagement"
+                          "com.apple.coreanimation"
+                          "com.apple.coreaudio"
+                          "com.apple.driver.AppleBluetoothMultitouch.mouse"
+                          "com.apple.driver.AppleBluetoothMultitouch.trackpad"
+                          "com.apple.driver.AppleHIDMouse"
+                          "com.apple.inputmethodkit"
+                          "com.apple.universalaccess"
+                          "com.apple.universalaccess.debug"
+                          "kCFPreferencesAnyApplication"))
+
+;; Other folders
+(allow file-read*
+    (home-subpath "/Library/Input Methods")
+    (home-subpath "/Library/Keyboard Layouts")
+    (literal "/Library/Preferences/com.apple.ViewBridge.plist")
+    (home-literal "/.CFUserTextEncoding")
+    (path "/Library/Application Support/CrashReporter/SubmitDiagInfo.domains")
+    (subpath "/Library/MessageTracer")
+    (subpath "/System/Library/MessageTracer")
+    (subpath "/System/Library/CoreServices/WindowManager.app"))
+
+;; Sandbox extensions
+(allow file-issue-extension
+    (require-all
+         (extension-class "com.apple.app-sandbox.read")
+         (subpath "/System/Library/CoreServices/WindowManager.app")))
+
+;; Allow opening the onboarding app
+(allow lsopen)

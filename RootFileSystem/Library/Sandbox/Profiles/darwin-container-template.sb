@@ -1,0 +1,144 @@
+;;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+
+;; This file is a copy of the default profile with reporting enabled for items
+;; for which you may wish to define more specific rules.
+;;
+;; You should make a copy of it and install that into your cryptex at:
+;; /System/Library/Sandbox/Profiles/<launchd_job_label>.sb
+;;
+;; Then, test your application and review the sandbox logs to determine how to
+;; replace (with report) rules with more specific allow rules.
+
+(version 2)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(import "cryptex-session-base.sb")
+
+(corefoundation)
+(cryptex-session)
+(cryptex-session-confstr)
+
+;; Allow syscalls
+(allow syscall*)
+(allow system-mac-syscall)
+(allow (with report) ipc-posix*)
+(allow (with report) system-fcntl)
+
+;; Socket operations: remove or add (with report) if you wish to limit networking
+(allow socket-ioctl)
+(allow socket-option*)
+(allow system-socket)
+
+;; Filesystem read-write access
+(allow (with report) file-read* file-write* file-clone file-link
+	(home-subpath "")
+)
+
+;; Writable global state paths
+(allow (with report) file-read*
+	(prefix  "/Library/Preferences/com.apple.PowerManagement.")     ; .plist, .<host uuid>.plist
+	(literal "/Library/Preferences/.GlobalPreferences.plist")
+	(literal "/Library/Preferences/com.apple.networkd.plist")
+	(prefix  "/Library/Preferences/com.apple.security.")
+	(literal "/Library/Preferences/SystemConfiguration/preferences.plist")
+	(literal "/Volumes")
+	(literal "/private/etc/apache2/mime.types")
+	(literal "/private/etc/group")
+	(literal "/private/etc/hosts")
+	(literal "/private/etc/openldap/ldap.conf")
+	(literal "/private/etc/passwd")
+	(literal "/private/etc/protocols")
+	(literal "/private/etc/resolv.conf")
+	(literal "/private/etc/services")
+	(literal "/private/etc/ssl/cert.pem")
+	(literal "/private/etc/ssl/openssl.cnf")
+	(literal "/private/var/run/resolv.conf")
+)
+
+;; Allow execution of unix command-line tools
+(allow (with report) file-read* process-exec
+	 (subpath "/bin")
+	 (subpath "/sbin")
+	 (subpath "/usr/bin")
+	 (subpath "/usr/sbin")
+	 (subpath "/usr/libexec")
+	 (subpath "/usr/local/bin")
+	 (subpath "/usr/local/sbin")
+	 (subpath "/usr/local/libexec")
+	 (subpath "/usr/appleinternal/bin")
+)
+
+;; Allow issuing extensions
+(define (read-write-and-issue-extensions path-filter)
+	(allow (with report) file-issue-extension
+		(require-all path-filter
+			(require-any (extension-class "com.apple.app-sandbox.read")
+				 (extension-class "com.apple.app-sandbox.read-write")))))
+
+(read-write-and-issue-extensions (home-subpath ""))
+
+;; Mapping of libraries
+(allow file-read* file-map-executable
+	; /usr/lib is covered by system.sb
+	(subpath "/usr/local/lib")
+	(subpath "/System/Library/Components/")
+	(subpath "/System/Library/Perl/")
+)
+
+;; File system read for global temp paths, but not write
+(allow (with report) file-read*
+	(path "/private/tmp")
+	(path "/private/var/tmp")
+)
+
+;; Security.framework
+(allow file-read*
+	(subpath "/private/var/db/mds"))
+
+;; IPC
+(allow (with report) mach-lookup)
+(allow (with report) darwin-notification-post)
+
+;; Preferences (read-only)
+(allow (with report) user-preference-read)
+
+;; IOKit properties
+(allow iokit-get-properties)
+(allow iokit-open-service)
+(allow (with report) iokit-open-user-client (iokit-user-client-class
+	"AGXDeviceUserClient"
+	"AppleCredentialManagerUserClient"
+	"AppleKeyStoreUserClient"
+	"AppleVirtIONeuralEngineDeviceUserClient"
+	"H11ANEInDirectPathClient"
+	"H1xANELoadBalancerDirectPathClient"
+	"IOHIDParamUserClient"
+	"IOSurfaceRootUserClient"
+))
+
+;; Process exec
+;; Note: redundant with the CLI tools section above
+(allow process-exec*)
+(allow process-fork)
+(allow process-info* signal)
+
+;; Network: remove or add (with report) if you wish to limit networking
+(allow network-bind)
+(allow network-inbound)
+(allow network-outbound)
+
+;; Enable JIT for e.g. Java
+(allow dynamic-code-generation)
+
+;; Allow nvram-read of IOClassNameOverride
+;; Workaround until rdar://104604971 is unblocked
+(allow nvram-get (nvram-variable "IOClassNameOverride"))

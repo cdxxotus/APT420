@@ -1,0 +1,40 @@
+; =========================================================================
+; standard client DSPgraph
+; =========================================================================
+
+graphName "mac_hal_spatial_channel_virtualization"
+
+
+box Converter srlconverter 1 1 
+
+; -------------------------------------------------------------------------
+; Definitions
+; -------------------------------------------------------------------------
+
+[def sampleRateIn 48000]
+[def numChannelsIn 1]
+[def numChannelsOut 1]
+
+; -------------------------------------------------------------------------
+; Graph Ins and Outs
+; -------------------------------------------------------------------------
+
+in in
+out out
+
+
+; -------------------------------------------------------------------------
+; DSP Graph topology
+; -------------------------------------------------------------------------
+
+wire in Converter ([sampleRateIn] [numChannelsIn])
+wire Converter out ([sampleRateIn] [numChannelsOut])
+
+; channel layout
+property clay
+[def kAudioConverterInputChannelLayout 1768123424] ; 'icl '
+wireGraphProperty clay (Converter [kAudioConverterInputChannelLayout])
+
+property olay
+[def kAudioConverterOutputChannelLayout 1868786720] ; 'ocl '
+wireGraphProperty olay (Converter [kAudioConverterOutputChannelLayout])

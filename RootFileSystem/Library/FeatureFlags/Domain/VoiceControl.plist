@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>new_asset_manager</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>use_independent_vad</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>use_keyword_spotter</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>use_phonetic_corrections</key>
+	<dict>
+		<key>DevelopmentPhase</key>
+		<string>FeatureComplete</string>
+	</dict>
+</dict>
+</plist>

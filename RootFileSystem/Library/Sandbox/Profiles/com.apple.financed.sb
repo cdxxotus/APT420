@@ -1,0 +1,155 @@
+;;; Copyright (c) 2021 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+  (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+  (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+  (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+  (literal (string-append (param "HOME") home-relative-literal)))
+
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; financed's preference domain.
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.CloudKit")
+       (preference-domain "com.apple.financed")
+       (preference-domain "com.apple.FinanceKit")
+       (preference-domain "com.apple.Wallet"))
+
+;; Read/write access to temporary directories.
+(allow file-read* file-write*
+       (subpath (param "TMPDIR"))
+       (subpath (param "DARWIN_CACHE_DIR")))
+(allow file-read* file-write* (mount-relative-regex #"^/\.TemporaryItems(/|$)"))
+
+;; Custom access
+(allow distributed-notification-post)
+
+(allow file-read*
+    (literal "/Library/Application Support/CrashReporter/SubmitDiagInfo.domains")
+    (literal (param "SECURITY_MESSAGES_DIR"))
+    (literal "/private/var/db/mds/system/mdsObject.db")
+    (literal "/private/var/db/mds/system/mdsDirectory.db")
+    (subpath (param "ICON_SERVICES_CACHE_DIR"))
+    (home-literal "/Library/Preferences/com.apple.security.plist")
+    (literal "/Library/Preferences/com.apple.security.plist"))
+(allow file-read* file-write*
+    (home-subpath "/Library/Finance/")
+    (home-subpath "/Library/Caches/Finance/")
+    (home-subpath "/Library/Caches/com.apple.financed/")
+    (home-subpath "/Library/Caches/com.apple.nsurlsessiond/Downloads/com.apple.financed")
+    (home-subpath "/Library/Caches/CloudKit"))
+
+(allow user-preference-read
+    (preference-domain "com.apple.AppSupport")
+    (preference-domain "com.apple.CFNetwork")
+    (preference-domain "com.apple.CoreGraphics")
+    (preference-domain "com.apple.ImageIO")
+    (preference-domain "com.apple.logging")
+    (preference-domain "com.apple.loginwindow")
+    (preference-domain "com.apple.nsurlcache")
+    (preference-domain "com.apple.security")
+    (preference-domain "com.apple.universalaccess")
+    (preference-domain "kCFPreferencesAnyApplication"))
+
+(allow ipc-posix-shm-read-data
+    (ipc-posix-name "FNetwork.defaultStorageSession")
+    (ipc-posix-name "com.apple.AppleDatabaseChanged"))
+(allow ipc-posix-shm-write-data
+    (ipc-posix-name "com.apple.AppleDatabaseChanged"))
+
+(allow mach-lookup
+    (global-name "com.apple.AppSSOAgent.XPC")
+    (global-name "com.apple.CoreAuthentication.agent")
+    (global-name "com.apple.CoreServices.coreservicesd")
+    (global-name "com.apple.PowerManagement.control")
+    (global-name "com.apple.iokit.powerdxpc")
+    (global-name "com.apple.powerlog.plxpclogger.xpc")
+    (global-name "com.apple.SecurityServer")
+    (global-name "com.apple.SharingServices")
+    (global-name "com.apple.SystemConfiguration.configd")
+    (global-name "com.apple.VoiceOver.running")
+    (global-name "com.apple.accountsd.accountmanager")
+    (global-name "com.apple.ak.anisette.xpc")
+    (global-name "com.apple.apsd")
+    (global-name "com.apple.bird.token")
+    (global-name "com.apple.cfnetwork.cfnetworkagent")
+    (global-name "com.apple.cloudd")
+    (global-name "com.apple.cookied")
+    (global-name "com.apple.coreservices.launchservicesd")
+    (global-name "com.apple.coreservices.quarantine-resolver")
+    (global-name "com.apple.iconservices")
+    (global-name "com.apple.iconservices.store")
+    (global-name "com.apple.locationd.desktop.registration")
+    (global-name "com.apple.locationd.desktop.synchronous")
+    (global-name "com.apple.logind")
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.lsd.modifydb")
+    (global-name "com.apple.metadata.mds")
+    (global-name "com.apple.nehelper")
+    (global-name "com.apple.nsurlsessiond")
+    (global-name "com.apple.nsurlstorage-cache")
+    (global-name "com.apple.remoted")
+    (global-name "com.apple.securityd.xpc")
+    (global-name "com.apple.softwareupdated")
+    (global-name "com.apple.system.opendirectoryd.api")
+    (global-name "com.apple.usernoted.multi_client")
+    (global-name "com.apple.usymptomsd")
+    (global-name "com.apple.windowserver.active")
+    (global-name "com.apple.mobileactivationd")
+    (global-name "com.apple.usernotifications.usernotificationservice")
+    (global-name "com.apple.usernotifications.listener")
+    (global-name "com.apple.ap.adservicesd.statusconditionservice")
+    (global-name "com.apple.familycircle.agent")
+    (global-name "com.apple.spotlight.IndexAgent")
+    (global-name "com.apple.passd.payment")
+    (global-name "com.apple.nfcd.hwmanager")
+    (global-name "com.apple.symptom_diagnostics"))
+
+(allow mach-register
+    (global-name "com.apple.aps.financed")
+    (global-name "com.apple.aps.financed.store")
+    (global-name "com.apple.financed.service.coredatastore")
+    (global-name "com.apple.financed.service.store")
+    (global-name "com.apple.financed.service.financestore")
+    (global-name-prefix "com.apple.usernotifications."))
+
+(allow network-outbound
+    (remote tcp "*:443")
+    (path "/private/var/run/mDNSResponder"))
+
+(allow lsopen)
+
+(allow iokit-open
+    (iokit-user-client-class "AppleKeyStoreUserClient"))
+
+(allow iokit-open-user-client
+    (iokit-user-client-class "IOSurfaceRootUserClient")
+    (iokit-user-client-class "AGXDeviceUserClient"))

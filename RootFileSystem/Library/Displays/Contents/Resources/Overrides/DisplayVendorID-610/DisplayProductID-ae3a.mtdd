@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>denylist</key>
+	<array>
+		<string>f60deb81ff30acf6</string>
+		<string>42fd25eabcabb274</string>
+		<string>fa842e06c61e91c5</string>
+		<string>ffe5ef870d7ba81a</string>
+		<string>b809c3757da9bb8d</string>
+		<string>db15bd556843c820</string>
+		<string>65ce76090165799a</string>
+		<string>31b6874cf7f642a</string>
+		<string>81e3e92dd6088272</string>
+		<string>35c1e88140c3e6cf</string>
+		<string>cff7df823d426e68</string>
+		<string>7df21cb3ed6977e5</string>
+		<string>176bfb16cb77edc6</string>
+		<string>189a3d4f975d5ffc</string>
+		<string>af831b42441aeb4c</string>
+		<string>3cbd00234e554e41</string>
+		<string>e43c1c25d4880ad6</string>
+		<string>6f11fd93f0323c5</string>
+		<string>2bd1b31983fe1663</string>
+		<string>93181e6f2ea4e009</string>
+		<string>6f11f11946d27c5</string>
+		<string>a369ddc4e67f1c45</string>
+		<string>35c5e08120c7eeaf</string>
+		<string>597125d10fa0894f</string>
+		<string>c3ec7cd22292981f</string>
+		<string>c9cf552659ea9913</string>
+	</array>
+	<key>display</key>
+	<dict>
+		<key>backendtiming</key>
+                <array>
+                        <string>2560,8,32,2680x2880,106,8,3000@482400000,+-</string>
+                        <string>*</string>
+                </array>
+                <key>frontendtiming</key>
+                <string>5120,8,32,5200x2880,106,8,3000@936000000,+-</string>
+		<key>linkmode</key>
+		<string>multi-cable</string>
+		<key>overlay</key>
+		<data>AP///////wAGEDuuAAAAAAAAAQTFPCEAAAAAAAAAAAAAAAAAAAABAQEBAQEBAQEBAQEBAQEBt84AUPBwWoAIIMgAAAAAAAAa0FwAUKCgPFAIIOgIAAAAAAAavDSAUHA4LUAIIPgEAAAAAAAaAAAA/ABTdHVkaW9EaXNwbGF5At4CAw+A4wUAAOYGAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAl3ASeQAAKQAQAAAAAAAAAAAAAAAAAAAAAAEADEAXFA0AFEALEABOu3+BBwAQ+gQBAAB+AAU6ApKBAH4AEAAQ+gUBAQBgwNL/VQAQABADABSfbQGE/xNPAAeAHwA/C3cAaQAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHKQ</data>
+		<key>streamcount</key>
+		<integer>2</integer>
+		<key>tileinfo</key>
+		<string>(2,1)</string>
+	</dict>
+	<key>productid</key>
+	<string>0xae3a</string>
+	<key>serial</key>
+	<integer>1</integer>
+	<key>vendorid</key>
+	<string>0x610</string>
+	<key>version</key>
+	<string>1.3</string>
+</dict>
+</plist>

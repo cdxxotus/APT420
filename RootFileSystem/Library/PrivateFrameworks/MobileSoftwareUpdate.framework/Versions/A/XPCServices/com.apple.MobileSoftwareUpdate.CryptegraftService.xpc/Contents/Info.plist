@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>22A380019</string>
+	<key>Bundle OS Type code</key>
+	<string>!XPC</string>
+	<key>Bundle identifier</key>
+	<string>com.apple.MobileSoftwareUpdate.CryptegraftService</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>CryptegraftService</string>
+	<key>CFBundleExecutable</key>
+	<string>com.apple.MobileSoftwareUpdate.CryptegraftService</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.MobileSoftwareUpdate.CryptegraftService</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>com.apple.MobileSoftwareUpdate.CryptegraftService</string>
+	<key>CFBundlePackageType</key>
+	<string>XPC!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>23F78</string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
+	<key>DTPlatformVersion</key>
+	<string>14.5</string>
+	<key>DTSDKBuild</key>
+	<string>23F78</string>
+	<key>DTSDKName</key>
+	<string>macosx14.5.internal</string>
+	<key>DTXcode</key>
+	<string>1500</string>
+	<key>DTXcodeBuild</key>
+	<string>15E6079e</string>
+	<key>Executable file</key>
+	<string></string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>Localization native development region</key>
+	<string>English</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2022 Apple Inc. All rights reserved.</string>
+	<key>XPCService</key>
+	<dict>
+		<key>ServiceType</key>
+		<string>System</string>
+		<key>_AllowedClients</key>
+		<array>
+			<string>anchor apple</string>
+			<string>identifier=com.apple.softwareupdated and anchor apple</string>
+			<string>identifier=com.apple.mobile.softwareupdated and anchor apple</string>
+		</array>
+	</dict>
+</dict>
+</plist>

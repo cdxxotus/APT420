@@ -1,0 +1,44 @@
+; =========================================================================
+; Voice Isolation with single channel NNet
+; =========================================================================
+
+graphName "VoiceIsolation_SC"
+
+; -------------------------------------------------------------------------
+; Definitions
+; -------------------------------------------------------------------------
+
+[def sampleRateIn 48000]
+[def processingRate 24000]
+[def numChannelsIn 1]
+[def blockSizeNNet 240]
+
+; -------------------------------------------------------------------------
+; Graph Ins and Outs
+; -------------------------------------------------------------------------
+
+in  Input
+box AUChannelSelector (aufx clsl appl) 1 1
+box InSRC src 1 1
+box AUNeuralNet (aufx nnet appl) 1 1 
+box ChannelCopier chancopy 1 1
+box OutSRC src 1 1
+out Output
+
+
+; -------------------------------------------------------------------------
+; DSP Graph topology
+; -------------------------------------------------------------------------
+
+wire Input InSRC ([sampleRateIn] [numChannelsIn])
+wire InSRC AUChannelSelector ([processingRate] [numChannelsIn] [blockSizeNNet])
+wire AUChannelSelector AUNeuralNet ([processingRate] 1 [blockSizeNNet])
+wire AUNeuralNet ChannelCopier ([processingRate] 1 [blockSizeNNet])
+wire ChannelCopier OutSRC ([processingRate] [numChannelsIn] [blockSizeNNet])
+wire OutSRC Output ([sampleRateIn] [numChannelsIn])
+
+; -------------------------------------------------------------------------
+; DSP Graph parameter/property
+; -------------------------------------------------------------------------
+property chsl 0x00000000 in
+wireGraphProperty chsl ( AUChannelSelector slcm 0 0 )

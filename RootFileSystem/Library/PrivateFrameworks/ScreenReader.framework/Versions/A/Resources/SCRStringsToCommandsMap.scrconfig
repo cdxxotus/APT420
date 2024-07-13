@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>actions</key>
+	<string>Global.showActionsMenu</string>
+	<key>add pronunciation</key>
+	<string>SCRWorkspace.addPronunciation</string>
+	<key>adjust braille window</key>
+	<string>SCRWorkspace.enableBrailleWindowAdjustment</string>
+	<key>adjust caption window</key>
+	<string>SCRWorkspace.enableCaptionWindowAdjustment</string>
+	<key>always allow keyboard commands to navigate websites</key>
+	<string>SCRWebArea.togglePreventDOMDispatch</string>
+	<key>audio ducking toggle</key>
+	<string>SCRWorkspace.audioDuckingToggle</string>
+	<key>audio graph scrub left</key>
+	<string>Global.audiographScrubLeft</string>
+	<key>audio graph scrub right</key>
+	<string>Global.audiographScrubRight</string>
+	<key>bring window to front</key>
+	<string>SCRWindow.raiseWindow</string>
+	<key>click mouse</key>
+	<string>Global.clickMouse</string>
+	<key>close window</key>
+	<string>SCRWindow.closeWindow</string>
+	<key>command key</key>
+	<string>SCRWorkspace.commandKey</string>
+	<key>control key</key>
+	<string>SCRWorkspace.controlKey</string>
+	<key>copy last phrase to clipboard</key>
+	<string>SCRWorkspace.copyLastOutputRequestToPasteboard</string>
+	<key>decrease auto advance speed</key>
+	<string>SCRBraille.decreaseAutoAdvanceSpeed</string>
+	<key>decrease magnification of voiceover cursor</key>
+	<string>SCRApplication.decreaseVoiceOverCursorMagnification</string>
+	<key>decrease pitch</key>
+	<string>SCRWorkspace.decreaseSpeechPitch</string>
+	<key>decrease rate</key>
+	<string>SCRWorkspace.decreaseSpeechRate</string>
+	<key>decrease system volume</key>
+	<string>SCRWorkspace.decreaseSystemVolume</string>
+	<key>decrease thickness</key>
+	<string>SCRBraille.decreaseThickness2DBraille</string>
+	<key>decrease volume</key>
+	<string>SCRWorkspace.decreaseSpeechVolume</string>
+	<key>delete key</key>
+	<string>SCRWorkspace.deleteKey</string>
+	<key>describe item at hot spot 0</key>
+	<string>Global.describeSpot_0</string>
+	<key>describe item at hot spot 1</key>
+	<string>Global.describeSpot_1</string>
+	<key>describe item at hot spot 2</key>
+	<string>Global.describeSpot_2</string>
+	<key>describe item at hot spot 3</key>
+	<string>Global.describeSpot_3</string>
+	<key>describe item at hot spot 4</key>
+	<string>Global.describeSpot_4</string>
+	<key>describe item at hot spot 5</key>
+	<string>Global.describeSpot_5</string>
+	<key>describe item at hot spot 6</key>
+	<string>Global.describeSpot_6</string>
+	<key>describe item at hot spot 7</key>
+	<string>Global.describeSpot_7</string>
+	<key>describe item at hot spot 8</key>
+	<string>Global.describeSpot_8</string>
+	<key>describe item at hot spot 9</key>
+	<string>Global.describeSpot_9</string>
+	<key>describe item in mouse pointer</key>
+	<string>SCRWorkspace.echoMouseSummary</string>
+	<key>describe item in voiceover cursor</key>
+	<string>SCRApplication.focusedElementOverview</string>
+	<key>describe item with keyboard focus</key>
+	<string>SCRApplication.keyboardElementOverview</string>
+	<key>describe mouse pointer location (from top left of screen)</key>
+	<string>SCRWorkspace.echoMouseLocation</string>
+	<key>describe mouse pointer location (from top left of window)</key>
+	<string>SCRWorkspace.echoMouseLocationRelativeToWindow</string>
+	<key>describe open applications</key>
+	<string>SCRWorkspace.workspaceOverview</string>
+	<key>describe position of item in voiceover cursor</key>
+	<string>Global.speakOrigin</string>
+	<key>describe position of window</key>
+	<string>SCRWindow.speakOrigin</string>
+	<key>describe size of item in voiceover cursor</key>
+	<string>Global.speakSize</string>
+	<key>describe size of window</key>
+	<string>SCRWindow.speakSize</string>
+	<key>describe window</key>
+	<string>SCRWorkspace.windowOverview</string>
+	<key>display announcement history</key>
+	<string>SCRBraille.announcementsOn</string>
+	<key>double click mouse</key>
+	<string>Global.doubleClickMouse</string>
+	<key>down arrow key</key>
+	<string>SCRWorkspace.downArrowKey</string>
+	<key>drop marked item after chosen spot</key>
+	<string>Global.dragAndDropAfterSpot</string>
+	<key>drop marked item after voiceover cursor</key>
+	<string>Global.dragAndDropAfter</string>
+	<key>drop marked item before chosen spot</key>
+	<string>Global.dragAndDropBeforeSpot</string>
+	<key>drop marked item before voiceover cursor</key>
+	<string>Global.dragAndDropBefore</string>
+	<key>drop marked item on chosen spot</key>
+	<string>Global.dragAndDropOnSpot</string>
+	<key>drop marked item on voiceover cursor</key>
+	<string>Global.dragAndDrop</string>
+	<key>escape</key>
+	<string>SCRWorkspace.escapeKey</string>
+	<key>f1 key</key>
+	<string>SCRWorkspace.f1Key</string>
+	<key>f10 key</key>
+	<string>SCRWorkspace.f10Key</string>
+	<key>f11 key</key>
+	<string>SCRWorkspace.f11Key</string>
+	<key>f12 key</key>
+	<string>SCRWorkspace.f12Key</string>
+	<key>f2 key</key>
+	<string>SCRWorkspace.f2Key</string>
+	<key>f3 key</key>
+	<string>SCRWorkspace.f3Key</string>
+	<key>f4 key</key>
+	<string>SCRWorkspace.f4Key</string>
+	<key>f5 key</key>
+	<string>SCRWorkspace.f5Key</string>
+	<key>f6 key</key>
+	<string>SCRWorkspace.f6Key</string>
+	<key>f7 key</key>
+	<string>SCRWorkspace.f7Key</string>
+	<key>f8 key</key>
+	<string>SCRWorkspace.f8Key</string>
+	<key>f9 key</key>
+	<string>SCRWorkspace.f9Key</string>
+	<key>fast forward</key>
+	<string>Global.fastForward</string>
+	<key>find</key>
+	<string>Global.findText</string>
+	<key>find next block quote</key>
+	<string>Global.findNextBlockQuote</string>
+	<key>find next block quote same level</key>
+	<string>Global.findNextBlockQuoteSameLevel</string>
+	<key>find next bold text</key>
+	<string>Global.findNextBoldText</string>
+	<key>find next button</key>
+	<string>SCRWebArea.nextButton</string>
+	<key>find next checkbox</key>
+	<string>SCRWebArea.nextCheckbox</string>
+	<key>find next color change</key>
+	<string>Global.findNextColorChange</string>
+	<key>find next column</key>
+	<string>SCRWebArea.nextWebTableColumn</string>
+	<key>find next control</key>
+	<string>Global.findNextControl</string>
+	<key>find next different item</key>
+	<string>Global.findNextDifferentItem</string>
+	<key>find next font change</key>
+	<string>Global.findNextFontChange</string>
+	<key>find next frame</key>
+	<string>SCRWebArea.nextFrame</string>
+	<key>find next heading</key>
+	<string>Global.findNextHeading</string>
+	<key>find next heading level 1</key>
+	<string>Global.findNextHeadingLevel1</string>
+	<key>find next heading level 2</key>
+	<string>Global.findNextHeadingLevel2</string>
+	<key>find next heading level 3</key>
+	<string>Global.findNextHeadingLevel3</string>
+	<key>find next heading level 4</key>
+	<string>Global.findNextHeadingLevel4</string>
+	<key>find next heading level 5</key>
+	<string>Global.findNextHeadingLevel5</string>
+	<key>find next heading level 6</key>
+	<string>Global.findNextHeadingLevel6</string>
+	<key>find next heading same level</key>
+	<string>Global.findNextHeadingSameLevel</string>
+	<key>find next image</key>
+	<string>Global.findNextGraphic</string>
+	<key>find next italic text</key>
+	<string>Global.findNextItalicText</string>
+	<key>find next item or text with same attributes</key>
+	<string>Global.findNextSameType</string>
+	<key>find next landmark</key>
+	<string>SCRWebArea.nextLandmark</string>
+	<key>find next link</key>
+	<string>Global.findNextLink</string>
+	<key>find next list</key>
+	<string>Global.findNextList</string>
+	<key>find next live region</key>
+	<string>SCRWebArea.nextLiveRegion</string>
+	<key>find next misspelled word</key>
+	<string>Global.findNextMisspelledWord</string>
+	<key>find next plain text</key>
+	<string>Global.findNextPlainText</string>
+	<key>find next radio group</key>
+	<string>SCRWebArea.nextRadioGroup</string>
+	<key>find next same table level item</key>
+	<string>Global.findNextSameTableLevel</string>
+	<key>find next searched text</key>
+	<string>Global.findTextSearchForward</string>
+	<key>find next searched text in history</key>
+	<string>Global.findTextNextSearch</string>
+	<key>find next table</key>
+	<string>Global.findNextTable</string>
+	<key>find next text field</key>
+	<string>SCRWebArea.nextTextField</string>
+	<key>find next text issue</key>
+	<string>Global.findNextTextIssue</string>
+	<key>find next text with different attributes</key>
+	<string>Global.findNextStyleChange</string>
+	<key>find next underlined text</key>
+	<string>Global.findNextUnderlineText</string>
+	<key>find next visited link</key>
+	<string>Global.findNextVisitedLink</string>
+	<key>find previous block quote</key>
+	<string>Global.findPreviousBlockQuote</string>
+	<key>find previous block quote same level</key>
+	<string>Global.findPreviousBlockQuoteSameLevel</string>
+	<key>find previous bold text</key>
+	<string>Global.findPreviousBoldText</string>
+	<key>find previous button</key>
+	<string>SCRWebArea.previousButton</string>
+	<key>find previous checkbox</key>
+	<string>SCRWebArea.previousCheckbox</string>
+	<key>find previous color change</key>
+	<string>Global.findPreviousColorChange</string>
+	<key>find previous column</key>
+	<string>SCRWebArea.previousWebTableColumn</string>
+	<key>find previous control</key>
+	<string>Global.findPreviousControl</string>
+	<key>find previous different item</key>
+	<string>Global.findPreviousDifferentItem</string>
+	<key>find previous font change</key>
+	<string>Global.findPreviousFontChange</string>
+	<key>find previous frame</key>
+	<string>SCRWebArea.previousFrame</string>
+	<key>find previous heading</key>
+	<string>Global.findPreviousHeading</string>
+	<key>find previous heading level 1</key>
+	<string>Global.findPreviousHeadingLevel1</string>
+	<key>find previous heading level 2</key>
+	<string>Global.findPreviousHeadingLevel2</string>
+	<key>find previous heading level 3</key>
+	<string>Global.findPreviousHeadingLevel3</string>
+	<key>find previous heading level 4</key>
+	<string>Global.findPreviousHeadingLevel4</string>
+	<key>find previous heading level 5</key>
+	<string>Global.findPreviousHeadingLevel5</string>
+	<key>find previous heading level 6</key>
+	<string>Global.findPreviousHeadingLevel6</string>
+	<key>find previous heading same level</key>
+	<string>Global.findPreviousHeadingSameLevel</string>
+	<key>find previous image</key>
+	<string>Global.findPreviousGraphic</string>
+	<key>find previous italic text</key>
+	<string>Global.findPreviousItalicText</string>
+	<key>find previous item or text with same attributes</key>
+	<string>Global.findPreviousSameType</string>
+	<key>find previous landmark</key>
+	<string>SCRWebArea.previousLandmark</string>
+	<key>find previous link</key>
+	<string>Global.findPreviousLink</string>
+	<key>find previous list</key>
+	<string>Global.findPreviousList</string>
+	<key>find previous live region</key>
+	<string>SCRWebArea.previousLiveRegion</string>
+	<key>find previous misspelled word</key>
+	<string>Global.findPreviousMisspelledWord</string>
+	<key>find previous plain text</key>
+	<string>Global.findPreviousPlainText</string>
+	<key>find previous radio group</key>
+	<string>SCRWebArea.previousRadioGroup</string>
+	<key>find previous same table level item</key>
+	<string>Global.findPreviousSameTableLevel</string>
+	<key>find previous searched text</key>
+	<string>Global.findTextSearchBackwards</string>
+	<key>find previous searched text in history</key>
+	<string>Global.findTextPreviousSearch</string>
+	<key>find previous table</key>
+	<string>Global.findPreviousTable</string>
+	<key>find previous text field</key>
+	<string>SCRWebArea.previousTextField</string>
+	<key>find previous text issue</key>
+	<string>Global.findPreviousTextIssue</string>
+	<key>find previous text with different attributes</key>
+	<string>Global.findPreviousStyleChange</string>
+	<key>find previous underlined text</key>
+	<string>Global.findPreviousUnderlineText</string>
+	<key>find previous visited link</key>
+	<string>Global.findPreviousVisitedLink</string>
+	<key>find text entered in search field</key>
+	<string>Global.findTextSearchForwardDuringModalSession</string>
+	<key>fn key</key>
+	<string>SCRWorkspace.fnKey</string>
+	<key>forward delete key</key>
+	<string>SCRWorkspace.forwardDeleteKey</string>
+	<key>go down one page</key>
+	<string>Global.interactPageDown</string>
+	<key>go left a bit</key>
+	<string>Global.interactLeftShift</string>
+	<key>go left one page</key>
+	<string>Global.interactPageUpShift</string>
+	<key>go right a bit</key>
+	<string>Global.interactRightShift</string>
+	<key>go right one page</key>
+	<string>Global.interactPageDownShift</string>
+	<key>go to beginning</key>
+	<string>Global.moveToFirstElement</string>
+	<key>go to bottom of window</key>
+	<string>Global.interactEndCommand</string>
+	<key>go to desktop</key>
+	<string>SCRWorkspace.desktop</string>
+	<key>go to dock</key>
+	<string>SCRWorkspace.dock</string>
+	<key>go to end</key>
+	<string>Global.moveToLastElement</string>
+	<key>go to linked item</key>
+	<string>Global.navigateLink</string>
+	<key>go to menu bar</key>
+	<string>SCRWorkspace.menubar</string>
+	<key>go to next custom window spot</key>
+	<string>Global.nextCustomSpot</string>
+	<key>go to next window spot</key>
+	<string>Global.nextSpot</string>
+	<key>go to popup item</key>
+	<string>Global.navigatePopup</string>
+	<key>go to previous custom window spot</key>
+	<string>Global.previousCustomSpot</string>
+	<key>go to previous window spot</key>
+	<string>Global.previousSpot</string>
+	<key>go to stage manager</key>
+	<string>SCRWorkspace.stageManager</string>
+	<key>go to status menus</key>
+	<string>SCRWorkspace.menuExtras</string>
+	<key>go to top of window</key>
+	<string>Global.interactHomeCommand</string>
+	<key>go to visible beginning</key>
+	<string>Global.moveToFirstVisibleElement</string>
+	<key>go to visible end</key>
+	<string>Global.moveToLastVisibleElement</string>
+	<key>go up one page</key>
+	<string>Global.interactPageUp</string>
+	<key>ignore next keypress</key>
+	<string>SCRWorkspace.keyboardPassthru</string>
+	<key>increase auto advance speed</key>
+	<string>SCRBraille.increaseAutoAdvanceSpeed</string>
+	<key>increase magnification of voiceover cursor</key>
+	<string>SCRApplication.increaseVoiceOverCursorMagnification</string>
+	<key>increase pitch</key>
+	<string>SCRWorkspace.increaseSpeechPitch</string>
+	<key>increase rate</key>
+	<string>SCRWorkspace.increaseSpeechRate</string>
+	<key>increase system volume</key>
+	<string>SCRWorkspace.increaseSystemVolume</string>
+	<key>increase thickness</key>
+	<string>SCRBraille.increaseThickness2DBraille</string>
+	<key>increase volume</key>
+	<string>SCRWorkspace.increaseSpeechVolume</string>
+	<key>interact with scroll bar</key>
+	<string>SCRScrollArea.scroll</string>
+	<key>item chooser</key>
+	<string>Global.elementListMenu</string>
+	<key>jump to header</key>
+	<string>SCRTable.moveToHeader</string>
+	<key>jump to item at hot spot 0</key>
+	<string>Global.navigateSpot_0</string>
+	<key>jump to item at hot spot 1</key>
+	<string>Global.navigateSpot_1</string>
+	<key>jump to item at hot spot 2</key>
+	<string>Global.navigateSpot_2</string>
+	<key>jump to item at hot spot 3</key>
+	<string>Global.navigateSpot_3</string>
+	<key>jump to item at hot spot 4</key>
+	<string>Global.navigateSpot_4</string>
+	<key>jump to item at hot spot 5</key>
+	<string>Global.navigateSpot_5</string>
+	<key>jump to item at hot spot 6</key>
+	<string>Global.navigateSpot_6</string>
+	<key>jump to item at hot spot 7</key>
+	<string>Global.navigateSpot_7</string>
+	<key>jump to item at hot spot 8</key>
+	<string>Global.navigateSpot_8</string>
+	<key>jump to item at hot spot 9</key>
+	<string>Global.navigateSpot_9</string>
+	<key>keyboard help</key>
+	<string>SCRWorkspace.openKeyboardHelp</string>
+	<key>label item</key>
+	<string>Global.setElementLabel</string>
+	<key>left arrow key</key>
+	<string>SCRWorkspace.leftArrowKey</string>
+	<key>magic tap</key>
+	<string>Global.performMagicTap</string>
+	<key>mark item to drag and drop</key>
+	<string>Global.markForDragAndDrop</string>
+	<key>monitor item at hot
+spot 0</key>
+	<string>Global.watchSpot_0</string>
+	<key>monitor item at hot spot 1</key>
+	<string>Global.watchSpot_1</string>
+	<key>monitor item at hot spot 2</key>
+	<string>Global.watchSpot_2</string>
+	<key>monitor item at hot spot 3</key>
+	<string>Global.watchSpot_3</string>
+	<key>monitor item at hot spot 4</key>
+	<string>Global.watchSpot_4</string>
+	<key>monitor item at hot spot 5</key>
+	<string>Global.watchSpot_5</string>
+	<key>monitor item at hot spot 6</key>
+	<string>Global.watchSpot_6</string>
+	<key>monitor item at hot spot 7</key>
+	<string>Global.watchSpot_7</string>
+	<key>monitor item at hot spot 8</key>
+	<string>Global.watchSpot_8</string>
+	<key>monitor item at hot spot 9</key>
+	<string>Global.watchSpot_9</string>
+	<key>more content</key>
+	<string>Global.showCustomContentMenu</string>
+	<key>mouse down</key>
+	<string>Global.stickyMouseDown</string>
+	<key>mouse up</key>
+	<string>Global.stickyMouseUp</string>
+	<key>move down</key>
+	<string>Global.interactDown</string>
+	<key>move down a bit</key>
+	<string>Global.moveDownSmall</string>
+	<key>move down in rotor</key>
+	<string>Global.interactDownCommand</string>
+	<key>move item to bottom center section</key>
+	<string>Global.moveItemToSector8</string>
+	<key>move item to bottom left section</key>
+	<string>Global.moveItemToSector7</string>
+	<key>move item to bottom right section</key>
+	<string>Global.moveItemToSector9</string>
+	<key>move item to middle center section</key>
+	<string>Global.moveItemToSector5</string>
+	<key>move item to middle left section</key>
+	<string>Global.moveItemToSector4</string>
+	<key>move item to middle right section</key>
+	<string>Global.moveItemToSector6</string>
+	<key>move item to top center section</key>
+	<string>Global.moveItemToSector2</string>
+	<key>move item to top left section</key>
+	<string>Global.moveItemToSector1</string>
+	<key>move item to top right section</key>
+	<string>Global.moveItemToSector3</string>
+	<key>move keyboard focus to voiceover cursor</key>
+	<string>Global.synchToVirtualFocus</string>
+	<key>move left</key>
+	<string>Global.interactLeft</string>
+	<key>move left a bit</key>
+	<string>Global.moveLeftSmall</string>
+	<key>move mouse pointer to voiceover cursor</key>
+	<string>Global.synchMouseToVirtualFocus</string>
+	<key>move right</key>
+	<string>Global.interactRight</string>
+	<key>move right a bit</key>
+	<string>Global.moveRightSmall</string>
+	<key>move to area after splitter</key>
+	<string>Global.jumpNextSplitterView</string>
+	<key>move to area before splitter</key>
+	<string>Global.jumpPreviousSplitterView</string>
+	<key>move to next hot spot</key>
+	<string>Global.nextHotSpot</string>
+	<key>move to parent row</key>
+	<string>SCROutline.moveToParentRow</string>
+	<key>move to previous hot spot</key>
+	<string>Global.previousHotSpot</string>
+	<key>move up</key>
+	<string>Global.interactUp</string>
+	<key>move up a bit</key>
+	<string>Global.moveUpSmall</string>
+	<key>move up in rotor</key>
+	<string>Global.interactUpCommand</string>
+	<key>move voiceover cursor to keyboard focus</key>
+	<string>Global.synchToKeyboardFocus</string>
+	<key>move voiceover cursor to mouse pointer</key>
+	<string>Global.synchVirtualFocusToMouse</string>
+	<key>mute sound toggle</key>
+	<string>SCRWorkspace.muteSoundToggle</string>
+	<key>mute speech toggle</key>
+	<string>SCRWorkspace.muteSpeechToggle</string>
+	<key>mute voiceover toggle</key>
+	<string>SCRWorkspace.muteVoiceOverToggle</string>
+	<key>next braille table</key>
+	<string>SCRBraille.nextBrailleTable</string>
+	<key>next content</key>
+	<string>Global.nextContent</string>
+	<key>next input mode</key>
+	<string>SCRBraille.nextInputMode</string>
+	<key>next output mode</key>
+	<string>SCRBraille.nextOutputMode</string>
+	<key>next rotor item</key>
+	<string>SCRInvertedT.rightUp</string>
+	<key>open activity chooser</key>
+	<string>SCRWorkspace.openProfiles</string>
+	<key>open application chooser</key>
+	<string>SCRWorkspace.openApplications</string>
+	<key>open commands menu</key>
+	<string>SCRWorkspace.openCommands</string>
+	<key>open control center</key>
+	<string>SCRWorkspace.openControlCenter</string>
+	<key>open find commands menu</key>
+	<string>SCRWorkspace.openSearchCommands</string>
+	<key>open hot spots chooser</key>
+	<string>Global.HotSpotMenu</string>
+	<key>open next speech attribute guide</key>
+	<string>Global.interactRightCommandShift</string>
+	<key>open notification center</key>
+	<string>SCRWorkspace.openNotificationCenter</string>
+	<key>open previous speech attribute guide</key>
+	<string>Global.interactLeftCommandShift</string>
+	<key>open quick start tutorial</key>
+	<string>SCRWorkspace.openVoiceOverWalkthrough</string>
+	<key>open shortcut menu</key>
+	<string>Global.contextualMenu</string>
+	<key>open the announcement history menu</key>
+	<string>SCRWorkspace.openAnnouncementGuide</string>
+	<key>open the notification list</key>
+	<string>SCRWorkspace.openNotificationsList</string>
+	<key>open the notifications menu</key>
+	<string>SCRWorkspace.openNotificationsGuide</string>
+	<key>open the text checker</key>
+	<string>Global.openTextChecker</string>
+	<key>open verbosity rotor</key>
+	<string>SCRWorkspace.verbosityRotor</string>
+	<key>open voiceover help menu</key>
+	<string>SCRWorkspace.openGuide</string>
+	<key>open voiceover utility</key>
+	<string>SCRWorkspace.openUtility</string>
+	<key>open window chooser</key>
+	<string>SCRWorkspace.openWindows</string>
+	<key>option key</key>
+	<string>SCRWorkspace.optionKey</string>
+	<key>pan left</key>
+	<string>SCRBraille.panLeft</string>
+	<key>pan right</key>
+	<string>SCRBraille.panRight</string>
+	<key>pause or resume speaking</key>
+	<string>SCRWorkspace.cancelSpeaking</string>
+	<key>perform action for item</key>
+	<string>Global.defaultAction</string>
+	<key>perform action for touch bar item</key>
+	<string>Global.defaultDFRAction</string>
+	<key>perform default action for current item</key>
+	<string>SCRBraille.primaryRouter</string>
+	<key>previous activity</key>
+	<string>SCRWorkspace.previousProfile</string>
+	<key>previous braille table</key>
+	<string>SCRBraille.previousBrailleTable</string>
+	<key>previous content</key>
+	<string>Global.previousContent</string>
+	<key>previous rotor item</key>
+	<string>SCRInvertedT.leftUp</string>
+	<key>read column description from current cell</key>
+	<string>SCRTable.columnDescription</string>
+	<key>read contents of voiceover cursor</key>
+	<string>Global.content</string>
+	<key>read contents of window</key>
+	<string>SCRWindow.windowContent</string>
+	<key>read current character</key>
+	<string>SCRTextElement.readCharacter</string>
+	<key>read current character phonetically</key>
+	<string>SCRTextElement.readCharacterPhonetically</string>
+	<key>read current item alphabetically</key>
+	<string>Global.visibleTextAlphabeticSpelling</string>
+	<key>read current item phonetically</key>
+	<string>Global.visibleTextPhoneticSpelling</string>
+	<key>read current line</key>
+	<string>SCRTextElement.readLine</string>
+	<key>read current paragraph</key>
+	<string>SCRTextElement.readParagraph</string>
+	<key>read current sentence</key>
+	<string>SCRTextElement.readSentence</string>
+	<key>read current word</key>
+	<string>SCRTextElement.readWord</string>
+	<key>read current word alphabetically</key>
+	<string>SCRTextElement.readWordAlphabetically</string>
+	<key>read current word phonetically</key>
+	<string>SCRTextElement.readWordPhonetically</string>
+	<key>read from beginning to voiceover cursor</key>
+	<string>Global.readFromBeginning</string>
+	<key>read header description</key>
+	<string>SCRTable.columnHeader</string>
+	<key>read help tag for item</key>
+	<string>Global.helpString</string>
+	<key>read image description for item</key>
+	<string>Global.imageDescription</string>
+	<key>read link address</key>
+	<string>SCRLink.url</string>
+	<key>read next character</key>
+	<string>SCRTextElement.nextCharacter</string>
+	<key>read next line</key>
+	<string>SCRTextElement.nextLine</string>
+	<key>read next paragraph</key>
+	<string>SCRTextElement.nextParagraph</string>
+	<key>read next sentence</key>
+	<string>SCRTextElement.interactPageDownCommand</string>
+	<key>read next word</key>
+	<string>SCRTextElement.nextWord</string>
+	<key>read previous character</key>
+	<string>SCRTextElement.previousCharacter</string>
+	<key>read previous line</key>
+	<string>SCRTextElement.previousLine</string>
+	<key>read previous paragraph</key>
+	<string>SCRTextElement.previousParagraph</string>
+	<key>read previous sentence</key>
+	<string>SCRTextElement.interactPageUpCommand</string>
+	<key>read previous word</key>
+	<string>SCRTextElement.previousWord</string>
+	<key>read row and column numbers</key>
+	<string>SCRTable.cellCoordinates</string>
+	<key>read row description from current cell</key>
+	<string>SCRTable.rowDescription</string>
+	<key>read row header description</key>
+	<string>SCRTable.rowHeader</string>
+	<key>read selected text or item</key>
+	<string>Global.selectionContent</string>
+	<key>read table dimensions</key>
+	<string>SCRTable.tableDimensions</string>
+	<key>read text attributes</key>
+	<string>SCRTextElement.getStyleInfo</string>
+	<key>read visible text</key>
+	<string>Global.readVisibleText</string>
+	<key>read voiceover hint</key>
+	<string>Global.contextualHelp</string>
+	<key>read webpage statistics</key>
+	<string>SCRWebArea.webOverview</string>
+	<key>remove from window spots</key>
+	<string>Global.removeSpot</string>
+	<key>repeat last phrase</key>
+	<string>SCRWorkspace.repeatLastOutputRequest</string>
+	<key>return key</key>
+	<string>SCRWorkspace.returnKey</string>
+	<key>rewind</key>
+	<string>Global.rewind</string>
+	<key>right arrow key</key>
+	<string>SCRWorkspace.rightArrowKey</string>
+	<key>right click mouse</key>
+	<string>Global.rightClickMouse</string>
+	<key>rotate left</key>
+	<string>Global.interactLeftCommand</string>
+	<key>rotate right</key>
+	<string>Global.interactRightCommand</string>
+	<key>rotor</key>
+	<string>Global.showRotor</string>
+	<key>save contents of voiceover cursor to desktop as image file</key>
+	<string>SCRWorkspace.takeVoiceOverCursorScreenshot</string>
+	<key>save last phrase to desktop as audio file</key>
+	<string>SCRWorkspace.saveLastOutputRequest</string>
+	<key>save or remove item at hot spot 0</key>
+	<string>Global.setOrRemoveSpot_0</string>
+	<key>save or remove item at hot spot 1</key>
+	<string>Global.setOrRemoveSpot_1</string>
+	<key>save or remove item at hot spot 2</key>
+	<string>Global.setOrRemoveSpot_2</string>
+	<key>save or remove item at hot spot 3</key>
+	<string>Global.setOrRemoveSpot_3</string>
+	<key>save or remove item at hot spot 4</key>
+	<string>Global.setOrRemoveSpot_4</string>
+	<key>save or remove item at hot spot 5</key>
+	<string>Global.setOrRemoveSpot_5</string>
+	<key>save or remove item at hot spot 6</key>
+	<string>Global.setOrRemoveSpot_6</string>
+	<key>save or remove item at hot spot 7</key>
+	<string>Global.setOrRemoveSpot_7</string>
+	<key>save or remove item at hot spot 8</key>
+	<string>Global.setOrRemoveSpot_8</string>
+	<key>save or remove item at hot spot 9</key>
+	<string>Global.setOrRemoveSpot_9</string>
+	<key>scroll down one page</key>
+	<string>Global.scrollDownByPage</string>
+	<key>scroll left one page</key>
+	<string>Global.scrollLeftByPage</string>
+	<key>scroll right one page</key>
+	<string>Global.scrollRightByPage</string>
+	<key>scroll up one page</key>
+	<string>Global.scrollUpByPage</string>
+	<key>select all</key>
+	<string>SCRTextElement.selectAll</string>
+	<key>select item</key>
+	<string>Global.select</string>
+	<key>select left of the cursor</key>
+	<string>SCRTextElement.selectLeft</string>
+	<key>select next option down in speech attribute guide</key>
+	<string>Global.interactDownCommandShift</string>
+	<key>select next option up in speech attribute guide</key>
+	<string>Global.interactUpCommandShift</string>
+	<key>select right of the cursor</key>
+	<string>SCRTextElement.selectRight</string>
+	<key>select text</key>
+	<string>Global.increaseTextSelection</string>
+	<key>select text in voiceover cursor</key>
+	<string>SCRTextElement.selectTextInVOCursor</string>
+	<key>set as a window spot</key>
+	<string>Global.setSpot</string>
+	<key>shift key</key>
+	<string>SCRWorkspace.shiftKey</string>
+	<key>show or hide the braille window</key>
+	<string>SCRWorkspace.enableBrailleWindow</string>
+	<key>show or hide the caption window</key>
+	<string>SCRWorkspace.enableCaptionWindow</string>
+	<key>show or hide voiceover visuals</key>
+	<string>SCRWorkspace.enableVisuals</string>
+	<key>speak battery status</key>
+	<string>SCRWorkspace.speakSystemBatteryStatus</string>
+	<key>speak current page in scroll area</key>
+	<string>Global.speakScrollPage</string>
+	<key>speak the date</key>
+	<string>SCRWorkspace.speakSystemDate</string>
+	<key>speak the time</key>
+	<string>SCRWorkspace.speakSystemTime</string>
+	<key>speak the time and date</key>
+	<string>SCRWorkspace.speakSystemTimeDate</string>
+	<key>speak wifi status</key>
+	<string>SCRWorkspace.speakSystemWifiStatus</string>
+	<key>start interacting with item</key>
+	<string>Global.interactDownShift</string>
+	<key>start moving item</key>
+	<string>Global.moveOrigin</string>
+	<key>start moving window</key>
+	<string>SCRWindow.moveOrigin</string>
+	<key>start resizing item</key>
+	<string>Global.moveSize</string>
+	<key>start resizing window</key>
+	<string>SCRWindow.moveSize</string>
+	<key>stop interacting with item</key>
+	<string>Global.interactUpShift</string>
+	<key>switch window</key>
+	<string>SCRWorkspace.switchWindow</string>
+	<key>tab key</key>
+	<string>SCRWorkspace.tabKey</string>
+	<key>tile visuals</key>
+	<string>SCRWorkspace.toggleTileVisuals</string>
+	<key>toggle arrow-key and single-key quick nav on or off</key>
+	<string>SCRWorkspace.toggleAllQuickNav</string>
+	<key>toggle arrow-key quick nav on or off</key>
+	<string>SCRWorkspace.toggleQuickNav</string>
+	<key>toggle auto advance on or off</key>
+	<string>SCRBraille.toggleAutoAdvance</string>
+	<key>toggle command key</key>
+	<string>SCRWorkspace.toggleCommandKey</string>
+	<key>toggle contracted braille on or off</key>
+	<string>SCRBraille.toggleContractions</string>
+	<key>toggle control key</key>
+	<string>SCRWorkspace.toggleControlKey</string>
+	<key>toggle cursor tracking on or off</key>
+	<string>SCRWorkspace.cursorTrackingEnabled</string>
+	<key>toggle disclosure triangle open or closed</key>
+	<string>Global.toggleDisclosureTriangle</string>
+	<key>toggle display text style on or off</key>
+	<string>SCRBraille.toggleDisplayTextStyle</string>
+	<key>toggle eight-dot braille on or off</key>
+	<string>SCRBraille.toggleEightDot</string>
+	<key>toggle expanded status description on or off</key>
+	<string>SCRBraille.primaryStatusRouter</string>
+	<key>toggle extended general display status cell on or off</key>
+	<string>SCRBraille.toggleExtendedGeneralDisplayStatusCell</string>
+	<key>toggle extended text style status cell on or off</key>
+	<string>SCRBraille.toggleExtendedTextStyleStatusCell</string>
+	<key>toggle fn key</key>
+	<string>SCRWorkspace.toggleFnKey</string>
+	<key>toggle general display status cell on or off</key>
+	<string>SCRBraille.toggleGeneralDisplayStatusCell</string>
+	<key>toggle insertion point navigation</key>
+	<string>SCRWebArea.toggleCaretBrowsing</string>
+	<key>toggle insertion point wrap on or off</key>
+	<string>SCRBraille.toggleInsertionPointWrap</string>
+	<key>toggle invert</key>
+	<string>SCRBraille.toggleInvert2DBraille</string>
+	<key>toggle keyboard commander on or off</key>
+	<string>SCRWorkspace.toggleKeyboardCommander</string>
+	<key>toggle live region update for current item</key>
+	<string>SCRWebArea.liveRegionToggle</string>
+	<key>toggle multiple selection on or off</key>
+	<string>Global.toggleMultipleSelection</string>
+	<key>toggle nemeth code for equations on or off</key>
+	<string>SCRBraille.toggleNemethForEquations</string>
+	<key>toggle numpad commander on or off</key>
+	<string>SCRWorkspace.toggleNumPad</string>
+	<key>toggle option key</key>
+	<string>SCRWorkspace.toggleOptionKey</string>
+	<key>toggle screen curtain on or off</key>
+	<string>SCRWorkspace.screenCurtain</string>
+	<key>toggle shift key</key>
+	<string>SCRWorkspace.toggleShiftKey</string>
+	<key>toggle single-key quick nav on or off</key>
+	<string>SCRWorkspace.toggleSingleLetterQuickNav</string>
+	<key>toggle table interactability</key>
+	<string>SCRWebArea.toggleWebTableInteractability</string>
+	<key>toggle table row and column indices</key>
+	<string>SCRWorkspace.toggleWebTableSpeakRowColumnIndices</string>
+	<key>toggle text spoken all or most recent</key>
+	<string>SCRWorkspace.toggleShouldOutputSelectionChanged</string>
+	<key>toggle text style status cell on or off</key>
+	<string>SCRBraille.toggleTextStyleStatusCell</string>
+	<key>toggle the vo modifier lock on or off</key>
+	<string>SCRWorkspace.lockVoiceOverKeys</string>
+	<key>toggle trackpad commander on or off</key>
+	<string>SCRWorkspace.toggleTrackpadCommander</string>
+	<key>toggle turn page when panning on or off</key>
+	<string>SCRBraille.toggleTurnPageWhenPanning</string>
+	<key>toggle using dots seven and eight to indicate cursor position</key>
+	<string>SCRBraille.toggleDotsSevenAndEight</string>
+	<key>toggle voiceover cursor follows mouse on or off</key>
+	<string>Global.toggleVoiceOverFollowsMouse</string>
+	<key>toggle web navigation dom or group</key>
+	<string>SCRWorkspace.switchWebNavigationType</string>
+	<key>toggle word wrap on or off</key>
+	<string>SCRBraille.toggleWordWrap</string>
+	<key>translate braille</key>
+	<string>SCRBraille.translate</string>
+	<key>unselect text</key>
+	<string>Global.decreaseTextSelection</string>
+	<key>up arrow key</key>
+	<string>SCRWorkspace.upArrowKey</string>
+	<key>user guide</key>
+	<string>SCRWorkspace.openHelp</string>
+	<key>voiceover modifier</key>
+	<string>SCRWorkspace.voModifierKey</string>
+	<key>zoom in</key>
+	<string>SCRBraille.zoomIn2DBraille</string>
+	<key>zoom out</key>
+	<string>SCRBraille.zoomOut2DBraille</string>
+</dict>
+</plist>

@@ -1,0 +1,75 @@
+;;; Copyright © 2023 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable iokit-get-properties process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex))
+)
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath))
+)
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix))
+)
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal))
+)
+
+(define relative-path-to-safari-library-directory
+    "/Library/Containers/com.apple.Safari/Data/Library/Safari/")
+(define safari-container-path
+    (home-subpath relative-path-to-safari-library-directory))
+(define configuration-plist-subpath
+    (subpath (string-append relative-path-to-safari-library-directory "AuthenticationServicesManagedConfiguration.plist")))
+
+;; On a clean install, the Safari folder in ~/Library may not exist yet, so we need to be allowed to create it.
+(allow file-write-create (require-all (vnode-type DIRECTORY) safari-container-path))
+
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+    (subpath (param "TMPDIR"))
+    (subpath (param "DARWIN_CACHE_DIR"))
+)
+
+;; Sandbox extension for download task URLs
+(allow file-issue-extension
+    (require-all
+        (extension-class "com.apple.app-sandbox.read-write")
+        (subpath (param "TMPDIR"))
+    )
+)
+
+(allow mach-lookup
+    ;; RemoteManagement mach services
+    (global-name "com.apple.remotemanagementd.store")
+    (global-name "com.apple.RemoteManagementAgent.store")
+    ;; Look up Safari's container
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.containermanagerd")
+)
+
+;; Read/write access to managed configuration in Safari's container
+(allow file-read* file-write* configuration-plist-subpath)

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildAliasOf</key>
+	<string>apfs</string>
+	<key>BuildVersion</key>
+	<string>63</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2236.120.10</string>
+	<key>CFBundleVersion</key>
+	<string>2236.120.10</string>
+	<key>ProjectName</key>
+	<string>apfs_framework</string>
+	<key>SourceVersion</key>
+	<string>2236120010000001</string>
+</dict>
+</plist>

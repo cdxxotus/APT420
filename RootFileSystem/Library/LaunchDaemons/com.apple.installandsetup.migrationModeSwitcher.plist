@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>_LimitLoadToBootMode</key>
+	<array>
+		<string>migration</string>
+		<string>eacs</string>
+	</array>
+	<key>Label</key>
+	<string>com.apple.installandsetup.migration_mode_switcher</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/System/Installation/CDIS/migrationModeSwitcher</string>
+	</array>
+	<key>Program</key>
+	<string>/System/Installation/CDIS/migrationModeSwitcher</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>ProcessType</key>
+	<string>Interactive</string>
+</dict>
+</plist>

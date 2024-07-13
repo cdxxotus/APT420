@@ -1,0 +1,40 @@
+(version 1)
+
+(deny default)
+(import "system.sb")
+
+; Allow the GPUTask to open the various user clients that are needed to implement Metal
+(allow iokit-open
+    (iokit-user-client-class "IOSurfaceRootUserClient")
+    (iokit-user-client-class "IOGPUDeviceUserClient")
+    (iokit-user-client-class "IOAccelDevice2")
+    (iokit-user-client-class "IOAccelSharedUserClient2")
+    (iokit-user-client-class "IOAccelCommandQueue")
+)
+
+; Allow the GPUTask to open the MTLCompilerService instance
+(allow mach-lookup
+    (global-name "com.apple.MTLCompilerService")
+    (global-name "com.apple.gpumemd.source")
+    (global-name "com.apple.CoreServices.coreservicesd")
+    (global-name "com.apple.DiskArbitration.diskarbitrationd")
+)
+
+; Metal refers to everything by the /var/* path but this resolves
+; to /private/var/* path due to a symlink
+(allow file-read* file-write*
+    (subpath (param "DARWIN_CACHE_DIR"))
+    (subpath (param "PRIVATE_DARWIN_CACHE_DIR"))
+)
+
+; Allow introspection into the service and framework bundles to allow
+; for shader loading at runtime
+(allow file-read*
+    (subpath (param "SERVICE_BUNDLE"))
+    (subpath (param "FRAMEWORK_BUNDLE"))
+)
+
+; Allow for reading the user preferences for GPU selection
+(allow user-preference-read
+    (preference-domain "kCFPreferencesAnyApplication")
+)

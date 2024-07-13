@@ -1,0 +1,171 @@
+;;; Copyright (c) 2019-2022 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+;;; Override the (param ...) function to variable-quote results now that ENABLE_PATTERN_VARIABLES=1.
+;;; This is to guard against the pattern variable logic triggering on (param ...) statements
+(define (var-quote-if-string obj)
+    (if (and obj (string? obj)) (variable-quote obj) obj))
+
+(let ((orig-param param))
+  (set! param
+    (lambda(key)
+      (var-quote-if-string (orig-param key)))))
+      
+(allow process-info* (target self))
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; preference domain
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.progressd")
+    (preference-domain "com.apple.ClassKit")
+    (preference-domain "com.apple.ClassKit-Settings.extension"))
+
+(allow distributed-notification-post)
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+    (subpath (param "TMPDIR"))
+    (subpath (param "DARWIN_CACHE_DIR"))
+    (subpath (param "CLASSKIT_DB_DIR")))
+
+;; Push notification registration.
+(allow mach-lookup (global-name "com.apple.SystemConfiguration.configd"))
+(allow mach-lookup (global-name "com.apple.windowserver.active"))
+
+(allow mach-lookup
+    (global-name "com.apple.accountsd.accountmanager")
+    (global-name "com.apple.ak.anisette.xpc")
+    (global-name "com.apple.analyticsd")
+    (global-name "com.apple.apsd")
+    (global-name "com.apple.awdd")
+    (global-name "com.apple.bird")
+    (global-name "com.apple.bird.token")
+    (global-name "com.apple.ckdiscretionaryd")
+    (global-name "com.apple.cloudd")
+    (global-name "com.apple.FileCoordination")
+    (global-name "com.apple.cookied")
+    (global-name "com.apple.identityservicesd.desktop.auth")
+    (global-name "com.apple.lsd.xpc")
+    (global-name "com.apple.lsd.modifydb")
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.mobile.keybagd.UserManager.xpc")
+    (global-name "com.apple.mobile.keybagd.xpc")
+    (global-name "com.apple.mobile.usermanagerd.xpc")
+    (global-name "com.apple.nsurlstorage-cache")
+    (global-name "com.apple.progressd.xpc")
+    (global-name "com.apple.securityd.xpc")
+    (global-name "com.apple.SecurityServer")
+    (global-name "com.apple.system.opendirectoryd.api")
+    (global-name "com.apple.UNCUserNotification")
+    (global-name "com.apple.usernotifications.usernotificationservice")
+    (global-name "com.apple.usernotifications.listener")
+    (global-name "com.apple.cfnetwork.cfnetworkagent")
+    (global-name "com.apple.biome.access.user")
+    (global-name "com.apple.biome.access.system")               ;; To address: deny(1) mach-lookup com.apple.biome.access.system
+    (global-name "com.apple.fairplayd.versioned")               ;; To address: deny(1) mach-lookup com.apple.fairplayd.versioned
+    (global-name "com.apple.ProgressReporting")                 ;; To address: deny(1) mach-lookup com.apple.ProgressReporting
+    (global-name "com.apple.metadata.mds")                      ;; To address: deny(1) mach-lookup com.apple.metadata.mds
+    (global-name "com.apple.biome.PublicStreamAccessService")   ;; To address: deny(1) mach-lookup com.apple.biome.PublicStreamAccessService
+    (global-name "com.apple.coreduetd.knowledge")               ;; To address: deny(1) mach-lookup com.apple.coreduetd.knowledge
+    (global-name "com.apple.coreduetd.knowledge.user")          ;; To address: deny(1) mach-lookup com.apple.coreduetd.knowledge.user
+    (global-name "com.apple.FileProvider"))                     ;; Required by iCloud Drive file provider (for iWork)
+
+(allow user-preference-read
+    (preference-domain "com.apple.CFNetwork")
+    (preference-domain "com.apple.appleaccount")
+    (preference-domain "com.apple.appleaccountd")
+    (preference-domain "kCFPreferencesAnyApplication")
+    (preference-domain "com.apple.itunesstored")
+    (preference-domain "com.apple.storeservices.itfe")
+    (preference-domain "com.apple.nsurlcache")
+    (preference-domain "com.apple.security")
+    (preference-domain "com.apple.CloudKit")
+    (preference-domain "com.apple.iclouddrive.features")
+    (preference-domain "com.apple.ImageIO"))
+
+(system-network)
+
+(allow network*
+    (local udp)
+    (remote udp)
+    (local tcp)
+    (remote tcp))
+
+(allow network-outbound (literal "/private/var/run/mDNSResponder"))
+
+(define (allow-read-write-and-issue-generic-extensions . filters)
+    (allow file-read* file-write*
+           (apply require-any filters))
+    ;; Explicitly allow reading the metadata so processes can get timestamps.
+    (allow file-read-metadata
+           (apply require-any filters))
+    (with-filter (mac-policy-name "Sandbox")
+        (allow system-mac-syscall
+               (mac-syscall-number 5))) ;; SYSCALL_EXTENSION_ISSUE
+    (allow file-issue-extension
+        (require-all
+            ;; APP_SANDBOX_READ - default for sandbox_issue_extension() & sandbox_issue_fs_extension().
+            ;; APP_SANDBOX_READ_WRITE  - default for sandbox_issue_fs_extension() & sandbox_issue_fs_rw_extension().
+            (extension-class "com.apple.app-sandbox.read-write" "com.apple.app-sandbox.read")
+            (apply require-any filters))))
+
+;; Read/write cache access
+(allow-read-write-and-issue-generic-extensions (home-subpath "/Library/Caches/com.apple.progressd"))
+(allow-read-write-and-issue-generic-extensions (home-subpath "/Library/Caches/CloudKit/com.apple.progressd"))
+
+;; Read/write access to ~/Library/ClassKit
+;; This does not need extensions because it is only used by progressd for access to the persistant store directory.
+(allow file-read* file-write* (home-subpath "/Library/ClassKit"))
+
+(allow file-read*
+    (home-subpath "/Library/Keychains/login.keychain-db")
+    (literal "/Library/Keychains/System.keychain")
+    (home-literal "/Library/Preferences/com.apple.security.plist")                      ;; To address: deny(1) file-read-data ${HOME}/Library/Preferences/com.apple.security.plist
+    (literal "/private/var/db/mds/system/mdsDirectory.db")                              ;; To address: deny(1) file-read-data /private/var/db/mds/system/mdsDirectory.db
+    (literal "/private/var/db/mds/messages/se_SecurityMessages")                        ;; To address: deny(1) file-read-data /private/var/db/mds/messages/502/se_SecurityMessages
+    (regex #"/private/var/db/mds/messages/.*/se_SecurityMessages")
+    (home-literal "/Library/Preferences/com.apple.networkextension.uuidcache.plist")    ;; To address: deny(1) file-read-data /Library/Preferences/com.apple.networkextension.uuidcache.plist
+    (literal "/Library/Preferences/com.apple.networkextension.uuidcache.plist"))
+
+;; To address: deny(1) file-write-create ${HOME}/Library/HTTPStorages/${SIGNING_ID}
+(allow file-read* file-write*
+    (home-subpath "/Library/HTTPStorages"))
+
+;; To address: deny(1) ipc-posix-shm-write-create com.apple.AppleDatabaseChanged
+(allow ipc-posix-shm-read-data ipc-posix-shm-write-data ipc-posix-shm-write-create
+        (ipc-posix-name "com.apple.AppleDatabaseChanged"))
+
+;; To address: deny(1) file-write-create /Volumes/Users/.TemporaryItems/folders.502/TemporaryItems/NSIRD_progressd_mCq0XP
+;; Allow access to other volume temp dirs we may need should we use foundation APIs similar to -[NSDictionary writeToURL:error:]
+(allow-read-write-and-issue-generic-extensions (mount-relative-regex #"^/\.TemporaryItems(/|$)"))

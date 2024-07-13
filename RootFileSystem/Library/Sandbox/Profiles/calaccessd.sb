@@ -1,0 +1,206 @@
+;;; Copyright (c) 2017 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+;; Deny by default
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+;;; Override the (param ...) function to variable-quote results to avoid
+;;; unexpected ${...} patterns inside parameters.
+(define (var-quote-if-string obj)
+  (if (and obj (string? obj)) (variable-quote obj) obj))
+
+(let ((orig-param param))
+  (set! param
+    (lambda(key)
+      (var-quote-if-string (orig-param key)))))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+;; Allow getting info about calaccessd's process
+(allow process-info* (target self))
+
+;; Allow getting PID of processes, used for XPC clients
+(allow process-info-pidinfo)
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; To post Darwin notifications
+(allow distributed-notification-post)
+
+;; Preference domains
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.calaccessd")
+    (preference-domain "com.apple.iCal")
+    (preference-domain "com.apple.remindd")
+)
+
+;; Global preferences
+(allow user-preference-read
+    (preference-domain "kCFPreferencesAnyApplication"))
+
+;; Global preferences
+(allow file-read*
+    (home-literal "/Library/Preferences/.GlobalPreferences.plist"))
+    
+;; Launch Services
+(allow file-read*
+    (home-literal "/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist")
+    (regex "^/private/var/folders/.*/com\.apple\.LaunchServices-.*\.csstore$")
+)
+
+;; Read/write access to a temporary directory.
+(allow file-read* file-write*
+    (subpath (param "TMPDIR"))
+    (subpath (param "DARWIN_CACHE_DIR"))
+    (mount-relative-regex #"^/.TemporaryItems(/|$)"))
+
+;; Loading AppleInternal libraries
+(allow file-read* (subpath "/AppleInternal/Library/Frameworks"))
+(allow file-map-executable (subpath "/AppleInternal/Library/Frameworks"))
+
+;; Read/write access to calendar directory
+(allow file-read* file-write* (home-subpath "/Library/Calendars"))
+
+;; Read/write access to calendar attachments
+(allow file-read* file-write* (home-subpath "/Library/Group Containers/group.com.apple.calendar"))
+;; Read/write access to calendar databases and attachments on persona volumes
+(allow file-read* file-write* (subpath "/Volumes/${ANY_UUID}/Library/Group Containers/group.com.apple.calendar"))
+
+;; Read access to dataaccessd's log directory (for gathering diagnostics)
+(allow file-read* (home-subpath "/Library/Logs/CrashReporter/DataAccess"))
+
+;; Read/write access to the legacy CalendarAgent container so that we can delete it
+(allow file-read* file-write* (home-subpath "/Library/Containers/com.apple.CalendarAgent"))
+
+;; support consuming com.apple.app-sandbox.read and com.apple.app-sandbox.read-write extensions from clients (e.g. attachments)
+(allow file-read* (extension "com.apple.app-sandbox.read"))
+(allow file-read* file-write* (extension "com.apple.app-sandbox.read-write"))
+
+;; allow issuing extension to clients (e.g. attachments)
+(allow file-issue-extension
+  (require-all
+    (extension-class "com.apple.app-sandbox.read")
+    (require-any
+        (home-subpath "/Library/Calendars")
+        (subpath "/Volumes/${ANY_UUID}/Library/Group Containers/group.com.apple.calendar")
+    )
+))
+
+(allow file-issue-extension
+  (require-all
+    (extension-class "com.apple.app-sandbox.read")
+    (home-subpath "/Library/Group Containers/group.com.apple.calendar")))
+
+;; For Contacts
+(import "contacts.sb")
+(contacts-client (param "HOME") (param "TMPDIR"))
+
+;; Read/write cache access
+(let ((cache-path-filter (home-subpath "/Library/Caches/com.apple.calaccessd")))
+    (allow file-read* file-write* cache-path-filter)
+    (allow file-issue-extension
+    (require-all
+        (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+        cache-path-filter)))
+
+;; Keychain (needed for migration)
+(allow file-read* file-write* (regex #"^/private/var/folders/[^/]+/[^/]+/C/mds/"))
+(allow file-read*
+    (literal "/private/var/db/mds/messages/se_SecurityMessages")
+    (literal "/private/var/db/mds/system/mdsObject.db")
+    (literal "/private/var/db/mds/system/mdsDirectory.db"))
+(allow file-read* file-write* (literal "/private/var/db/mds/system/mds.lock"))
+
+(define keychain-check-path                 "/private/var/run/systemkeychaincheck.done")
+(define keychains-directory-path            "/Library/Keychains/")
+(define login-keychain-db-path              "/Library/Keychains/login.keychain-db")
+(define security-plist-path                 "/Library/Preferences/com.apple.security.plist")
+(define system-keychain-path                "/Library/Keychains/System.keychain")
+(allow file-read*
+    (home-subpath keychains-directory-path)
+    (home-subpath login-keychain-db-path)
+    (literal system-keychain-path))
+(allow file-read-metadata
+    (home-subpath security-plist-path)
+    (literal keychain-check-path)
+    (literal security-plist-path))
+(allow file-read-data
+    (home-subpath security-plist-path)
+    (literal security-plist-path))
+(allow file-write* (home-subpath keychains-directory-path))
+
+;; Mach lookups (for XPC to other processes)
+(allow mach-lookup
+    (global-name "com.apple.CalendarAgent")
+    (global-name "com.apple.calaccessd.xpc")
+    (global-name "com.apple.dataaccess.dataaccessd")
+    (global-name "com.apple.calendar.CalendarAgentBookmarkMigrationService")
+    (global-name "com.apple.exchange.exchangesyncd")
+    (global-name "com.apple.tccd")
+    (global-name "com.apple.tccd.system")
+    (global-name "com.apple.chronoservices")
+    (global-name "com.apple.accountsd.accountmanager")
+    (global-name "com.apple.spotlight.IndexAgent")
+    (global-name "com.apple.containermanagerd")
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.lsd.modifydb")
+    (global-name "com.apple.analyticsd")
+    (global-name "com.apple.routined.registration")
+    (global-name "com.apple.suggestd.events")
+    (global-name "com.apple.corerecents.recentsd")
+    (global-name "com.apple.backupd.sandbox.xpc")
+    (global-name "com.apple.usernotifications.usernotificationservice")
+    (global-name "com.apple.usernotifications.listener")
+    (global-name "com.apple.CoreLocation.agent")
+    (global-name "com.apple.locationd.desktop.spi")
+    (global-name "com.apple.locationd.desktop.synchronous")
+    (global-name "com.apple.locationd.desktop.registration")
+    (global-name "com.apple.navd")
+    (global-name "com.apple.system.opendirectoryd.api")
+    (global-name "com.apple.progressd")
+    (global-name "com.apple.remindd")
+    (global-name "com.apple.SystemConfiguration.configd")
+    (global-name "com.apple.coreservices.launchservicesd")
+    (global-name "com.apple.coreservices.quarantine-resolver")
+    (global-name "com.apple.scopedbookmarksagent.xpc")
+    (global-name "com.apple.SecurityServer")
+    (global-name "com.apple.securityd.xpc")
+    (global-name "com.apple.symptom_diagnostics")
+    (global-name "com.apple.mobile.usermanagerd.xpc"))
+
+;; For PersistentConnection
+(allow iokit-open (iokit-user-client-class "RootDomainUserClient"))
+
+;; File Open Permissions for Launch Services
+(allow lsopen)
+
+;; For PrivacyAccounting
+(allow mach-task-name)

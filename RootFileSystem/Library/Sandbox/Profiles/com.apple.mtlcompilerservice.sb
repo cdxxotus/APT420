@@ -1,0 +1,282 @@
+(version 3)
+
+(deny default)
+
+(allow file-test-existence)
+    
+(allow file-read-metadata
+    (subpath "/Library")
+    (subpath "/System")
+    (subpath "/usr/local/include")
+    (subpath "/usr/local")
+    (subpath "/usr")
+    (subpath "/Users"))
+    
+(allow file-read-metadata
+    (literal "/etc")
+    (literal "/tmp")
+    (literal "/var")
+    (literal "/private/var/root")
+    (literal "/private/etc/passwd")
+    (literal "/private/etc/localtime")
+    (literal "/private/var/db/securityagent"))
+   
+(allow file-read*
+    (literal "/")
+    (literal "/private/etc/master.passwd")
+    (literal "/Library/Preferences/.GlobalPreferences.plist")
+    (literal "/Library/Preferences/com.apple.Metal.plist"))
+
+(allow file-read*
+    (subpath "/Library/Preferences/Logging")
+    (subpath "/System")
+    (subpath "/usr/share")
+    (subpath "/private/var/db/timezone"))
+
+(allow file-read-data
+    (literal "/private/var/db/securityagent/Library/Preferences"))
+
+(allow file-write*
+    (subpath "/Library/Logs/DiagnosticReports/MTLCompiler")
+    (subpath "/Library/Logs/Metal"))
+    
+(allow file-read* file-write*
+    (subpath (param "_TMPDIR")))
+
+(import "dyld-support.sb")
+
+(allow file-map-executable
+    (subpath "/System/Library")
+    (subpath "/System/iOSSupport/System/Library")
+)
+    
+(with-filter (system-attribute apple-internal)
+    (allow file-read* file-write*
+        (subpath "/tmp")
+        (subpath "/private/tmp"))
+        
+    (allow file-read*
+        (subpath "/Library/GPUBundles"))
+     
+    (allow file-read-metadata
+        (literal "/AppleInternal"))
+        
+    (allow file-map-executable
+        (subpath "/System/AppleInternal/Library")
+        (subpath "/Library/GPUBundles")))
+     
+(allow user-preference-read
+    (preference-domain "com.apple.Metal")
+    (preference-domain "kCFPreferencesAnyApplication")
+    (preference-domain "com.apple.MTLCompilerService"))
+
+(with-filter (extension-class "com.apple.cfprefsd.read")
+    (allow file-issue-extension
+        (literal "/private/var/db/securityagent/Library/Preferences/com.apple.MTLCompilerService.plist")
+        (literal "/private/var/db/securityagent/Library/Preferences/.GlobalPreferences.plist")
+        (literal "/private/var/db/securityagent/Library/Preferences/.GlobalPreferences_m.plist")))
+
+(allow sysctl-read)
+(allow sysctl-write
+    (sysctl-name
+        "kern.grade_cputype"
+        "kern.wq_limit_cooperative_threads"
+        "vm.task_no_footprint_for_debug"
+        "debug.toggle_address_reuse"))
+
+(allow network-outbound
+    (literal "/private/var/run/syslog"))
+       
+(allow ipc-posix-shm-read*
+    (ipc-posix-name-prefix "apple.cfprefs.")
+    (ipc-posix-name "apple.shm.notification_center"))
+    
+(allow file-read* file-write*
+    (extension "com.apple.app-sandbox.read-write"))
+
+(allow file-read*
+    (extension "com.apple.app-sandbox.read"))
+    
+(allow ipc-posix-sem-create ipc-posix-sem-wait ipc-posix-sem-unlink ipc-posix-sem-open ipc-posix-sem-post
+    (ipc-posix-name-prefix "/MDB"))
+
+(allow process-info-pidinfo (target self))
+
+(allow process-info-rusage (target self))
+
+(allow syscall-unix
+    (syscall-group-pthread-locks)
+    (syscall-group-ulock)
+    (syscall-number
+        SYS_munmap
+        SYS_issetugid
+        SYS_fstat64
+        SYS_bsdthread_ctl
+        SYS_sigsuspend_nocancel
+        SYS_psynch_cvsignal
+        SYS_kdebug_trace_string
+        SYS_setrlimit
+        SYS_gettid
+        SYS_lstat64
+        SYS___pthread_sigmask
+        SYS___pthread_kill
+        SYS_workq_open
+        SYS_ulock_wake
+        SYS_workq_kernreturn
+        SYS_getrusage
+        SYS_stat64
+        SYS_kevent_qos
+        SYS_access
+        SYS_bsdthread_create
+        SYS_madvise
+        SYS_getrlimit
+        SYS___disable_threadsignal
+        SYS_bsdthread_terminate
+        SYS_getattrlist
+        SYS_getattrlistbulk
+        SYS_kdebug_typefilter
+        SYS_fgetattrlist
+        SYS_gettimeofday
+        SYS_mmap
+        SYS_getuid
+        SYS_mprotect
+        SYS_gethostuuid
+        SYS_ulock_wait
+        SYS_ulock_wait2
+        SYS_read
+        SYS_rename
+        SYS_csrctl
+        SYS_getentropy
+        SYS_getdirentries64
+        SYS_kdebug_trace64
+        SYS_getegid
+        SYS_kevent_id
+        SYS_psynch_cvwait
+        SYS_read_nocancel
+        SYS_sigaction
+        SYS_fsync
+        SYS_ftruncate
+        SYS___semwait_signal_nocancel
+        SYS_lseek
+        SYS_mkdir
+        SYS_thread_selfid
+        SYS_geteuid
+        SYS_symlink
+        SYS_psynch_cvbroad
+        SYS_pread
+        SYS_fileport_makefd
+        SYS_fstatfs64
+        SYS_mkdirat
+        SYS_sendto
+        SYS_abort_with_payload
+        SYS_fstatat64
+        SYS_sigprocmask
+        SYS___semwait_signal
+        SYS_getsid
+        SYS_getgid
+        SYS_sigaltstack
+        SYS_rmdir
+        SYS_sigreturn
+        SYS___mac_syscall
+        SYS_close
+        SYS_close_nocancel
+        SYS_crossarch_trap
+        SYS_csops
+        SYS_csops_audittoken
+        SYS_fcntl
+        SYS_fsgetpath
+        SYS_getpid
+        SYS_ioctl
+        SYS_iopolicysys
+        SYS_objc_bp_assist_cfg_np
+        SYS_open_nocancel
+        SYS_proc_info
+        SYS_readlink
+        SYS_shared_region_check_np
+        SYS_shm_open
+        SYS_sysctl
+        SYS_bsdthread_register
+        SYS_write
+        SYS_psynch_mutexdrop
+        SYS_psynch_mutexwait
+        SYS_socket
+        SYS_getpriority))
+        
+(allow system-mac-syscall
+    (mac-syscall-number 0 2 4 5 6 7 22 90))
+        
+(allow syscall-mach
+    (machtrap-number
+        MSC__kernelrpc_mach_port_guard_trap
+        MSC__kernelrpc_mach_port_deallocate_trap
+        MSC__kernelrpc_mach_vm_deallocate_trap
+        MSC__kernelrpc_mach_port_construct_trap
+        MSC__kernelrpc_mach_port_type_trap
+        MSC__kernelrpc_mach_port_insert_right_trap
+        MSC_host_self_trap
+        MSC__kernelrpc_mach_vm_protect_trap
+        MSC__kernelrpc_mach_vm_map_trap
+        MSC__kernelrpc_mach_port_destruct_trap
+        MSC_thread_get_special_reply_port
+        MSC_mach_msg2_trap
+        MSC__kernelrpc_mach_vm_allocate_trap
+        MSC__kernelrpc_mach_port_request_notification_trap
+        MSC__kernelrpc_mach_port_mod_refs_trap
+        MSC_mach_timebase_info_trap
+        MSC_syscall_thread_switch
+        MSC_semaphore_signal_trap
+        MSC_semaphore_wait_trap
+        MSC_mach_generate_activity_id
+        MSC_host_create_mach_voucher_trap
+        MSC_mach_reply_port
+        MSC_task_self_trap))
+        
+(allow system-fcntl
+        (fcntl-command
+            F_SETLK
+            F_GETPATH
+            F_ADDFILESIGS_RETURN
+            F_CHECK_LV
+            F_SETFD
+            F_SETLKW))
+            
+(allow mach-lookup
+    (global-name "com.apple.logd")
+    (global-name "com.apple.system.notification_center")
+    (global-name "com.apple.analyticsd")
+    (global-name "com.apple.cfprefsd.agent")
+    (global-name "com.apple.cfprefsd.daemon")
+    (global-name "com.apple.diagnosticd")
+    (global-name "com.apple.system.opendirectoryd.libinfo")
+    (global-name "com.apple.system.opendirectoryd.membership"))
+
+(allow syscall-mig
+    (kernel-mig-routine
+        _mach_make_memory_entry
+        mach_vm_map_external
+        mach_port_is_connection_for_service
+        host_info
+        mach_vm_copy
+        mach_memory_entry_ownership
+        task_get_special_port_from_user
+        clock_get_time
+        mach_port_set_attributes
+        mach_port_request_notification
+        mach_port_get_context_from_user
+        mach_port_request_notification
+        mach_exception_raise
+        host_get_clock_service
+        host_get_special_port
+        semaphore_create
+        task_info_from_user
+        task_restartable_ranges_register
+        task_set_special_port))
+        
+(deny syscall-mig)
+
+(allow file-ioctl
+    (literal "/dev/dtracehelper"))
+    
+(allow mach-priv-host-port)
+
+(allow process-info-codesignature (target self))

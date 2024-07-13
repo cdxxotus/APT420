@@ -1,0 +1,809 @@
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>Helyreállítás az Apple-chippel rendelkező Macen</title>
+	<link rel="stylesheet" type="text/css" href="../css/static.css">
+</head>
+<body class="apd-topic" data-istaskopen="true">
+<header role="presentation" id="mchl82829c17" class="AppleTopic">
+	<figure class="topicIcon">
+		<img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24">
+	</figure>
+	<h1>
+		A macOS Helyreállítás használata Apple-chippel rendelkező Macen
+	</h1>
+	<p>
+		A macOS Helyreállítás egy beépített helyreállítási rendszer a Macjén.
+	</p>
+	<p>
+		Apple-chippel rendelkező Macen a macOS Helyreállítás alkalmazásaival kijavíthatja a belső tároló hibáit, újratelepítheti a macOS rendszert, helyreállíthatja a fájlokat egy Time Machine biztonsági másolatból, beállíthatja a különböző kötetek biztonsági irányelvét, fájlokat továbbíthat két Mac között, elindíthatja biztonságos módban a rendszert, ezenkívül egyéb műveleteket is elvégezhet.
+	</p>
+	<p>
+		A macOS rendszer újratelepítéséhez internetkapcsolat szükséges. Az internethez vezetékes vagy vezeték nélküli hálózati kapcsolaton keresztül egyaránt csatlakozhat. Ha előfizetés-alapú portálon keresztül próbál csatlakozni a Wi-Fi-hez (pl. kávézóban, könyvtárban vagy szállodában) vagy egy vállalati hálózathoz, akkor elképzelhető, hogy a macOS Helyreállításban nem fog tudni csatlakozni az internethez. Lásd: <a href="#mchle9d1cb3c" class="xRef Task">Csatlakozás az internethez Wi-Fi-n keresztül</a>.
+	</p>
+	<div class="Alert">
+		<p class="Note">
+			<em>Megjegyzés: </em>Ha fel szeretné készíteni a Macjét a beszámíttatásra, eladásra vagy elajándékozásra, akkor használja a macOS-en elérhető Törlési asszisztenst. A Törlési asszisztens használatához indítsa el a számítógépét macOS rendszerrel, válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Rendszerbeállítások lehetőséget, kattintson az Általános <img src="../SharedGlobalArt/AppIconTopic_General.png" alt="" height="30" width="30"> lehetőségre az oldalsávon (előfordulhat, hogy lefelé kell görgetnie), kattintson az „Átvitel vagy alaphelyzetbe állítás” lehetőségre a jobb oldalon, kattintson az Összes tartalom és beállítás törlése gombra, majd kövesse a képernyőn megjelenő utasításokat.
+		</p>
+	</div>
+	<div id="mchla906a106" class="Subhead">
+		<div class="heading-nobreak">
+			<h2 class="Name">
+				A macOS Helyreállításban elérhető appok az Apple-chippel rendelkező Maceken
+			</h2>
+			<p>
+				A macOS Helyreállításban a következő appok érhetők el az Apple-chippel rendelkező Maceken:
+			</p>
+		</div>
+		<ul>
+			<li>
+			<p>
+				<em>Helyreállítás : </em>A Helyreállítás app további appokhoz biztosít hozzáférést a macOS Helyreállításban. Lásd: <a href="#mchl5abfbb29" class="xRef Task">A számítógép elindítása macOS Helyreállítás módban</a>, <a href="#mchldc3556ed" class="xRef Task">A számítógép elindítása macOS Helyreállítás módban és Bluetooth-eszközök párosítása</a> és <a href="#mchlb7e93c86" class="xRef Task">Kilépés a macOS Helyreállításból</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Time Machine rendszer-helyreállítás: </em>Helyreállíthatja az adatait egy Time Machine biztonsági másolatból. A Helyreállítás appban válassza a „Visszaállítás a Time Machine-ból” lehetőséget, majd kattintson a Folytatás gombra. Ha vissza szeretne térni a Helyreállítás apphoz, válassza a Time Machine rendszer-helyreállítás > Kilépés a Time Machine rendszer-helyreállításból menüpontot. Lásd: <a href="#mchlf4cdcc0f" class="xRef Task">A fájlok helyreállítása a Time Machine használatával</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>A macOS telepítése: </em>Újratelepítheti a macOS rendszert a számítógépén. A Helyreállítás appban válassza a macOS [<em>name</em>] újratelepítése lehetőséget, majd kattintson a Folytatás gombra. Ha vissza szeretne térni a Helyreállítás apphoz, válassza a macOS [<em>name</em>] telepítése > Kilépés a macOS telepítéséből menüpontot. Lásd: <a href="#mchl57249f89" class="xRef Task">A macOS újratelepítése</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Safari: </em>A Helyreállítás appban válassza a Safari lehetőséget, majd kattintson a Folytatás gombra. Ha vissza szeretne térni a Helyreállítás apphoz, válassza a Safari > Kilépés a Safariból menüpontot. Ha csatlakozik az internethez, igény szerint további információkat kereshet a Safari segítségével az Apple-támogatás webhelyén.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Lemezkezelő: </em>Kijavíthatja a belső tároló hibáit, vagy törölheti a belső tárolót. A Helyreállítás appban válassza ki a Lemezkezelő lehetőséget, majd kattintson a Folytatás gombra. Ha vissza szeretne térni a Helyreállítás apphoz, válassza a Lemezkezelő > Kilépés a Lemezkezelőből menüpontot. Lásd: <a href="#mchl0e4c30d6" class="xRef Task">A macOS rendszer törlése és újratelepítése</a> és <a href="#mchl3fe49482" class="xRef Task">A belső tároló hibáinak kijavítása</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Rendszerindítás-védelem segédprogram: </em>Beállíthatja a Mac biztonsági irányelveit. A Helyreállítás appban válassza a Segédprogramok > Rendszerindítás-védelem segédprogram menüpontot. Ha vissza szeretne térni a Helyreállítás apphoz, válassza az Indítólemez > Kilépés az Indítólemezből menüpontot. Lásd: <a href="#mchl9b13cbdc" class="xRef Task">A biztonsági szabályzat módosítása</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Terminal: </em>Módosíthatja a beállításokat a parancssoron keresztül. A Helyreállítás appban válassza a Segédprogramok > Terminal menüpontot. Ha vissza szeretne térni a Helyreállítás apphoz, válassza a Terminal > Kilépés a Terminalból menüpontot.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Lemez megosztása: </em>Megoszthatja a macOS Helyreállítás módban elindított Mac lemezét. A Helyreállítás appban válassza a Segédprogramok > Lemez megosztása menüpontot. Lásd: <a href="#mchl6e3b9225" class="xRef Task">Fájlok átvitele két Mac között a lemezmegosztási funkció használatával</a>.
+			</p>
+			</li>
+			<li>
+			<p>
+				<em>Indítólemez: </em>Beállíthatja a Mac indítólemezét. Válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Indítólemez menüpontot. Ha ki szeretne lépni az appból, válassza az Indítólemez > Kilépés az Indítólemezből menüpontot. 
+			</p>
+			</li>
+		</ul>
+	</div>
+	<p>
+		A macOS Helyreállítás használatával az alábbi műveletek elvégzésére is lehetősége van:
+	</p>
+	<ul>
+		<li>
+		<p>
+			<a href="#mchl08ae9930" class="xRef Task">A számítógép elindítása biztonságos módban</a>
+		</p>
+		</li>
+		<li>
+		<p>
+			<a href="#mchlbcf8b54b" class="xRef Task">Az alapértelmezett rendszerindító kötet beállítása és a számítógép újraindítása</a>
+		</p>
+		</li>
+		<li>
+		<p>
+			<a href="#mchl2a21e30c" class="xRef Task">A helyreállítási napló megtekintése</a>
+		</p>
+		</li>
+		<li>
+		<p>
+			<a href="#mchl4ee3f192" class="xRef Task">Helyreállítási diagnosztikai fájl létrehozása</a>
+		</p>
+		</li>
+	</ul>
+	<div id="mchl5abfbb29" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl5abfbb29">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl5abfbb29" class="Name">
+					A számítógép elindítása macOS Helyreállítás módban
+				</h2>
+				<ol>
+					<li>
+					<p>
+						A Macjén válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Kikapcsolás menüpontot.
+					</p>
+					<p>
+						Várja meg, amíg a Macje teljesen le nem áll. A Mac akkor állt le teljesen, amikor a képernyő elsötétült, és minden fény (beleértve a Touch bart és a billentyűzetet) ki van kapcsolva.
+					</p>
+					</li>
+					<li>
+					<p>
+						Tartsa lenyomva a bekapcsológombot a Macjén, amíg meg nem jelenik a rendszerkötet és a Beállítások gomb.
+					</p>
+					</li>
+					<li>
+					<p>
+						Kattintson a Beállítások lehetőségre, majd kattintson a Folytatás gombra. 
+					</p>
+					</li>
+					<li>
+					<p>
+						Ha az app felszólítja, válassza ki a helyreállítani kívánt kötetet, majd kattintson a Következő gombra.
+					</p>
+					</li>
+					<li>
+					<p>
+						Válasszon ki egy rendszergazdafiókot, majd kattintson a Következő gombra.
+					</p>
+					</li>
+					<li>
+					<p>
+						Adja meg a rendszergazdafiók jelszavát, majd kattintson a Folytatás lehetőségre.
+					</p>
+					<p>
+						Amikor megjelenik a Helyreállítás app a menüsoron, válasszon egyet az ablakban vagy a menüsoron elérhető lehetőségek közül.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchldc3556ed" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchldc3556ed">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchldc3556ed" class="Name">
+					A számítógép elindítása macOS Helyreállítás módban, és Bluetooth<sup>®</sup> beviteli eszközök párosítása
+				</h2>
+				<p>
+					Kövesse ezeket az utasításokat, ha Bluetooth-billentyűzetet, -trackpadet vagy -egeret szeretne párosítani a Macjével, amikor macOS Helyreállítás módban indítja el.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					A Macjén válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Kikapcsolás menüpontot.
+				</p>
+				<p>
+					Várja meg, amíg a Macje teljesen le nem áll. A Mac akkor állt le teljesen, amikor a képernyő elsötétült, és minden fény (beleértve a Touch bart és a billentyűzetet) ki van kapcsolva.
+				</p>
+				</li>
+				<li>
+				<p>
+					Tartsa lenyomva a bekapcsológombot a Macjén, amíg meg nem jelenik a rendszerkötet és a Beállítások gomb.
+				</p>
+				</li>
+				<li>
+				<p>
+					Ekkor nyomja meg háromszor a bekapcsológombot.
+				</p>
+				<div class="Alert">
+					<p class="Note">
+						<em>Megjegyzés: </em>A bekapcsológomb megnyomásai között ne teljen el 1 másodpercnél több idő. Ha túl gyorsan nyomja meg a bekapcsológombot, akkor azt a gép nem észleli, mert a gyors megnyomások más célra vannak fenntartva, például a VoiceOverhez.
+					</p>
+				</div>
+				</li>
+				<li>
+				<p>
+					Használja a Bluetooth beállítási asszisztenst a Bluetooth-kiegészítőinek a Macjével való beállításához.
+				</p>
+				<div class="Alert">
+					<p class="Note">
+						<em>Megjegyzés: </em>A Bluetooth beállítási asszisztens nem jelenik meg, ha már van csatlakoztatva beviteli eszköz.
+					</p>
+				</div>
+				</li>
+				<li>
+				<p>
+					Válasszon ki egy rendszergazdafiókot, majd kattintson a Következő gombra.
+				</p>
+				</li>
+				<li>
+				<p>
+					Adja meg a rendszergazdafiók jelszavát, majd kattintson a Folytatás lehetőségre.
+				</p>
+				<p>
+					Amikor megjelenik a Helyreállítás app a menüsoron, válasszon egyet az ablakban vagy a menüsoron elérhető lehetőségek közül.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl08ae9930" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl08ae9930">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl08ae9930" class="Name">
+					A számítógép elindítása biztonságos módban
+				</h2>
+				<ol>
+					<li>
+					<p>
+						A Macjén válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Kikapcsolás menüpontot.
+					</p>
+					<p>
+						Várjon, amíg a Macje teljesen leáll. A Mac akkor állt le teljesen, amikor a képernyő elsötétült, és minden fény (beleértve a Touch bart és a billentyűzetet) ki van kapcsolva.
+					</p>
+					</li>
+					<li>
+					<p>
+						Tartsa lenyomva a bekapcsológombot a Macjén, amíg meg nem jelenik a rendszerkötet és a Beállítások gomb.
+					</p>
+					</li>
+					<li>
+					<p>
+						Válasszon ki egy kötetet.
+					</p>
+					</li>
+					<li>
+					<p>
+						Tartsa lenyomva a Shift billentyűt, majd kattintson a Folytatás Biztonságos módban lehetőségre.
+					</p>
+					<p>
+						A számítógép automatikusan újraindul.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchlbcf8b54b" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlbcf8b54b">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlbcf8b54b" class="Name">
+					Az alapértelmezett rendszerindító kötet beállítása és a számítógép újraindítása
+				</h2>
+				<ol>
+					<li>
+					<p>
+						A Macjén válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Kikapcsolás menüpontot.
+					</p>
+					<p>
+						Várjon, amíg a Macje teljesen leáll. A Mac akkor állt le teljesen, amikor a képernyő elsötétült, és minden fény (beleértve a Touch bart és a billentyűzetet) ki van kapcsolva.
+					</p>
+					</li>
+					<li>
+					<p>
+						Tartsa lenyomva a bekapcsológombot a Macjén, amíg meg nem jelenik a rendszerkötet és a Beállítások gomb.
+					</p>
+					</li>
+					<li>
+					<p>
+						Válasszon ki egy kötetet.
+					</p>
+					</li>
+					<li>
+					<p>
+						Tartsa lenyomva az Option billentyűt, majd kattintson a Használat mindig lehetőségre.
+					</p>
+					<p>
+						A számítógép automatikusan újraindul.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchle9d1cb3c" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchle9d1cb3c">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchle9d1cb3c" class="Name">
+					Csatlakozás az internethez Wi-Fi-n keresztül
+				</h2>
+				<p>
+					Ha a Wi-Fi menü ikonján (a képernyő jobb felső sarkában) egy vagy több sáv <span class="NoBreak"><img src="../SharedGlobalArt/IL_Wifi.png" alt="" height="30" width="42"> látható, az azt jelenti, hogy </span>a Wi-Fi be van kapcsolva, és egy vezeték nélküli hálózathoz csatlakozik. Ha a Wi-Fi menü ikonján nem láthatók sávok <span class="NoBreak"><img src="../SharedGlobalArt/IL_WiFiNoBars.png" alt="" height="30" width="41">, az azt jelzi, hogy </span>a Wi-Fi be van kapcsolva, azonban nem csatlakozik vezeték nélküli hálózathoz. Ha a Wi-Fi menü ikonján egy áthúzás <span class="NoBreak"><img src="../SharedGlobalArt/IL_WifiSlash.png" alt="" height="30" width="34"> látható, az azt jelenti, hogy </span>a Wi-Fi ki van kapcsolva. A Wi-Fi-nek bekapcsolva kell lennie, ha vezeték nélküli hálózathoz szeretne csatlakozni.
+				</p>
+			</div>
+			<p>
+				A Macjén végezze el az alábbi műveletek bármelyikét:
+			</p>
+			<ul>
+				<li>
+				<p>
+					<em>A Wi-Fi bekapcsolása: </em>Kattintson a Wi-Fi menü ikonjára, majd válassza a Wi-Fi bekapcsolása menüpontot.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>A Wi-Fi kikapcsolása: </em>Kattintson a Wi-Fi menü ikonjára, majd válassza a Wi-Fi kikapcsolása menüpontot.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>Csatlakozás egy hálózathoz: </em>Kattintson a Wi-Fi menü ikonjára, majd válasszon ki egy hálózatot. Ha a rendszer kéri, adja meg a hálózat jelszavát.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>Csatlakozás zárt hálózathoz: </em>Kattintson a Wi-Fi menü ikonjára, majd válassza a Csatlakozás másik hálózathoz menüpontot. Adja meg a hálózat nevét, és ha a rendszer kéri, adja meg a hálózat jelszavát is.
+				</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="mchl3fe49482" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl3fe49482">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl3fe49482" class="Name">
+					A belső tároló hibáinak kijavítása
+				</h2>
+				<p>
+					Ha problémákat tapasztal a számítógépén, vagy ha elindította a számítógépet, és megjelenik a macOS Helyreállítás ablaka, akkor elképzelhető, hogy javítást kell végeznie a számítógép belső tárolóján.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					A Helyreállítás appban válassza ki a Lemezkezelő lehetőséget, majd kattintson a Folytatás gombra.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Lemezkezelő appban válassza a Nézet > Összes eszköz megjelenítése menüpontot.
+				</p>
+				</li>
+				<li>
+				<p>
+					Az oldalsávon válasszon ki egy kötetet, majd kattintson az Elsősegély gombra <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37"></span>.
+				</p>
+				</li>
+				<li>
+				<p>
+					Az Elsősegély párbeszédpanelen kattintson a Futtatás lehetőségre, majd kövesse a képernyőn megjelenő utasításokat.
+				</p>
+				</li>
+				<li>
+				<p>
+					Az Elsősegély folyamatának befejeződése után kattintson a Kész gombra.
+				</p>
+				</li>
+				<li>
+				<p>
+					Ismételje meg a 3–5. lépést a tárolóeszközön lévő minden egyes kötet esetében.
+				</p>
+				</li>
+				<li>
+				<p>
+					Az oldalsávon válasszon ki egy tárolót, majd kattintson az Elsősegély gombra <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37"></span>.
+				</p>
+				</li>
+				<li>
+				<p>
+					Az Elsősegély párbeszédpanelen kattintson a Futtatás lehetőségre, majd kövesse a képernyőn megjelenő utasításokat.
+				</p>
+				</li>
+				<li>
+				<p>
+					Az Elsősegély folyamatának befejeződése után kattintson a Kész gombra.
+				</p>
+				</li>
+				<li>
+				<p>
+					Ismételje meg a 7–9. lépést a tárolóeszközön lévő minden egyes tároló esetében.
+				</p>
+				</li>
+				<li>
+				<p>
+					Az oldalsávon válasszon ki egy tárolóeszközt, majd kattintson az Elsősegély gombra <span class="NoBreak"><img src="../SharedGlobalArt/IL_Stethoscope.png" alt="" height="30" width="37"></span>.
+				</p>
+				</li>
+				<li>
+				<p>
+					Az Elsősegély párbeszédpanelen kattintson a Futtatás lehetőségre, majd kövesse a képernyőn megjelenő utasításokat.
+				</p>
+				</li>
+				<li>
+				<p>
+					Az Elsősegély folyamatának befejeződése után kattintson a Kész gombra.
+				</p>
+				</li>
+			</ol>
+			<p>
+				Ha a Lemezkezelővel nem lehet kijavítani a lemez hibáit, készítsen biztonsági másolatot lehetőleg minél több adatról, majd kövesse <a href="#mchl0e4c30d6" class="xRef Task">A macOS eltávolítása és újratelepítése</a> című rész utasításait.
+			</p>
+			<p>
+				Ha vissza szeretne térni a Helyreállítás apphoz, válassza a Lemezkezelő > Kilépés a Lemezkezelőből menüpontot.
+			</p>
+		</div>
+	</div>
+	<div id="mchlf4cdcc0f" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlf4cdcc0f">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlf4cdcc0f" class="Name">
+					A Time Machine használata a fájlok helyreállításához
+				</h2>
+				<p>
+					Ha korábban Time Machine biztonsági másolatot készített, akkor helyreállíthatja a fájljait a biztonsági másolatból.
+				</p>
+			</div>
+			<div class="Alert">
+				<p class="Important">
+					<strong>Fontos: </strong>Csak azon a számítógépen használja a Time Machine biztonsági mentését az információk helyreállításához, amelyiken a biztonsági mentést készítette. Ha a Macről egy új számítógépre szeretne adatokat továbbítani, lépjen ki a macOS Helyreállításból, indítsa újra a Macet, majd használja a macOS rendszer Költöztető asszisztens alkalmazását.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Ha a biztonsági másolat egy Time Capsule-on található, győződjön meg arról, hogy csatlakozik az internethez.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Helyreállítás appban válassza a „Visszaállítás a Time Machine-ból” lehetőséget, majd kattintson a Folytatás gombra.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Time Machine rendszer-helyreállítás alkalmazásban kövesse a képernyőn megjelenő utasításokat.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl57249f89" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl57249f89">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl57249f89" class="Name">
+					A macOS újratelepítése
+				</h2>
+				<p>
+					Bizonyos körülmények között előfordulhat, hogy újra kell telepítenie a macOS rendszert. A macOS újratelepítése során megőrizheti a fájljait és felhasználói beállításait.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Győződjön meg arról, hogy csatlakozik az internethez.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Helyreállítás appban kattintson a macOS [<em>name</em>] újratelepítése lehetőségre, majd kattintson a Folytatás gombra.
+					<li>
+					<p>
+						Kövesse a képernyőn megjelenő útmutatásokat.
+					</p>
+					<div class="Alert">
+						<p class="Important">
+							<strong>Fontos: </strong> A lemez kiválasztásakor válassza ki az aktuális macOS-lemezt (az esetek többségében ez az egyetlen lemez, amely elérhető).
+						</p>
+					</div>
+					</li>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl0e4c30d6" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl0e4c30d6">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl0e4c30d6" class="Name">
+					A macOS rendszer törlése és újratelepítése
+				</h2>
+				<p>
+					Ha törli és újratelepíti a macOS rendszert, akkor a felhasználói fiókok, a hálózati beállítások, továbbá a Macjén lévő összes fájl és mappa törölve lesz. A macOS törlése előtt először próbáljon meg ismét bejelentkezni a rendszerbe, majd másolja át a megőrizni kívánt fájlokat egy másik tárolóeszközre a fájlok biztonsági mentéséhez. Ezenkívül jegyezze fel a hálózati beállításokat a Hálózat beállításaiból, hogy a macOS újratelepítése után könnyebben tudjon ismét csatlakozni.
+				</p>
+			</div>
+			<div class="Alert">
+				<p class="Note">
+					<em>Megjegyzés: </em>Amikor törli és újratelepíti a macOS rendszert, előfordulhat, hogy a macOS egy korábbi verziója lesz telepítve. A macOS telepített verziójáról a legújabb verzióra való frissítéshez lépjen az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> &gt; Rendszerbeállítások menüpontjára, kattintson az Általános <img src="../SharedGlobalArt/AppIconTopic_General.png" alt="" height="30" width="30"> lehetőségre az oldalsávon (előfordulhat, hogy lefelé kell görgetnie), majd kattintson a Szoftverfrissítés lehetőségre a jobb oldalon.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Győződjön meg róla, hogy csatlakozik az internethez.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Helyreállítás appban kattintson a Lemezkezelő lehetőségre, majd kattintson a Folytatás gombra.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Lemezkezelőben válassza ki a törölni kívánt kötetet az oldalsávon, majd kattintson a Törlés gombra az eszközsoron.
+				</p>
+				</li>
+				<li>
+				<p>
+					Adja meg a kötet nevét a Név mezőben.
+				</p>
+				</li>
+				<li>
+				<p>
+					Kattintson a Formátum előugró menüre, válassza ki az APFS lehetőséget, majd kattintson a Kötetcsoport törlése lehetőségre.
+				</p>
+				</li>
+				<li>
+				<p>
+					Miután a törlési folyamat befejeződött, kattintson a Kész gombra, majd válassza a Lemezkezelő > Kilépés a Lemezkezelőből menüpontot.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Helyreállítás appban kattintson a macOS [<em>name</em>] újratelepítése lehetőségre, kattintson a Folytatás gombra, majd kövesse a képernyőn megjelenő utasításokat.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl9b13cbdc" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl9b13cbdc">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl9b13cbdc" class="Name">
+					A biztonsági szabályzat módosítása
+				</h2>
+				<ol>
+					<li>
+					<p>
+						A Helyreállítás appban válassza a Segédprogramok > Rendszerindítás-védelem segédprogram menüpontot.
+					</p>
+					</li>
+					<li>
+					<p>
+						Válassza ki a rendszert, amelyet a biztonsági irányelv beállításához szeretne használni.
+					</p>
+					</li>
+					<li>
+					<p>
+						Ha a lemez titkosítva van, kattintson a Feloldás lehetőségre, adja meg a jelszót, majd kattintson a Feloldás gombra.
+					</p>
+					</li>
+					<li>
+					<p>
+						Kattintson a Biztonsági irányelv lehetőségre.
+					</p>
+					</li>
+					<li>
+					<p>
+						Válassza ki az alábbi biztonsági beállítások egyikét:
+					</p>
+					<ul>
+						<li>
+						<p>
+							<em>Teljes biztonság: </em>Arról gondoskodik, hogy csak a jelenlegi operációs rendszert vagy az olyan aláírt operációsrendszer-szoftvert lehessen futtatni, amelyet az Apple jelenleg megbízhatónak tart. Ez a mód hálózati kapcsolatot igényel a szoftver telepítésekor.
+						</p>
+						</li>
+						<li>
+						<p>
+							<em>Csökkentett biztonság: </em> Engedélyezi az olyan aláírt operációsrendszer-szoftver futtatását, amelyet az Apple bármikor megbízhatónak tartott.
+						</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p>
+						Ha a Csökkentett biztonság lehetőséget választotta, akkor válasszon a következő lehetőségek közül, ha szükséges:
+					</p>
+					<ul>
+						<li>
+						<p>
+							<em>Azonosított fejlesztőktől származó kernelbővítmények felhasználó általi kezelésének engedélyezése: </em>Engedélyezi az elavult kernelbővítményeket használó szoftverek telepítését.
+						</p>
+						</li>
+						<li>
+						<p>
+							<em>A kernelbővítmények és az automatikus szoftverfrissítések távoli kezelésének engedélyezése: </em>Engedélyezi az elavult kernelbővítmények és az automatikus szoftverfrissítések mobil-eszközfelügyeleti (MDM) megoldással történő távoli kezelését.
+						</p>
+						</li>
+					</ul>
+					</li>
+					<li>
+					<p>
+						Kattintson az OK gombra.
+					</p>
+					</li>
+					<li>
+					<p>
+						Ha módosította a biztonsági szabályzatot, kattintson a Felhasználó felugró menüre, válasszon ki egy rendszergazdafiókot, adja meg a rendszergazdafiók jelszavát, majd kattintson az OK gombra.
+					</p>
+					</li>
+					<li>
+					<p>
+						Válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Újraindítás menüpontot.
+					</p>
+					<p>
+						Indítsa újra a Macjét a módosítások érvényesítéséhez.
+					</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="mchl6e3b9225" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl6e3b9225">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl6e3b9225" class="Name">
+					Fájlok átvitele két Mac között a Lemez megosztása funkció használatával
+				</h2>
+				<p>
+					Igény szerint fájlokat továbbíthat egy macOS Helyreállítás módban elindított Mac és egy másik Mac között, ha megoszt egy kötetet, és a két számítógépet csatlakoztatja egymáshoz egy USB-, USB-C- vagy Thunderbolt-kábel segítségével.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Csatlakoztassa a két számítógépet egy USB-, USB-C- vagy Thunderbolt-kábelen keresztül.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Helyreállítás appban válassza a Segédprogramok > Lemez megosztása menüpontot.
+				</p>
+				</li>
+				<li>
+				<p>
+					Válassza ki a megosztani kívánt kötetet, majd kattintson a Megosztás indítása lehetőségre.
+				</p>
+				</li>
+				<li>
+				<p>
+					A másik Macen nyisson meg egy Finder-ablakot, majd kattintson a Hálózat lehetőségre a Helyek alatt az oldalsávon.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Hálózat ablakban kattintson duplán arra a Macre, amelyen a megosztott lemez található, kattintson a Kapcsolódás mint lehetőségre, válassza ki a Vendég lehetőséget a Kapcsolódás mint ablakban, majd kattintson a Csatlakozás lehetőségre.
+				</p>
+				</li>
+				<li>
+				<p>
+					Továbbítsa a fájlokat.
+				</p>
+				</li>
+				<li>
+				<p>
+					Miután a fájlok átvitele befejeződött, adja ki a kötetet a másik Macen.
+				</p>
+				</li>
+				<li>
+				<p>
+					A Lemez megosztása appban kattintson a Megosztás leállítása lehetőségre.
+				</p>
+				</li>
+				<li>
+				<p>
+					Válassza a Lemez megosztása > Kilépés a lemez megosztásából lehetőséget.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl2a21e30c" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl2a21e30c">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl2a21e30c" class="Name">
+					A helyreállítási napló megtekintése
+				</h2>
+				<p>
+					A helyreállítási napló a macOS Helyreállítás által naplózott üzeneteket tartalmazza. Megadhatja a megjeleníteni kívánt üzenetek típusát, az üzenetek szűrésével megkereshet bizonyos szövegrészeket, ezenkívül a helyreállítási naplót mentheti egy fájlba.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					A Helyreállítás appban válassza az Ablak > Helyreállítási napló menüpontot.
+				</p>
+				</li>
+				<li>
+				<p>
+					Kattintson a Részletességi szint előugró menüre, majd válassza ki, hogy melyek azok az üzenetek, amelyeket meg szeretne jeleníteni:
+				</p>
+				<ul>
+					<li>
+					<p>
+						<em>Csak a hibák megjelenítése: </em>Akkor válassza ezt a beállítást, ha csak a hibaüzeneteket szeretné megjeleníteni.
+					</p>
+					</li>
+					<li>
+					<p>
+						<em>Hibák és folyamatjelző megjelenítése: </em>Akkor válassza ezt a beállítást, ha a hibaüzeneteket és a folyamatjelző üzeneteket is meg szeretné jeleníteni.
+					</p>
+					</li>
+					<li>
+					<p>
+						<em>Összes napló megjelenítése: </em>Ezzel a beállítással az összes üzenetet megjelenítheti.
+					</p>
+					</li>
+				</ul>
+				</li>
+				<li>
+				<p>
+					Az üzenetek szűréséhez írja be a keresett szövegrészt a Szűrő mezőbe.
+				</p>
+				</li>
+				<li>
+				<p>
+					A helyreállítási napló mentéséhez kattintson a Mentés gombra, válassza ki a fájl helyét, majd kattintson a Mentés gombra.
+				</p>
+				</li>
+				<li>
+				<p>
+					Miután végzett a helyreállítási napló megtekintésével, kattintson a Bezárás gombra <img src="../SharedGlobalArt/IL_XMarkBlackCircleFillRed.png" alt="" height="30" width="30"> az ablak bal felső sarkában.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchl4ee3f192" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchl4ee3f192">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchl4ee3f192" class="Name">
+					Helyreállítási diagnosztikai fájl létrehozása
+				</h2>
+				<p>
+					Ha jelentést küld egy problémáról a Visszajelzési asszisztens segítségével, a rendszer megkérheti arra, hogy adjon meg egy helyreállítási diagnosztikai fájlt. Létrehozhat egy fájlt, és mentheti egy külső tárolóeszközre.
+				</p>
+			</div>
+			<ol>
+				<li>
+				<p>
+					Csatlakoztasson egy külső tárolóeszközt a Macjéhez.
+				</p>
+				</li>
+				<li>
+				<p>
+					Nyomja meg a Control-Option-Shift-Command-pont billentyűkombinációt.
+				</p>
+				</li>
+				<li>
+				<p>
+					Amikor a képernyő villogni kezd, várjon néhány másodpercet, amíg megjelenik egy párbeszédpanel.
+				</p>
+				</li>
+				<li>
+				<p>
+					A párbeszédpanelen mentse a helyreállítási diagnosztikai fájlt egy tetszőleges helyre a külső tárolóeszközön.
+				</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div id="mchlb7e93c86" class="Task">
+		<div class="TaskBody" role="region" aria-hidden="false" id="aria-mchlb7e93c86">
+			<div class="heading-nobreak">
+				<h2 aria-controls="aria-mchlb7e93c86" class="Name">
+					Kilépés a macOS Helyreállításból
+				</h2>
+				<p>
+					A Mac automatikusan újraindul, ha újratelepíti a macOS rendszert, vagy helyreállítja egy Time Machine biztonsági másolatból. Más esetekben manuálisan kell kilépnie a macOS Helyreállításból (ha például biztonsági másolatot szeretne készíteni a fájlokról a macOS újratelepítése előtt, vagy módosított egy beállítást a Rendszerindítás-védelem segédprogram használatával).
+				</p>
+			</div>
+			<p>
+				A Macjén tegye az alábbiak egyikét:
+			</p>
+			<ul>
+				<li>
+				<p>
+					<em>A Mac újraindítása: </em>Válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Újraindítás menüpontot.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>Másik rendszerindító lemez kiválasztása a Mac újraindítása előtt: </em>Válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Indítólemez menüpontot, válasszon ki egy rendszerindító lemezt, majd kattintson az Újraindítás lehetőségre.
+				</p>
+				</li>
+				<li>
+				<p>
+					<em>A Mac kikapcsolása: </em>Válassza az Apple menü <img src="../SharedGlobalArt/IL_AppleLogo_11.png" alt="" height="30" width="24"> > Kikapcsolás menüpontot.
+				</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<main></main>
+<footer>
+	<p>
+		Copyright © 2024 Apple Inc. Minden jog fenntartva.
+	</p>
+</footer>
+<script type="text/javascript" src="../js/static.js">
+</script>
+</body>
+</html>

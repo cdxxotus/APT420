@@ -1,0 +1,57 @@
+# Ruleset for Yosemite (Vocalizer Expressive)
+#
+# Copyright (c) 2013 Nuance Communications, Inc. All Rights Reserved.
+#
+#RLSTAG:
+
+[header]
+language = GED
+
+[data]
+
+/ vs\. / --> " vs "
+/Panic! At the Disco/ --> "Panic At the Disco"
+/E=MC²/ --> "E=MC squared"
+/Am... Sasha/ --> "Am...Sasha"
+/\bIncl\./ --> "Incl"
+/Chronicle: / --> "Chronicle "
+/Ms\. New/ --> "Ms New"
+/We Sing. We Dance. We Steal Things/ --> "We Sing We Dance We Steal Things"
+/Am...Sasha/ --> "Am Sasha"
+
+# improved rule for "dot com" bug  radar://6779706 to fix radar://7699944 & 7702531
+# rewrite this rule /([a-zA-Z])\.([a-zA-Z]{2,})\b/ --> "$1 punkt $2 "
+/([a-zA-Z])\.com\b/ --> "$1 punkt com"
+/([a-zA-Z])\.org\b/ --> "$1 punkt org"
+/([a-zA-Z])\.net\b/ --> "$1 punkt net"
+/([a-zA-Z])\.gov\b/ --> "$1 punkt gov"
+/([a-zA-Z])\.edu\b/ --> "$1 punkt edu"
+/([a-zA-Z])\.info\b/ --> "$1 punkt info"
+/([a-zA-Z])\.biz\b/ --> "$1 punkt biz"
+/([a-zA-Z])\.jobs\b/ --> "$1 punkt jobs"
+/([a-zA-Z])\.coop\b/ --> "$1 punkt coop"
+/([a-zA-Z])\.ac\b/ --> "$1 punkt A C"
+/([a-zA-Z])\.us\b/ --> "$1 punkt U S"
+/([a-zA-Z])\.uk\b/ --> "$1 punkt U K"
+/([a-zA-Z])\.eu\b/ --> "$1 punkt E U"
+/([a-zA-Z])\.int\b/ --> "$1 punkt int"
+/([a-zA-Z])\.co\b/ --> "$1 punkt co"
+/([a-zA-Z])\.es\b/ --> "$1 punkt E S"
+/([a-zA-Z])\.de\b/ --> "$1 punkt D E"
+/([a-zA-Z])\.fr\b/ --> "$1 punkt F R"
+/([a-zA-Z])\.it\b/ --> "$1 punkt it"
+/([a-zA-Z])\.be\b/ --> "$1 punkt B E"
+/([a-zA-Z])\.nl\b/ --> "$1 punkt N L"
+/([a-zA-Z])\.gr\b/ --> "$1 punkt G R"
+/([a-zA-Z])\.ru\b/ --> "$1 punkt R U"
+/([a-zA-Z])\.mx\b/ --> "$1 punkt M X"
+/([a-zA-Z])\.ca\b/ --> "$1 punkt C A"
+
+#  these might be covered in a music-specific text-conditioning rule in Voice Control
+#/feat\./i --> "featuring" 
+#/feat /i --> "featuring"
+
+#FB-29527
+/([A-Z][a-z]+) Dr/ --> "$1 D R"
+
+

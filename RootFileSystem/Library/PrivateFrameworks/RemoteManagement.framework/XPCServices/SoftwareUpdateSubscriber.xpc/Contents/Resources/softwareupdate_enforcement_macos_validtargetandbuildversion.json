@@ -1,0 +1,11 @@
+{
+  "Type": "com.apple.activation.simple",
+  "Identifier": "CD2A3767-7290-42A2-92A2-27150F2FEBCE",
+  "ServerToken": "0F35325B-E770-4498-A8FF-212837244376",
+  "Payload": {
+    "StandardConfigurations": [
+      "EB13EE2B-5D63-4EBA-810F-5B81D07F5017",
+    ]
+  }
+}
+

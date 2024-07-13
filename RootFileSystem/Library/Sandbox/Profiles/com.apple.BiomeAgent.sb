@@ -1,0 +1,128 @@
+;;; Copyright (c) 2021 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+(deny default)
+(deny file-map-executable process-info* nvram*)
+(deny dynamic-code-generation)
+
+(deny mach-priv-host-port)
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;; Homedir-relative path filters
+(define (home-regex home-relative-regex)
+    (regex (string-append "^" (regex-quote (param "HOME")) home-relative-regex)))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(define (home-prefix home-relative-prefix)
+    (prefix (string-append (param "HOME") home-relative-prefix)))
+
+(define (home-literal home-relative-literal)
+    (literal (string-append (param "HOME") home-relative-literal)))
+
+(allow process-info* (target self))
+(allow process-info-pidinfo) ;; to display client name in logs
+
+;; For resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; For validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Your preference domain
+(allow user-preference-read user-preference-write
+    (preference-domain "com.apple.Biome")
+    (preference-domain "com.apple.BiomeAgent"))
+
+;; Read-only preferences, .GlobalPreferences
+(allow user-preference-read
+       (preference-domain "com.apple.assistant.support")
+       (preference-domain "com.apple.intelligenceplatform")
+       (preference-domain "com.apple.suggestions")
+       (preference-domain "kCFPreferencesAnyApplication"))
+
+;; Read for NSBundle
+(allow file-read*
+    (literal "/System/Library/PrivateFrameworks/BiomeStreams.framework/Support")
+    (literal "/System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent"))
+
+;; Read/write access to suffixed darwin directories
+(allow file-read* file-write*
+       (subpath (param "DARWIN_TOP_DIR"))
+       (subpath (param "DARWIN_TMP_DIR"))
+       (subpath (param "DARWIN_CACHE_DIR"))
+       (mount-relative-literal "/.TemporaryItems")
+       (mount-relative-regex #"^/\.TemporaryItems/folders.[0-9]+(/|$)"))
+
+;; Read/write cache access
+(let ((cache-path-filter (home-subpath "/Library/Caches/com.apple.BiomeAgent")))
+  (allow file-read* file-write* cache-path-filter)
+  (allow file-issue-extension
+    (require-all
+      (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")
+      cache-path-filter)))
+
+;; Issue extensions to ~/Library/Biome
+(allow file-issue-extension
+    (require-all
+        (home-subpath "/Library/Biome")
+        (extension-class "com.apple.app-sandbox.read" "com.apple.app-sandbox.read-write")))
+
+;; Allow issuing file extensions for views
+(allow file-issue-extension
+    (require-all
+        (home-subpath "/Library/IntelligencePlatform/Artifacts")
+        (extension-class "com.apple.app-sandbox.read")))
+
+;; Read/write ~/Library/Biome and ~/Library/IntelligencePlatform
+(allow file-read* file-write*
+  (home-subpath "/Library/Biome")
+  (home-subpath "/Library/IntelligencePlatform"))
+
+(define (home-subpath home-relative-subpath)
+    (subpath (string-append (param "HOME") home-relative-subpath)))
+
+(allow file-read* file-write*
+    (home-subpath "/Library/IntelligencePlatform")
+)
+
+(allow file-read*
+    (home-subpath "/Library/Trial"))
+
+(allow mach-lookup
+    ;; Service lookup
+    (global-name "com.apple.lsd.mapdb")
+    (global-name "com.apple.lsd.modifydb")
+    (global-name "com.apple.metadata.mds")
+    (global-name "com.apple.intelligenceplatform.IntelligencePlatformComputeService")
+
+    ;; Allow connections to user access service
+    (global-name "com.apple.biome.access.user")
+    (global-name "com.apple.biome.access.system")
+
+    ;; Allow connections to system compute service from user compute service
+    (global-name "com.apple.biome.compute.publisher.service")
+
+    ;; Allow lookup to biome sync service
+    (global-name "com.apple.biomesyncd.sync")
+
+    ;; Allow connections to PowerLog service
+    (global-name "com.apple.powerlog.plxpclogger.xpc")
+    (global-name "com.apple.PerfPowerTelemetryClientRegistrationService")
+
+    ;; Allow lookup to Cascade diff update service
+    (global-name "com.apple.SetStoreUpdateService")
+)
+
+;; Feature Store (until rdar://79994314 or rdar://79993838)
+(allow file-read* file-write*
+    (subpath (string-append (param "DARWIN_BASE_DIR") "/com.apple.FeatureStore/biomeStream")))

@@ -1,0 +1,90 @@
+;;; Copyright © 2020 Apple Inc.  All Rights reserved.
+;;;
+;;; WARNING: The sandbox rules in this file currently constitute
+;;; Apple System Private Interface and are subject to change at any time and
+;;; without notice.
+;;;
+(version 1)
+
+;;;;;;
+;;; Restrictions
+;;;;;;
+
+(deny default)
+(deny file-map-executable iokit-get-properties process-info* nvram*)
+(deny dynamic-code-generation)
+
+;;;;;;
+;;; Imports
+;;;;;;
+
+(import "system.sb")
+(import "com.apple.corefoundation.sb")
+(corefoundation)
+
+;;;;;;
+;;; Defines
+;;;;;;
+
+(define darwin-user-cache-directory-path (param "DARWIN_USER_CACHE_DIR"))
+(define darwin-user-directory-path (param "DARWIN_USER_DIR"))
+(define darwin-user-temp-directory-path (param "DARWIN_USER_TEMP_DIR"))
+(define legacy-darwin-user-directory-path (param "LEGACY_DARWIN_USER_DIR"))
+(define darwin-base-user-directory-path (param "DARWIN_USER_DIR_BASE"))
+
+;;;;;;
+;;; Permissions
+;;;;;;
+
+;; Allow introspecting our own process info.
+(allow process-info* (target self))
+
+;; Allow resolving symlinks, realpath(3), and equivalents.
+(allow file-read-metadata)
+
+;; Allow validating the entitlements of clients.
+(allow process-info-codesignature)
+
+;; Allow read/write access to our own preferences.
+(allow user-preference-read user-preference-write
+       (preference-domain "com.apple.dmd"))
+
+;; Allow read data access to our launch path.
+(allow file-read-data
+       (literal "/usr/libexec")
+       (literal "/usr/libexec/dmd"))
+
+;; Allow read/write access to a temporary, darwin cache and dmd user directories.
+(allow file-read* file-write*
+       (subpath darwin-base-user-directory-path)
+       (subpath darwin-user-cache-directory-path)
+       (subpath darwin-user-directory-path)
+       (subpath darwin-user-temp-directory-path)
+       (subpath legacy-darwin-user-directory-path))
+
+;; Allow MCXTools plug in.
+(allow file-map-executable
+       (subpath "/System/Library/CoreServices/ManagedClient.app/Contents/PlugIns/MCXToolsInterface.bundle"))
+
+;; Allow read access to mdmclient and any application preferences.
+(allow user-preference-read
+       (preference-domain "com.apple.mdmclient")
+       (preference-domain "kCFPreferencesAnyApplication"))
+
+;; Allows access to group containers with extensions from containermanagerd
+(allow file-read*
+       (extension "com.apple.sandbox.application-group")
+       (extension "com.apple.app-sandbox.read"))
+
+;; Allow mach lookup for containermanagerd, mdmclient, mds, ScreenTime and UsageTracking.
+(allow mach-lookup
+       (global-name "com.apple.containermanagerd")
+       (global-name "com.apple.lsd.mapdb")
+       (global-name "com.apple.ManagedSettingsAgent")
+       (global-name "com.apple.mdmclient.agent")
+       (global-name "com.apple.mdmclient.agent.unrestricted")
+       (global-name "com.apple.metadata.mds")
+       (global-name "com.apple.pluginkit.pkd")
+       (global-name "com.apple.ScreenTimeAgent.organization-status")
+       (global-name "com.apple.UsageTrackingAgent")
+       (global-name "com.apple.UsageTrackingAgent.private"))

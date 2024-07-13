@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>battery_usage_ui</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>debug_profile_upgrade</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>elp_ca</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>new_energy_saver_pref</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>override_allowlist</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>signpost_reader_idle_exit</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>switch_to_incremental_vacuum</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>tasking_ce_copy_tables</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>xcode_db</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

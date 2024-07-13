@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fpfsOptimizeStorageAndSpeculativeDownload</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>modernExtensionUI</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>multiAccountsHandling</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>requestCKCacheAssetClone</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>serverSideAssetCopies</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+	<key>smartFolders</key>
+	<dict>
+		<key>Enabled</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

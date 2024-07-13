@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- This top level describes the profile itself, and is shown when installing -->
+    <!-- NOTE: all domains should be something specific to your team -->
+
+    <!-- Used to determine whether a new profile should replace an existing one or should be added -->
+    <key>PayloadIdentifier</key>
+    <string>com.apple.externaldisplay.sysdiagnose</string> <!-- e.g. com.apple.tcon.sysdiagnose -->
+
+    <!-- UUIDs must be globally unique, generated on macOS with `uuidgen` -->
+    <key>PayloadUUID</key>
+    <string>7D8527E2-D165-4763-BBB0-CEEEEA3085E1</string>
+    <key>PayloadOrganization</key>
+    <string>Apple Inc.</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadScope</key>
+    <string>System</string> <!-- Since sysdiagnose runs as root, must install System profile to be able to read the setting -->
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+	<key>DurationUntilRemoval</key>
+	<real>259200</real> <!-- In seconds. recommend default of 3 days = 259200 seconds -->
+
+    <key>PayloadDisplayName</key> <!-- I.e. title + description on the prompt when installing the profile -->
+    <string>External display sysdiagnose defaults</string>
+    <key>PayloadDescription</key>
+    <string>Sets defaults of apple external display sysdiagnose</string>
+
+    <key>ConsentText</key> <!-- You should fill something in here, but the profile approval folks will likely change it -->
+    <dict>
+      <key>en</key>
+      <string>"This enables sysdiagnose to collect TCON NVM dump on Apple external displays"</string>
+      <key>default</key>
+      <string>"This enables sysdiagnose to collect TCON NVM dump on Apple external displays"</string>
+    </dict> <!-- End ConsentText -->
+
+    <!-- PayloadContent contains the actual defaults that get set -->
+    <key>PayloadContent</key>
+    <array>
+        <!-- These titles/descriptions are shown within the profile in settings -->
+        <dict> <!-- macOS config -->
+            <key>PayloadUUID</key> <!-- Different than top level one -->
+            <string>24C7900F-0F1A-44D9-B011-7B727D76EA15</string>
+            <key>PayloadIdentifier</key> <!-- Should be a sub-domain of the top level PayloadIdentifier -->
+            <string>com.apple.externaldisplay.sysdiagnose.dumpnvm</string> <!-- e.g. com.apple.tcon.sysdiagnose.dumpnvm -->
+
+            <key>PayloadDisplayName</key>
+            <string>TCON NVM dump defaults</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+
+            <key>PayloadType</key> <!-- Domain to write to. This is the actual domain + key pair that we will try to read -->
+            <string>com.apple.externaldisplay</string> <!-- e.g. com.apple.tcon -->
+            <key>dump-nvm</key> <!-- e.g. dump-nvm -->
+         	<true/>
+        </dict> <!-- End macOS config -->
+    </array> <!-- End PayloadContent -->
+
+</dict>
+</plist>

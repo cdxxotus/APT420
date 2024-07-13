@@ -1,0 +1,57 @@
+graphName "mac_hal_spatial_stereo"
+
+in input
+out output
+
+; -------------------------------------
+; variables
+; -------------------------------------
+
+[def sampleRateIn 48000]
+[def numChannelsIn 2]
+[def numChannelsUpmixedOut 6]
+[def numChannelsOut 2]
+
+box Upmixer (aufx scty) 1 1
+box Spatializer (aumx 3dem) 1 1
+box HTPreCompressorGain dbgn 1 1
+box HTNormalizer (aufx ldnm) 1 1
+box HTLimiter (aufx cfrk) 1 1
+box HTPostCompressorGain dbgn 1 1
+box Volume dbgn 1 1
+box GainInverter parameter_negate 0 0
+
+; -------------------------------------
+; topology
+; -------------------------------------
+
+wire input Volume ([sampleRateIn] [numChannelsIn])
+wire Volume Upmixer ([sampleRateIn] [numChannelsIn])
+wire Upmixer Spatializer ([sampleRateIn] [numChannelsUpmixedOut])
+wire Spatializer HTPreCompressorGain ([sampleRateIn] [numChannelsOut])
+wire HTPreCompressorGain HTNormalizer ([sampleRateIn] [numChannelsOut])
+wire HTNormalizer HTLimiter ([sampleRateIn] [numChannelsOut])
+wire HTLimiter HTPostCompressorGain ([sampleRateIn] [numChannelsOut])
+wire HTPostCompressorGain output ([sampleRateIn] [numChannelsOut])
+
+; -------------------------------------
+; parameters
+; -------------------------------------
+
+; graph volume control
+param volu -20
+wireGraphParam volu (HTPreCompressorGain 0 0 0)
+wireGraphParam volu (GainInverter 0 input 0)
+wireParam (GainInverter 0 output 0) (HTPostCompressorGain 0 0 0) true
+
+; head-tracking position
+property head
+wireGraphProperty head (Spatializer 3102)
+
+
+; private property initialization (not to be set by ADM)
+
+; set prop here (instead of propstrip) to work-around rdar://61182368
+; set AUSM input channel layout to match output of scotty (kAudioChannelLayoutTag_AudioUnit_5_1)
+property 19 0x060079000000000000000000 in
+wireGraphProperty 19 (Spatializer 19 input)
